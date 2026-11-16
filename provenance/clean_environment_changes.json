@@ -1,0 +1,89 @@
+[
+  {
+    "path": "experiments/task_aware/run.py",
+    "change": "os.environ['ORION_ENV_FILE']=str(repo/'.env') -> os.environ.setdefault('ORION_ENV_FILE',str(repo/'.env'))"
+  },
+  {
+    "path": "reproduce.py",
+    "change": "One run id from results/task_aware/protocol.json -> One run id from experiments/task_aware/protocol.json"
+  },
+  {
+    "path": "src/orion/tools/electrolyte_design/conductivity_tool.py",
+    "change": "from __future__ import annotations -> from __future__ import annotations\nfrom release_paths import release_path"
+  },
+  {
+    "path": "src/orion/tools/electrolyte_design/robust_ranking.py",
+    "change": "from __future__ import annotations -> from __future__ import annotations\nfrom release_paths import release_path"
+  },
+  {
+    "path": "src/orion/tools/electrolyte_design/conductivity_tool.py",
+    "change": "os.environ.get(\"ORION_NA_CONDUCTIVITY_MODEL_PATH\", \"\") -> os.environ.get(\"ORION_NA_CONDUCTIVITY_MODEL_PATH\", release_path(\"${PROJECT_SOURCE}/reports/cwsr_inputs/cwsr_conductivity_rf_formal_v1.joblib\"))"
+  },
+  {
+    "path": "src/orion/tools/electrolyte_design/robust_ranking.py",
+    "change": "ROOT.parent / \"reports\" / \"cwsr_inputs\" / \"na_training_bundle_v1\" -> Path(release_path(\"${PROJECT_SOURCE}/reports/cwsr_inputs/na_training_bundle_v1\"))"
+  },
+  {
+    "path": "src/orion/tools/electrolyte_design/__init__.py",
+    "removed_unavailable_unrelated_exports": [
+      "check_formulation_feasibility",
+      "optimize_formulations",
+      "score_formulation",
+      "validate_formulation",
+      "lookup_measurement"
+    ]
+  },
+  {
+    "path": "versions/task_aware/orion/tools/electrolyte_design/conductivity_tool.py",
+    "change": "from __future__ import annotations -> from __future__ import annotations\nfrom release_paths import release_path"
+  },
+  {
+    "path": "versions/task_aware/orion/tools/electrolyte_design/robust_ranking.py",
+    "change": "from __future__ import annotations -> from __future__ import annotations\nfrom release_paths import release_path"
+  },
+  {
+    "path": "versions/task_aware/orion/tools/electrolyte_design/conductivity_tool.py",
+    "change": "os.environ.get(\"ORION_NA_CONDUCTIVITY_MODEL_PATH\", \"\") -> os.environ.get(\"ORION_NA_CONDUCTIVITY_MODEL_PATH\", release_path(\"${PROJECT_SOURCE}/reports/cwsr_inputs/cwsr_conductivity_rf_formal_v1.joblib\"))"
+  },
+  {
+    "path": "versions/task_aware/orion/tools/electrolyte_design/robust_ranking.py",
+    "change": "ROOT.parent / \"reports\" / \"cwsr_inputs\" / \"na_training_bundle_v1\" -> Path(release_path(\"${PROJECT_SOURCE}/reports/cwsr_inputs/na_training_bundle_v1\"))"
+  },
+  {
+    "path": "versions/task_aware/orion/tools/electrolyte_design/__init__.py",
+    "removed_unavailable_unrelated_exports": [
+      "check_formulation_feasibility",
+      "optimize_formulations",
+      "score_formulation",
+      "validate_formulation",
+      "lookup_measurement"
+    ]
+  },
+  {
+    "restored_missing_workers": [
+      "src/orion/benchmark/cwsr_na_conductivity_ml_worker_v1.py",
+      "versions/task_aware/orion/benchmark/cwsr_na_conductivity_ml_worker_v1.py",
+      "src/orion/benchmark/cwsr_bgem3_external_worker_v1.py"
+    ]
+  },
+  {
+    "removed_unused_prototype": "src/orion/tools/electrolyte_design/shared_compute_worker.py",
+    "reason": "No paper entry, import, subprocess launch or public tool registry references it."
+  },
+  {
+    "path": "src/orion/tools/electrolyte_design/conductivity_tool.py",
+    "change": "Resolve bundled data relative to this source file without requiring the current-version helper in historical worker subprocesses."
+  },
+  {
+    "path": "src/orion/tools/electrolyte_design/robust_ranking.py",
+    "change": "Resolve bundled data relative to this source file without requiring the current-version helper in historical worker subprocesses."
+  },
+  {
+    "path": "versions/task_aware/orion/tools/electrolyte_design/conductivity_tool.py",
+    "change": "Resolve bundled data relative to this source file without requiring the current-version helper in historical worker subprocesses."
+  },
+  {
+    "path": "versions/task_aware/orion/tools/electrolyte_design/robust_ranking.py",
+    "change": "Resolve bundled data relative to this source file without requiring the current-version helper in historical worker subprocesses."
+  }
+]

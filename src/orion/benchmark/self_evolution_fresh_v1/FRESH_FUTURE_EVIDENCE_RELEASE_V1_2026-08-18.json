@@ -1,0 +1,40 @@
+{
+  "schema_version": "orion_self_evolution_fresh_future_evidence_release_v1",
+  "status": "PREFREEZE_NO_FORMAL_EXECUTION_AUTHORIZED",
+  "date": "2026-08-18",
+  "policy": {
+    "initial_context_contains_current_task_evidence": false,
+    "evidence_is_released_only_after_model_calls_a_frozen_scientific_retrieval_tool": true,
+    "same_release_packet_for_all_primary_arms_of_a_task": true,
+    "typed_boundary_metadata_is_never_returned_by_future_retrieval_tools": true,
+    "source_identity_is_hidden_before_first_scientific_action": true,
+    "global_RAG_or_KG_fallback": false,
+    "development_source_reuse_in_future_evaluator": false,
+    "note": "The evaluator uses frozen primary-source fact packets rather than live corpus retrieval so evidence timing, content and arm budgets remain deterministic."
+  },
+  "families": {
+    "FRESH_A1_NADFP_WIDE_TEMP": {
+      "positive_transfer_source_ids": ["A1_POS_ESM_2025_HARD_SOFT"],
+      "out_of_scope_control_source_ids": ["A1_CONTROL_AEL_2025_ETHER_LT"]
+    },
+    "FRESH_A4_DTD_HIGH_TEMP": {
+      "positive_transfer_source_ids": ["A4_POS_CELC_2026_DTD"],
+      "out_of_scope_control_source_ids": ["A4_CONTROL_AEL_2025_ETHER_LT"]
+    },
+    "FRESH_A5_ETHER_HIGH_VOLTAGE_BOUNDARY": {
+      "positive_transfer_source_ids": [],
+      "out_of_scope_control_source_ids": ["A5_BOUNDARY_JACS_2026_ETHER_HV"],
+      "note": "The same primary high-voltage source was already an admission boundary for B/C/D. In the future evaluator its plain facts become current-task searchable evidence for every arm only after the scored first action; A does not receive it in initial context."
+    },
+    "FRESH_A6_GLYME_LOW_VOLTAGE_PRESERVATION": {
+      "positive_transfer_source_ids": ["A6_POS_ACSAMI_2024_SWITCHGRASS"],
+      "out_of_scope_control_source_ids": []
+    },
+    "FRESH_A8_PFPN_FULL_CELL_PRESERVATION": {
+      "positive_transfer_source_ids": ["A8_POS_SMALL_2025_PFPN_FULL_CELL"],
+      "out_of_scope_control_source_ids": ["A8_BOUNDARY_ACSEL_2025_NA_METAL_LIMIT"],
+      "note": "The independent Small full-cell paper is the primary future-positive evidence packet. The secondary 2026 Nature Communications provenance remains source-audit support and is not released in the main future evaluator."
+    }
+  },
+  "formal_execution_authorized": false
+}

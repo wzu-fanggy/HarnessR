@@ -1,0 +1,154 @@
+{
+  "schema": "cwsr-v17-warm-cache-eight-task-aggregate-v1",
+  "created_on": "2026-10-13",
+  "source_summary_files": [
+    "reports/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/summary.json",
+    "reports/cwsr_v17_warm_toolnode_ab_20261013_c1_v1/summary.json",
+    "reports/cwsr_v17_warm_toolnode_ab_20261013_c2_v1/summary.json",
+    "reports/cwsr_v17_warm_toolnode_ab_20261013_c3_v1/summary.json",
+    "reports/cwsr_v17_warm_toolnode_ab_20261013_d1_v1/summary.json"
+  ],
+  "run_count": 32,
+  "pair_count": 16,
+  "task_count": 8,
+  "all_provenance_and_output_checks_passed": true,
+  "benchmark_scope": "Preloaded original BGE-M3 and Neo4j Driver; resource-bearing saved r1-native LangGraph ToolNode batches, not full LLM Agent",
+  "relative_time_delta_median_percent": 1.1925,
+  "relative_time_delta_mean_percent": 2.5403125,
+  "paired_runtime_minus_native_median_s": 0.164628,
+  "pairs_runtime_faster": 4,
+  "pairs_runtime_more_than_3_percent_slower": 4,
+  "bridge_overhead_median_s": 0.1473545,
+  "bridge_overhead_to_runtime_duration_median_percent": 1.1013083693968047,
+  "paired_results": [
+    {
+      "task": "U1",
+      "pair": 0,
+      "native_s": 6.765359,
+      "runtime_s": 6.84826,
+      "runtime_minus_native_s": 0.082901,
+      "percent": 1.225
+    },
+    {
+      "task": "U1",
+      "pair": 1,
+      "native_s": 6.80074,
+      "runtime_s": 9.131021,
+      "runtime_minus_native_s": 2.330281,
+      "percent": 34.265
+    },
+    {
+      "task": "U2",
+      "pair": 0,
+      "native_s": 13.545132,
+      "runtime_s": 11.554529,
+      "runtime_minus_native_s": -1.990603,
+      "percent": -14.696
+    },
+    {
+      "task": "U2",
+      "pair": 1,
+      "native_s": 11.476638,
+      "runtime_s": 11.762674,
+      "runtime_minus_native_s": 0.286036,
+      "percent": 2.492
+    },
+    {
+      "task": "P1",
+      "pair": 0,
+      "native_s": 10.931785,
+      "runtime_s": 11.301724,
+      "runtime_minus_native_s": 0.369939,
+      "percent": 3.384
+    },
+    {
+      "task": "P1",
+      "pair": 1,
+      "native_s": 11.206228,
+      "runtime_s": 11.177915,
+      "runtime_minus_native_s": -0.028313,
+      "percent": -0.253
+    },
+    {
+      "task": "P2",
+      "pair": 0,
+      "native_s": 10.620344,
+      "runtime_s": 10.74356,
+      "runtime_minus_native_s": 0.123216,
+      "percent": 1.16
+    },
+    {
+      "task": "P2",
+      "pair": 1,
+      "native_s": 10.829162,
+      "runtime_s": 10.736502,
+      "runtime_minus_native_s": -0.09266,
+      "percent": -0.856
+    },
+    {
+      "task": "C1",
+      "pair": 0,
+      "native_s": 13.98084,
+      "runtime_s": 13.999876,
+      "runtime_minus_native_s": 0.019036,
+      "percent": 0.136
+    },
+    {
+      "task": "C1",
+      "pair": 1,
+      "native_s": 13.614022,
+      "runtime_s": 13.435011,
+      "runtime_minus_native_s": -0.179011,
+      "percent": -1.315
+    },
+    {
+      "task": "C2",
+      "pair": 0,
+      "native_s": 22.657712,
+      "runtime_s": 22.814564,
+      "runtime_minus_native_s": 0.156852,
+      "percent": 0.692
+    },
+    {
+      "task": "C2",
+      "pair": 1,
+      "native_s": 22.405368,
+      "runtime_s": 22.748835,
+      "runtime_minus_native_s": 0.343467,
+      "percent": 1.533
+    },
+    {
+      "task": "C3",
+      "pair": 0,
+      "native_s": 16.871664,
+      "runtime_s": 17.050362,
+      "runtime_minus_native_s": 0.178698,
+      "percent": 1.059
+    },
+    {
+      "task": "C3",
+      "pair": 1,
+      "native_s": 17.003505,
+      "runtime_s": 17.572286,
+      "runtime_minus_native_s": 0.568781,
+      "percent": 3.345
+    },
+    {
+      "task": "D1",
+      "pair": 0,
+      "native_s": 6.612699,
+      "runtime_s": 6.996977,
+      "runtime_minus_native_s": 0.384278,
+      "percent": 5.811
+    },
+    {
+      "task": "D1",
+      "pair": 1,
+      "native_s": 6.473509,
+      "runtime_s": 6.645913,
+      "runtime_minus_native_s": 0.172404,
+      "percent": 2.663
+    }
+  ],
+  "note": "A 3% non-slowdown requirement is not verified: 4/16 pairs exceed it. This is neither task speedup proof nor statistical noninferiority."
+}

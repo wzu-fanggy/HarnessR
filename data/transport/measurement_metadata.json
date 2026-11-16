@@ -1,0 +1,21 @@
+{
+  "conductivity": "Figure3a, approximate digitization from original PDF, room temperature approximately25C; reading not author raw numeric data",
+  "viscosity": "SI TableS2,20C,manual transcription",
+  "ratio_basis": "solvent volume ratio, not molar",
+  "glyme_identity": "source 2G/G2 denotes diglyme",
+  "salt_concentration": "Results and Figure2/3 say1m/molal; Methods4.1 says1.0mol/g, retained source discrepancy",
+  "pairing": "same formulation across measures; different temperatures, not same-temperature joint truth",
+  "source_doi": "10.1021/acsami.4c11797",
+  "data_scope": "reported candidates, not new formulation experiments",
+  "flammability": {
+    "object": "solvent mixtures without salt; authors test categories",
+    "source": "Figure1",
+    "G2_TEP_volume_ratios": {
+      "9:1": "Flammable",
+      "7:3": "Flame retardant",
+      "1:1": "Non-flammable",
+      "3:7": "Non-flammable"
+    },
+    "1:9": "no Figure1 row supplied; do not invent measurement"
+  }
+}

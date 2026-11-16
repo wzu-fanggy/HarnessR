@@ -1,0 +1,99 @@
+{
+  "arm": "runtime",
+  "elapsed_s": 11.554529,
+  "tool_s": 11.407935,
+  "overhead_s": 0.142065,
+  "outputs_sha256": "19cc92b6588775dcc854fb7109b83c1b2efa956c097dbccbb846d51364379045",
+  "rows": [
+    {
+      "batch": 0,
+      "source_message_index": 5,
+      "tool_names": [
+        "search_literature_multiview",
+        "kg_query",
+        "resolve_literature_papers"
+      ],
+      "tool_s": 8.669979,
+      "total_s": 8.69292,
+      "overhead_s": 0.022941,
+      "output_sha256": "bff26a8ab3e441aa4e175a5128cd6494033bb3edd57ad426bb6d222995fb009a"
+    },
+    {
+      "batch": 1,
+      "source_message_index": 10,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks",
+        "search_paper_chunks",
+        "search_paper_chunks",
+        "search_paper_chunks",
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.296395,
+      "total_s": 0.313855,
+      "overhead_s": 0.017461,
+      "output_sha256": "46d273a0ca4d7bd14cbd28537a686b394719b14d3efe7060bc658d2140af129e"
+    },
+    {
+      "batch": 2,
+      "source_message_index": 17,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks",
+        "search_paper_chunks",
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.118067,
+      "total_s": 0.14466,
+      "overhead_s": 0.026592,
+      "output_sha256": "87e74d578a87b068ab29d0a5336afef196fb7e520dc940a02b9528c312488314"
+    },
+    {
+      "batch": 3,
+      "source_message_index": 26,
+      "tool_names": [
+        "query_formulation_space"
+      ],
+      "tool_s": 1.052801,
+      "total_s": 1.074378,
+      "overhead_s": 0.021576,
+      "output_sha256": "2e1e70325babcfd3e291d42b3e3cc78c9c3eca0d5aa684db1cf7c73d3b503402"
+    },
+    {
+      "batch": 4,
+      "source_message_index": 28,
+      "tool_names": [
+        "query_formulation_space"
+      ],
+      "tool_s": 1.040991,
+      "total_s": 1.046364,
+      "overhead_s": 0.005373,
+      "output_sha256": "c5fc1dc97df2bcfb8c2547a3e8295168219cc76b27aaf5698dc59186f8822d14"
+    },
+    {
+      "batch": 5,
+      "source_message_index": 30,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.191,
+      "total_s": 0.21124,
+      "overhead_s": 0.02024,
+      "output_sha256": "6dc0c1c62357019f133c0106cef755689af1783d1d4b917273e3dd0ac8d0fec5"
+    },
+    {
+      "batch": 6,
+      "source_message_index": 33,
+      "tool_names": [
+        "enrich_formulation_evidence"
+      ],
+      "tool_s": 0.038702,
+      "total_s": 0.066584,
+      "overhead_s": 0.027882,
+      "output_sha256": "599f89c891d11ab68bfb7b1ec0e391d6bc1435b82ee8632d017beb6c43883efd"
+    }
+  ],
+  "task": "U2",
+  "pair": 0
+}

@@ -1,0 +1,360 @@
+[
+  {
+    "label": "restore-0",
+    "calls": [
+      {
+        "name": "rank_formulations_under_uncertainty",
+        "args": {
+          "request": {
+            "candidates": [
+              {
+                "candidate_id": "B3-gen-0007",
+                "salt": "NaPF6",
+                "solvents": [
+                  "EC",
+                  "EMC",
+                  "PC"
+                ],
+                "additives": [],
+                "composition_inputs": {
+                  "component_mmol": {
+                    "NaPF6": 644.260836,
+                    "EC": 2196.769523,
+                    "EMC": 6134.374423,
+                    "PC": 1668.856054
+                  }
+                }
+              },
+              {
+                "candidate_id": "B3-gen-0016",
+                "salt": "NaPF6",
+                "solvents": [
+                  "EC",
+                  "EMC",
+                  "PC"
+                ],
+                "additives": [],
+                "composition_inputs": {
+                  "component_mmol": {
+                    "NaPF6": 687.84333,
+                    "EC": 2383.748104,
+                    "EMC": 5805.454908,
+                    "PC": 1810.796988
+                  }
+                }
+              },
+              {
+                "candidate_id": "B3-gen-0008",
+                "salt": "NaPF6",
+                "solvents": [
+                  "EC",
+                  "EMC",
+                  "PC"
+                ],
+                "additives": [],
+                "composition_inputs": {
+                  "component_mmol": {
+                    "NaPF6": 835.054291,
+                    "EC": 2689.682719,
+                    "EMC": 5215.754818,
+                    "PC": 2094.562463
+                  }
+                }
+              }
+            ],
+            "min_conductivity_ms_cm": 2.0,
+            "temperature_c": [
+              -20,
+              0,
+              20
+            ]
+          }
+        },
+        "id": "call_00_JeWrqTDdaUX3ptoNpa3T9481",
+        "type": "tool_call"
+      }
+    ],
+    "messages": [
+      {
+        "content": "{\"candidates\": [{\"bootstrap_inclusion_frequency\": null, \"candidate_id\": \"B3-gen-0007\", \"caveats\": [], \"decision\": \"recommended\", \"dominated_by\": [], \"in_sample_group_memorization_gap_log10\": null, \"joint_meets_constraint_probability\": 0.9375, \"joint_meets_constraint_probability_unseen_members\": null, \"pareto_layer\": 1, \"per_temperature\": [{\"ensemble_log10_std\": 0.05690243809135453, \"median_ms_cm\": 2.495556247420543, \"meets_constraint_probability\": 0.9375, \"p05_ms_cm\": 1.967620085648573, \"p95_ms_cm\": 2.7912810571165187, \"temperature_c\": -20.0}, {\"ensemble_log10_std\": 0.024303041025247992, \"median_ms_cm\": 4.651704639615247, \"meets_constraint_probability\": 1.0, \"p05_ms_cm\": 4.187079247123391, \"p95_ms_cm\": 5.1138913468467315, \"temperature_c\": 0.0}, {\"ensemble_log10_std\": 0.02331140643666526, \"median_ms_cm\": 6.879376440706414, \"meets_constraint_probability\": 1.0, \"p05_ms_cm\": 6.511791964003835, \"p95_ms_cm\": 7.607004141583896, \"temperature_c\": 20.0}], \"rank\": 1, \"rank_stability\": {\"mean_rank\": 2.0, \"mean_spearman_vs_ensemble_median\": -0.234375, \"member_count\": 32, \"rank_std\": 0.790569, \"top1_frequency\": 0.3125}, \"rejection_reasons\": [], \"status\": \"ranked\", \"worst_temperature_c\": -20.0, \"worst_temperature_median_ms_cm\": 2.495556247420543}, {\"bootstrap_inclusion_frequency\": null, \"candidate_id\": \"B3-gen-0008\", \"caveats\": [], \"decision\": \"rejected\", \"dominated_by\": [\"B3-gen-0007\"], \"in_sample_group_memorization_gap_log10\": null, \"joint_meets_constraint_probability\": 0.9375, \"joint_meets_constraint_probability_unseen_members\": null, \"pareto_layer\": 2, \"per_temperature\": [{\"ensemble_log10_std\": 0.05198808510504962, \"median_ms_cm\": 2.465720176500775, \"meets_constraint_probability\": 0.9375, \"p05_ms_cm\": 1.959809088345557, \"p95_ms_cm\": 2.7433929479764116, \"temperature_c\": -20.0}, {\"ensemble_log10_std\": 0.029597020945411515, \"median_ms_cm\": 4.647322774938788, \"meets_constraint_probability\": 1.0, \"p05_ms_cm\": 4.256323043682866, \"p95_ms_cm\": 5.186433612634203, \"temperature_c\": 0.0}, {\"ensemble_log10_std\": 0.02640637736481903, \"median_ms_cm\": 7.307615578666519, \"meets_constraint_probability\": 1.0, \"p05_ms_cm\": 6.570854407586091, \"p95_ms_cm\": 7.730750639006015, \"temperature_c\": 20.0}], \"rank\": 2, \"rank_stability\": {\"mean_rank\": 2.28125, \"mean_spearman_vs_ensemble_median\": -0.234375, \"member_count\": 32, \"rank_std\": 0.943212, \"top1_frequency\": 0.34375}, \"rejection_reasons\": [\"Pareto-dominated by B3-gen-0007\"], \"status\": \"ranked\", \"worst_temperature_c\": -20.0, \"worst_temperature_median_ms_cm\": 2.465720176500775}, {\"bootstrap_inclusion_frequency\": null, \"candidate_id\": \"B3-gen-0016\", \"caveats\": [], \"decision\": \"rejected\", \"dominated_by\": [\"B3-gen-0007\", \"B3-gen-0008\"], \"in_sample_group_memorization_gap_log10\": null, \"joint_meets_constraint_probability\": 0.9375, \"joint_meets_constraint_probability_unseen_members\": null, \"pareto_layer\": 3, \"per_temperature\": [{\"ensemble_log10_std\": 0.05624463366250685, \"median_ms_cm\": 2.4524900517616564, \"meets_constraint_probability\": 0.9375, \"p05_ms_cm\": 1.969209530877028, \"p95_ms_cm\": 2.789161430820433, \"temperature_c\": -20.0}, {\"ensemble_log10_std\": 0.02375003891784812, \"median_ms_cm\": 4.659752314545861, \"meets_constraint_probability\": 1.0, \"p05_ms_cm\": 4.3519020151744545, \"p95_ms_cm\": 5.2114694693445545, \"temperature_c\": 0.0}, {\"ensemble_log10_std\": 0.02434457364781359, \"median_ms_cm\": 7.1408137061979335, \"meets_constraint_probability\": 1.0, \"p05_ms_cm\": 6.5131657529165095, \"p95_ms_cm\": 7.71057076377253, \"temperature_c\": 20.0}], \"rank\": 3, \"rank_stability\": {\"mean_rank\": 1.71875, \"mean_spearman_vs_ensemble_median\": -0.234375, \"member_count\": 32, \"rank_std\": 0.571969, \"top1_frequency\": 0.34375}, \"rejection_reasons\": [\"Pareto-dominated by B3-gen-0007, B3-gen-0008\"], \"status\": \"ranked\", \"worst_temperature_c\": -20.0, \"worst_temperature_median_ms_cm\": 2.4524900517616564}], \"ensemble_members_fitted\": 32, \"ensemble_members_used\": 32, \"evidence_status\": \"model_based_robustness_analysis_not_experimental_fact\", \"method\": \"group_bootstrap_random_forest_ensemble\", \"min_conductivity_ms_cm\": 2.0, \"model_id\": \"na-conductivity-robust-ensemble-v1\", \"notes\": [\"Probabilities are ensemble frequencies over group-bootstrap members, not calibrated frequentist coverage.\", \"Candidates drawn from the same public measurement set the ensemble was fitted on make this an in-sample robustness analysis; read bootstrap_inclusion_frequency per candidate.\", \"Model robustness does not replace literature evidence or experimental fact.\"], \"pareto_layers\": [[\"B3-gen-0007\"], [\"B3-gen-0008\"], [\"B3-gen-0016\"]], \"ranking\": [\"B3-gen-0007\", \"B3-gen-0008\", \"B3-gen-0016\"], \"reject_probability\": 0.5, \"source_data_doi\": \"10.5281/zenodo.18429013\", \"temperature_c\": [-20.0, 0.0, 20.0], \"tool\": \"rank_formulations_under_uncertainty\", \"training_formulations\": 66, \"training_rows\": 593, \"unranked_candidates\": []}",
+        "additional_kwargs": {},
+        "response_metadata": {},
+        "type": "tool",
+        "name": "rank_formulations_under_uncertainty",
+        "id": null,
+        "tool_call_id": "call_00_JeWrqTDdaUX3ptoNpa3T9481",
+        "artifact": null,
+        "status": "success"
+      }
+    ]
+  },
+  {
+    "label": "restore-1",
+    "calls": [
+      {
+        "name": "predict_formulation_conductivity",
+        "args": {
+          "request": {
+            "candidates": [
+              {
+                "candidate_id": "B3-gen-0007",
+                "salt": "NaPF6",
+                "solvents": [
+                  "EC",
+                  "EMC",
+                  "PC"
+                ],
+                "additives": [],
+                "composition_inputs": {
+                  "component_mmol": {
+                    "NaPF6": 644.260836,
+                    "EC": 2196.769523,
+                    "EMC": 6134.374423,
+                    "PC": 1668.856054
+                  }
+                }
+              }
+            ],
+            "temperature_c": 20
+          }
+        },
+        "id": "call_00_h6x0qsjP44rLzJrecbhq6919",
+        "type": "tool_call"
+      }
+    ],
+    "messages": [
+      {
+        "content": "[{\"candidate_id\": \"B3-gen-0007\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"component_mmol\": {\"NaPF6\": 644.260836, \"EC\": 2196.769523, \"EMC\": 6134.374423, \"PC\": 1668.856054}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 6.866935620011926, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.06772876330301733, \"estimated_factor_1sigma\": 1.168769213388413, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.06052659230418732, \"x_EC\": 0.2636816189035752, \"x_PC\": 0.1668856054}, \"reason\": \"\", \"result_binding\": {\"schema\": \"transport_prediction_record_v1\", \"record_id\": \"4ea2f2a69b8f8b1b0a529650e5912bd0fcdc23ccb910a51563f78acb5a246170\", \"record_path\": \"reports/transport_predictions/4ea2f2a69b8f8b1b0a529650e5912bd0fcdc23ccb910a51563f78acb5a246170.json\", \"execution_id\": \"f72c8f1a33e9470fa4de1906aa9c29e4\", \"tool_run_id\": \"01a1b92a-70f2-78b3-a533-2ede4b1ef07e\", \"thread_id\": \"continuation-ranking-previous\", \"composition_id\": \"27c162d4a4ee74ec92f098fc03e4ede1294b91edd322bc7bef139d9631812259\", \"condition_id\": \"c1416b8b618e339adeca775587751df2e8e47fb6b1043d890015825e8775f72f\", \"composition\": {\"basis\": \"mole_fraction_of_all_components\", \"components\": {\"NaPF6\": \"0.0605265923042\", \"EC\": \"0.20638065497\", \"EMC\": \"0.576308164326\", \"PC\": \"0.156784588401\"}}, \"conditions\": {\"temperature_c\": 20.0, \"declared_context\": {}}, \"model_reference\": {\"artifact_sha256\": \"cb60829a64e6ac4f1590b49a496b650f06a73563c0b002d3b1579e1de642e182\", \"implementation_sha256\": \"f6eba047f8eb2d3e5603c852ac4c069c982abe4a046cdb4cf180b572dd07f43c\"}, \"scope\": \"model_input_identity_not_source_or_battery_validation\"}}]}]",
+        "additional_kwargs": {},
+        "response_metadata": {},
+        "type": "tool",
+        "name": "predict_formulation_conductivity",
+        "id": null,
+        "tool_call_id": "call_00_h6x0qsjP44rLzJrecbhq6919",
+        "artifact": null,
+        "status": "success"
+      }
+    ]
+  },
+  {
+    "label": "incoming-0",
+    "calls": [
+      {
+        "name": "fit_conductivity_temperature_law",
+        "args": {
+          "request": {
+            "measurements": [
+              {
+                "temperature_c": -30.0,
+                "conductivity_ms_cm": 1.851699327963
+              },
+              {
+                "temperature_c": -20.0,
+                "conductivity_ms_cm": 1.840177574978
+              },
+              {
+                "temperature_c": -10.0,
+                "conductivity_ms_cm": 2.759636752722
+              },
+              {
+                "temperature_c": 0.0,
+                "conductivity_ms_cm": 3.8058648593
+              },
+              {
+                "temperature_c": 10.0,
+                "conductivity_ms_cm": 4.992309253987
+              },
+              {
+                "temperature_c": 20.0,
+                "conductivity_ms_cm": 6.156483956922
+              },
+              {
+                "temperature_c": 30.0,
+                "conductivity_ms_cm": 7.437532198843
+              },
+              {
+                "temperature_c": 40.0,
+                "conductivity_ms_cm": 8.829673135487
+              },
+              {
+                "temperature_c": 50.0,
+                "conductivity_ms_cm": 10.220288169566
+              },
+              {
+                "temperature_c": 60.0,
+                "conductivity_ms_cm": 11.603756421658
+              }
+            ]
+          }
+        },
+        "id": "call_00_FJP1glRVqFwAA7ioQP3q2184",
+        "type": "tool_call"
+      },
+      {
+        "name": "fit_conductivity_temperature_law",
+        "args": {
+          "request": {
+            "measurements": [
+              {
+                "temperature_c": -30.0,
+                "conductivity_ms_cm": 1.653227261534
+              },
+              {
+                "temperature_c": -20.0,
+                "conductivity_ms_cm": 1.660382527732
+              },
+              {
+                "temperature_c": -10.0,
+                "conductivity_ms_cm": 2.6046795002
+              },
+              {
+                "temperature_c": 0.0,
+                "conductivity_ms_cm": 3.727320182887
+              },
+              {
+                "temperature_c": 10.0,
+                "conductivity_ms_cm": 5.119281608486
+              },
+              {
+                "temperature_c": 20.0,
+                "conductivity_ms_cm": 6.490036905405
+              },
+              {
+                "temperature_c": 30.0,
+                "conductivity_ms_cm": 8.011972200772
+              },
+              {
+                "temperature_c": 40.0,
+                "conductivity_ms_cm": 9.538101999457
+              },
+              {
+                "temperature_c": 50.0,
+                "conductivity_ms_cm": 11.072841349535
+              },
+              {
+                "temperature_c": 60.0,
+                "conductivity_ms_cm": 12.775211305443
+              }
+            ]
+          }
+        },
+        "id": "call_01_nFeUHRYhaGfbvOL3yTEt7675",
+        "type": "tool_call"
+      }
+    ],
+    "messages": [
+      {
+        "content": "{\"conductivity_unit\": \"mS/cm\", \"formulation_id\": null, \"interpretation_boundary\": \"Statistical fit to supplied measurements; it does not establish a transport mechanism or authorize extrapolation beyond the observed temperature range.\", \"measurement_count\": 10, \"models\": [{\"aicc\": -61.97318636474868, \"loo_rmse_log10\": 0.04739866150425472, \"model\": \"arrhenius\", \"parameters\": {\"activation_energy_j_mol\": 15049.593729270107, \"activation_energy_kj_mol\": 15.049593729270107, \"intercept_log10_ms_cm\": 3.4489502012201485, \"slope_per_1000_over_k\": -0.7860947618235268}, \"residual_summary_log10\": {\"max_absolute\": 0.0788376060377447, \"mean\": 2.7755575615628914e-16, \"mean_absolute\": 0.026268510823032165}, \"rmse_log10\": 0.03389886981467195}, {\"aicc\": -57.7863108209591, \"loo_rmse_log10\": 0.07986546475249695, \"model\": \"vtf\", \"parameters\": {\"b_kelvin\": 619.1604983970942, \"intercept_log10_ms_cm\": 3.1384632926183587, \"t0_kelvin\": 31.684843295529898}, \"residual_summary_log10\": {\"max_absolute\": 0.07785678022096776, \"mean\": -2.4370363893577718e-08, \"mean_absolute\": 0.025045906565071198}, \"rmse_log10\": 0.03373175700302856}], \"preferred_by_aicc\": \"arrhenius\", \"provenance\": null, \"response_scale\": \"log10(mS/cm)\", \"status\": \"fitted\", \"temperature_range_c\": [-30.0, 60.0]}",
+        "additional_kwargs": {},
+        "response_metadata": {},
+        "type": "tool",
+        "name": "fit_conductivity_temperature_law",
+        "id": null,
+        "tool_call_id": "call_00_FJP1glRVqFwAA7ioQP3q2184",
+        "artifact": null,
+        "status": "success"
+      },
+      {
+        "content": "{\"conductivity_unit\": \"mS/cm\", \"formulation_id\": null, \"interpretation_boundary\": \"Statistical fit to supplied measurements; it does not establish a transport mechanism or authorize extrapolation beyond the observed temperature range.\", \"measurement_count\": 10, \"models\": [{\"aicc\": -59.11013733285481, \"loo_rmse_log10\": 0.05362733673405973, \"model\": \"arrhenius\", \"parameters\": {\"activation_energy_j_mol\": 16779.131581808168, \"activation_energy_kj_mol\": 16.77913158180817, \"intercept_log10_ms_cm\": 3.770455971887213, \"slope_per_1000_over_k\": -0.8764347849971371}, \"residual_summary_log10\": {\"max_absolute\": 0.08813134481805146, \"mean\": 1.582067810090848e-15, \"mean_absolute\": 0.03193071230856212}, \"rmse_log10\": 0.03911609920515032}, {\"aicc\": -55.173865174069874, \"loo_rmse_log10\": 0.09254720416290359, \"model\": \"vtf\", \"parameters\": {\"b_kelvin\": 566.4908096455027, \"intercept_log10_ms_cm\": 3.1673961135870004, \"t0_kelvin\": 55.15280909519806}, \"residual_summary_log10\": {\"max_absolute\": 0.08608267227377314, \"mean\": -2.237896062906586e-09, \"mean_absolute\": 0.02935761998151773}, \"rmse_log10\": 0.03843859451232181}], \"preferred_by_aicc\": \"arrhenius\", \"provenance\": null, \"response_scale\": \"log10(mS/cm)\", \"status\": \"fitted\", \"temperature_range_c\": [-30.0, 60.0]}",
+        "additional_kwargs": {},
+        "response_metadata": {},
+        "type": "tool",
+        "name": "fit_conductivity_temperature_law",
+        "id": null,
+        "tool_call_id": "call_01_nFeUHRYhaGfbvOL3yTEt7675",
+        "artifact": null,
+        "status": "success"
+      }
+    ],
+    "scientific_numeric_comparison": [
+      {
+        "tool_call_id": "call_00_FJP1glRVqFwAA7ioQP3q2184",
+        "numeric_values": 22,
+        "differences": {}
+      },
+      {
+        "tool_call_id": "call_01_nFeUHRYhaGfbvOL3yTEt7675",
+        "numeric_values": 22,
+        "differences": {}
+      }
+    ]
+  },
+  {
+    "label": "incoming-1",
+    "calls": [
+      {
+        "name": "rank_formulations_under_uncertainty",
+        "args": {
+          "request": {
+            "candidates": [
+              {
+                "candidate_id": "配方1",
+                "salt": "NaPF6",
+                "solvents": [
+                  "EC",
+                  "EMC",
+                  "PC"
+                ],
+                "additives": [],
+                "composition_inputs": {
+                  "component_mmol": {
+                    "EC": 0.8301158301158301,
+                    "EMC": 15.91085922866337,
+                    "PC": 6.127006827376113,
+                    "NaPF6": 3.8648407264066686
+                  }
+                }
+              },
+              {
+                "candidate_id": "配方2",
+                "salt": "NaPF6",
+                "solvents": [
+                  "EC",
+                  "EMC",
+                  "PC"
+                ],
+                "additives": [],
+                "composition_inputs": {
+                  "component_mmol": {
+                    "EC": 2.2768566886213946,
+                    "EMC": 0.0778060611882234,
+                    "PC": 24.644183016779472,
+                    "NaPF6": 1.7231318844894314
+                  }
+                }
+              }
+            ],
+            "temperature_c": [
+              0.0,
+              20.0,
+              40.0
+            ],
+            "min_conductivity_ms_cm": 3.0
+          }
+        },
+        "id": "call_00_QYwmfLh4coE6pqvGinDA4616",
+        "type": "tool_call"
+      }
+    ],
+    "messages": [
+      {
+        "content": "{\"candidates\": [{\"bootstrap_inclusion_frequency\": null, \"candidate_id\": \"配方1\", \"caveats\": [], \"decision\": \"recommended\", \"dominated_by\": [], \"in_sample_group_memorization_gap_log10\": null, \"joint_meets_constraint_probability\": 0.90625, \"joint_meets_constraint_probability_unseen_members\": null, \"pareto_layer\": 1, \"per_temperature\": [{\"ensemble_log10_std\": 0.037749293912030545, \"median_ms_cm\": 3.5475043560704336, \"meets_constraint_probability\": 0.90625, \"p05_ms_cm\": 2.9199500214254623, \"p95_ms_cm\": 3.8189441708454672, \"temperature_c\": 0.0}, {\"ensemble_log10_std\": 0.03016413084647581, \"median_ms_cm\": 6.09726567321954, \"meets_constraint_probability\": 1.0, \"p05_ms_cm\": 5.425234096558313, \"p95_ms_cm\": 6.309538297114107, \"temperature_c\": 20.0}, {\"ensemble_log10_std\": 0.038847542173048505, \"median_ms_cm\": 8.72411863364269, \"meets_constraint_probability\": 1.0, \"p05_ms_cm\": 6.787310355654701, \"p95_ms_cm\": 9.192504737253179, \"temperature_c\": 40.0}], \"rank\": 1, \"rank_stability\": {\"mean_rank\": 1.15625, \"mean_spearman_vs_ensemble_median\": 0.6875, \"member_count\": 32, \"rank_std\": 0.363092, \"top1_frequency\": 0.84375}, \"rejection_reasons\": [], \"status\": \"ranked\", \"worst_temperature_c\": 0.0, \"worst_temperature_median_ms_cm\": 3.5475043560704336}, {\"bootstrap_inclusion_frequency\": null, \"candidate_id\": \"配方2\", \"caveats\": [], \"decision\": \"rejected\", \"dominated_by\": [\"配方1\"], \"in_sample_group_memorization_gap_log10\": null, \"joint_meets_constraint_probability\": 0.5, \"joint_meets_constraint_probability_unseen_members\": null, \"pareto_layer\": 2, \"per_temperature\": [{\"ensemble_log10_std\": 0.1561219309384585, \"median_ms_cm\": 3.0281138192553083, \"meets_constraint_probability\": 0.5, \"p05_ms_cm\": 1.2556056426939513, \"p95_ms_cm\": 3.473505989433576, \"temperature_c\": 0.0}, {\"ensemble_log10_std\": 0.009103889432811601, \"median_ms_cm\": 5.973786637582339, \"meets_constraint_probability\": 1.0, \"p05_ms_cm\": 5.8433937062365136, \"p95_ms_cm\": 6.248763331739901, \"temperature_c\": 20.0}, {\"ensemble_log10_std\": 0.009225992510281313, \"median_ms_cm\": 9.221220673533018, \"meets_constraint_probability\": 1.0, \"p05_ms_cm\": 8.863651208145788, \"p95_ms_cm\": 9.606053448501115, \"temperature_c\": 40.0}], \"rank\": 2, \"rank_stability\": {\"mean_rank\": 1.84375, \"mean_spearman_vs_ensemble_median\": 0.6875, \"member_count\": 32, \"rank_std\": 0.363092, \"top1_frequency\": 0.15625}, \"rejection_reasons\": [\"Pareto-dominated by 配方1\"], \"status\": \"ranked\", \"worst_temperature_c\": 0.0, \"worst_temperature_median_ms_cm\": 3.0281138192553083}], \"ensemble_members_fitted\": 32, \"ensemble_members_used\": 32, \"evidence_status\": \"model_based_robustness_analysis_not_experimental_fact\", \"method\": \"group_bootstrap_random_forest_ensemble\", \"min_conductivity_ms_cm\": 3.0, \"model_id\": \"na-conductivity-robust-ensemble-v1\", \"notes\": [\"Probabilities are ensemble frequencies over group-bootstrap members, not calibrated frequentist coverage.\", \"Candidates drawn from the same public measurement set the ensemble was fitted on make this an in-sample robustness analysis; read bootstrap_inclusion_frequency per candidate.\", \"Model robustness does not replace literature evidence or experimental fact.\"], \"pareto_layers\": [[\"配方1\"], [\"配方2\"]], \"ranking\": [\"配方1\", \"配方2\"], \"reject_probability\": 0.5, \"source_data_doi\": \"10.5281/zenodo.18429013\", \"temperature_c\": [0.0, 20.0, 40.0], \"tool\": \"rank_formulations_under_uncertainty\", \"training_formulations\": 66, \"training_rows\": 593, \"unranked_candidates\": []}",
+        "additional_kwargs": {},
+        "response_metadata": {},
+        "type": "tool",
+        "name": "rank_formulations_under_uncertainty",
+        "id": null,
+        "tool_call_id": "call_00_QYwmfLh4coE6pqvGinDA4616",
+        "artifact": null,
+        "status": "success"
+      }
+    ],
+    "scientific_numeric_comparison": [
+      {
+        "tool_call_id": "call_00_QYwmfLh4coE6pqvGinDA4616",
+        "numeric_values": 65,
+        "differences": {}
+      }
+    ]
+  }
+]

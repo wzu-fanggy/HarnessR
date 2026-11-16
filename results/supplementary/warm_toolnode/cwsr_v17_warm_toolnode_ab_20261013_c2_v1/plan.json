@@ -1,0 +1,26 @@
+{
+  "schema": "cwsr-v17-warm-toolnode-ab-v1",
+  "task_order": [
+    "C2"
+  ],
+  "pairs": 2,
+  "arms": [
+    [
+      "native",
+      "runtime"
+    ],
+    [
+      "runtime",
+      "native"
+    ]
+  ],
+  "source_files": {
+    "C2": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C2-r1-native\\result.json"
+  },
+  "source_sha256": {
+    "C2": "cb55db57ae6f4744dc69135bea06168916579c321178c47ffa18176c8f97b01c"
+  },
+  "scope": "Warm resident BGE-M3+Neo4j; real production ToolNode and same trace; no LLM",
+  "selection": "Entire frozen r1-native trace of every preselected task, preserving original parallel batches",
+  "reclamation": "Disabled by sufficient declared budget; report if any demotion occurs"
+}

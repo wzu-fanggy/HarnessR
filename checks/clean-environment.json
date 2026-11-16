@@ -1,0 +1,151 @@
+{
+  "status": "PASS",
+  "checked_on": "2026-11-16",
+  "platform": "Windows",
+  "python": "3.11.9",
+  "fresh_environments": [
+    "core dependencies only",
+    "complete agent/MCP/platform dependencies"
+  ],
+  "system_site_packages": false,
+  "user_site_packages": false,
+  "original_project_source_required": false,
+  "requirements_installation": "PASS",
+  "pip_check": "PASS",
+  "final_constrained_core_installation": "PASS",
+  "core_only_tests": 69,
+  "full_environment_tests": 69,
+  "commands": [
+    {
+      "check": "pip-check",
+      "exit_code": 0,
+      "seconds": 1.25
+    },
+    {
+      "check": "verify",
+      "exit_code": 0,
+      "seconds": 0.27
+    },
+    {
+      "check": "tests",
+      "exit_code": 0,
+      "seconds": 6.99
+    },
+    {
+      "check": "controlled-main",
+      "exit_code": 0,
+      "seconds": 3.82
+    },
+    {
+      "check": "fixed-summary",
+      "exit_code": 0,
+      "seconds": 0.3
+    },
+    {
+      "check": "science",
+      "exit_code": 0,
+      "seconds": 2.05
+    },
+    {
+      "check": "training",
+      "exit_code": 0,
+      "seconds": 2.32
+    },
+    {
+      "check": "installation",
+      "exit_code": 0,
+      "seconds": 35.35
+    },
+    {
+      "check": "mcp-preflight",
+      "exit_code": 0,
+      "seconds": 2.37
+    }
+  ],
+  "isolation": {
+    "network_guard_verified": true,
+    "user_site_disabled": true,
+    "system_site_disabled": true
+  },
+  "installation_check": {
+    "status": "PASS",
+    "python": "3.11.9",
+    "isolated_virtual_environment": true,
+    "versions": [
+      {
+        "status": "PASS",
+        "version": "current",
+        "agent_module": "src/orion/main.py",
+        "tool_count": 32,
+        "prediction_worker_recomputed": 1,
+        "prediction_error": 0.0,
+        "ranking_worker_started_and_closed": true,
+        "default_data_paths_in_package": true,
+        "original_project_imports": [],
+        "external_calls": 0
+      },
+      {
+        "status": "PASS",
+        "version": "historical",
+        "agent_module": "versions/task_aware/orion/main.py",
+        "tool_count": 32,
+        "prediction_worker_recomputed": 1,
+        "prediction_error": 0.0,
+        "ranking_worker_started_and_closed": true,
+        "default_data_paths_in_package": true,
+        "original_project_imports": [],
+        "external_calls": 0
+      }
+    ],
+    "paid_api_calls": 0
+  },
+  "mcp_preflight": {
+    "phase": "preflight",
+    "checks": {
+      "batch_sharing_single_creation": true,
+      "server_enforces_task_scope": true,
+      "active_lease_protected": true,
+      "reuse_after_batch": true,
+      "real_close_confirmed": true,
+      "closed_generation_unusable": true,
+      "recreation_preserves_output": true,
+      "impossible_batch_rejected_without_creation": true,
+      "second_workspace_available": true,
+      "all_services_closed": true
+    },
+    "success": true
+  },
+  "training_check": {
+    "full": {
+      "rows": 647,
+      "formulations": 72,
+      "max_log_prediction_difference_from_frozen": 0.0
+    },
+    "heldout": {
+      "rows": 539,
+      "formulations": 60,
+      "max_log_prediction_difference_from_frozen": 0.0
+    }
+  },
+  "data_and_results_preserved": {
+    "data": {
+      "files": 34,
+      "all_bytes_identical": true
+    },
+    "results": {
+      "files": 1256,
+      "all_bytes_identical": true
+    }
+  },
+  "roundtrip_relocation": "PASS",
+  "paid_api_calls": 0,
+  "uploaded": false,
+  "remaining_external_prerequisites": [
+    "LLM/Jev credentials for online experiments",
+    "BGE-M3 weights",
+    "evidence graph and vector index with retrieval service",
+    "compatible GPU environment for original GPU measurements"
+  ],
+  "publication_item": "Select an author-code license before public distribution",
+  "roundtrip_details": "checks/roundtrip-check.json"
+}

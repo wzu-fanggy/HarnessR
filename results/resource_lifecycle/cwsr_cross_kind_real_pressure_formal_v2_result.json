@@ -1,0 +1,229 @@
+{
+  "checks": {
+    "high_budget_convergence_without_cwsr_eviction": true,
+    "intermediate_budget_cross_kind_difference": true,
+    "low_budget_no_strategy_can_admit_single_bge": true,
+    "primary_cwsr_complete_all_repeats": true,
+    "primary_cwsr_fewer_preparations_all_repeats": true,
+    "primary_cwsr_pre_admission_cross_kind_eviction_all_repeats": true,
+    "primary_release_all_complete_all_repeats": true,
+    "primary_scientific_outputs_equal_all_repeats": true,
+    "primary_type_local_stops_before_process_start_all_repeats": true
+  },
+  "design": {
+    "admission_rule": "profiled costs are used before materialization; measured telemetry is checked after materialization",
+    "neo4j_included": false,
+    "objects": [
+      "real BGE-M3 Model",
+      "real sodium-electrolyte conductivity Process"
+    ],
+    "operation_sequence": [
+      "BGE",
+      "BGE",
+      "Process",
+      "Process",
+      "BGE",
+      "BGE"
+    ],
+    "primary_host_budget_mib": 750,
+    "primary_repeats": 3,
+    "profiled_bge_host_mib": 558.13671875,
+    "profiled_cost_source": "independent measurements completed before this pressure comparison",
+    "profiled_process_host_mib": 383.4609375,
+    "scope": "prospective controlled physical-resource validation; not evidence that this exact mixed sequence occurred in archived agent traces",
+    "sensitivity_budgets_mib": [
+      500,
+      654,
+      846,
+      1050
+    ],
+    "timing_role": "diagnostic only; not a primary endpoint"
+  },
+  "primary_summary": {
+    "cwsr_completed": [
+      6,
+      6,
+      6
+    ],
+    "cwsr_elapsed_s_diagnostic": {
+      "max": 20.889999999999418,
+      "median": 20.64099999999962,
+      "min": 20.59400000000005
+    },
+    "cwsr_model_load_count": [
+      2,
+      2,
+      2
+    ],
+    "cwsr_process_establishment_count": [
+      1,
+      1,
+      1
+    ],
+    "release_all_completed": [
+      6,
+      6,
+      6
+    ],
+    "release_all_elapsed_s_diagnostic": {
+      "max": 31.82799999999952,
+      "median": 31.78100000000086,
+      "min": 31.313000000000102
+    },
+    "release_all_model_load_count": [
+      4,
+      4,
+      4
+    ],
+    "release_all_process_establishment_count": [
+      2,
+      2,
+      2
+    ],
+    "type_local_completed": [
+      2,
+      2,
+      2
+    ]
+  },
+  "schema_version": "cwsr-cross-kind-real-pressure-formal-v2.0",
+  "sensitivity_summary": [
+    {
+      "cwsr_budget_evictions": [],
+      "cwsr_completed": 0,
+      "host_budget_mib": 500,
+      "outputs_equal_cwsr_release_all": true,
+      "release_all_completed": 0,
+      "type_local_completed": 0
+    },
+    {
+      "cwsr_budget_evictions": [
+        {
+          "capability_id": "model:bge-m3-real",
+          "detail": "budget_eviction"
+        },
+        {
+          "capability_id": "process:na-conductivity-real",
+          "detail": "budget_eviction"
+        }
+      ],
+      "cwsr_completed": 6,
+      "host_budget_mib": 654,
+      "outputs_equal_cwsr_release_all": true,
+      "release_all_completed": 6,
+      "type_local_completed": 2
+    },
+    {
+      "cwsr_budget_evictions": [
+        {
+          "capability_id": "model:bge-m3-real",
+          "detail": "budget_eviction"
+        },
+        {
+          "capability_id": "process:na-conductivity-real",
+          "detail": "budget_eviction"
+        }
+      ],
+      "cwsr_completed": 6,
+      "host_budget_mib": 846,
+      "outputs_equal_cwsr_release_all": true,
+      "release_all_completed": 6,
+      "type_local_completed": 2
+    },
+    {
+      "cwsr_budget_evictions": [],
+      "cwsr_completed": 6,
+      "host_budget_mib": 1050,
+      "outputs_equal_cwsr_release_all": true,
+      "release_all_completed": 6,
+      "type_local_completed": 6
+    }
+  ],
+  "source_files": [
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_type_local_750.json",
+      "sha256": "8d35f99b6b8de2ecf52d0d55c2802e24998fe65288705040292a2c2b2704fa40"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_cwsr_750.json",
+      "sha256": "b6512a7fcfc8bb8e20306aa82d891f6f60b15a3d60a51140acaa48e45514cb88"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_release_all_750_clean.json",
+      "sha256": "8868dd94570395a2945d23c27ff52a5c93ad3dc8dbe32b5db9120514fca6c7e6"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_type_local_750_r2_clean.json",
+      "sha256": "176fc82a0134341c8cbd3c02d7fab8d7997d67972700fa2ba6db9e2be99e4c1a"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_cwsr_750_r2_clean.json",
+      "sha256": "3dd9753290cce3db0b14d86c285101dcf0c2adce6bcdba4527e78087b661e1a7"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_release_all_750_r2_clean.json",
+      "sha256": "6dd5d7e24728be3d1c987fbca0bcb0de3a93fd5640278832988b3cd9129c8c02"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_type_local_750_r3_clean.json",
+      "sha256": "17cf8de195a8feece7706f0d70585fe584f8ec3c550e02dffd2b337552cf9cb0"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_cwsr_750_r3_clean.json",
+      "sha256": "0692be23f9b85c3830a01ad75bf6236b1679e49e4b6f0967866a4423b57f8452"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_release_all_750_r3_clean.json",
+      "sha256": "2aae71d17f4e9c90e2c418ce109c7e76f3ca9ba39fc9a1ee99f842ee3e410f82"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_type_local_500.json",
+      "sha256": "184b961caf601821c54b4a858f3f45af0c671291e91bae4e06e00ef0f613e2c1"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_cwsr_500.json",
+      "sha256": "d33ff6de3f78b8a104b4803a05bb04a576aaf74a77a1a360c381d6ecfc791878"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_release_all_500.json",
+      "sha256": "b37859ac683d860b9f3b312da0f91a0f89ab5ed95ee3677f7bad36ddd0075749"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_type_local_654_clean.json",
+      "sha256": "a0ade626c66b1e30ff165ce3b9bb67dd9ebd9916cee3fd425bbe4ebe7f6704a0"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_cwsr_654_clean.json",
+      "sha256": "5f979215e47b079475153082c335b825138dd63e0d7f644fb546ecfcc52d137d"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_release_all_654_clean.json",
+      "sha256": "17df12a1571e471ef3ac6571f9640744657e8a40ed650e44f1d4523c2a975c5c"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_type_local_846_clean.json",
+      "sha256": "6b0aa32ff341cf4d4d534cc3cfa2a7f93517e7b3e70b153f9949c7b7cc13432f"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_cwsr_846_clean.json",
+      "sha256": "6fc06aa0b7d6063f6b466a8c1d9bac375bd379c73d8c3eb656fdbd3e54a9ef70"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_release_all_846_clean.json",
+      "sha256": "d936a92ff63e6ed77a4bf62ef71b9f80890cecad4f63f252035fee388cdc74d9"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_type_local_1050_clean.json",
+      "sha256": "20936cfdce30c68a14f73ea38ef8de90d2bbf8c6a833bb09488924ea197904e2"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_cwsr_1050_clean.json",
+      "sha256": "117e853e379c62cfd5a177b603db9fb5a2669001397d3a184d67e29cc811df0d"
+    },
+    {
+      "path": "benchmark\\_scratch\\cwsr_cross_kind_profiled_release_all_1050_clean.json",
+      "sha256": "d7f8f562689c91450b401fc25509854c60d5f412c174a4ad2c4abc23d0a2c365"
+    }
+  ],
+  "status": "PASS"
+}

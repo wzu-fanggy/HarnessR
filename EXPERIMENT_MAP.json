@@ -1,0 +1,67 @@
+[
+  {
+    "id": "E1",
+    "paper": "Methods 2.4; controlled resource comparison; Fig. 5–6",
+    "entry": "src/orion/benchmark/cwsr_retention_robust_window_v2.py",
+    "results": "results/controlled",
+    "external": "None; lightweight local processes",
+    "validation": "20-request main suite rerun offline; 27-order archived results retained"
+  },
+  {
+    "id": "E2",
+    "paper": "Methods 2.4; fixed six calls; Figure 7–8",
+    "entry": "src/orion/benchmark/cwsr_cross_kind_real_pressure_probe_v1.py",
+    "analysis": "src/orion/benchmark/cwsr_cross_kind_real_pressure_formal_v2.py",
+    "results": "results/fixed_calls/raw; results/resource_lifecycle",
+    "external": "BGE-M3 weights and compatible GPU/PyTorch for the original GPU configuration"
+  },
+  {
+    "id": "E3",
+    "paper": "Screening and held-out formulations; Table 3–4; Figure 9",
+    "entry": "src/orion/benchmark/cwsr_native_runtime_pair_v1.py; cwsr_complete_case_resource_v1.py; cwsr_heldout12_agent_pair_v1.py",
+    "results": "results/screening; results/heldout; results/heldout_quality",
+    "external": "LLM API, BGE-M3, Neo4j/evidence database and retrieval service"
+  },
+  {
+    "id": "E4",
+    "paper": "Eight literature recommendation tasks; Table 5",
+    "entry": "src/orion/benchmark/cwsr_eight_task_autonomous_frozen_v1.py",
+    "results": "results/recommendation",
+    "external": "LLM API, BGE-M3, Neo4j/evidence database"
+  },
+  {
+    "id": "E5",
+    "paper": "Sharing and paired continuation; Table 6; SI S7",
+    "entry": "experiments/sharing/run.py; experiments/sharing/continuation.py",
+    "results": "results/sharing",
+    "external": "LLM/Jev API for live experiments; archived results can be verified offline"
+  },
+  {
+    "id": "E6",
+    "paper": "Integrated chemical analysis; Table 6; SI S7",
+    "entry": "experiments/integrated/execute.py",
+    "results": "results/integrated; results/coordination_checks",
+    "external": "LLM/Jev API; bundled RF and three public training CSVs"
+  },
+  {
+    "id": "E7",
+    "paper": "Task-aware policy comparison; SI Table S6",
+    "entry": "experiments/task_aware/run.py",
+    "results": "results/task_aware",
+    "external": "LLM/Jev API; frozen original task-aware source retained in provenance/frozen_sources"
+  },
+  {
+    "id": "E8",
+    "paper": "External tool sessions; SI Table S8",
+    "entry": "experiments/mcp_sessions/run_case.py",
+    "results": "results/mcp_sessions",
+    "external": "Windows, Node.js, official filesystem server 2.1.0, MCP Python client"
+  },
+  {
+    "id": "E9",
+    "paper": "SI Table S1 and S5 timing; release/recreation; Neo4j lifecycle",
+    "entry": "src/orion/benchmark/cwsr_run_uniform_real_rag_all8_v2.py; cwsr_v17_warm_toolnode_ab_v1.py; cwsr_conductivity_process_timing_serialized_v2.py; hcvm_neo4j_driver_integration_v2.py",
+    "results": "results/supplementary; results/resource_lifecycle",
+    "external": "Retrieval timing and Neo4j checks require the original data services"
+  }
+]

@@ -1,0 +1,340 @@
+{
+  "schema": "real-mcp-session-case-v1",
+  "stage": "frozen-before-preflight",
+  "python_packages": {
+    "aiohappyeyeballs": "2.7.1",
+    "aiohttp": "3.14.1",
+    "aiosignal": "1.4.0",
+    "aiosqlite": "0.22.1",
+    "annotated-doc": "0.0.4",
+    "annotated-types": "0.7.0",
+    "anthropic": "0.117.0",
+    "anyio": "4.14.1",
+    "appdirs": "1.4.4",
+    "attrs": "26.1.0",
+    "bracex": "3.0",
+    "cachetools": "7.1.4",
+    "certifi": "2026.6.17",
+    "cffi": "2.1.0",
+    "charset-normalizer": "3.4.9",
+    "click": "8.4.2",
+    "colorama": "0.4.6",
+    "contourpy": "1.3.3",
+    "cryptography": "49.0.0",
+    "cycler": "0.12.1",
+    "dataclasses-json": "0.6.7",
+    "datasets": "5.0.0",
+    "deepagents": "0.6.12",
+    "dill": "0.4.1",
+    "diskcache": "5.6.3",
+    "distro": "1.9.0",
+    "docstring_parser": "0.18.0",
+    "electrolyte-workbench-api": "0.1.0",
+    "fastapi": "0.139.0",
+    "filelock": "3.29.7",
+    "filetype": "1.2.0",
+    "flashtext": "2.7",
+    "fonttools": "4.66.0",
+    "frozenlist": "1.8.0",
+    "fsspec": "2026.4.0",
+    "google-auth": "2.55.2",
+    "google-genai": "2.12.1",
+    "greenlet": "3.5.3",
+    "grpcio": "1.82.1",
+    "h11": "0.16.0",
+    "hdbscan": "0.8.44",
+    "hf-xet": "1.5.1",
+    "httpcore": "1.0.9",
+    "httptools": "0.8.0",
+    "httpx": "0.28.1",
+    "httpx-sse": "0.4.3",
+    "huggingface_hub": "1.22.0",
+    "idna": "3.18",
+    "iniconfig": "2.3.0",
+    "Jinja2": "3.1.6",
+    "jiter": "0.16.0",
+    "joblib": "1.5.3",
+    "jsonpatch": "1.33",
+    "jsonpointer": "3.1.1",
+    "jsonschema": "4.26.0",
+    "jsonschema-specifications": "2025.9.1",
+    "kiwisolver": "1.5.1",
+    "langchain": "1.3.12",
+    "langchain-anthropic": "1.4.8",
+    "langchain-classic": "1.0.8",
+    "langchain-community": "0.4.1",
+    "langchain-core": "1.4.9",
+    "langchain-deepseek": "1.1.0",
+    "langchain-google-genai": "4.2.7",
+    "langchain-openai": "1.3.4",
+    "langchain-protocol": "0.0.18",
+    "langchain-text-splitters": "1.1.2",
+    "langgraph": "1.2.8",
+    "langgraph-checkpoint": "4.1.1",
+    "langgraph-checkpoint-sqlite": "3.1.0",
+    "langgraph-prebuilt": "1.1.0",
+    "langgraph-sdk": "0.4.2",
+    "langsmith": "0.9.8",
+    "laya": "0.3.6",
+    "MAPIE": "0.6.5",
+    "markdown-it-py": "4.2.0",
+    "MarkupSafe": "3.0.3",
+    "marshmallow": "3.26.2",
+    "matplotlib": "3.11.2",
+    "mcp": "1.30.0",
+    "mdit-py-plugins": "0.6.1",
+    "mdurl": "0.1.2",
+    "mpmath": "1.3.0",
+    "multidict": "6.7.1",
+    "multiprocess": "0.70.19",
+    "mypy_extensions": "1.1.0",
+    "narwhals": "2.23.0",
+    "neo4j": "6.2.0",
+    "nest-asyncio": "1.6.0",
+    "networkx": "3.6.1",
+    "nh3": "0.3.6",
+    "numpy": "2.4.6",
+    "openai": "2.44.0",
+    "orjson": "3.11.9",
+    "ormsgpack": "1.12.2",
+    "packaging": "26.2",
+    "pandas": "3.0.3",
+    "pillow": "12.3.0",
+    "pip": "24.0",
+    "pluggy": "1.6.0",
+    "prompt_toolkit": "3.0.52",
+    "propcache": "0.5.2",
+    "protobuf": "7.35.1",
+    "pyarrow": "25.0.0",
+    "pyasn1": "0.6.4",
+    "pyasn1_modules": "0.4.2",
+    "pycparser": "3.0",
+    "pydantic": "2.13.4",
+    "pydantic_core": "2.46.4",
+    "pydantic-settings": "2.14.2",
+    "Pygments": "2.20.0",
+    "PyJWT": "2.15.1",
+    "pymilvus": "3.0.0",
+    "pyparsing": "3.3.3",
+    "pytest": "9.1.1",
+    "pytest-asyncio": "1.4.0",
+    "pytest-mock": "3.15.1",
+    "python-dateutil": "2.9.0.post0",
+    "python-dotenv": "1.2.2",
+    "python-multipart": "0.0.32",
+    "pytz": "2026.2",
+    "pywin32": "312",
+    "PyYAML": "6.0.3",
+    "ragas": "0.2.15",
+    "rdkit": "2026.9.1",
+    "referencing": "0.37.0",
+    "regex": "2026.6.28",
+    "requests": "2.34.2",
+    "requests-toolbelt": "1.0.0",
+    "rich": "15.0.0",
+    "rpds-py": "2026.9.1",
+    "safetensors": "0.8.0",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.17.1",
+    "seaborn": "0.13.2",
+    "sentence-transformers": "5.6.0",
+    "setuptools": "83.0.0",
+    "shellingham": "1.5.4",
+    "six": "1.17.0",
+    "sniffio": "1.3.1",
+    "SQLAlchemy": "2.0.51",
+    "sqlite-vec": "0.1.9",
+    "sse-starlette": "3.6.0",
+    "starlette": "1.3.1",
+    "sympy": "1.14.0",
+    "tenacity": "9.1.4",
+    "threadpoolctl": "3.6.0",
+    "tiktoken": "0.13.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.13.0+cu130",
+    "tqdm": "4.68.4",
+    "transformers": "5.13.0",
+    "typer": "0.26.8",
+    "typing_extensions": "4.16.0",
+    "typing-inspect": "0.9.0",
+    "typing-inspection": "0.4.2",
+    "tzdata": "2026.2",
+    "uncertainties": "3.2.3",
+    "urllib3": "2.7.0",
+    "uuid_utils": "0.16.2",
+    "uvicorn": "0.50.2",
+    "watchfiles": "1.2.0",
+    "wcmatch": "11.0",
+    "wcwidth": "0.8.2",
+    "websockets": "15.0.1",
+    "xxhash": "3.8.1",
+    "yarl": "1.24.2",
+    "zstandard": "0.25.0"
+  },
+  "node_version": "v24.12.0",
+  "server_package": "2.1.0",
+  "package_lock_sha256": "84efff9a7a3f809db906337f470e474ffb202d71b9b9b605bc908be7e21e2c87",
+  "runtime_python_sha256": {
+    "capvm\\__init__.py": "54aff5fbe430b37c8bef9d9b6af0bc147f449e2a44ce5319b0945708627390f9",
+    "capvm\\adapters\\__init__.py": "b5de5726715bdde7390cbc65404d8aae5c5a15f661b52291b7c19869bd7ae0cf",
+    "capvm\\adapters\\base.py": "fce507cbd6713ae204348b39731d305c056ce30abe6c0acf5e206ee075c5517f",
+    "capvm\\adapters\\model.py": "efc57d77365d5a56dfc4b61faa8fc33173d70370c9ac803258872e5ad05903de",
+    "capvm\\adapters\\neo4j_driver.py": "3b48b6e4703d0f7ca899ceff7040ad6ddc7cdad8da06ab28c00724bec8645574",
+    "capvm\\adapters\\neo4j_session.py": "bb3159f9327024891307132ceb94ee6658733c3f4be92be63cc542ac7612b4d2",
+    "capvm\\adapters\\plugin.py": "de9577202b5fa8516eb7a5af1c310a11535379afc42c6b12f3b66f043763a4f0",
+    "capvm\\adapters\\plugin_runtime_state.py": "dc7fe8a72932a98997e1d353107451d64a2daa01ff3e4c5f9ffb3989f6f8b9ef",
+    "capvm\\adapters\\process.py": "461efeae465886714bf5de294617c81e767efbe4a3ae3c63bd589a9c7ffacfa3",
+    "capvm\\adapters\\root_service_resource.py": "11f5470603278653a1c676998d7f3bf27c486ad1d8160bc004c0b7c08a0824c8",
+    "capvm\\adapters\\session.py": "2d4ba583eb0451d5854e9ebf45005e9d0244e6f90557235f9b6c32a8a1d0a0ae",
+    "capvm\\adapters\\skill.py": "2f8d438fcda078faf364d1177bae18478871482f1e60e984a28eba431a1e20a7",
+    "capvm\\adapters\\tool.py": "8d38b4f8c88cb126c139de31a72038e5685d432ea75927b79edcc9242dfc0e09",
+    "capvm\\capability_asset.py": "63fea44759c9f0f6a26eb8474f3ca0de1b048b985bb0521f9dd9a7c921e6f124",
+    "capvm\\catalog.py": "a081307f7b630ef49aadec0c6ba54b9822c1357676be8d57d799e1b19990cbc0",
+    "capvm\\deployment.py": "eccb1f93f196f9cacc9ccb384f444dfed11a3727e49f495d572ea662268ad04a",
+    "capvm\\evolvable_plugin.py": "dac6c57562379634a6050c38a30ad35ea9514e5d07c954492b44d1b958d4fe64",
+    "capvm\\governor.py": "6b0c5babec48ebd91218d4348393cb700bd3eb3259b757b2c6e269ca3db2a6c9",
+    "capvm\\lifecycle.py": "b7557b42f1a7c691af71edb3630cd639c2da658d951e52fd0d4eef8e70278aa8",
+    "capvm\\local_capability_folder.py": "0e30bc4d52ab0d92b3cf25630386d9adcdb53a62f6a221f7a982fefcff182955",
+    "capvm\\measurement_batch.py": "ae186e17fa3a36515200bdf95876c489345dfb67e800188ed0e4d7fec4c7a712",
+    "capvm\\model.py": "d417b476c62d2a27b351aab24ad1a33a779ac4bd705acd16a5ed05f7cac0a6fe",
+    "capvm\\parallel_preparation.py": "e533287c2f720aa3db396c138fb6ecaeb1a242d49e1a1e32a76116c352665cf2",
+    "capvm\\plugin_bundle.py": "56ba5954c0b977f73d508a50862ddc2b86ebf93a043c277de07f7672594b95ac",
+    "capvm\\plugin_evolution.py": "580571b678600135964e1897294131efd51750158ec874142477b21d4d39cde2",
+    "capvm\\plugin_host.py": "4164d8536f677f5aaeee4d293683345b1f7dd6bf81015db936056e1853a4fdae",
+    "capvm\\policies\\__init__.py": "86324c4a1bd716577298a7ae9b7c281a9d13d8c1557999187563c6e68e27da38",
+    "capvm\\policies\\laya_reuse.py": "f1bc1d632ba57ed703798843d7365706954b03ab0e0e8aa3f3d71abbd28f3b9d",
+    "capvm\\policies\\lru_cost.py": "eb3830b33d8ee52374f877d139f99ea0183006818e34debe1ce3b637ab2764bc",
+    "capvm\\policies\\observed_cost.py": "8f1ff1bf83941e2c5bce351e27ddf80718cd1b83c01d36ed07ebf6fa919051bd",
+    "capvm\\regression_qualification.py": "ef02e0c5b09bd89e3f5615e385aad2da307f2d9432023a0d322814a94f4dc12e",
+    "capvm\\resource_budget.py": "306dcdd765212663525ae18ffff285a5fe3084ab0445dff7032e87ee0433385f",
+    "capvm\\resource_observation.py": "2599929380c470dc85c62f4378b8520acba9048477bbc430fef5cd06a153b931",
+    "capvm\\routing.py": "df984b83542f9e5f7f47ad5a188b32f08b407b996cfef51c4a968dda70371d18",
+    "capvm\\stateful_graph_plugin.py": "c7fa3e10401651107972c2f15d1f272ae845304239a59436339afbf92ddc0304",
+    "capvm\\telemetry.py": "5747d426e16536fa44c2cd2f361b51dda22f2e7dfd265ad9b629df78169631e3",
+    "capvm\\ttl_shadow.py": "14dbcbf3198728b415c5cf0f99d93b802cfa9316a1a7c25a58adc54e779fd484"
+  },
+  "sources": [
+    {
+      "workspace": "A",
+      "task_run": "P2-r1-runtime",
+      "source_result": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P2-r1-runtime\\result.json",
+      "source_result_sha256": "e4826f0a8d8e71150bd6a40fd2bd9615b27daf15e6628285cfaa2b9f917c1e14",
+      "source_report": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P2-r1-runtime\\report.md",
+      "source_report_sha256": "d61966f061fadedf8776565a30ee9d9f212870e97de29da04c1e2e4bf1502079",
+      "evidence_transform": "JSON serialization of the unchanged contexts field",
+      "files": {
+        "evidence.json": {
+          "sha256": "3762b36b216f7d72cb5832528ddffcf3216bfc2f25411090b87a15d29068f256",
+          "bytes": 35175
+        },
+        "report.md": {
+          "sha256": "d61966f061fadedf8776565a30ee9d9f212870e97de29da04c1e2e4bf1502079",
+          "bytes": 26467
+        }
+      }
+    },
+    {
+      "workspace": "B",
+      "task_run": "U2-r1-runtime",
+      "source_result": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U2-r1-runtime\\result.json",
+      "source_result_sha256": "22283a7bbf418d18c3014933cd268f20cd0e6010d0498b559893cb9cb7f8e883",
+      "source_report": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U2-r1-runtime\\report.md",
+      "source_report_sha256": "49536c1555e63df3f13551fdd175b284a82dd2b7ba5ffca9a681cbfd21fec766",
+      "evidence_transform": "JSON serialization of the unchanged contexts field",
+      "files": {
+        "evidence.json": {
+          "sha256": "8f8baa8326df865b9de942937f60c0169ceff34963e65b0b2b52bf76f24ec382",
+          "bytes": 35564
+        },
+        "report.md": {
+          "sha256": "49536c1555e63df3f13551fdd175b284a82dd2b7ba5ffca9a681cbfd21fec766",
+          "bytes": 27635
+        }
+      }
+    }
+  ],
+  "batches": [
+    {
+      "workspace": "A",
+      "calls": [
+        [
+          "list_directory",
+          "."
+        ],
+        [
+          "read_text_file",
+          "evidence.json"
+        ]
+      ]
+    },
+    {
+      "workspace": "A",
+      "calls": [
+        [
+          "read_text_file",
+          "report.md"
+        ]
+      ]
+    },
+    {
+      "workspace": "B",
+      "calls": [
+        [
+          "list_directory",
+          "."
+        ],
+        [
+          "read_text_file",
+          "evidence.json"
+        ]
+      ]
+    },
+    {
+      "workspace": "B",
+      "calls": [
+        [
+          "read_text_file",
+          "report.md"
+        ]
+      ]
+    },
+    {
+      "workspace": "A",
+      "calls": [
+        [
+          "read_text_file",
+          "evidence.json"
+        ]
+      ]
+    },
+    {
+      "workspace": "A",
+      "calls": [
+        [
+          "read_text_file",
+          "report.md"
+        ]
+      ]
+    }
+  ],
+  "scope_contract": "Prospective task-isolated authorized roots; not a historical MCP trace.",
+  "quotas": [
+    1,
+    2
+  ],
+  "quota_unit": "managed stdio MCP session instances",
+  "strategies": [
+    "retain_all",
+    "release_after_batch",
+    "runtime"
+  ],
+  "primary_outcomes": [
+    "completed_batches",
+    "correct_tool_results",
+    "creations",
+    "repeated_creations",
+    "confirmed_closures",
+    "quota_compliance"
+  ],
+  "performance_claim": false
+}

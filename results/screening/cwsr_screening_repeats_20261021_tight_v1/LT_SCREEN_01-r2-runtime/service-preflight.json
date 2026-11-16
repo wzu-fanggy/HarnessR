@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "schema_version": "1.0",
+    "service": "kg-rag",
+    "database": "kg-v1",
+    "neo4j_version": "2026.03.1",
+    "graph": {
+      "node_count": 112879,
+      "relationship_count": 802804,
+      "nodes_by_label": {
+        "Additive": 2892,
+        "Anode": 3044,
+        "Cathode": 2232,
+        "Chunk": 57899,
+        "Component": 4830,
+        "Condition": 9171,
+        "Device": 3942,
+        "Electrolyte": 6545,
+        "Entity": 54159,
+        "LithiumSalt": 140,
+        "Method": 5707,
+        "Paper": 821,
+        "Phenomenon": 5887,
+        "Precursor": 873,
+        "Property": 11515,
+        "SeiComponent": 2550,
+        "SodiumSalt": 603,
+        "Solvent": 45
+      },
+      "relationships_by_type": {
+        "COMPARED_WITH": 3789,
+        "CONTAINS": 14279,
+        "CORRELATES_WITH": 7493,
+        "DEGRADES": 1859,
+        "DISSOLVES": 1659,
+        "ENABLES": 6181,
+        "FORMS": 3803,
+        "HAS_CHUNK": 57899,
+        "HAS_PROPERTY": 23481,
+        "IMPROVES": 5185,
+        "MENTIONED_IN": 661481,
+        "PREPARED_FROM": 1461,
+        "TESTED_UNDER": 11201,
+        "TREATED_AT": 3033
+      }
+    },
+    "vector_index": {
+      "name": "chunk_embedding",
+      "present": true,
+      "type": "VECTOR",
+      "state": "ONLINE",
+      "entity_type": "NODE",
+      "labels_or_types": [
+        "Chunk"
+      ],
+      "properties": [
+        "embedding"
+      ],
+      "dimensions": 1024,
+      "similarity_function": "COSINE"
+    },
+    "runtime_code": {
+      "fingerprint": "b0acb286cd9422aa7460d168e9c12e2d78c246fcf96ac698ec8e2ef1a08d7181",
+      "source_files": [
+        "kg_rag/service.py",
+        "kg_rag/config.py",
+        "kg_rag/service_kg_query.py",
+        "kg_rag/agent_tools.py",
+        "kg_rag/retriever.py",
+        "kg_rag/entity_resolver.py",
+        "kg_rag/entity_linker.py",
+        "kg_rag/query_variants.py",
+        "kg_rag/reranker.py",
+        "kg_rag/vector_store.py",
+        "kg_rag/embedder.py",
+        "kg_rag/resource_telemetry.py",
+        "kg_rag/runtime_resources.py"
+      ]
+    },
+    "snapshot_fingerprint": "1b419b5196831e7c2389aed5f83df7b566a1e451f89d5632a3587453e0ca4ccc",
+    "collected_at": "2026-10-21T10:00:21.401889+00:00"
+  },
+  "initial_resources": {
+    "resources": {
+      "bge-m3-model": {
+        "resource_id": "bge-m3-model",
+        "resident": false,
+        "host_ram_mib": 0.0,
+        "host_ram_measurement": "not_resident",
+        "gpu_allocated_mib": 0.0,
+        "gpu_vram_pressure": null,
+        "load_count": 0,
+        "release_count": 0,
+        "last_load_seconds": 0.0
+      },
+      "neo4j-session": {
+        "resource_id": "neo4j-session",
+        "resident": false,
+        "connection_slots": 0.0,
+        "open_count": 0,
+        "close_count": 0,
+        "last_open_seconds": 0.0
+      }
+    }
+  },
+  "telemetry": {
+    "schema_version": "resource-residency-v1",
+    "pid": 22628,
+    "process_rss_mib": 51.953,
+    "host_ram_pressure": 0.641,
+    "resources": [],
+    "telemetry_write_errors": 0
+  },
+  "service_setup_seconds": 4.01600000000326,
+  "service_setup_excluded_from_task_timer": true
+}

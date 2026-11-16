@@ -1,0 +1,96 @@
+{
+  "arm": "native",
+  "elapsed_s": 11.206228,
+  "tool_s": 11.202541,
+  "overhead_s": 1.7e-05,
+  "outputs_sha256": "ccb1e6087f627ec75d50389c3af51b3bcff961e85c14a76da2d8f78047e4de88",
+  "rows": [
+    {
+      "batch": 0,
+      "source_message_index": 6,
+      "tool_names": [
+        "search_literature_multiview"
+      ],
+      "tool_s": 5.70539,
+      "total_s": 5.705393,
+      "overhead_s": 3e-06,
+      "output_sha256": "2cf5d3971fdbfcad989c2c6ea3e7e8b49b3918865f646b536a544ce3c818b07b"
+    },
+    {
+      "batch": 1,
+      "source_message_index": 9,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks",
+        "kg_query",
+        "resolve_literature_papers"
+      ],
+      "tool_s": 4.735331,
+      "total_s": 4.735333,
+      "overhead_s": 2e-06,
+      "output_sha256": "c89b4b482e25f4f1d844f880e73730ba9c2b289ef3c951c92692687b8f6552df"
+    },
+    {
+      "batch": 2,
+      "source_message_index": 14,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks",
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.333064,
+      "total_s": 0.333066,
+      "overhead_s": 2e-06,
+      "output_sha256": "eadbfcb8903df7741678e1a72163daf71ca71a989812d58975c137a5b691e819"
+    },
+    {
+      "batch": 3,
+      "source_message_index": 18,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks",
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.269603,
+      "total_s": 0.269606,
+      "overhead_s": 2e-06,
+      "output_sha256": "83309d57de22384104daa891842ce901f796feb6816b776023faeaae8ea25402"
+    },
+    {
+      "batch": 4,
+      "source_message_index": 22,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.065899,
+      "total_s": 0.065902,
+      "overhead_s": 3e-06,
+      "output_sha256": "7552aac31b3b0f79901d3690ac5daf45f47a88456913635983369891b196597e"
+    },
+    {
+      "batch": 5,
+      "source_message_index": 26,
+      "tool_names": [
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.03712,
+      "total_s": 0.037122,
+      "overhead_s": 2e-06,
+      "output_sha256": "5f103aae1e9d2217653e06a5ab4932daa79c8276aec75064dc4525539486510b"
+    },
+    {
+      "batch": 6,
+      "source_message_index": 28,
+      "tool_names": [
+        "query_formulation_space"
+      ],
+      "tool_s": 0.056134,
+      "total_s": 0.056137,
+      "overhead_s": 3e-06,
+      "output_sha256": "ad8d0128cd84a0ea1ebe3318a67dbd324b5cb757b32cda8bf04498e21e0b995c"
+    }
+  ],
+  "task": "P1",
+  "pair": 1
+}

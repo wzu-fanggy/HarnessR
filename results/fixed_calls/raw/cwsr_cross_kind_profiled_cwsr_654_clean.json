@@ -1,0 +1,156 @@
+{
+  "budget_evictions": [
+    {
+      "capability_id": "model:bge-m3-real",
+      "detail": "budget_eviction"
+    },
+    {
+      "capability_id": "process:na-conductivity-real",
+      "detail": "budget_eviction"
+    }
+  ],
+  "complete": true,
+  "completed": 6,
+  "elapsed_s": 20.563000000000102,
+  "event_counts": {
+    "active_enter": 6,
+    "active_exit": 6,
+    "compulsory_fault": 2,
+    "demote": 2,
+    "promote": 3,
+    "refault": 1
+  },
+  "explicit_release_count": 0,
+  "failure": null,
+  "gpu_budget_mib": 3000.0,
+  "host_budget_mib": 654.0,
+  "model_load_count": 2,
+  "model_promotions": 2,
+  "operation_sequence": [
+    "bge",
+    "bge",
+    "conductivity",
+    "conductivity",
+    "bge",
+    "bge"
+  ],
+  "process_promotions": 1,
+  "profiled_costs": {
+    "bge_host_mib": 558.13671875,
+    "process_host_mib": 383.4609375
+  },
+  "result_signature": [
+    "bc3d4192bc8bc43aaf6b1c80309b703d02660ac533a20d7f2fddfb87f1bcf63c",
+    "7bf3efea33ad07638ea47bbbd898aeca5f81cc48836ae03e3373701efed7fc35",
+    "2228843531f29914a21b4ad2c473a3f84e348673ee397687744fddf8d7c4fd63",
+    "78930babf357adffe6be761311d1353bb8106ba14273648f45973a4a707753a2",
+    "f818b03eb1abaa87562a0e451285d554e06567147e1c36aa6a03c1b29e2322c7",
+    "f964747b25fc82f99d743b3d66fefb6693caf08fdae9ba16b0bfcd4597c6ea43"
+  ],
+  "rows": [
+    {
+      "elapsed_s": 12.17200000000048,
+      "index": 0,
+      "kind": "bge",
+      "measured": {
+        "connection_slots": 0.0,
+        "gpu_vram_mb": 2174.0634765625,
+        "host_ram_mb": 534.8984375,
+        "process_slots": 0.0,
+        "prompt_tokens": 0.0
+      },
+      "model_load_count": 1,
+      "model_resident": true,
+      "process_pid": null,
+      "process_resident": false,
+      "result_sha256": "bc3d4192bc8bc43aaf6b1c80309b703d02660ac533a20d7f2fddfb87f1bcf63c"
+    },
+    {
+      "elapsed_s": 0.01599999999962165,
+      "index": 1,
+      "kind": "bge",
+      "measured": {
+        "connection_slots": 0.0,
+        "gpu_vram_mb": 2174.0634765625,
+        "host_ram_mb": 534.9375,
+        "process_slots": 0.0,
+        "prompt_tokens": 0.0
+      },
+      "model_load_count": 1,
+      "model_resident": true,
+      "process_pid": null,
+      "process_resident": false,
+      "result_sha256": "7bf3efea33ad07638ea47bbbd898aeca5f81cc48836ae03e3373701efed7fc35"
+    },
+    {
+      "elapsed_s": 5.561999999999898,
+      "index": 2,
+      "kind": "conductivity",
+      "measured": {
+        "connection_slots": 0.0,
+        "gpu_vram_mb": 0.0,
+        "host_ram_mb": 382.62109375,
+        "process_slots": 1.0,
+        "prompt_tokens": 0.0
+      },
+      "model_load_count": 1,
+      "model_resident": false,
+      "process_pid": 13576,
+      "process_resident": true,
+      "result_sha256": "2228843531f29914a21b4ad2c473a3f84e348673ee397687744fddf8d7c4fd63"
+    },
+    {
+      "elapsed_s": 0.031000000000858563,
+      "index": 3,
+      "kind": "conductivity",
+      "measured": {
+        "connection_slots": 0.0,
+        "gpu_vram_mb": 0.0,
+        "host_ram_mb": 382.62109375,
+        "process_slots": 1.0,
+        "prompt_tokens": 0.0
+      },
+      "model_load_count": 1,
+      "model_resident": false,
+      "process_pid": 13576,
+      "process_resident": true,
+      "result_sha256": "78930babf357adffe6be761311d1353bb8106ba14273648f45973a4a707753a2"
+    },
+    {
+      "elapsed_s": 2.7659999999996217,
+      "index": 4,
+      "kind": "bge",
+      "measured": {
+        "connection_slots": 0.0,
+        "gpu_vram_mb": 2165.9384765625,
+        "host_ram_mb": 541.875,
+        "process_slots": 0.0,
+        "prompt_tokens": 0.0
+      },
+      "model_load_count": 2,
+      "model_resident": true,
+      "process_pid": null,
+      "process_resident": false,
+      "result_sha256": "f818b03eb1abaa87562a0e451285d554e06567147e1c36aa6a03c1b29e2322c7"
+    },
+    {
+      "elapsed_s": 0.01599999999962165,
+      "index": 5,
+      "kind": "bge",
+      "measured": {
+        "connection_slots": 0.0,
+        "gpu_vram_mb": 2165.9384765625,
+        "host_ram_mb": 541.89453125,
+        "process_slots": 0.0,
+        "prompt_tokens": 0.0
+      },
+      "model_load_count": 2,
+      "model_resident": true,
+      "process_pid": null,
+      "process_resident": false,
+      "result_sha256": "f964747b25fc82f99d743b3d66fefb6693caf08fdae9ba16b0bfcd4597c6ea43"
+    }
+  ],
+  "schema_version": "cwsr-cross-kind-real-pressure-probe-v1.0",
+  "strategy": "cwsr"
+}

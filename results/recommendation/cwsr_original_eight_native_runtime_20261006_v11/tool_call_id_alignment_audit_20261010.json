@@ -1,0 +1,432 @@
+{
+  "schema": "cwsr-v17-32-run-tool-message-id-alignment-v1",
+  "generated_at_utc": "2026-10-10T02:09:03.310597+00:00",
+  "scope": "The 2026-10-06 native/runtime v11 runs used for V17 Table 2; static summary-vs-raw-message alignment only. Not a scientific truth or reference applicability review.",
+  "run_count": 32,
+  "saved_tool_calls": 758,
+  "raw_tool_messages": 758,
+  "counts": {
+    "exact": 758
+  },
+  "science_counts": {},
+  "runs_with_mismatches": [],
+  "runs": {
+    "C1-r1-native": {
+      "run": "C1-r1-native",
+      "result_sha256": "3f434fa9a875049e7a3847e18a21dc1c87989e2c7d696e4e21104f9939a4e694",
+      "saved_calls": 23,
+      "ai_calls": 23,
+      "tool_messages": 23,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 23
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "C1-r1-runtime": {
+      "run": "C1-r1-runtime",
+      "result_sha256": "9963d1dfa834f0c83e01c409f17283765cfd7d0163c37f1342b0134a322d5792",
+      "saved_calls": 30,
+      "ai_calls": 30,
+      "tool_messages": 30,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 30
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "C1-r2-native": {
+      "run": "C1-r2-native",
+      "result_sha256": "a1870b3ab4256118a6717f9f1c8f99872480395c98eabc153e79a65a812f8d53",
+      "saved_calls": 26,
+      "ai_calls": 26,
+      "tool_messages": 26,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 26
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "C1-r2-runtime": {
+      "run": "C1-r2-runtime",
+      "result_sha256": "633a61e14ad8c679e620ee43eb921739b4a4c6bebd1d32504db7aed6af4d4052",
+      "saved_calls": 30,
+      "ai_calls": 30,
+      "tool_messages": 30,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 30
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "C2-r1-native": {
+      "run": "C2-r1-native",
+      "result_sha256": "cb55db57ae6f4744dc69135bea06168916579c321178c47ffa18176c8f97b01c",
+      "saved_calls": 25,
+      "ai_calls": 25,
+      "tool_messages": 25,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 25
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "C2-r1-runtime": {
+      "run": "C2-r1-runtime",
+      "result_sha256": "008f721502d355ef9e2b2760ca94a25f02e1957235481601f77a2dd141623a71",
+      "saved_calls": 33,
+      "ai_calls": 33,
+      "tool_messages": 33,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 33
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "C2-r2-native": {
+      "run": "C2-r2-native",
+      "result_sha256": "a9db7cde1d1f5456f9b9cfba97a5350fd581d446f6c1292c60a1f4c00716c990",
+      "saved_calls": 25,
+      "ai_calls": 25,
+      "tool_messages": 25,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 25
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "C2-r2-runtime": {
+      "run": "C2-r2-runtime",
+      "result_sha256": "9c6a23611196e1dc7b72d9728186d5aafcb2ea12943ca8f5bc0b603b980cd262",
+      "saved_calls": 22,
+      "ai_calls": 22,
+      "tool_messages": 22,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 22
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "C3-r1-native": {
+      "run": "C3-r1-native",
+      "result_sha256": "022ac21c6854a19e867dd06fc7f16836c3901546f5a0da7a25705ca78adfa5da",
+      "saved_calls": 21,
+      "ai_calls": 21,
+      "tool_messages": 21,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 21
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "C3-r1-runtime": {
+      "run": "C3-r1-runtime",
+      "result_sha256": "48fa986133e4296d9a1488b3ce6490b6a474dc5202cf82cb976618e234aa9652",
+      "saved_calls": 22,
+      "ai_calls": 22,
+      "tool_messages": 22,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 22
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "C3-r2-native": {
+      "run": "C3-r2-native",
+      "result_sha256": "0eebce7aaafafb7c38dbd4f5095d09a1049d35d2117db1c0c75c2bfbd923755b",
+      "saved_calls": 21,
+      "ai_calls": 21,
+      "tool_messages": 21,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 21
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "C3-r2-runtime": {
+      "run": "C3-r2-runtime",
+      "result_sha256": "17947de171834f3b9ef9d4971b68bfa3a8d99ac57676d4abd8df0627f71f26c7",
+      "saved_calls": 22,
+      "ai_calls": 22,
+      "tool_messages": 22,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 22
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "D1-r1-native": {
+      "run": "D1-r1-native",
+      "result_sha256": "1ecb27d1844cb4deb0501031f866aa8349b5603fe6c90e86eac1cac303e0912b",
+      "saved_calls": 27,
+      "ai_calls": 27,
+      "tool_messages": 27,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 27
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "D1-r1-runtime": {
+      "run": "D1-r1-runtime",
+      "result_sha256": "0714a44832fcf39d33b97232ba00f4224614baa99e4e1ac4c4c413a910a18963",
+      "saved_calls": 27,
+      "ai_calls": 27,
+      "tool_messages": 27,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 27
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "D1-r2-native": {
+      "run": "D1-r2-native",
+      "result_sha256": "26d6c294d4939972baffcadfe12b30ae3a871014bd49305f0c624e10fc5b7f9b",
+      "saved_calls": 36,
+      "ai_calls": 36,
+      "tool_messages": 36,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 36
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "D1-r2-runtime": {
+      "run": "D1-r2-runtime",
+      "result_sha256": "fc0aa1686252947a487e72a35ed2b09f2942dc47e035b9348181866027b88e63",
+      "saved_calls": 24,
+      "ai_calls": 24,
+      "tool_messages": 24,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 24
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "P1-r1-native": {
+      "run": "P1-r1-native",
+      "result_sha256": "4297cc64d0e7a455a7c4b1fcd179782e910d0df56577889cfbc0df7dc84d87de",
+      "saved_calls": 21,
+      "ai_calls": 21,
+      "tool_messages": 21,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 21
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "P1-r1-runtime": {
+      "run": "P1-r1-runtime",
+      "result_sha256": "85914b0f42b114e6dbaf00410a0cf2fb232991d419dfc2307c1dd44a97a90f53",
+      "saved_calls": 23,
+      "ai_calls": 23,
+      "tool_messages": 23,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 23
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "P1-r2-native": {
+      "run": "P1-r2-native",
+      "result_sha256": "555179071ed23bfbbae7465b00ead0d708a10f7d407e4cfa5ca20ef3959de478",
+      "saved_calls": 21,
+      "ai_calls": 21,
+      "tool_messages": 21,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 21
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "P1-r2-runtime-resumed1": {
+      "run": "P1-r2-runtime-resumed1",
+      "result_sha256": "47fc0fa380c4c797efaa3172298db313b5a73d13c6262288ba9c366624f8cc0a",
+      "saved_calls": 22,
+      "ai_calls": 22,
+      "tool_messages": 22,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 22
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "P2-r1-native": {
+      "run": "P2-r1-native",
+      "result_sha256": "f4bd74bc286ddd07d2b140fdf77dea8e2ea396d8243c9c8d83ae55cea42cf0a4",
+      "saved_calls": 19,
+      "ai_calls": 19,
+      "tool_messages": 19,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 19
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "P2-r1-runtime": {
+      "run": "P2-r1-runtime",
+      "result_sha256": "e4826f0a8d8e71150bd6a40fd2bd9615b27daf15e6628285cfaa2b9f917c1e14",
+      "saved_calls": 21,
+      "ai_calls": 21,
+      "tool_messages": 21,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 21
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "P2-r2-native": {
+      "run": "P2-r2-native",
+      "result_sha256": "8a49dd517a2c78f73c72b2d47d3bba41e6ed3248c0daa8e95c89a9f69f778ef7",
+      "saved_calls": 28,
+      "ai_calls": 28,
+      "tool_messages": 28,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 28
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "P2-r2-runtime": {
+      "run": "P2-r2-runtime",
+      "result_sha256": "d0fb51a6cf5f2697fc004583a48697010f9c9853e95396eb1dc70039224f1071",
+      "saved_calls": 25,
+      "ai_calls": 25,
+      "tool_messages": 25,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 25
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "U1-r1-native": {
+      "run": "U1-r1-native",
+      "result_sha256": "f90eec853d04bd86c0f482320b55ec43ff6d041df3687257fbe525df3913869d",
+      "saved_calls": 18,
+      "ai_calls": 18,
+      "tool_messages": 18,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 18
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "U1-r1-runtime": {
+      "run": "U1-r1-runtime",
+      "result_sha256": "31596b4a2b48dab5a14479b93856667e39ace55f8d57a6333d8b01addcd27554",
+      "saved_calls": 19,
+      "ai_calls": 19,
+      "tool_messages": 19,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 19
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "U1-r2-native": {
+      "run": "U1-r2-native",
+      "result_sha256": "8c2c53c6ff03bad89fe49e203aefd60cd21f498a6e8ff63c415c584e503a090c",
+      "saved_calls": 25,
+      "ai_calls": 25,
+      "tool_messages": 25,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 25
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "U1-r2-runtime": {
+      "run": "U1-r2-runtime",
+      "result_sha256": "52e0834f6dcafaea5dd38fbf07b9d4c79f0ec1307c27d738400952c881ef8edc",
+      "saved_calls": 22,
+      "ai_calls": 22,
+      "tool_messages": 22,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 22
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "U2-r1-native": {
+      "run": "U2-r1-native",
+      "result_sha256": "4f29b6a404160fb312fbe2a947d6fe3c6d4345c2f4b6d5d1d13f448aa2e61027",
+      "saved_calls": 25,
+      "ai_calls": 25,
+      "tool_messages": 25,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 25
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "U2-r1-runtime": {
+      "run": "U2-r1-runtime",
+      "result_sha256": "22283a7bbf418d18c3014933cd268f20cd0e6010d0498b559893cb9cb7f8e883",
+      "saved_calls": 18,
+      "ai_calls": 18,
+      "tool_messages": 18,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 18
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "U2-r2-native": {
+      "run": "U2-r2-native",
+      "result_sha256": "e021a7af65a3215dfd4d01227e10004ae9b8fafa3c15d3daca8249855043f755",
+      "saved_calls": 19,
+      "ai_calls": 19,
+      "tool_messages": 19,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 19
+      },
+      "science_counts": {},
+      "mismatches": []
+    },
+    "U2-r2-runtime": {
+      "run": "U2-r2-runtime",
+      "result_sha256": "cebcc652f3ce84f621a4851d71ac712e9f60fcb0bb3dbbd615a89cb86593773c",
+      "saved_calls": 18,
+      "ai_calls": 18,
+      "tool_messages": 18,
+      "ai_sequence_matches": true,
+      "counts": {
+        "exact": 18
+      },
+      "science_counts": {},
+      "mismatches": []
+    }
+  },
+  "historical_result_files_unchanged": true
+}

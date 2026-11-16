@@ -1,0 +1,60 @@
+{
+  "source": "${ORION_SOURCE}\\reports\\cwsr_leca_rf_comparison_20261012_v1\\predictions.csv",
+  "source_sha256": "d0ea5e50e56a36e57c98660640e3409ca80c56c4b7ee9f95e268b17afd0d9566",
+  "python": "${ORION_SOURCE}\\workbench\\api\\.venv\\Scripts\\python.exe",
+  "method": "sqrt(sum((predicted_ms_cm-measured_ms_cm)**2)/n); pooled across all 48 observations, not average of temperature RMSEs",
+  "pooled": {
+    "n": 48,
+    "n_formulations": 12,
+    "mae_ms_cm": 0.27527245151026636,
+    "rmse_ms_cm": 0.43934768119127987,
+    "r2": 0.9534622095187248
+  },
+  "per_temperature_c": {
+    "-20": {
+      "n": 12,
+      "n_formulations": 12,
+      "mae_ms_cm": 0.1713066897672899,
+      "rmse_ms_cm": 0.2203368898163534,
+      "r2": 0.9010974013639311
+    },
+    "-10": {
+      "n": 12,
+      "n_formulations": 12,
+      "mae_ms_cm": 0.3414690609100102,
+      "rmse_ms_cm": 0.5758415288889737,
+      "r2": 0.6379194009215383
+    },
+    "0": {
+      "n": 12,
+      "n_formulations": 12,
+      "mae_ms_cm": 0.17929562968256904,
+      "rmse_ms_cm": 0.2358521986491347,
+      "r2": 0.948324060106153
+    },
+    "20": {
+      "n": 12,
+      "n_formulations": 12,
+      "mae_ms_cm": 0.4090184256811962,
+      "rmse_ms_cm": 0.57994609133768,
+      "r2": 0.8117868723604209
+    }
+  },
+  "low_temperature_only": {
+    "n": 36,
+    "n_formulations": 12,
+    "mae_ms_cm": 0.23069046011995642,
+    "rmse_ms_cm": 0.3811246825798461,
+    "r2": 0.8991468848954294
+  },
+  "existing_metric_crosscheck": "PASS",
+  "split_evidence": {
+    "rf_training_from_raw_exclusion_equals_direct": true,
+    "rf_training_rows": 539,
+    "rf_training_formulations": 60,
+    "test_composition_exact_duplicates_in_train": [],
+    "near_duplicate_test_compositions": [],
+    "heldout_raw_rows_excluded": 360,
+    "training_raw_rows_after_exclusion": 1800
+  }
+}

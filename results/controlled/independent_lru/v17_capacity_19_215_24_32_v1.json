@@ -1,0 +1,828 @@
+{
+  "schema": "cwsr-v17-minimal-global-budget-lru-v1",
+  "suite": "capacity",
+  "run_utc": "2026-10-10T03:23:08.097280+00:00",
+  "purpose": "independent minimal LRU policy vs V17 policy in the same governor/adapters; not an independent caching system comparison",
+  "real_process_adapters": true,
+  "uses_agent_llm": false,
+  "software_budget_not_os_hard_limit": true,
+  "source_sha256": {
+    "scripts/agent/cwsr_v17_minimal_lru_vs_runtime_v1.py": "623c26299b4d13940cb47e43e7c5c19e84fc63c4a53e1fd38c131f42d0b260a6",
+    "benchmark/cwsr_retention_corrected_v2.py": "770450b4cb6afbd42f385184a95d6b7e2e9019650c4d5e99d9a132082a0eba5c",
+    "benchmark/cwsr_runtime_only_retention_v1.py": "bac5d352492f95f299fffe43924c3abf2fb4f8f6788632daeb5f96dffc8562a1",
+    "benchmark/cwsr_retention_robust_window_v2.py": "fab66f70e06e5e6d11deb6291b1e661bdb0ca7287c63ecba4e37daa4e7dfa077",
+    "benchmark/hcvm_shared_pool_vs_per_kind_v2.py": "24dfc6deece0e9a936b13fe95d50b02fb7cf73ae8667e3dac4360546643e7bed",
+    "benchmark/hcvm_global_admission_replacement_order_sensitivity_v1.py": "cde06e562ed37b54fba52170174c90192deb1dbb64ee7a807f0ed0a45b8a6111",
+    "capvm/governor.py": "7baa4ce0f0b1d8c996e794805a0c2022254aded37e9ad50ca4d32d415eba20ed",
+    "capvm/policies/lru_cost.py": "eb3830b33d8ee52374f877d139f99ea0183006818e34debe1ce3b637ab2764bc",
+    "capvm/adapters/process.py": "461efeae465886714bf5de294617c81e767efbe4a3ae3c63bd589a9c7ffacfa3"
+  },
+  "sources_unchanged": true,
+  "all_27_order_names": [
+    "grouped_original",
+    "reverse",
+    "repeat_interleaved",
+    "shuffle_00",
+    "shuffle_01",
+    "shuffle_02",
+    "shuffle_03",
+    "shuffle_04",
+    "shuffle_05",
+    "shuffle_06",
+    "shuffle_07",
+    "shuffle_08",
+    "shuffle_09",
+    "shuffle_10",
+    "shuffle_11",
+    "shuffle_12",
+    "shuffle_13",
+    "shuffle_14",
+    "shuffle_15",
+    "shuffle_16",
+    "shuffle_17",
+    "shuffle_18",
+    "shuffle_19",
+    "shuffle_20",
+    "shuffle_21",
+    "shuffle_22",
+    "shuffle_23"
+  ],
+  "by_budget": [
+    {
+      "budget_mib": 19.0,
+      "orders": 3,
+      "ready_all_both": 0,
+      "same_readiness": 3,
+      "same_rebuilds": 3,
+      "same_by_kind": 3,
+      "median_runtime_rebuilds": 1,
+      "median_simple_lru_rebuilds": 1,
+      "runtime_better_rebuilds": 0,
+      "simple_lru_better_rebuilds": 0
+    },
+    {
+      "budget_mib": 21.5,
+      "orders": 3,
+      "ready_all_both": 3,
+      "same_readiness": 3,
+      "same_rebuilds": 3,
+      "same_by_kind": 3,
+      "median_runtime_rebuilds": 3,
+      "median_simple_lru_rebuilds": 3,
+      "runtime_better_rebuilds": 0,
+      "simple_lru_better_rebuilds": 0
+    },
+    {
+      "budget_mib": 24.0,
+      "orders": 3,
+      "ready_all_both": 3,
+      "same_readiness": 3,
+      "same_rebuilds": 3,
+      "same_by_kind": 3,
+      "median_runtime_rebuilds": 0,
+      "median_simple_lru_rebuilds": 0,
+      "runtime_better_rebuilds": 0,
+      "simple_lru_better_rebuilds": 0
+    },
+    {
+      "budget_mib": 32.0,
+      "orders": 3,
+      "ready_all_both": 3,
+      "same_readiness": 3,
+      "same_rebuilds": 3,
+      "same_by_kind": 3,
+      "median_runtime_rebuilds": 0,
+      "median_simple_lru_rebuilds": 0,
+      "runtime_better_rebuilds": 0,
+      "simple_lru_better_rebuilds": 0
+    }
+  ],
+  "runs": [
+    {
+      "host_budget_mib": 19.0,
+      "order": "grouped_original",
+      "strategy_start_order": [
+        "simple_lru",
+        "runtime"
+      ],
+      "arms": {
+        "simple_lru": {
+          "ready": 16,
+          "requested": 20,
+          "flags": "11111111111111110000",
+          "runtime_rebuilds": 1,
+          "all_rebuilds": 1,
+          "by_kind": {
+            "plugin": 1,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [
+            [
+              16,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              17,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              18,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              19,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ]
+          ],
+          "measured_peak_ram_mib": 15.68359375
+        },
+        "runtime": {
+          "ready": 16,
+          "requested": 20,
+          "flags": "11111111111111110000",
+          "runtime_rebuilds": 1,
+          "all_rebuilds": 1,
+          "by_kind": {
+            "plugin": 1,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [
+            [
+              16,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              17,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              18,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              19,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ]
+          ],
+          "measured_peak_ram_mib": 15.62890625
+        }
+      },
+      "matching_readiness_flags": true,
+      "matching_rebuilds": true,
+      "matching_rebuild_by_kind": true,
+      "matching_failure_classes": true
+    },
+    {
+      "host_budget_mib": 19.0,
+      "order": "reverse",
+      "strategy_start_order": [
+        "runtime",
+        "simple_lru"
+      ],
+      "arms": {
+        "runtime": {
+          "ready": 16,
+          "requested": 20,
+          "flags": "00001111111111111111",
+          "runtime_rebuilds": 1,
+          "all_rebuilds": 1,
+          "by_kind": {
+            "plugin": 1,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [
+            [
+              0,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              1,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              2,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              3,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ]
+          ],
+          "measured_peak_ram_mib": 15.49609375
+        },
+        "simple_lru": {
+          "ready": 16,
+          "requested": 20,
+          "flags": "00001111111111111111",
+          "runtime_rebuilds": 1,
+          "all_rebuilds": 1,
+          "by_kind": {
+            "plugin": 1,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [
+            [
+              0,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              1,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              2,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              3,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ]
+          ],
+          "measured_peak_ram_mib": 15.7578125
+        }
+      },
+      "matching_readiness_flags": true,
+      "matching_rebuilds": true,
+      "matching_rebuild_by_kind": true,
+      "matching_failure_classes": true
+    },
+    {
+      "host_budget_mib": 19.0,
+      "order": "repeat_interleaved",
+      "strategy_start_order": [
+        "simple_lru",
+        "runtime"
+      ],
+      "arms": {
+        "simple_lru": {
+          "ready": 16,
+          "requested": 20,
+          "flags": "11110111101111011110",
+          "runtime_rebuilds": 10,
+          "all_rebuilds": 10,
+          "by_kind": {
+            "plugin": 4,
+            "process": 3,
+            "session": 3,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [
+            [
+              4,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              9,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              14,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              19,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ]
+          ],
+          "measured_peak_ram_mib": 15.73828125
+        },
+        "runtime": {
+          "ready": 16,
+          "requested": 20,
+          "flags": "11110111101111011110",
+          "runtime_rebuilds": 10,
+          "all_rebuilds": 10,
+          "by_kind": {
+            "plugin": 4,
+            "process": 3,
+            "session": 3,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [
+            [
+              4,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              9,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              14,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ],
+            [
+              19,
+              "ResidencyBudgetExceeded",
+              [
+                "host_ram_mb"
+              ]
+            ]
+          ],
+          "measured_peak_ram_mib": 15.671875
+        }
+      },
+      "matching_readiness_flags": true,
+      "matching_rebuilds": true,
+      "matching_rebuild_by_kind": true,
+      "matching_failure_classes": true
+    },
+    {
+      "host_budget_mib": 21.5,
+      "order": "grouped_original",
+      "strategy_start_order": [
+        "simple_lru",
+        "runtime"
+      ],
+      "arms": {
+        "simple_lru": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 2,
+          "all_rebuilds": 2,
+          "by_kind": {
+            "plugin": 1,
+            "process": 1,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 17.7421875
+        },
+        "runtime": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 2,
+          "all_rebuilds": 2,
+          "by_kind": {
+            "plugin": 1,
+            "process": 1,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 17.69921875
+        }
+      },
+      "matching_readiness_flags": true,
+      "matching_rebuilds": true,
+      "matching_rebuild_by_kind": true,
+      "matching_failure_classes": true
+    },
+    {
+      "host_budget_mib": 21.5,
+      "order": "reverse",
+      "strategy_start_order": [
+        "runtime",
+        "simple_lru"
+      ],
+      "arms": {
+        "runtime": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 3,
+          "all_rebuilds": 3,
+          "by_kind": {
+            "plugin": 1,
+            "process": 1,
+            "session": 1,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 17.62109375
+        },
+        "simple_lru": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 3,
+          "all_rebuilds": 3,
+          "by_kind": {
+            "plugin": 1,
+            "process": 1,
+            "session": 1,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 17.734375
+        }
+      },
+      "matching_readiness_flags": true,
+      "matching_rebuilds": true,
+      "matching_rebuild_by_kind": true,
+      "matching_failure_classes": true
+    },
+    {
+      "host_budget_mib": 21.5,
+      "order": "repeat_interleaved",
+      "strategy_start_order": [
+        "simple_lru",
+        "runtime"
+      ],
+      "arms": {
+        "simple_lru": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 14,
+          "all_rebuilds": 14,
+          "by_kind": {
+            "plugin": 7,
+            "process": 4,
+            "session": 3,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 17.6796875
+        },
+        "runtime": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 14,
+          "all_rebuilds": 14,
+          "by_kind": {
+            "plugin": 7,
+            "process": 4,
+            "session": 3,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 17.703125
+        }
+      },
+      "matching_readiness_flags": true,
+      "matching_rebuilds": true,
+      "matching_rebuild_by_kind": true,
+      "matching_failure_classes": true
+    },
+    {
+      "host_budget_mib": 24.0,
+      "order": "grouped_original",
+      "strategy_start_order": [
+        "simple_lru",
+        "runtime"
+      ],
+      "arms": {
+        "simple_lru": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 0,
+          "all_rebuilds": 0,
+          "by_kind": {
+            "plugin": 0,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 18.5703125
+        },
+        "runtime": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 0,
+          "all_rebuilds": 0,
+          "by_kind": {
+            "plugin": 0,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 18.6875
+        }
+      },
+      "matching_readiness_flags": true,
+      "matching_rebuilds": true,
+      "matching_rebuild_by_kind": true,
+      "matching_failure_classes": true
+    },
+    {
+      "host_budget_mib": 24.0,
+      "order": "reverse",
+      "strategy_start_order": [
+        "runtime",
+        "simple_lru"
+      ],
+      "arms": {
+        "runtime": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 0,
+          "all_rebuilds": 0,
+          "by_kind": {
+            "plugin": 0,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 18.57421875
+        },
+        "simple_lru": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 0,
+          "all_rebuilds": 0,
+          "by_kind": {
+            "plugin": 0,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 18.68359375
+        }
+      },
+      "matching_readiness_flags": true,
+      "matching_rebuilds": true,
+      "matching_rebuild_by_kind": true,
+      "matching_failure_classes": true
+    },
+    {
+      "host_budget_mib": 24.0,
+      "order": "repeat_interleaved",
+      "strategy_start_order": [
+        "simple_lru",
+        "runtime"
+      ],
+      "arms": {
+        "simple_lru": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 0,
+          "all_rebuilds": 0,
+          "by_kind": {
+            "plugin": 0,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 18.75390625
+        },
+        "runtime": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 0,
+          "all_rebuilds": 0,
+          "by_kind": {
+            "plugin": 0,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 18.4765625
+        }
+      },
+      "matching_readiness_flags": true,
+      "matching_rebuilds": true,
+      "matching_rebuild_by_kind": true,
+      "matching_failure_classes": true
+    },
+    {
+      "host_budget_mib": 32.0,
+      "order": "grouped_original",
+      "strategy_start_order": [
+        "simple_lru",
+        "runtime"
+      ],
+      "arms": {
+        "simple_lru": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 0,
+          "all_rebuilds": 0,
+          "by_kind": {
+            "plugin": 0,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 18.55859375
+        },
+        "runtime": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 0,
+          "all_rebuilds": 0,
+          "by_kind": {
+            "plugin": 0,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 18.71875
+        }
+      },
+      "matching_readiness_flags": true,
+      "matching_rebuilds": true,
+      "matching_rebuild_by_kind": true,
+      "matching_failure_classes": true
+    },
+    {
+      "host_budget_mib": 32.0,
+      "order": "reverse",
+      "strategy_start_order": [
+        "runtime",
+        "simple_lru"
+      ],
+      "arms": {
+        "runtime": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 0,
+          "all_rebuilds": 0,
+          "by_kind": {
+            "plugin": 0,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 18.4609375
+        },
+        "simple_lru": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 0,
+          "all_rebuilds": 0,
+          "by_kind": {
+            "plugin": 0,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 18.734375
+        }
+      },
+      "matching_readiness_flags": true,
+      "matching_rebuilds": true,
+      "matching_rebuild_by_kind": true,
+      "matching_failure_classes": true
+    },
+    {
+      "host_budget_mib": 32.0,
+      "order": "repeat_interleaved",
+      "strategy_start_order": [
+        "simple_lru",
+        "runtime"
+      ],
+      "arms": {
+        "simple_lru": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 0,
+          "all_rebuilds": 0,
+          "by_kind": {
+            "plugin": 0,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 18.6796875
+        },
+        "runtime": {
+          "ready": 20,
+          "requested": 20,
+          "flags": "11111111111111111111",
+          "runtime_rebuilds": 0,
+          "all_rebuilds": 0,
+          "by_kind": {
+            "plugin": 0,
+            "process": 0,
+            "session": 0,
+            "tool": 0
+          },
+          "initial": 4,
+          "failures": [],
+          "measured_peak_ram_mib": 18.48828125
+        }
+      },
+      "matching_readiness_flags": true,
+      "matching_rebuilds": true,
+      "matching_rebuild_by_kind": true,
+      "matching_failure_classes": true
+    }
+  ]
+}

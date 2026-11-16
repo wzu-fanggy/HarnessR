@@ -1,0 +1,1 @@
+All 48 prediction points are complete and literature evidence is in hand. Compiling the candidate_screening report.

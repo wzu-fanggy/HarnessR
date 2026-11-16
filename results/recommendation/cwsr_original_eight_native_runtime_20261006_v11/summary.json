@@ -1,0 +1,1986 @@
+{
+  "complete_pairs": [
+    {
+      "pair_id": "P2-r1",
+      "task": "P2",
+      "repeat": 1,
+      "arm_order": [
+        "native",
+        "runtime"
+      ],
+      "arms": {
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 180.516,
+            "model_request_union_seconds": 158.06399999999996,
+            "tool_function_union_seconds": 20.934000000000008,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 1.5180000000000007,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "search_literature_multiview": 1,
+            "kg_query": 2,
+            "search_paper_chunks": 7,
+            "search_literature_chunks": 1,
+            "extract_numeric_properties": 2,
+            "query_formulation_space": 1,
+            "enrich_formulation_evidence": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 260.07500000000005,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538048,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.687000000001717
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0790000000015425
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3187.504,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P2-r1-native\\result.json"
+        },
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 157.766,
+            "model_request_union_seconds": 136.436,
+            "tool_function_union_seconds": 14.127999999999991,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 7.20199999999997,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "search_literature_multiview": 1,
+            "resolve_literature_papers": 1,
+            "kg_query": 1,
+            "search_paper_chunks": 10,
+            "extract_numeric_properties": 3,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 259.2180000000001,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538374,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.514999999999418
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.047000000002299
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3059.242,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P2-r1-runtime\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": 22.75,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "U2-r1",
+      "task": "U2",
+      "repeat": 1,
+      "arm_order": [
+        "runtime",
+        "native"
+      ],
+      "arms": {
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 173.656,
+            "model_request_union_seconds": 153.436,
+            "tool_function_union_seconds": 12.967000000000027,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 7.252999999999986,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "resolve_literature_papers": 1,
+            "search_paper_chunks": 7,
+            "search_literature_multiview": 1,
+            "kg_query": 1,
+            "extract_numeric_properties": 3,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 261.4920000000001,
+                "gpu_allocated_mib": 2182.188,
+                "gpu_vram_pressure": 0.532188,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.4840000000003783
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0319999999992433
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3154.605,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U2-r1-runtime\\result.json"
+        },
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 202.344,
+            "model_request_union_seconds": 181.0,
+            "tool_function_union_seconds": 19.704000000000004,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 1.6399999999999864,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "search_literature_multiview": 1,
+            "kg_query": 1,
+            "resolve_literature_papers": 1,
+            "search_paper_chunks": 12,
+            "extract_numeric_properties": 2,
+            "query_formulation_space": 2,
+            "enrich_formulation_evidence": 1,
+            "screen_formulations": 2,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 259.23400000000004,
+                "gpu_allocated_mib": 2214.688,
+                "gpu_vram_pressure": 0.544234,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.6090000000003783
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0790000000015425
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3201.031,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U2-r1-native\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": 28.687999999999988,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "U1-r1",
+      "task": "U1",
+      "repeat": 1,
+      "arm_order": [
+        "native",
+        "runtime"
+      ],
+      "arms": {
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 160.953,
+            "model_request_union_seconds": 141.689,
+            "tool_function_union_seconds": 17.873999999999988,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 1.3900000000000148,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 2,
+            "kg_query": 1,
+            "search_literature_multiview": 1,
+            "search_paper_chunks": 9,
+            "extract_numeric_properties": 1,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 259.687,
+                "gpu_allocated_mib": 2190.313,
+                "gpu_vram_pressure": 0.533491,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.5469999999986612
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.062999999998283
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3138.836,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U1-r1-native\\result.json"
+        },
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 195.265,
+            "model_request_union_seconds": 174.78199999999998,
+            "tool_function_union_seconds": 14.655999999999993,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 5.826999999999998,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "kg_query": 1,
+            "search_literature_multiview": 1,
+            "search_paper_chunks": 10,
+            "search_literature_chunks": 1,
+            "extract_numeric_properties": 1,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 260.07399999999996,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538374,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 2.1410000000032596
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.077999999997701
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 2278.953,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U1-r1-runtime\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": -34.31199999999998,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "P1-r1",
+      "task": "P1",
+      "repeat": 1,
+      "arm_order": [
+        "runtime",
+        "native"
+      ],
+      "arms": {
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 276.187,
+            "model_request_union_seconds": 256.001,
+            "tool_function_union_seconds": 14.328000000000031,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 5.858000000000004,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 2,
+            "search_literature_multiview": 1,
+            "kg_query": 1,
+            "resolve_literature_papers": 1,
+            "search_paper_chunks": 10,
+            "search_literature_chunks": 2,
+            "extract_numeric_properties": 1,
+            "query_formulation_space": 1,
+            "screen_formulations": 2,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 258.703,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538374,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 2.1409999999996217
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.061999999998079
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 2271.965,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P1-r1-runtime\\result.json"
+        },
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 164.672,
+            "model_request_union_seconds": 142.638,
+            "tool_function_union_seconds": 20.56199999999999,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 1.4720000000000084,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "read_todos": 1,
+            "write_todos": 1,
+            "search_literature_multiview": 1,
+            "search_paper_chunks": 11,
+            "kg_query": 1,
+            "resolve_literature_papers": 1,
+            "extract_numeric_properties": 1,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 258.254,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538048,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 4.125
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0930000000007567
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3276.555,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P1-r1-native\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": -111.51500000000001,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "C1-r1",
+      "task": "C1",
+      "repeat": 1,
+      "arm_order": [
+        "native",
+        "runtime"
+      ],
+      "arms": {
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 171.64,
+            "model_request_union_seconds": 146.87600000000003,
+            "tool_function_union_seconds": 23.24900000000004,
+            "model_tool_overlap_seconds": 2.842170943040401e-14,
+            "outside_model_and_tool_seconds": 1.5149999999999295,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 3,
+            "search_literature_multiview": 4,
+            "kg_query": 1,
+            "search_paper_chunks": 8,
+            "extract_numeric_properties": 2,
+            "query_formulation_space": 2,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 260.40200000000004,
+                "gpu_allocated_mib": 2190.313,
+                "gpu_vram_pressure": 0.533491,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 4.110000000000582
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.047000000002299
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3233.113,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C1-r1-native\\result.json"
+        },
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "held",
+          "timing": {
+            "task_wall_seconds": 209.032,
+            "model_request_union_seconds": 179.892,
+            "tool_function_union_seconds": 21.156,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 7.984000000000009,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 2,
+            "search_literature_multiview": 2,
+            "kg_query": 1,
+            "search_literature_chunks": 5,
+            "search_paper_chunks": 13,
+            "resolve_literature_papers": 1,
+            "extract_numeric_properties": 2,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 260.90999999999997,
+                "gpu_allocated_mib": 2190.313,
+                "gpu_vram_pressure": 0.533816,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.547000000002299
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0469999999986612
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3096.188,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C1-r1-runtime\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": -37.392000000000024,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "C2-r1",
+      "task": "C2",
+      "repeat": 1,
+      "arm_order": [
+        "runtime",
+        "native"
+      ],
+      "arms": {
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "held",
+          "timing": {
+            "task_wall_seconds": 416.187,
+            "model_request_union_seconds": 385.34399999999994,
+            "tool_function_union_seconds": 22.467,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 8.376000000000033,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 2,
+            "search_literature_multiview": 3,
+            "kg_query": 1,
+            "resolve_literature_papers": 1,
+            "search_paper_chunks": 16,
+            "search_literature_chunks": 2,
+            "extract_numeric_properties": 1,
+            "query_formulation_space": 1,
+            "screen_formulations": 4,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 260.98799999999994,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538374,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.9680000000007567
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0940000000009604
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3135.59,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C2-r1-runtime\\result.json"
+        },
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "held",
+          "timing": {
+            "task_wall_seconds": 233.938,
+            "model_request_union_seconds": 204.00300000000001,
+            "tool_function_union_seconds": 28.030999999999967,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 1.9039999999999964,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "search_literature_multiview": 4,
+            "resolve_literature_papers": 1,
+            "search_paper_chunks": 9,
+            "search_literature_chunks": 2,
+            "kg_query": 1,
+            "extract_numeric_properties": 1,
+            "query_formulation_space": 1,
+            "enrich_formulation_evidence": 1,
+            "screen_formulations": 2,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 260.28200000000004,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538048,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.5780000000013388
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0320000000028813
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3171.773,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C2-r1-native\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": -182.24900000000002,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "C3-r1",
+      "task": "C3",
+      "repeat": 1,
+      "arm_order": [
+        "native",
+        "runtime"
+      ],
+      "arms": {
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "held",
+          "timing": {
+            "task_wall_seconds": 198.468,
+            "model_request_union_seconds": 172.358,
+            "tool_function_union_seconds": 24.561999999999973,
+            "model_tool_overlap_seconds": 2.842170943040401e-14,
+            "outside_model_and_tool_seconds": 1.5480000000000302,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "search_literature_multiview": 2,
+            "kg_query": 2,
+            "search_paper_chunks": 8,
+            "search_literature_chunks": 1,
+            "resolve_literature_papers": 1,
+            "query_formulation_space": 2,
+            "extract_numeric_properties": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 258.89499999999987,
+                "gpu_allocated_mib": 2190.313,
+                "gpu_vram_pressure": 0.533491,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 2.2339999999967404
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0469999999986612
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 2277.449,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C3-r1-native\\result.json"
+        },
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "held",
+          "timing": {
+            "task_wall_seconds": 194.406,
+            "model_request_union_seconds": 170.14299999999997,
+            "tool_function_union_seconds": 16.857999999999976,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 7.40500000000003,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 3,
+            "search_literature_multiview": 1,
+            "kg_query": 1,
+            "search_paper_chunks": 9,
+            "resolve_literature_papers": 1,
+            "search_literature_chunks": 1,
+            "extract_numeric_properties": 2,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 261.40599999999995,
+                "gpu_allocated_mib": 2190.313,
+                "gpu_vram_pressure": 0.533491,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.514999999999418
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0309999999990396
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3116.738,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C3-r1-runtime\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": 4.061999999999983,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "D1-r1",
+      "task": "D1",
+      "repeat": 1,
+      "arm_order": [
+        "runtime",
+        "native"
+      ],
+      "arms": {
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "held",
+          "timing": {
+            "task_wall_seconds": 356.984,
+            "model_request_union_seconds": 335.53100000000006,
+            "tool_function_union_seconds": 15.326999999999979,
+            "model_tool_overlap_seconds": 5.684341886080802e-14,
+            "outside_model_and_tool_seconds": 6.125999999999976,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 2,
+            "search_literature_multiview": 1,
+            "kg_query": 1,
+            "search_paper_chunks": 13,
+            "search_literature_chunks": 4,
+            "query_formulation_space": 1,
+            "extract_numeric_properties": 1,
+            "screen_formulations": 2,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 260.96399999999994,
+                "gpu_allocated_mib": 2190.313,
+                "gpu_vram_pressure": 0.533816,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 2.110000000000582
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0319999999992433
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 2269.031,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\D1-r1-runtime\\result.json"
+        },
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "held",
+          "timing": {
+            "task_wall_seconds": 251.5,
+            "model_request_union_seconds": 233.577,
+            "tool_function_union_seconds": 16.247999999999955,
+            "model_tool_overlap_seconds": 2.842170943040401e-14,
+            "outside_model_and_tool_seconds": 1.6750000000000682,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "kg_query": 2,
+            "search_literature_multiview": 3,
+            "search_paper_chunks": 14,
+            "query_formulation_space": 1,
+            "extract_numeric_properties": 2,
+            "screen_formulations": 2,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 258.7690000000001,
+                "gpu_allocated_mib": 2182.188,
+                "gpu_vram_pressure": 0.532188,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 2.1559999999990396
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0469999999986612
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 2390.738,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\D1-r1-native\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": -105.48399999999998,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "P2-r2",
+      "task": "P2",
+      "repeat": 2,
+      "arm_order": [
+        "runtime",
+        "native"
+      ],
+      "arms": {
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 220.688,
+            "model_request_union_seconds": 195.502,
+            "tool_function_union_seconds": 19.328000000000042,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 5.857999999999947,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "resolve_literature_papers": 2,
+            "kg_query": 2,
+            "search_literature_multiview": 1,
+            "search_paper_chunks": 13,
+            "extract_numeric_properties": 1,
+            "query_formulation_space": 1,
+            "enrich_formulation_evidence": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 260.32400000000007,
+                "gpu_allocated_mib": 2206.563,
+                "gpu_vram_pressure": 0.540002,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 2.0780000000013388
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.063000000001921
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 2319.914,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P2-r2-runtime\\result.json"
+        },
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 176.891,
+            "model_request_union_seconds": 153.121,
+            "tool_function_union_seconds": 22.190000000000005,
+            "model_tool_overlap_seconds": 2.842170943040401e-14,
+            "outside_model_and_tool_seconds": 1.5800000000000125,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "search_literature_multiview": 2,
+            "kg_query": 1,
+            "resolve_literature_papers": 2,
+            "search_paper_chunks": 14,
+            "extract_numeric_properties": 4,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 254.91800000000012,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538374,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.9690000000009604
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0469999999986612
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3246.246,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P2-r2-native\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": -43.797,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "U2-r2",
+      "task": "U2",
+      "repeat": 2,
+      "arm_order": [
+        "native",
+        "runtime"
+      ],
+      "arms": {
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 173.547,
+            "model_request_union_seconds": 150.407,
+            "tool_function_union_seconds": 21.670999999999967,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 1.4690000000000225,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "search_literature_multiview": 1,
+            "resolve_literature_papers": 1,
+            "kg_query": 1,
+            "search_paper_chunks": 8,
+            "extract_numeric_properties": 3,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 257.582,
+                "gpu_allocated_mib": 2190.313,
+                "gpu_vram_pressure": 0.533491,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.7340000000003783
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0469999999986612
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3029.82,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U2-r2-native\\result.json"
+        },
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 131.907,
+            "model_request_union_seconds": 108.797,
+            "tool_function_union_seconds": 15.298000000000012,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 7.811999999999998,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "search_literature_multiview": 1,
+            "kg_query": 1,
+            "resolve_literature_papers": 1,
+            "search_paper_chunks": 7,
+            "search_literature_chunks": 1,
+            "extract_numeric_properties": 2,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 260.34400000000005,
+                "gpu_allocated_mib": 2190.313,
+                "gpu_vram_pressure": 0.533491,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 4.031999999999243
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0459999999984575
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3146.172,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U2-r2-runtime\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": 41.639999999999986,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "U1-r2",
+      "task": "U1",
+      "repeat": 2,
+      "arm_order": [
+        "runtime",
+        "native"
+      ],
+      "arms": {
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 156.531,
+            "model_request_union_seconds": 133.937,
+            "tool_function_union_seconds": 15.124000000000015,
+            "model_tool_overlap_seconds": 2.842170943040401e-14,
+            "outside_model_and_tool_seconds": 7.469999999999999,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "kg_query": 1,
+            "search_literature_multiview": 2,
+            "resolve_literature_papers": 1,
+            "search_paper_chunks": 11,
+            "extract_numeric_properties": 2,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 261.097,
+                "gpu_allocated_mib": 2190.313,
+                "gpu_vram_pressure": 0.533816,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.547000000002299
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.014999999999418
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3043.074,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U1-r2-runtime\\result.json"
+        },
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 255.0,
+            "model_request_union_seconds": 231.89100000000002,
+            "tool_function_union_seconds": 21.374999999999996,
+            "model_tool_overlap_seconds": 2.842170943040401e-14,
+            "outside_model_and_tool_seconds": 1.7340000000000089,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 2,
+            "kg_query": 2,
+            "search_literature_multiview": 1,
+            "search_paper_chunks": 14,
+            "search_literature_chunks": 1,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 2
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 260.09000000000003,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538374,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 4.484000000000378
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.047000000002299
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3297.012,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U1-r2-native\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": 98.469,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "P1-r2",
+      "task": "P1",
+      "repeat": 2,
+      "arm_order": [
+        "native",
+        "runtime"
+      ],
+      "arms": {
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 182.329,
+            "model_request_union_seconds": 165.15699999999998,
+            "tool_function_union_seconds": 15.670999999999978,
+            "model_tool_overlap_seconds": 2.842170943040401e-14,
+            "outside_model_and_tool_seconds": 1.5010000000000616,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "kg_query": 2,
+            "search_literature_multiview": 1,
+            "search_paper_chunks": 11,
+            "search_literature_chunks": 1,
+            "query_formulation_space": 1,
+            "extract_numeric_properties": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 259.15599999999995,
+                "gpu_allocated_mib": 2190.313,
+                "gpu_vram_pressure": 0.533491,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.5940000000009604
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.062000000001717
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3195.398,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P1-r2-native\\result.json"
+        },
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 220.453,
+            "model_request_union_seconds": 192.82700000000003,
+            "tool_function_union_seconds": 19.43800000000001,
+            "model_tool_overlap_seconds": 2.842170943040401e-14,
+            "outside_model_and_tool_seconds": 8.187999999999988,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 2,
+            "kg_query": 1,
+            "search_literature_multiview": 3,
+            "search_paper_chunks": 10,
+            "extract_numeric_properties": 1,
+            "query_formulation_space": 1,
+            "screen_formulations": 2,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 0.0,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538048,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 4.25
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0469999999986612
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3053.957,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P1-r2-runtime-resumed1\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": -38.123999999999995,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "C1-r2",
+      "task": "C1",
+      "repeat": 2,
+      "arm_order": [
+        "runtime",
+        "native"
+      ],
+      "arms": {
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 306.594,
+            "model_request_union_seconds": 282.48199999999997,
+            "tool_function_union_seconds": 16.18699999999994,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 7.925000000000068,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 2,
+            "kg_query": 2,
+            "search_literature_multiview": 2,
+            "search_paper_chunks": 13,
+            "search_literature_chunks": 2,
+            "query_formulation_space": 1,
+            "enrich_formulation_evidence": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 5
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 261.461,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538374,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 3.5780000000013388
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0309999999990396
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3015.699,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C1-r2-runtime\\result.json"
+        },
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "held",
+          "timing": {
+            "task_wall_seconds": 205.86,
+            "model_request_union_seconds": 174.09400000000002,
+            "tool_function_union_seconds": 29.85799999999999,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 1.907999999999987,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "search_literature_multiview": 3,
+            "kg_query": 1,
+            "search_paper_chunks": 14,
+            "search_literature_chunks": 2,
+            "resolve_literature_papers": 1,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 257.297,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538048,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 4.312999999998283
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.062999999998283
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3208.102,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C1-r2-native\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": -100.73399999999998,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "C2-r2",
+      "task": "C2",
+      "repeat": 2,
+      "arm_order": [
+        "native",
+        "runtime"
+      ],
+      "arms": {
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "recommended",
+          "timing": {
+            "task_wall_seconds": 279.641,
+            "model_request_union_seconds": 247.26399999999995,
+            "tool_function_union_seconds": 30.295000000000005,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 2.0820000000000505,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 2,
+            "search_literature_multiview": 3,
+            "kg_query": 1,
+            "resolve_literature_papers": 1,
+            "search_paper_chunks": 11,
+            "extract_numeric_properties": 2,
+            "query_formulation_space": 1,
+            "screen_formulations": 2,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 258.84000000000003,
+                "gpu_allocated_mib": 2190.313,
+                "gpu_vram_pressure": 0.533491,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 4.842999999997119
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.061999999998079
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3275.297,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C2-r2-native\\result.json"
+        },
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "held",
+          "timing": {
+            "task_wall_seconds": 344.797,
+            "model_request_union_seconds": 309.923,
+            "tool_function_union_seconds": 28.076000000000004,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 6.798000000000002,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "search_literature_multiview": 4,
+            "resolve_literature_papers": 1,
+            "search_paper_chunks": 9,
+            "kg_query": 1,
+            "extract_numeric_properties": 1,
+            "query_formulation_space": 1,
+            "screen_formulations": 2,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 259.67600000000004,
+                "gpu_allocated_mib": 2190.313,
+                "gpu_vram_pressure": 0.533491,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 2.7180000000007567
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.062999999998283
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 2811.625,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C2-r2-runtime\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": -65.156,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "C3-r2",
+      "task": "C3",
+      "repeat": 2,
+      "arm_order": [
+        "runtime",
+        "native"
+      ],
+      "arms": {
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "held",
+          "timing": {
+            "task_wall_seconds": 241.453,
+            "model_request_union_seconds": 213.313,
+            "tool_function_union_seconds": 15.516000000000028,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 12.623999999999967,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "search_literature_multiview": 1,
+            "kg_query": 1,
+            "resolve_literature_papers": 2,
+            "search_paper_chunks": 9,
+            "search_literature_chunks": 1,
+            "query_formulation_space": 1,
+            "extract_numeric_properties": 1,
+            "enrich_formulation_evidence": 2,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 261.05899999999997,
+                "gpu_allocated_mib": 2206.563,
+                "gpu_vram_pressure": 0.539676,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 5.125
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0780000000013388
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 3129.367,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C3-r2-runtime\\result.json"
+        },
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "held",
+          "timing": {
+            "task_wall_seconds": 224.39,
+            "model_request_union_seconds": 202.266,
+            "tool_function_union_seconds": 20.218999999999987,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 1.9050000000000011,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 1,
+            "resolve_literature_papers": 1,
+            "kg_query": 1,
+            "search_literature_multiview": 1,
+            "search_paper_chunks": 9,
+            "search_literature_chunks": 2,
+            "extract_numeric_properties": 2,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 259.7420000000001,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538374,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 2.0939999999973224
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0780000000013388
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 2560.445,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C3-r2-native\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": -17.063000000000017,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    },
+    {
+      "pair_id": "D1-r2",
+      "task": "D1",
+      "repeat": 2,
+      "arm_order": [
+        "native",
+        "runtime"
+      ],
+      "arms": {
+        "native": {
+          "arm": "native",
+          "ok": true,
+          "task_status": "held",
+          "timing": {
+            "task_wall_seconds": 309.234,
+            "model_request_union_seconds": 283.83099999999996,
+            "tool_function_union_seconds": 23.516999999999992,
+            "model_tool_overlap_seconds": 0.0,
+            "outside_model_and_tool_seconds": 1.886000000000024,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 2,
+            "search_literature_multiview": 2,
+            "kg_query": 1,
+            "resolve_literature_papers": 1,
+            "search_paper_chunks": 21,
+            "search_literature_chunks": 4,
+            "query_formulation_space": 1,
+            "screen_formulations": 2,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 257.485,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538374,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 2.0
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0780000000013388
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 2681.434,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\D1-r2-native\\result.json"
+        },
+        "runtime": {
+          "arm": "runtime",
+          "ok": true,
+          "task_status": "held",
+          "timing": {
+            "task_wall_seconds": 195.828,
+            "model_request_union_seconds": 171.374,
+            "tool_function_union_seconds": 14.044999999999984,
+            "model_tool_overlap_seconds": 2.842170943040401e-14,
+            "outside_model_and_tool_seconds": 10.409000000000049,
+            "incomplete_events": [],
+            "model_request_includes_network_and_provider_wait": true,
+            "outside_intervals_is_not_a_resource_preparation_measurement": true
+          },
+          "tool_counts": {
+            "load_skill": 1,
+            "write_todos": 2,
+            "search_literature_multiview": 2,
+            "kg_query": 2,
+            "search_paper_chunks": 10,
+            "search_literature_chunks": 2,
+            "extract_numeric_properties": 2,
+            "query_formulation_space": 1,
+            "screen_formulations": 1,
+            "synthesize_design_report": 1
+          },
+          "root_resources": {
+            "resources": {
+              "bge-m3-model": {
+                "resource_id": "bge-m3-model",
+                "resident": true,
+                "host_ram_mib": 228.49199999999996,
+                "gpu_allocated_mib": 2198.438,
+                "gpu_vram_pressure": 0.538374,
+                "device": "cuda",
+                "load_count": 1,
+                "release_count": 0,
+                "last_load_seconds": 4.828000000001339
+              },
+              "neo4j-session": {
+                "resource_id": "neo4j-session",
+                "resident": true,
+                "connection_slots": 1.0,
+                "open_count": 1,
+                "close_count": 0,
+                "last_open_seconds": 2.0469999999986612
+              }
+            }
+          },
+          "root_service_sampled_peak_rss_mib": 2987.77,
+          "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+          "quality_verified": false,
+          "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\D1-r2-runtime\\result.json"
+        }
+      },
+      "tool_call_plan_equal": false,
+      "observed_native_minus_runtime_seconds": 113.40599999999998,
+      "causal_speedup_verified": false,
+      "chemical_quality_verified": false
+    }
+  ],
+  "collection_complete": true,
+  "source_and_inputs_unchanged": true,
+  "resume_record": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\resume-record-1.json",
+  "interrupted_attempts_excluded": 1
+}

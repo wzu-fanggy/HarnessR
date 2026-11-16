@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "train_formulations": 60,
+  "heldout_formulations": 12,
+  "validated_predictions": 48,
+  "split_sha256": "e8a76be9db45d1fe4689583334f0e6cbea2abd8a3b58ef20f18aac078c170708",
+  "model_sha256": "27ce6c1ab1dceb6bca3a55201fc4980b8a4dad55a17f11c79893fc26b86ec400",
+  "archive_sha256": "d0ea5e50e56a36e57c98660640e3409ca80c56c4b7ee9f95e268b17afd0d9566",
+  "question_sha256": "a8bdb713b279eeddb209ad0521f35fd441e792ee5aa1a85da7428c8042479d7e",
+  "holdout_truth_exposed_in_prompt": false,
+  "model_training_reexecuted": false
+}

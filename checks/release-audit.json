@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "findings": {
+    "python_syntax": [],
+    "secret_patterns": [],
+    "absolute_machine_paths": [],
+    "forbidden_files": []
+  },
+  "fresh_environment_installation_tested": true,
+  "data_and_results_preserved": {
+    "data": {
+      "files": 34,
+      "all_bytes_identical": true
+    },
+    "results": {
+      "files": 1256,
+      "all_bytes_identical": true
+    }
+  },
+  "paid_api_requests_during_packaging": 0,
+  "uploaded": false
+}

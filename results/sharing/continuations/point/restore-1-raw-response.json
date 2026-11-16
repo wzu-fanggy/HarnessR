@@ -1,0 +1,13 @@
+[
+  {
+    "content": "[{\"candidate_id\": \"B3-gen-0007\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"component_mmol\": {\"NaPF6\": 644.260836, \"EC\": 2196.769523, \"EMC\": 6134.374423, \"PC\": 1668.856054}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 6.866935620011926, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.06772876330301733, \"estimated_factor_1sigma\": 1.168769213388413, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.06052659230418732, \"x_EC\": 0.2636816189035752, \"x_PC\": 0.1668856054}, \"reason\": \"\", \"result_binding\": {\"schema\": \"transport_prediction_record_v1\", \"record_id\": \"7a966522132a919361a665f88fd0a40e2aa993647d185150ff755d53414aba69\", \"record_path\": \"reports/transport_predictions/7a966522132a919361a665f88fd0a40e2aa993647d185150ff755d53414aba69.json\", \"execution_id\": \"ba5c8a605a7a45f396cefa6362b7ed1c\", \"tool_run_id\": \"01a1b92a-4cb0-7252-94ab-5079d3100b6b\", \"thread_id\": \"continuation-point-previous\", \"composition_id\": \"27c162d4a4ee74ec92f098fc03e4ede1294b91edd322bc7bef139d9631812259\", \"condition_id\": \"c1416b8b618e339adeca775587751df2e8e47fb6b1043d890015825e8775f72f\", \"composition\": {\"basis\": \"mole_fraction_of_all_components\", \"components\": {\"NaPF6\": \"0.0605265923042\", \"EC\": \"0.20638065497\", \"EMC\": \"0.576308164326\", \"PC\": \"0.156784588401\"}}, \"conditions\": {\"temperature_c\": 20.0, \"declared_context\": {}}, \"model_reference\": {\"artifact_sha256\": \"cb60829a64e6ac4f1590b49a496b650f06a73563c0b002d3b1579e1de642e182\", \"implementation_sha256\": \"f6eba047f8eb2d3e5603c852ac4c069c982abe4a046cdb4cf180b572dd07f43c\"}, \"scope\": \"model_input_identity_not_source_or_battery_validation\"}}]}]",
+    "additional_kwargs": {},
+    "response_metadata": {},
+    "type": "tool",
+    "name": "predict_formulation_conductivity",
+    "id": null,
+    "tool_call_id": "call_00_h6x0qsjP44rLzJrecbhq6919",
+    "artifact": null,
+    "status": "success"
+  }
+]

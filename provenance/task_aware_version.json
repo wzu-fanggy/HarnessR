@@ -1,0 +1,90 @@
+[
+  {
+    "path": "capvm/demand_coordinator.py",
+    "original_sha256": "7b6d442b75eb554ee33f7b61675102386709b99e887c4b4be82bd42448ce5a62"
+  },
+  {
+    "path": "capvm/governor.py",
+    "original_sha256": "9f69311f7e0e684f8ec69acf4241509ca5f57ba04dd140814d8f5d35400f388f"
+  },
+  {
+    "path": "capvm/jev_task_intent.py",
+    "original_sha256": "ac852a7863a1663c5eff4337b7adcb2fd67e282752844d97a790cb5ccaff4c28"
+  },
+  {
+    "path": "capvm/semantic_plan.py",
+    "original_sha256": "789ca135b25bdd221d20088d719e5804ed81c87b0b5c461fa5ff6654ef38d37b"
+  },
+  {
+    "path": "capvm/shared_runtime.py",
+    "original_sha256": "47744eead5928de880e3253945303fbb236bdbdd13edd001e6192df57656a039"
+  },
+  {
+    "path": "capvm/task_intent.py",
+    "original_sha256": "b232bc42db464a6c17a3d65a3cc8fcbad513ba6f3212579593f7923dd392bbc8"
+  },
+  {
+    "path": "core/default_resource_runtime.py",
+    "original_sha256": "6e6966fea595c9c95e8fb6102331f9155aa38ac2dd1e42e5c79a57460055d86f"
+  },
+  {
+    "path": "core/langgraph_residency.py",
+    "original_sha256": "b96afe18b7d59ff51ea528bcfd0a3cbfed5097a0de0e85da2009747134838f66"
+  },
+  {
+    "path": "core/resource_task_graph.py",
+    "original_sha256": "d6b1c2822b2d6a6a36e3ae56fa24fa39b334ffe68f94a8b07bb3525c23a39d60"
+  },
+  {
+    "path": "core/resource_tool_node.py",
+    "original_sha256": "c67e854d0bfa01f5cdd8aed6de2596b0dfd66915f7a11009c31ae62f0226f69b"
+  },
+  {
+    "path": "core/task_board_intent.py",
+    "original_sha256": "09658682ee4a6c64b4b6465b1712df7a45b5ae4475dab6d0960b38b13b8d3d81"
+  },
+  {
+    "path": "core/tasks/board.py",
+    "original_sha256": "2b9126b16bac7eef985f9a7670acda178af8503335283b0be95abce28deebbb8"
+  },
+  {
+    "path": "core/tasks/tools.py",
+    "original_sha256": "93a74b4cb813c0d45a644ab67eabbeda33f6796a82ebd837f7dad2e47d536057"
+  },
+  {
+    "path": "llms.py",
+    "original_sha256": "143967e879ab40be7e7d2a1bae507ea582ab97da3a3c5d9a76abe3621e85a7e2"
+  },
+  {
+    "path": "main.py",
+    "original_sha256": "13232328de34c8ceab0cc5370d334ce212d5977282f3f5505e842e3b5b7333be"
+  },
+  {
+    "path": "model_config.py",
+    "original_sha256": "e696a9413b36d60c2b281b69958ae82d300f325cbe70d155a742e4f5ddb01787"
+  },
+  {
+    "path": "tools/electrolyte_design/conductivity_tool.py",
+    "original_sha256": "c34c207adf5e19d090850aee6be8b5c4fd00bd3d70a05ccdb6828cf1f1df12ff"
+  },
+  {
+    "path": "tools/electrolyte_design/temperature_fit.py",
+    "original_sha256": "5a92eac7041cf6c4a0789682f39d560ead36f7a53f3ddde00f5eeaafde45a82b"
+  },
+  {
+    "path": "tools/electrolyte_design/robust_ranking_tool.py",
+    "original_sha256": "4ec9ef64349a7df742954ba1854c64ed3cc19ee47f2b4c0a43b724640d0b72ce"
+  },
+  {
+    "path": "tools/electrolyte_design/robust_ranking.py",
+    "original_sha256": "9c055061177faaa1f1c78f4599052941462b6a41c0e6ba5ffe8c2a5c96d0921c"
+  },
+  {
+    "path": "tools/electrolyte_design/robust_ranking_process.py",
+    "original_sha256": "6499dba9e70eed9915cafa5f2ba1c4df23d26b0125d5b153f62b05604ae07f0d"
+  },
+  {
+    "path": "tools/electrolyte_design/conductivity_ml.py",
+    "original_sha256": "f6eba047f8eb2d3e5603c852ac4c069c982abe4a046cdb4cf180b572dd07f43c"
+  }
+]

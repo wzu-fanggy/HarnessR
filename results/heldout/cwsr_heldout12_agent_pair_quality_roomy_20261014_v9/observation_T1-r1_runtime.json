@@ -1,0 +1,107 @@
+{
+  "arm": "runtime",
+  "ok": false,
+  "task_status": null,
+  "timing": {
+    "task_wall_seconds": 159.156,
+    "model_request_union_seconds": 124.561,
+    "tool_function_union_seconds": 11.766000000000002,
+    "model_tool_overlap_seconds": 0.0,
+    "outside_model_and_tool_seconds": 22.829000000000008,
+    "incomplete_events": [],
+    "model_request_includes_network_and_provider_wait": true,
+    "outside_intervals_is_not_a_resource_preparation_measurement": true
+  },
+  "tool_counts": {
+    "load_skill": 1,
+    "write_todos": 1,
+    "predict_formulation_conductivity": 4,
+    "search_literature_multiview": 2,
+    "search_literature_chunks": 5,
+    "extract_numeric_properties": 3,
+    "synthesize_design_report": 1
+  },
+  "root_resources": {
+    "resources": {
+      "bge-m3-model": {
+        "resource_id": "bge-m3-model",
+        "resident": true,
+        "host_ram_mib": 346.75800000000004,
+        "host_ram_measurement": "load_rss_increment",
+        "load_rss_before_mib": 693.625,
+        "load_rss_after_mib": 1040.383,
+        "load_rss_delta_mib": 346.75800000000004,
+        "release_rss_before_mib": null,
+        "release_rss_after_mib": null,
+        "gpu_allocated_mib": 2182.188,
+        "gpu_vram_pressure": 0.531863,
+        "device": "cuda",
+        "load_count": 1,
+        "release_count": 0,
+        "last_load_seconds": 6.235000000000582
+      },
+      "neo4j-session": {
+        "resource_id": "neo4j-session",
+        "resident": true,
+        "connection_slots": 1.0,
+        "open_count": 1,
+        "close_count": 0,
+        "last_open_seconds": 2.0469999999995707
+      }
+    }
+  },
+  "root_service_sampled_peak_rss_mib": 2986.012,
+  "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+  "quality_verified": false,
+  "result_path": "${ORION_SOURCE}\\reports\\cwsr_heldout12_agent_pair_quality_roomy_20261014_v9\\T1-r1-runtime\\result.json",
+  "scientific_audit": {
+    "scientific_complete": false,
+    "report_quality_pass": false,
+    "report_quality": {
+      "has_full_12x4_prediction_table": true,
+      "priority_top4_expected": [
+        "heldout-03",
+        "heldout-04",
+        "heldout-05",
+        "heldout-06"
+      ],
+      "explicit_top_four_in_result_section": false,
+      "has_followup_validation_plan": false,
+      "has_source_citations": false,
+      "literature_claim_count": 0,
+      "distinct_literature_source_count": 0,
+      "declared_priority_count": 1,
+      "structured_priority_ids": [],
+      "agent_submitted_validation_plan": false,
+      "validation_plan_source": null,
+      "issues": [
+        "报告及结构化数据未明确列出按预测排序的前四种候选",
+        "缺少明确的后续电导率实测、电芯或界面验证计划",
+        "Agent 未提交至少两项独立验证建议；自动补充的通用模板不计作 Agent 自主完成",
+        "缺少可追溯文献依据",
+        "不同来源的相关文献背景事实不足两项"
+      ],
+      "full_report_quality_pass": false,
+      "literature_semantic_verification": "科学文献引文已通过归属检查，尚未人工确认语义完整性"
+    },
+    "agent_ok": false,
+    "task_status": null,
+    "valid_prediction_points": 0,
+    "expected_prediction_points": 48,
+    "issues": [
+      "缺少 48 个正确的温度-配方预测点",
+      "报告状态不是 model_assessed",
+      "最终报告缺少有出处的文献事实"
+    ],
+    "spearman_low_temperature": null,
+    "top4_overlap": null,
+    "predicted_top4": [],
+    "measured_top4": [
+      "heldout-04",
+      "heldout-03",
+      "heldout-06",
+      "heldout-02"
+    ],
+    "prediction_reference_sha256": "d0ea5e50e56a36e57c98660640e3409ca80c56c4b7ee9f95e268b17afd0d9566"
+  }
+}

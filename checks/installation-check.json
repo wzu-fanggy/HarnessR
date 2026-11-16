@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "python": "3.11.9",
+  "isolated_virtual_environment": true,
+  "versions": [
+    {
+      "status": "PASS",
+      "version": "current",
+      "agent_module": "src/orion/main.py",
+      "tool_count": 32,
+      "prediction_worker_recomputed": 1,
+      "prediction_error": 0.0,
+      "ranking_worker_started_and_closed": true,
+      "default_data_paths_in_package": true,
+      "original_project_imports": [],
+      "external_calls": 0
+    },
+    {
+      "status": "PASS",
+      "version": "historical",
+      "agent_module": "versions/task_aware/orion/main.py",
+      "tool_count": 32,
+      "prediction_worker_recomputed": 1,
+      "prediction_error": 0.0,
+      "ranking_worker_started_and_closed": true,
+      "default_data_paths_in_package": true,
+      "original_project_imports": [],
+      "external_calls": 0
+    }
+  ],
+  "paid_api_calls": 0
+}

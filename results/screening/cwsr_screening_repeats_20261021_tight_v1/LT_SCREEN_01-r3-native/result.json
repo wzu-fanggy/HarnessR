@@ -1,0 +1,1225 @@
+{
+  "ok": false,
+  "answer": "I'll start by loading the required skill.",
+  "contexts": [],
+  "tool_calls": [
+    {
+      "name": "load_skill",
+      "args": {
+        "name": "electrolyte_screening"
+      },
+      "result": "---\nname: electrolyte_screening\ndescription: 钠离子电池电解液文献对比与模型性质初筛\ntriggers:\n  - 作用是什么\n  - 对比\n  - 比较\n  - 差异\n  - 性能\n  - 优缺点\n  - FEC\n  - NaPF6\n  - NaFSI\n  - 成膜\nworkflow:\n  steps:\n    - id: load_skill\n      tool: load_skill\n      required: true\n      description: 加载本 SKILL.md 全文，确保遵守 screening 工作流\n    - id: resolve_paper\n      tool: resolve_literature_papers\n      required: false\n      description: 当问题指定作者、论文题名或 DOI 时，先解析 paper_id\n    - id: retrieve\n      tool: search_literature_multiview\n      required: true\n      description: 多角度检索文献证据；对比任务禁止跳过此步\n    - id: retrieve_paper\n      tool: search_paper_chunks\n      required: false\n      description: named-study 问题在已解析的单篇论文内部做一次有界聚焦检索\n    - id: retrieve_focused\n      tool: search_literature_chunks\n      required: true\n      description: 用题目中的实体、数值或原始短语做聚焦检索，核验首轮检索未覆盖的直接实验事实\n    - id: numeric\n      tool: extract_numeric_properties\n      required: true\n      description: 涉及数值/性能对比时必须抽取具体数值证据\n    - id: report\n      tool: synthesize_design_report\n      required: true\n      description: 生成带 chunk_id 引用的简洁回答\n---\n\n# 电解液 Screening Skill\n\n## 适用场景\n\n- 解释某种组分/添加剂的作用（如\"FEC 的作用\"）\n- 对比两种或多种材料/体系（如\"NaPF6 vs NaFSI\"）\n- 回答事实性、机理性问题\n- 对用户提供的候选进行模型性质初筛，明确计算指标、组成与温度\n\n## 模型性质初筛\n\n当任务要求用预测模型筛选既有配方时，文献解释研究背景，模型计算评价候选。\n两类来源分别保存。不要把预测值、模型排序或模型成员统计引用为某篇论文的实验结果，\n也不要为性质预测编造电极、电压、倍率或循环数。\n\n- 先明确候选组成、比例基准、目标温度及用户指定的筛选指标。已有候选保持身份一致，\n  不自行增加配方或修改比例。\n- 用现有性质预测能力获得目标温度下的计算结果。可在一次单温度请求中计算多种候选；\n  由任务需要决定调用，不规定检索与计算的交替顺序。\n- 未给出最低电导率要求时，不自行设置 1 mS/cm 等阈值。对于“目标温度范围内最低\n  电导率尽可能高”的任务，可直接比较单点预测，不必调用要求阈值的集成排序工具。\n- 编译报告时传 `task_type=\"candidate_screening\"`、候选清单及\n  `model_comparison={\"candidate_ids\":[...],\"temperatures_c\":[...],\n  \"objective\":\"maximise_minimum_conductivity\",\"priority_count\":1}`。若用户要求前 N 种优先候选，\n  必须把 `priority_count` 设为 N（例如要求四种则传 4），并按筛选指标列出该数量的候选；\n  并列末位可一同保留。此字段仅控制报告列出多少个优先候选，不改变预测模型或实验事实。\n  编译器读取本轮工具消息，不在\n  `claims` 内复制预测数值或给它们拼接文献 chunk_id。未完成计算应继续补齐相关温度，\n  不用已知答案填补工具返回。\n  用户要求比较参照温度时，把该温度传入 `reference_temperature_c`，不能只在文字建议中\n  提及参照结果；`temperatures_c` 应只包含目标筛选温度，单独传入的参照温度不改变初筛指标。\n  提交前对照用户问题检查候选、目标\n  温度和参照温度是否完整，不能为了修复其他字段错误而省略已要求的比较。\n- 用户要求文献解释时，只把直接相关且来源完整的背景事实作为 `claim_type=\"fact\"` 放入\n  `claims`，逐条附真实 `chunk_id` 与完整、有边界的逐字 `evidence_quote`。不要引用截在\n  冠词、形容词或句中连词后的不完整摘句；不能仅凭一句关于容量的数据扩展出未获证实的\n  电导率—电池表现因果关系。模型排序由编译器使用已执行预测计算，不需要用文献\n  `claim_type=\"comparison\"` 代替模型排序。这类非 fact 的文献声明在模型初筛编译时\n  不会自动用于支持配方优先级。`next_steps` 必须明确给出至少两项尚未执行的具体验证，\n  包括目标配方、温度下的独立电导率复测，以及在相同电极、电芯类型、倍率和电压范围下\n  的实际容量、循环或阻抗比较；不能把建议写成已做实验。若模型遗漏 `next_steps`，\n  报告编译器只会补充标明来源的通用复测项目，不算 Agent 独立设计的方案。\n  这些背景事实并未被用来证明给定候选的电池性能，不需为它们编造目标电极或实验工况。\n  工具接口公开了请求字段结构，不要添加结构以外的字段。\n- `model_assessed` 表示已按显式指标完成模型初筛。展示具体候选、组成、温度、数值和\n  选择理由，区分预测与实测；提出相应实验验证建议。这个状态不表示电池循环性能已被验证。\n\n下方文献工作流适用于从论文实验数据得出事实和实验比较的任务。模型初筛中的背景\n检索按实际证据缺口安排，不为凑文献数或操作数追加查询。\n\n## 工作流\n\n0. **论文身份解析（named-study 问题强制）**：如果问题以作者、论文题名或 DOI\n   指定某项既有研究，先调用 `resolve_literature_papers`，只传身份标识本身\n   （例如 `Fondard`），不要把整段问题当成身份查询。选择题名、作者和主题均\n   与问题一致的首位结果，并记录其 `paper_id`。随后所有\n   `search_literature_multiview` 调用都必须传入 `paper_ids=[该 paper_id]`，\n   内容 query 去掉作者名，改用盐、溶剂、添加剂、循环次数、容量保持率或原文短语。\n   只有 resolver 与限定论文检索都没有结果时，才能说明当前语料未找到该研究；\n   禁止仅凭普通向量检索失败就声称论文未收录。\n   完成限定论文的 `search_literature_multiview` 后，调用一次\n   `search_paper_chunks(paper_id=..., query=..., top_k=8)` 做论文内聚焦。\n   该工具替代 named-study 的通用 `search_literature_chunks` 必需步骤，\n   query 只保留 4–8 个英文技术词，例如\n   `\"EC:DMC HC Na voltage cycles rate\"`；不要堆叠完整句子、作者名或大量近义词。\n   named-study 下这一步仍计入 `retrieve_focused` 必需步骤，不得跳过。\n   两次检索已覆盖问题中的组分、工况和指标后立即进入数值抽取与报告合成；\n   禁止为了补齐无关细节反复改写查询，也禁止用 `read_file` 绕过检索访问原文路径。\n   若仍缺少某个明确事实，最多再做一次短 query 的限定论文检索；仍未命中就在\n   报告中标为未验证，不继续追逐空结果。\n\n1. **检索**：优先调用 `search_literature_multiview`，用 2–4 个不同角度查询同一主题。\n   查询模板（按问题类型选择，全部用英文）：\n   - **机理解释**（如 FEC 的作用）:\n     - `\"FEC SEI film formation mechanism sodium ion battery\"`\n     - `\"FEC reductive decomposition sodium ion battery\"`\n     - `\"FEC cycling performance sodium ion battery\"`\n   - **材料对比**（如 NaPF6 vs NaFSI）:\n     - `\"NaPF6 sodium salt carbonate electrolyte common use\"`\n     - `\"NaFSI aluminum corrosion sodium ion battery carbonate\"`\n     - `\"NaPF6 NaFSI dual salt low temperature performance sodium ion battery\"`\n     - `\"FSI anion solvation structure Na+ compared PF6\"`\n     - **必须有至少一个查询直接指向实验对比**：包含两种材料、温度条件、容量/循环等关键指标，例如 `\"NaFSI-E NaPF6-E -10°C capacity retention cycling comparison\"`。\n   - **性能/属性查询**:\n     - `\"{material} ionic conductivity low temperature sodium ion battery\"`\n     - `\"{material} cycling stability sodium ion battery\"`\n   - 参数建议：`top_k=12`，`per_query_top_k=10`，`max_per_paper=2`。\n   - 如果 `search_literature_multiview` 返回的 top chunks 中没有直接对比两种材料的实验证据，必须再用 `search_literature_chunks` 做一次聚焦检索，查询要同时包含两种材料名和温度/性能关键词（`top_k=8`）。\n2. **数值抽取**：涉及具体数值对比时调用 `extract_numeric_properties`；\n3. **综合**：先按用户任务选择 canonical `task_type`：\n   - 单一材料作用、事实、机理或研究现状：`evidence_synthesis`；\n   - 用户明确给出两个及以上候选并要求比较/筛选：`candidate_screening`。\n   调用 `synthesize_design_report` 时不得再传旧的 `screening` 标签。候选比较必须传入\n   `comparison_axes`，并为每个候选传入一条 `comparison_records`：\n   `{\"candidate_id\":\"...\",\"conditions\":{\"temperature_c\":...,\"electrode\":\"...\",\n   \"voltage_window_v\":[lower,upper],\"rate\":\"...\",\"cycle_count\":...,\n   \"measurement_definition\":\"...\"},\"evidence_ids\":[\"实际 chunk_id\",...]}`。\n   六类条件必须来自本轮原文证据，不能用模型常识补齐。报告编译器会确定性比较全部字段：\n   缺字段或 evidence id 不属于本轮 ledger 时返回 `insufficient_evidence`，字段冲突时返回\n   `not_comparable`，全部一致且存在通过逐字引文校验的 `comparison`/`ranking` claim\n   时才允许 `compared`。旧 `condition_comparable` 布尔值不再具有准入权限；\n   除 `comparison_records` 外，还必须在 `claims` 中显式提交至少一条\n   `claim_type=\"comparison\"` 或 `claim_type=\"ranking\"` 的声明，直接回答“谁更好/有何不同”。\n   每条 claim 必须包含 `text`（结论句，内嵌 `[chunk_id]`）、`chunk_id`、\n   `evidence_quote`（逐字原文片段，≥12 字符）。示例：\n   `{\"claim_type\":\"comparison\",\"text\":\"在 Fondard 的 NaPF6/EC:DMC 硬碳体系中，3% FEC 在 130 周后容量保持率为 94%，循环稳定性优于 DMCF [0053_paper4_fondard_sei::sec5::child2]\",\"chunk_id\":\"0053_paper4_fondard_sei::sec5::child2\",\"evidence_quote\":\"65%, 72% and 94% capacity retention was measured after 130 cycles with 0%, 1.5% or 3% FEC, respectively\"}`\n   若 `claims` 为空或只有 `fact` 类型，报告将退化为证据清单，`answer_relevancy` 会大幅降低；\n   对比任务禁止以“仅列证据”收尾。\n4. **输出**：采用\"直接结论 + 8–12 条证据\"，每条证据独立成句并带 `[chunk_id]` 引用；\n   其中至少 6 条使用不同的 chunk_id，且这些证据应来自至少 4 篇不同文献\n   （避免 3 条以上证据来自同一篇 paper），尽量覆盖本次检索返回的多数关键来源，\n   控制在 **300–500 个中文字**。\n   **named-study 例外**：当问题指定作者、题名或 DOI 时，不适用“至少 4 篇文献”\n   与“每篇不超过 3 条证据”的要求。所有事实证据必须来自步骤 0 解析出的目标\n   `paper_id`；不要为了凑文献数执行未传 `paper_ids` 的检索，也不要引入综述或其他论文。\n   named-study 回答使用 4–8 条直接相关证据即可，不适用普通 screening 的\n   “8–12 条证据”要求。\n\n## 工作流顺序纪律（严禁违反）\n\n- **`synthesize_design_report` 必须是最后一步**。在完成充分检索和数值抽取之前，**严禁**调用 `synthesize_design_report`。\n- 提前调用会导致系统要求回退补全，造成重复调用和额外 token 消耗。\n\n## 禁止行为\n\n- 禁止调用 `query_formulation_space`、`screen_formulations`、`optimize_formulations` 等设计专用工具；\n- **禁止直接使用 `kg_query` 的 `compare_materials` 等结构化查询做材料对比；对比结论必须来自文献 chunk 原文；**\n- 文献事实问答不自行生成新的候选配方；模型初筛可以比较用户给定的候选。\n- 文献事实问答不扩展成配方设计任务；模型初筛可提出有计算依据的测试优先级和验证建议。\n- 禁止把\"对比两种盐\"改写成\"推荐一套双盐完整配方\"；\n- 禁止输出\"【推断】\"句，无直接证据的陈述直接删除。\n\n## 引用纪律\n\n- 只能引用本次检索实际返回的文献；\n- 文献数值、配方、性能值必须能在返回 chunk 原文中找到；预测值绑定实际工具计算。\n- 使用 `[chunk_id]` 格式引用，禁止改为 `[1]` 或 `[作者]`。\n\n## KG 质量反馈\n\n同 `electrolyte_design`：筛选过程中若发现 KG 实体标签错误、关系语义错误、数值异常、同名异义或证据与 KG 矛盾，**必须**调用 `flag_suspicious_kg_item` 记录，供后续离线人工审查。\n\n## 知识沉淀\n\n筛选流程结束后，调用 `reflect_now` 进行知识反思和 Wiki 沉淀，\n将本次筛选发现的有效对比维度、检索关键词、被否决的候选理由记录到 LLM Wiki，\n供下次相似筛选问题直接复用。\n"
+    },
+    {
+      "name": "write_todos",
+      "args": {
+        "todos": [
+          {
+            "id": "1",
+            "content": "加载 electrolyte_screening skill 并确认工作流",
+            "status": "completed"
+          },
+          {
+            "id": "2",
+            "content": "用模型在 −20/−10/0 ℃ 及 20 ℃ 计算 5 个候选 NaPF6-EC/EMC/PC 配方的离子电导率",
+            "status": "in_progress"
+          },
+          {
+            "id": "3",
+            "content": "多角度检索文献证据：低温输运意义、EC/PC/EMC 溶剂角色、NaPF6 碳酸酯体系低温性能",
+            "status": "pending"
+          },
+          {
+            "id": "4",
+            "content": "抽取数值证据（文献实测电导率/温度）并核对",
+            "status": "pending"
+          },
+          {
+            "id": "5",
+            "content": "合成 candidate_screening 报告（含 model_comparison、20 ℃ 参照、文献背景与后续验证需求）",
+            "status": "pending"
+          }
+        ]
+      },
+      "result": "{'todo_list': [TodoItem(id='1', content='加载 electrolyte_screening skill 并确认工作流', status='completed'), TodoItem(id='2', content='用模型在 −20/−10/0 ℃ 及 20 ℃ 计算 5 个候选 NaPF6-EC/EMC/PC 配方的离子电导率', status='in_progress'), TodoItem(id='3', content='多角度检索文献证据：低温输运意义、EC/PC/EMC 溶剂角色、NaPF6 碳酸酯体系低温性能', status='pending'), TodoItem(id='4', content='抽取数值证据（文献实测电导率/温度）并核对', status='pending'), TodoItem(id='5', content='合成 candidate_screening 报告（含 model_comparison、20 ℃ 参照、文献背景与后续验证需求）', status='pending')]}"
+    },
+    {
+      "name": "predict_formulation_conductivity",
+      "args": {
+        "request": {
+          "candidates": [
+            {
+              "candidate_id": "C1",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.12828314652601666,
+                  "EC": 0.5694935118915765,
+                  "EMC": 0.2849609994814937,
+                  "PC": 0.01726234210091304
+                }
+              }
+            },
+            {
+              "candidate_id": "C2",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.19951783307955084,
+                  "EC": 0.17508760594792486,
+                  "EMC": 0.36168693219858494,
+                  "PC": 0.2637076287739395
+                }
+              }
+            },
+            {
+              "candidate_id": "C3",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.13659165981340052,
+                  "EC": 0.09913935791043874,
+                  "EMC": 0.22127296310046693,
+                  "PC": 0.5429960191756938
+                }
+              }
+            },
+            {
+              "candidate_id": "C4",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.09766791771234627,
+                  "EC": 0.013536078619457399,
+                  "EMC": 0.0011761179656606918,
+                  "PC": 0.8876198857025356
+                }
+              }
+            },
+            {
+              "candidate_id": "C5",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.0852192419102328,
+                  "EC": 0.17361285375612137,
+                  "EMC": 0.736772576595408,
+                  "PC": 0.004395327738237865
+                }
+              }
+            }
+          ],
+          "temperature_c": -20
+        }
+      },
+      "result": "[{\"candidate_id\": \"C1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.12828314652601666, \"EC\": 0.5694935118915765, \"EMC\": 0.2849609994814937, \"PC\": 0.01726234210091304}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.4178494203752665, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.18915060517798277, \"estimated_factor_1sigma\": 1.545790397710345, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.12828314652601666, \"x_EC\": 0.6664995085302152, \"x_PC\": 0.019802693996472377}, \"reason\": \"\"}]}, {\"candidate_id\": \"C2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.19951783307955084, \"EC\": 0.17508760594792486, \"EMC\": 0.36168693219858494, \"PC\": 0.2637076287739395}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 0.49875241818894755, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.2196004036928746, \"estimated_factor_1sigma\": 1.658060616337216, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.19951783307955084, \"x_EC\": 0.3261846334077337, \"x_PC\": 0.32943598205123586}, \"reason\": \"\"}]}, {\"candidate_id\": \"C3\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.2418644454008225, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.1016837207825427, \"estimated_factor_1sigma\": 1.2638156261202176, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.13659165981340052, \"x_EC\": 0.30941181536856194, \"x_PC\": 0.6288982789514654}, \"reason\": \"\"}]}, {\"candidate_id\": \"C4\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.09766791771234627, \"EC\": 0.013536078619457399, \"EMC\": 0.0011761179656606918, \"PC\": 0.8876198857025356}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.2416024173805078, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.08044451579898504, \"estimated_factor_1sigma\": 1.2034956248652835, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.09766791771234627, \"x_EC\": 0.9200583027248034, \"x_PC\": 0.9836953635209127}, \"reason\": \"\"}]}, {\"candidate_id\": \"C5\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.0852192419102328, \"EC\": 0.17361285375612137, \"EMC\": 0.736772576595408, \"PC\": 0.004395327738237865}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 2.3004257242081674, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09106914931792585, \"estimated_factor_1sigma\": 1.2333011865107715, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.0852192419102328, \"x_EC\": 0.1907025837277337, \"x_PC\": 0.00480478814116743}, \"reason\": \"\"}]}]"
+    },
+    {
+      "name": "predict_formulation_conductivity",
+      "args": {
+        "request": {
+          "candidates": [
+            {
+              "candidate_id": "C1",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.12828314652601666,
+                  "EC": 0.5694935118915765,
+                  "EMC": 0.2849609994814937,
+                  "PC": 0.01726234210091304
+                }
+              }
+            },
+            {
+              "candidate_id": "C2",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.19951783307955084,
+                  "EC": 0.17508760594792486,
+                  "EMC": 0.36168693219858494,
+                  "PC": 0.2637076287739395
+                }
+              }
+            },
+            {
+              "candidate_id": "C3",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.13659165981340052,
+                  "EC": 0.09913935791043874,
+                  "EMC": 0.22127296310046693,
+                  "PC": 0.5429960191756938
+                }
+              }
+            },
+            {
+              "candidate_id": "C4",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.09766791771234627,
+                  "EC": 0.013536078619457399,
+                  "EMC": 0.0011761179656606918,
+                  "PC": 0.8876198857025356
+                }
+              }
+            },
+            {
+              "candidate_id": "C5",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.0852192419102328,
+                  "EC": 0.17361285375612137,
+                  "EMC": 0.736772576595408,
+                  "PC": 0.004395327738237865
+                }
+              }
+            }
+          ],
+          "temperature_c": -10
+        }
+      },
+      "result": "[{\"candidate_id\": \"C1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.12828314652601666, \"EC\": 0.5694935118915765, \"EMC\": 0.2849609994814937, \"PC\": 0.01726234210091304}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 2.3059821340238638, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.24735931890973437, \"estimated_factor_1sigma\": 1.767499578532824, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.12828314652601666, \"x_EC\": 0.6664995085302152, \"x_PC\": 0.019802693996472377}, \"reason\": \"\"}]}, {\"candidate_id\": \"C2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.19951783307955084, \"EC\": 0.17508760594792486, \"EMC\": 0.36168693219858494, \"PC\": 0.2637076287739395}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.1784756794254354, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.15060718401007087, \"estimated_factor_1sigma\": 1.4145137844261253, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.19951783307955084, \"x_EC\": 0.3261846334077337, \"x_PC\": 0.32943598205123586}, \"reason\": \"\"}]}, {\"candidate_id\": \"C3\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 2.1329028495857365, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.08678676989297986, \"estimated_factor_1sigma\": 1.2211999276391323, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.13659165981340052, \"x_EC\": 0.30941181536856194, \"x_PC\": 0.6288982789514654}, \"reason\": \"\"}]}, {\"candidate_id\": \"C4\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.09766791771234627, \"EC\": 0.013536078619457399, \"EMC\": 0.0011761179656606918, \"PC\": 0.8876198857025356}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.8005299314298344, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.11699605372466339, \"estimated_factor_1sigma\": 1.3091700269954818, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.09766791771234627, \"x_EC\": 0.9200583027248034, \"x_PC\": 0.9836953635209127}, \"reason\": \"\"}]}, {\"candidate_id\": \"C5\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.0852192419102328, \"EC\": 0.17361285375612137, \"EMC\": 0.736772576595408, \"PC\": 0.004395327738237865}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.1812954022363247, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09617092645410516, \"estimated_factor_1sigma\": 1.2478745469692925, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.0852192419102328, \"x_EC\": 0.1907025837277337, \"x_PC\": 0.00480478814116743}, \"reason\": \"\"}]}]"
+    },
+    {
+      "name": "predict_formulation_conductivity",
+      "args": {
+        "request": {
+          "candidates": [
+            {
+              "candidate_id": "C1",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.12828314652601666,
+                  "EC": 0.5694935118915765,
+                  "EMC": 0.2849609994814937,
+                  "PC": 0.01726234210091304
+                }
+              }
+            },
+            {
+              "candidate_id": "C2",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.19951783307955084,
+                  "EC": 0.17508760594792486,
+                  "EMC": 0.36168693219858494,
+                  "PC": 0.2637076287739395
+                }
+              }
+            },
+            {
+              "candidate_id": "C3",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.13659165981340052,
+                  "EC": 0.09913935791043874,
+                  "EMC": 0.22127296310046693,
+                  "PC": 0.5429960191756938
+                }
+              }
+            },
+            {
+              "candidate_id": "C4",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.09766791771234627,
+                  "EC": 0.013536078619457399,
+                  "EMC": 0.0011761179656606918,
+                  "PC": 0.8876198857025356
+                }
+              }
+            },
+            {
+              "candidate_id": "C5",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.0852192419102328,
+                  "EC": 0.17361285375612137,
+                  "EMC": 0.736772576595408,
+                  "PC": 0.004395327738237865
+                }
+              }
+            }
+          ],
+          "temperature_c": 0
+        }
+      },
+      "result": "[{\"candidate_id\": \"C1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.12828314652601666, \"EC\": 0.5694935118915765, \"EMC\": 0.2849609994814937, \"PC\": 0.01726234210091304}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.4065009926353578, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.2281554273161246, \"estimated_factor_1sigma\": 1.6910460227256041, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.12828314652601666, \"x_EC\": 0.6664995085302152, \"x_PC\": 0.019802693996472377}, \"reason\": \"\"}]}, {\"candidate_id\": \"C2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.19951783307955084, \"EC\": 0.17508760594792486, \"EMC\": 0.36168693219858494, \"PC\": 0.2637076287739395}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 2.0496580016052626, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09704139083654219, \"estimated_factor_1sigma\": 1.2503781929872135, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.19951783307955084, \"x_EC\": 0.3261846334077337, \"x_PC\": 0.32943598205123586}, \"reason\": \"\"}]}, {\"candidate_id\": \"C3\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.2607902679914744, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.0715898183648156, \"estimated_factor_1sigma\": 1.1792063749187005, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.13659165981340052, \"x_EC\": 0.30941181536856194, \"x_PC\": 0.6288982789514654}, \"reason\": \"\"}]}, {\"candidate_id\": \"C4\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.09766791771234627, \"EC\": 0.013536078619457399, \"EMC\": 0.0011761179656606918, \"PC\": 0.8876198857025356}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.1849200254643804, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.05164171462167791, \"estimated_factor_1sigma\": 1.1262679213976226, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.09766791771234627, \"x_EC\": 0.9200583027248034, \"x_PC\": 0.9836953635209127}, \"reason\": \"\"}]}, {\"candidate_id\": \"C5\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.0852192419102328, \"EC\": 0.17361285375612137, \"EMC\": 0.736772576595408, \"PC\": 0.004395327738237865}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.882327036880985, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.11701892631987826, \"estimated_factor_1sigma\": 1.3092389776864908, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.0852192419102328, \"x_EC\": 0.1907025837277337, \"x_PC\": 0.00480478814116743}, \"reason\": \"\"}]}]"
+    },
+    {
+      "name": "predict_formulation_conductivity",
+      "args": {
+        "request": {
+          "candidates": [
+            {
+              "candidate_id": "C1",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.12828314652601666,
+                  "EC": 0.5694935118915765,
+                  "EMC": 0.2849609994814937,
+                  "PC": 0.01726234210091304
+                }
+              }
+            },
+            {
+              "candidate_id": "C2",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.19951783307955084,
+                  "EC": 0.17508760594792486,
+                  "EMC": 0.36168693219858494,
+                  "PC": 0.2637076287739395
+                }
+              }
+            },
+            {
+              "candidate_id": "C3",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.13659165981340052,
+                  "EC": 0.09913935791043874,
+                  "EMC": 0.22127296310046693,
+                  "PC": 0.5429960191756938
+                }
+              }
+            },
+            {
+              "candidate_id": "C4",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.09766791771234627,
+                  "EC": 0.013536078619457399,
+                  "EMC": 0.0011761179656606918,
+                  "PC": 0.8876198857025356
+                }
+              }
+            },
+            {
+              "candidate_id": "C5",
+              "salt": "NaPF6",
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "composition_inputs": {
+                "molar_ratios": {
+                  "NaPF6": 0.0852192419102328,
+                  "EC": 0.17361285375612137,
+                  "EMC": 0.736772576595408,
+                  "PC": 0.004395327738237865
+                }
+              }
+            }
+          ],
+          "temperature_c": 20
+        }
+      },
+      "result": "[{\"candidate_id\": \"C1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.12828314652601666, \"EC\": 0.5694935118915765, \"EMC\": 0.2849609994814937, \"PC\": 0.01726234210091304}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 7.408869556693787, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09978100593673696, \"estimated_factor_1sigma\": 1.2582907555782883, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.12828314652601666, \"x_EC\": 0.6664995085302152, \"x_PC\": 0.019802693996472377}, \"reason\": \"\"}]}, {\"candidate_id\": \"C2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.19951783307955084, \"EC\": 0.17508760594792486, \"EMC\": 0.36168693219858494, \"PC\": 0.2637076287739395}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 4.6263159828404845, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.06257322704976374, \"estimated_factor_1sigma\": 1.1549767106433586, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.19951783307955084, \"x_EC\": 0.3261846334077337, \"x_PC\": 0.32943598205123586}, \"reason\": \"\"}]}, {\"candidate_id\": \"C3\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 6.3832989706090375, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.04266401870141507, \"estimated_factor_1sigma\": 1.1032248068033692, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.13659165981340052, \"x_EC\": 0.30941181536856194, \"x_PC\": 0.6288982789514654}, \"reason\": \"\"}]}, {\"candidate_id\": \"C4\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.09766791771234627, \"EC\": 0.013536078619457399, \"EMC\": 0.0011761179656606918, \"PC\": 0.8876198857025356}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 5.904341683066327, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.024943777299972665, \"estimated_factor_1sigma\": 1.0591166056599406, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.09766791771234627, \"x_EC\": 0.9200583027248034, \"x_PC\": 0.9836953635209127}, \"reason\": \"\"}]}, {\"candidate_id\": \"C5\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.0852192419102328, \"EC\": 0.17361285375612137, \"EMC\": 0.736772576595408, \"PC\": 0.004395327738237865}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 5.974245911278196, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09716747133026007, \"estimated_factor_1sigma\": 1.250741244308871, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.0852192419102328, \"x_EC\": 0.1907025837277337, \"x_PC\": 0.00480478814116743}, \"reason\": \"\"}]}]"
+    },
+    {
+      "name": "search_literature_multiview",
+      "args": {
+        "queries": [
+          "low temperature electrolyte ionic conductivity sodium ion battery rate performance",
+          "NaPF6 carbonate electrolyte ethylene carbonate propylene carbonate low temperature transport",
+          "ethyl methyl carbonate low viscosity co-solvent electrolyte ionic conductivity temperature dependence",
+          "desolvation energy barrier Na+ low temperature electrolyte sodium ion battery"
+        ],
+        "top_k": 12,
+        "per_query_top_k": 8,
+        "max_per_paper": 2
+      },
+      "result": null
+    },
+    {
+      "name": "search_literature_multiview",
+      "args": {
+        "queries": [
+          "-20 °C sodium ion battery electrolyte capacity retention hard carbon",
+          "propylene carbonate electrolyte sodium ion battery SEI compatibility graphite",
+          "electrolyte ionic conductivity measurement Arrhenius temperature celsius mS/cm carbonate",
+          "low temperature sodium ion full cell impedance charge transfer polarization"
+        ],
+        "top_k": 12,
+        "per_query_top_k": 8,
+        "max_per_paper": 2
+      },
+      "result": null
+    }
+  ],
+  "tool_messages": [
+    "---\nname: electrolyte_screening\ndescription: 钠离子电池电解液文献对比与模型性质初筛\ntriggers:\n  - 作用是什么\n  - 对比\n  - 比较\n  - 差异\n  - 性能\n  - 优缺点\n  - FEC\n  - NaPF6\n  - NaFSI\n  - 成膜\nworkflow:\n  steps:\n    - id: load_skill\n      tool: load_skill\n      required: true\n      description: 加载本 SKILL.md 全文，确保遵守 screening 工作流\n    - id: resolve_paper\n      tool: resolve_literature_papers\n      required: false\n      description: 当问题指定作者、论文题名或 DOI 时，先解析 paper_id\n    - id: retrieve\n      tool: search_literature_multiview\n      required: true\n      description: 多角度检索文献证据；对比任务禁止跳过此步\n    - id: retrieve_paper\n      tool: search_paper_chunks\n      required: false\n      description: named-study 问题在已解析的单篇论文内部做一次有界聚焦检索\n    - id: retrieve_focused\n      tool: search_literature_chunks\n      required: true\n      description: 用题目中的实体、数值或原始短语做聚焦检索，核验首轮检索未覆盖的直接实验事实\n    - id: numeric\n      tool: extract_numeric_properties\n      required: true\n      description: 涉及数值/性能对比时必须抽取具体数值证据\n    - id: report\n      tool: synthesize_design_report\n      required: true\n      description: 生成带 chunk_id 引用的简洁回答\n---\n\n# 电解液 Screening Skill\n\n## 适用场景\n\n- 解释某种组分/添加剂的作用（如\"FEC 的作用\"）\n- 对比两种或多种材料/体系（如\"NaPF6 vs NaFSI\"）\n- 回答事实性、机理性问题\n- 对用户提供的候选进行模型性质初筛，明确计算指标、组成与温度\n\n## 模型性质初筛\n\n当任务要求用预测模型筛选既有配方时，文献解释研究背景，模型计算评价候选。\n两类来源分别保存。不要把预测值、模型排序或模型成员统计引用为某篇论文的实验结果，\n也不要为性质预测编造电极、电压、倍率或循环数。\n\n- 先明确候选组成、比例基准、目标温度及用户指定的筛选指标。已有候选保持身份一致，\n  不自行增加配方或修改比例。\n- 用现有性质预测能力获得目标温度下的计算结果。可在一次单温度请求中计算多种候选；\n  由任务需要决定调用，不规定检索与计算的交替顺序。\n- 未给出最低电导率要求时，不自行设置 1 mS/cm 等阈值。对于“目标温度范围内最低\n  电导率尽可能高”的任务，可直接比较单点预测，不必调用要求阈值的集成排序工具。\n- 编译报告时传 `task_type=\"candidate_screening\"`、候选清单及\n  `model_comparison={\"candidate_ids\":[...],\"temperatures_c\":[...],\n  \"objective\":\"maximise_minimum_conductivity\",\"priority_count\":1}`。若用户要求前 N 种优先候选，\n  必须把 `priority_count` 设为 N（例如要求四种则传 4），并按筛选指标列出该数量的候选；\n  并列末位可一同保留。此字段仅控制报告列出多少个优先候选，不改变预测模型或实验事实。\n  编译器读取本轮工具消息，不在\n  `claims` 内复制预测数值或给它们拼接文献 chunk_id。未完成计算应继续补齐相关温度，\n  不用已知答案填补工具返回。\n  用户要求比较参照温度时，把该温度传入 `reference_temperature_c`，不能只在文字建议中\n  提及参照结果；`temperatures_c` 应只包含目标筛选温度，单独传入的参照温度不改变初筛指标。\n  提交前对照用户问题检查候选、目标\n  温度和参照温度是否完整，不能为了修复其他字段错误而省略已要求的比较。\n- 用户要求文献解释时，只把直接相关且来源完整的背景事实作为 `claim_type=\"fact\"` 放入\n  `claims`，逐条附真实 `chunk_id` 与完整、有边界的逐字 `evidence_quote`。不要引用截在\n  冠词、形容词或句中连词后的不完整摘句；不能仅凭一句关于容量的数据扩展出未获证实的\n  电导率—电池表现因果关系。模型排序由编译器使用已执行预测计算，不需要用文献\n  `claim_type=\"comparison\"` 代替模型排序。这类非 fact 的文献声明在模型初筛编译时\n  不会自动用于支持配方优先级。`next_steps` 必须明确给出至少两项尚未执行的具体验证，\n  包括目标配方、温度下的独立电导率复测，以及在相同电极、电芯类型、倍率和电压范围下\n  的实际容量、循环或阻抗比较；不能把建议写成已做实验。若模型遗漏 `next_steps`，\n  报告编译器只会补充标明来源的通用复测项目，不算 Agent 独立设计的方案。\n  这些背景事实并未被用来证明给定候选的电池性能，不需为它们编造目标电极或实验工况。\n  工具接口公开了请求字段结构，不要添加结构以外的字段。\n- `model_assessed` 表示已按显式指标完成模型初筛。展示具体候选、组成、温度、数值和\n  选择理由，区分预测与实测；提出相应实验验证建议。这个状态不表示电池循环性能已被验证。\n\n下方文献工作流适用于从论文实验数据得出事实和实验比较的任务。模型初筛中的背景\n检索按实际证据缺口安排，不为凑文献数或操作数追加查询。\n\n## 工作流\n\n0. **论文身份解析（named-study 问题强制）**：如果问题以作者、论文题名或 DOI\n   指定某项既有研究，先调用 `resolve_literature_papers`，只传身份标识本身\n   （例如 `Fondard`），不要把整段问题当成身份查询。选择题名、作者和主题均\n   与问题一致的首位结果，并记录其 `paper_id`。随后所有\n   `search_literature_multiview` 调用都必须传入 `paper_ids=[该 paper_id]`，\n   内容 query 去掉作者名，改用盐、溶剂、添加剂、循环次数、容量保持率或原文短语。\n   只有 resolver 与限定论文检索都没有结果时，才能说明当前语料未找到该研究；\n   禁止仅凭普通向量检索失败就声称论文未收录。\n   完成限定论文的 `search_literature_multiview` 后，调用一次\n   `search_paper_chunks(paper_id=..., query=..., top_k=8)` 做论文内聚焦。\n   该工具替代 named-study 的通用 `search_literature_chunks` 必需步骤，\n   query 只保留 4–8 个英文技术词，例如\n   `\"EC:DMC HC Na voltage cycles rate\"`；不要堆叠完整句子、作者名或大量近义词。\n   named-study 下这一步仍计入 `retrieve_focused` 必需步骤，不得跳过。\n   两次检索已覆盖问题中的组分、工况和指标后立即进入数值抽取与报告合成；\n   禁止为了补齐无关细节反复改写查询，也禁止用 `read_file` 绕过检索访问原文路径。\n   若仍缺少某个明确事实，最多再做一次短 query 的限定论文检索；仍未命中就在\n   报告中标为未验证，不继续追逐空结果。\n\n1. **检索**：优先调用 `search_literature_multiview`，用 2–4 个不同角度查询同一主题。\n   查询模板（按问题类型选择，全部用英文）：\n   - **机理解释**（如 FEC 的作用）:\n     - `\"FEC SEI film formation mechanism sodium ion battery\"`\n     - `\"FEC reductive decomposition sodium ion battery\"`\n     - `\"FEC cycling performance sodium ion battery\"`\n   - **材料对比**（如 NaPF6 vs NaFSI）:\n     - `\"NaPF6 sodium salt carbonate electrolyte common use\"`\n     - `\"NaFSI aluminum corrosion sodium ion battery carbonate\"`\n     - `\"NaPF6 NaFSI dual salt low temperature performance sodium ion battery\"`\n     - `\"FSI anion solvation structure Na+ compared PF6\"`\n     - **必须有至少一个查询直接指向实验对比**：包含两种材料、温度条件、容量/循环等关键指标，例如 `\"NaFSI-E NaPF6-E -10°C capacity retention cycling comparison\"`。\n   - **性能/属性查询**:\n     - `\"{material} ionic conductivity low temperature sodium ion battery\"`\n     - `\"{material} cycling stability sodium ion battery\"`\n   - 参数建议：`top_k=12`，`per_query_top_k=10`，`max_per_paper=2`。\n   - 如果 `search_literature_multiview` 返回的 top chunks 中没有直接对比两种材料的实验证据，必须再用 `search_literature_chunks` 做一次聚焦检索，查询要同时包含两种材料名和温度/性能关键词（`top_k=8`）。\n2. **数值抽取**：涉及具体数值对比时调用 `extract_numeric_properties`；\n3. **综合**：先按用户任务选择 canonical `task_type`：\n   - 单一材料作用、事实、机理或研究现状：`evidence_synthesis`；\n   - 用户明确给出两个及以上候选并要求比较/筛选：`candidate_screening`。\n   调用 `synthesize_design_report` 时不得再传旧的 `screening` 标签。候选比较必须传入\n   `comparison_axes`，并为每个候选传入一条 `comparison_records`：\n   `{\"candidate_id\":\"...\",\"conditions\":{\"temperature_c\":...,\"electrode\":\"...\",\n   \"voltage_window_v\":[lower,upper],\"rate\":\"...\",\"cycle_count\":...,\n   \"measurement_definition\":\"...\"},\"evidence_ids\":[\"实际 chunk_id\",...]}`。\n   六类条件必须来自本轮原文证据，不能用模型常识补齐。报告编译器会确定性比较全部字段：\n   缺字段或 evidence id 不属于本轮 ledger 时返回 `insufficient_evidence`，字段冲突时返回\n   `not_comparable`，全部一致且存在通过逐字引文校验的 `comparison`/`ranking` claim\n   时才允许 `compared`。旧 `condition_comparable` 布尔值不再具有准入权限；\n   除 `comparison_records` 外，还必须在 `claims` 中显式提交至少一条\n   `claim_type=\"comparison\"` 或 `claim_type=\"ranking\"` 的声明，直接回答“谁更好/有何不同”。\n   每条 claim 必须包含 `text`（结论句，内嵌 `[chunk_id]`）、`chunk_id`、\n   `evidence_quote`（逐字原文片段，≥12 字符）。示例：\n   `{\"claim_type\":\"comparison\",\"text\":\"在 Fondard 的 NaPF6/EC:DMC 硬碳体系中，3% FEC 在 130 周后容量保持率为 94%，循环稳定性优于 DMCF [0053_paper4_fondard_sei::sec5::child2]\",\"chunk_id\":\"0053_paper4_fondard_sei::sec5::child2\",\"evidence_quote\":\"65%, 72% and 94% capacity retention was measured after 130 cycles with 0%, 1.5% or 3% FEC, respectively\"}`\n   若 `claims` 为空或只有 `fact` 类型，报告将退化为证据清单，`answer_relevancy` 会大幅降低；\n   对比任务禁止以“仅列证据”收尾。\n4. **输出**：采用\"直接结论 + 8–12 条证据\"，每条证据独立成句并带 `[chunk_id]` 引用；\n   其中至少 6 条使用不同的 chunk_id，且这些证据应来自至少 4 篇不同文献\n   （避免 3 条以上证据来自同一篇 paper），尽量覆盖本次检索返回的多数关键来源，\n   控制在 **300–500 个中文字**。\n   **named-study 例外**：当问题指定作者、题名或 DOI 时，不适用“至少 4 篇文献”\n   与“每篇不超过 3 条证据”的要求。所有事实证据必须来自步骤 0 解析出的目标\n   `paper_id`；不要为了凑文献数执行未传 `paper_ids` 的检索，也不要引入综述或其他论文。\n   named-study 回答使用 4–8 条直接相关证据即可，不适用普通 screening 的\n   “8–12 条证据”要求。\n\n## 工作流顺序纪律（严禁违反）\n\n- **`synthesize_design_report` 必须是最后一步**。在完成充分检索和数值抽取之前，**严禁**调用 `synthesize_design_report`。\n- 提前调用会导致系统要求回退补全，造成重复调用和额外 token 消耗。\n\n## 禁止行为\n\n- 禁止调用 `query_formulation_space`、`screen_formulations`、`optimize_formulations` 等设计专用工具；\n- **禁止直接使用 `kg_query` 的 `compare_materials` 等结构化查询做材料对比；对比结论必须来自文献 chunk 原文；**\n- 文献事实问答不自行生成新的候选配方；模型初筛可以比较用户给定的候选。\n- 文献事实问答不扩展成配方设计任务；模型初筛可提出有计算依据的测试优先级和验证建议。\n- 禁止把\"对比两种盐\"改写成\"推荐一套双盐完整配方\"；\n- 禁止输出\"【推断】\"句，无直接证据的陈述直接删除。\n\n## 引用纪律\n\n- 只能引用本次检索实际返回的文献；\n- 文献数值、配方、性能值必须能在返回 chunk 原文中找到；预测值绑定实际工具计算。\n- 使用 `[chunk_id]` 格式引用，禁止改为 `[1]` 或 `[作者]`。\n\n## KG 质量反馈\n\n同 `electrolyte_design`：筛选过程中若发现 KG 实体标签错误、关系语义错误、数值异常、同名异义或证据与 KG 矛盾，**必须**调用 `flag_suspicious_kg_item` 记录，供后续离线人工审查。\n\n## 知识沉淀\n\n筛选流程结束后，调用 `reflect_now` 进行知识反思和 Wiki 沉淀，\n将本次筛选发现的有效对比维度、检索关键词、被否决的候选理由记录到 LLM Wiki，\n供下次相似筛选问题直接复用。\n",
+    "{'todo_list': [TodoItem(id='1', content='加载 electrolyte_screening skill 并确认工作流', status='completed'), TodoItem(id='2', content='用模型在 −20/−10/0 ℃ 及 20 ℃ 计算 5 个候选 NaPF6-EC/EMC/PC 配方的离子电导率', status='in_progress'), TodoItem(id='3', content='多角度检索文献证据：低温输运意义、EC/PC/EMC 溶剂角色、NaPF6 碳酸酯体系低温性能', status='pending'), TodoItem(id='4', content='抽取数值证据（文献实测电导率/温度）并核对', status='pending'), TodoItem(id='5', content='合成 candidate_screening 报告（含 model_comparison、20 ℃ 参照、文献背景与后续验证需求）', status='pending')]}",
+    "[{\"candidate_id\": \"C1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.12828314652601666, \"EC\": 0.5694935118915765, \"EMC\": 0.2849609994814937, \"PC\": 0.01726234210091304}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.4178494203752665, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.18915060517798277, \"estimated_factor_1sigma\": 1.545790397710345, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.12828314652601666, \"x_EC\": 0.6664995085302152, \"x_PC\": 0.019802693996472377}, \"reason\": \"\"}]}, {\"candidate_id\": \"C2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.19951783307955084, \"EC\": 0.17508760594792486, \"EMC\": 0.36168693219858494, \"PC\": 0.2637076287739395}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 0.49875241818894755, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.2196004036928746, \"estimated_factor_1sigma\": 1.658060616337216, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.19951783307955084, \"x_EC\": 0.3261846334077337, \"x_PC\": 0.32943598205123586}, \"reason\": \"\"}]}, {\"candidate_id\": \"C3\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.2418644454008225, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.1016837207825427, \"estimated_factor_1sigma\": 1.2638156261202176, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.13659165981340052, \"x_EC\": 0.30941181536856194, \"x_PC\": 0.6288982789514654}, \"reason\": \"\"}]}, {\"candidate_id\": \"C4\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.09766791771234627, \"EC\": 0.013536078619457399, \"EMC\": 0.0011761179656606918, \"PC\": 0.8876198857025356}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.2416024173805078, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.08044451579898504, \"estimated_factor_1sigma\": 1.2034956248652835, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.09766791771234627, \"x_EC\": 0.9200583027248034, \"x_PC\": 0.9836953635209127}, \"reason\": \"\"}]}, {\"candidate_id\": \"C5\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.0852192419102328, \"EC\": 0.17361285375612137, \"EMC\": 0.736772576595408, \"PC\": 0.004395327738237865}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 2.3004257242081674, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09106914931792585, \"estimated_factor_1sigma\": 1.2333011865107715, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.0852192419102328, \"x_EC\": 0.1907025837277337, \"x_PC\": 0.00480478814116743}, \"reason\": \"\"}]}]",
+    "[{\"candidate_id\": \"C1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.12828314652601666, \"EC\": 0.5694935118915765, \"EMC\": 0.2849609994814937, \"PC\": 0.01726234210091304}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 2.3059821340238638, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.24735931890973437, \"estimated_factor_1sigma\": 1.767499578532824, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.12828314652601666, \"x_EC\": 0.6664995085302152, \"x_PC\": 0.019802693996472377}, \"reason\": \"\"}]}, {\"candidate_id\": \"C2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.19951783307955084, \"EC\": 0.17508760594792486, \"EMC\": 0.36168693219858494, \"PC\": 0.2637076287739395}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.1784756794254354, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.15060718401007087, \"estimated_factor_1sigma\": 1.4145137844261253, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.19951783307955084, \"x_EC\": 0.3261846334077337, \"x_PC\": 0.32943598205123586}, \"reason\": \"\"}]}, {\"candidate_id\": \"C3\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 2.1329028495857365, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.08678676989297986, \"estimated_factor_1sigma\": 1.2211999276391323, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.13659165981340052, \"x_EC\": 0.30941181536856194, \"x_PC\": 0.6288982789514654}, \"reason\": \"\"}]}, {\"candidate_id\": \"C4\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.09766791771234627, \"EC\": 0.013536078619457399, \"EMC\": 0.0011761179656606918, \"PC\": 0.8876198857025356}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.8005299314298344, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.11699605372466339, \"estimated_factor_1sigma\": 1.3091700269954818, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.09766791771234627, \"x_EC\": 0.9200583027248034, \"x_PC\": 0.9836953635209127}, \"reason\": \"\"}]}, {\"candidate_id\": \"C5\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.0852192419102328, \"EC\": 0.17361285375612137, \"EMC\": 0.736772576595408, \"PC\": 0.004395327738237865}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.1812954022363247, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09617092645410516, \"estimated_factor_1sigma\": 1.2478745469692925, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.0852192419102328, \"x_EC\": 0.1907025837277337, \"x_PC\": 0.00480478814116743}, \"reason\": \"\"}]}]",
+    "[{\"candidate_id\": \"C1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.12828314652601666, \"EC\": 0.5694935118915765, \"EMC\": 0.2849609994814937, \"PC\": 0.01726234210091304}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.4065009926353578, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.2281554273161246, \"estimated_factor_1sigma\": 1.6910460227256041, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.12828314652601666, \"x_EC\": 0.6664995085302152, \"x_PC\": 0.019802693996472377}, \"reason\": \"\"}]}, {\"candidate_id\": \"C2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.19951783307955084, \"EC\": 0.17508760594792486, \"EMC\": 0.36168693219858494, \"PC\": 0.2637076287739395}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 2.0496580016052626, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09704139083654219, \"estimated_factor_1sigma\": 1.2503781929872135, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.19951783307955084, \"x_EC\": 0.3261846334077337, \"x_PC\": 0.32943598205123586}, \"reason\": \"\"}]}, {\"candidate_id\": \"C3\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.2607902679914744, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.0715898183648156, \"estimated_factor_1sigma\": 1.1792063749187005, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.13659165981340052, \"x_EC\": 0.30941181536856194, \"x_PC\": 0.6288982789514654}, \"reason\": \"\"}]}, {\"candidate_id\": \"C4\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.09766791771234627, \"EC\": 0.013536078619457399, \"EMC\": 0.0011761179656606918, \"PC\": 0.8876198857025356}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.1849200254643804, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.05164171462167791, \"estimated_factor_1sigma\": 1.1262679213976226, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.09766791771234627, \"x_EC\": 0.9200583027248034, \"x_PC\": 0.9836953635209127}, \"reason\": \"\"}]}, {\"candidate_id\": \"C5\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.0852192419102328, \"EC\": 0.17361285375612137, \"EMC\": 0.736772576595408, \"PC\": 0.004395327738237865}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.882327036880985, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.11701892631987826, \"estimated_factor_1sigma\": 1.3092389776864908, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.0852192419102328, \"x_EC\": 0.1907025837277337, \"x_PC\": 0.00480478814116743}, \"reason\": \"\"}]}]",
+    "[{\"candidate_id\": \"C1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.12828314652601666, \"EC\": 0.5694935118915765, \"EMC\": 0.2849609994814937, \"PC\": 0.01726234210091304}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 7.408869556693787, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09978100593673696, \"estimated_factor_1sigma\": 1.2582907555782883, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.12828314652601666, \"x_EC\": 0.6664995085302152, \"x_PC\": 0.019802693996472377}, \"reason\": \"\"}]}, {\"candidate_id\": \"C2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.19951783307955084, \"EC\": 0.17508760594792486, \"EMC\": 0.36168693219858494, \"PC\": 0.2637076287739395}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 4.6263159828404845, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.06257322704976374, \"estimated_factor_1sigma\": 1.1549767106433586, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.19951783307955084, \"x_EC\": 0.3261846334077337, \"x_PC\": 0.32943598205123586}, \"reason\": \"\"}]}, {\"candidate_id\": \"C3\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 6.3832989706090375, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.04266401870141507, \"estimated_factor_1sigma\": 1.1032248068033692, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.13659165981340052, \"x_EC\": 0.30941181536856194, \"x_PC\": 0.6288982789514654}, \"reason\": \"\"}]}, {\"candidate_id\": \"C4\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.09766791771234627, \"EC\": 0.013536078619457399, \"EMC\": 0.0011761179656606918, \"PC\": 0.8876198857025356}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 5.904341683066327, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.024943777299972665, \"estimated_factor_1sigma\": 1.0591166056599406, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.09766791771234627, \"x_EC\": 0.9200583027248034, \"x_PC\": 0.9836953635209127}, \"reason\": \"\"}]}, {\"candidate_id\": \"C5\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.0852192419102328, \"EC\": 0.17361285375612137, \"EMC\": 0.736772576595408, \"PC\": 0.004395327738237865}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 5.974245911278196, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09716747133026007, \"estimated_factor_1sigma\": 1.250741244308871, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.0852192419102328, \"x_EC\": 0.1907025837277337, \"x_PC\": 0.00480478814116743}, \"reason\": \"\"}]}]"
+  ],
+  "task_artifact": null,
+  "event_trace_count": 42,
+  "failure_reasons": [
+    "agent_error:CommonBudgetExceeded"
+  ],
+  "error_type": "CommonBudgetExceeded",
+  "error_message": "Common before budget check refused ['search_literature_multiview', 'search_literature_multiview']: ['host_ram_mb']; resident=['process:na-conductivity-rf']; required=['root-rag:bge-m3-model', 'root-rag:neo4j-session']",
+  "grounding_status": "pending",
+  "grounding_error": null,
+  "grounding_duration_seconds": null,
+  "grounding_fallback_used": false,
+  "grounding_primary_error": null,
+  "claim_contract_summary": null,
+  "configured_task_type": "candidate_screening",
+  "run_duration_seconds": 15.719,
+  "evaluation_timed_out": false,
+  "evaluation_timeout_seconds": 600.0,
+  "llm_request_max_retries": 2,
+  "llm_transport_retry_count": 0,
+  "arm": "native",
+  "task": "LT_SCREEN_01",
+  "messages": [
+    {
+      "content": "请为钠离子电池低温电解液实验筛选候选。给定以下五种 NaPF6–EC/EMC/PC 配方，molar_ratios 表示包含盐的全组分摩尔比例。评价 −20、−10 和 0 °C 的电导率，以这三个目标温度下的最低预测电导率作为初筛指标，提出优先开展后续实验的配方及理由。同时评价 20 °C 的电导率，说明室温数值的优先级是否与低温初筛一致。结合文献解释该体系低温输运评价的意义和后续电池验证需求。请列出候选组成、测试温度、模型名称、计算数值及出处，区分预测值与文献实测。目标是既有候选的性质初筛，不生成新配方；如果候选接近或证据不足，可提出并行测试。不预设最低电导率通过阈值。\n\n候选组成：\n[\n  {\n    \"candidate_id\": \"C1\",\n    \"salt\": \"NaPF6\",\n    \"solvents\": [\n      \"EC\",\n      \"EMC\",\n      \"PC\"\n    ],\n    \"additives\": [],\n    \"composition_inputs\": {\n      \"molar_ratios\": {\n        \"NaPF6\": 0.12828314652601666,\n        \"EC\": 0.5694935118915765,\n        \"EMC\": 0.2849609994814937,\n        \"PC\": 0.01726234210091304\n      }\n    }\n  },\n  {\n    \"candidate_id\": \"C2\",\n    \"salt\": \"NaPF6\",\n    \"solvents\": [\n      \"EC\",\n      \"EMC\",\n      \"PC\"\n    ],\n    \"additives\": [],\n    \"composition_inputs\": {\n      \"molar_ratios\": {\n        \"NaPF6\": 0.19951783307955084,\n        \"EC\": 0.17508760594792486,\n        \"EMC\": 0.36168693219858494,\n        \"PC\": 0.2637076287739395\n      }\n    }\n  },\n  {\n    \"candidate_id\": \"C3\",\n    \"salt\": \"NaPF6\",\n    \"solvents\": [\n      \"EC\",\n      \"EMC\",\n      \"PC\"\n    ],\n    \"additives\": [],\n    \"composition_inputs\": {\n      \"molar_ratios\": {\n        \"NaPF6\": 0.13659165981340052,\n        \"EC\": 0.09913935791043874,\n        \"EMC\": 0.22127296310046693,\n        \"PC\": 0.5429960191756938\n      }\n    }\n  },\n  {\n    \"candidate_id\": \"C4\",\n    \"salt\": \"NaPF6\",\n    \"solvents\": [\n      \"EC\",\n      \"EMC\",\n      \"PC\"\n    ],\n    \"additives\": [],\n    \"composition_inputs\": {\n      \"molar_ratios\": {\n        \"NaPF6\": 0.09766791771234627,\n        \"EC\": 0.013536078619457399,\n        \"EMC\": 0.0011761179656606918,\n        \"PC\": 0.8876198857025356\n      }\n    }\n  },\n  {\n    \"candidate_id\": \"C5\",\n    \"salt\": \"NaPF6\",\n    \"solvents\": [\n      \"EC\",\n      \"EMC\",\n      \"PC\"\n    ],\n    \"additives\": [],\n    \"composition_inputs\": {\n      \"molar_ratios\": {\n        \"NaPF6\": 0.0852192419102328,\n        \"EC\": 0.17361285375612137,\n        \"EMC\": 0.736772576595408,\n        \"PC\": 0.004395327738237865\n      }\n    }\n  }\n]",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "human",
+      "name": null,
+      "id": "552bae4e-c37b-46d3-98a0-f02a16306970"
+    },
+    {
+      "content": "你是一个可使用多种工具完成任务的智能助手。\n\n核心工作方式：\n1. 判断用户请求是否匹配某个 skill 的触发词（triggers）。\n2. 如果匹配，先调用 load_skill(name=\"<skill_name>\") 加载完整指引，再按指引执行。\n3. 使用检索工具查找事实时，在回答中用 [n] 标注来源，n 为检索结果中的序号。\n4. 如果工具需要用户才能确定的参数而用户没有给出，必须先询问用户，严禁自行假设。\n5. 问题涉及性能数值（电导率、容量、循环次数、倍率、库仑效率、粘度等）时，检索后必须调用 extract_numeric_properties 抽取数值证据，再组织回答。\n\n## 可用 Skills\n按需调用 load_skill 工具加载完整步骤。\n\n- **electrolyte_design**: 钠离子电池电解液配方正向设计与候选配方筛选  (`electrolyte_design/SKILL.md`)  triggers: [设计, 配方设计, 推荐电解液, 优化电解液]\n- **electrolyte_inverse_design**: 钠离子电池电解液故障逆向设计与性能问题调整  (`electrolyte_inverse_design/SKILL.md`)  triggers: [逆向, 容量骤降, 失效, 如何调整, 为什么, 性能下降]\n- **electrolyte_screening**: 钠离子电池电解液文献对比与模型性质初筛  (`electrolyte_screening/SKILL.md`)  triggers: [作用是什么, 对比, 比较, 差异, 性能, 优缺点, FEC, NaPF6, NaFSI, 成膜]\n- **kg_retrieval**: 将用户自然语言查询转换为结构化知识图谱检索计划，确保高召回率和高精度  (`kg-retrieval/SKILL.md`)  triggers: [知识图谱, 图谱检索, 结构化查询, KG 查询, 查询规划]\n- **literature_review**: 文献综述检索，根据研究主题系统检索钠离子电池相关文献并汇总  (`literature_review/SKILL.md`)  triggers: [文献综述, 文献调研, 相关研究, 研究现状]\n- **rag_evaluation**: 自动评估 RAG 召回质量、知识图谱查询质量和 agent 设计任务表现，输出评估报告  (`rag_evaluation/SKILL.md`)  triggers: [评估, 测试召回, RAG评估, 测试效果, 跑baseline]\n\n当前所在目录：${ORION_SOURCE}\\reports\\cwsr_screening_repeats_20261021_tight_v1\\LT_SCREEN_01-r3-native\\agent-state-97_82b82\n\n检索与证据纪律（严禁违反）：\n- 只要用户问题涉及钠离子电池、电解液、电极材料、添加剂、电池性能、机理等专业概念，无论问题看起来多简单，都必须先调用 search_literature_chunks 或 search_literature_multiview 获取文献证据，再组织回答；禁止仅凭参数知识直接回答。\n- 当问题指定作者、论文题名或 DOI 时，必须先调用 resolve_literature_papers 解析 paper_id，再调用 search_paper_chunks 在该论文内部检索正文；禁止因普通向量检索未命中作者名就声称论文未收录。\n- 指定论文的问题一旦解析出 paper_id，search_literature_multiview 必须传入该 paper_ids，search_paper_chunks 必须传入该 paper_id；此时只回答目标论文，不执行跨论文补充检索，也不追求多论文覆盖。\n- 如果问题匹配某个 skill 的触发词，必须先调用 load_skill 加载该 skill，再按 workflow 执行；load_skill 必须发生在该任务的检索/设计工具之前，不能先检索后跳过 Skill 直接收尾。\n\nSkill 执行纪律：\n- 当 skill 指引要求特定引用格式（如 chunk_id）时，严格按 skill 格式输出，不要自行改为 [n] 编号。\n- 调用 `synthesize_design_report` 时，凡声明或推荐依赖温度、组分、电极、电池构型、电压窗口、倍率、循环数或测量定义，必须在 `request.applicability_inputs` 中提交 source scope、target scope、relevant_fields 与证据角色。条件缺失/不匹配不得省略该输入来绕过门禁；普通 bridge 证据不能直接标为 transferable，只有带逐字引文且 `review.status=\"reviewed\"` 的 TransferContract 才可请求限定性回答。\n- 当调用 `synthesize_design_report` 生成最终报告后，你只需输出一句简短确认（例如\"报告已生成，正在进行 grounding 校验\"），**不要**重复报告全文； grounding 节点会自动取得报告并完成校验后输出最终版本。\n- 输出 `synthesize_design_report` 的结果后，不要再调用 write_todos 等状态更新工具；最终答案将由 grounding 节点负责交付。\n\n当前文献辅助设计采用有出处的模型语义审查。screen_formulations 的数值和字段评估保留为诊断资料，最终 DecisionState 依据原始问题与本轮检索原文判断候选适用性。不同段落可依据明确的实验关联共同支持结论，不要求各句重复全部条件。收到语义审查缺口后按缺口检索或更换候选；报告只推荐 DecisionState 获准的候选。",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "system",
+      "name": null,
+      "id": "b47697ca-fbe2-4a06-a868-2765a5bdc196"
+    },
+    {
+      "content": "## Structured task contract (authoritative)\n- task_type: `candidate_screening`\n- required Skill: `electrolyte_screening`\nActivate this procedure with `load_skill(name=\"electrolyte_screening\")` before domain retrieval or synthesis. Do not load a different Skill. The load_skill boundary will reject a mismatched route and ask you to correct it.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "system",
+      "name": null,
+      "id": "d59478d8-420b-41f7-bedd-fd4430b892c6"
+    },
+    {
+      "content": "I'll start by loading the required skill.",
+      "additional_kwargs": {
+        "reasoning_content": ""
+      },
+      "response_metadata": {
+        "finish_reason": "tool_calls",
+        "model_name": "deepseek-flash",
+        "system_fingerprint": "e72d3c7f663d3e1383b00b3884cb4501",
+        "model_provider": "deepseek"
+      },
+      "type": "ai",
+      "name": null,
+      "id": "lc_run--01a15de9-82d4-7892-bdfe-bbc6bd35be1f",
+      "tool_calls": [
+        {
+          "name": "load_skill",
+          "args": {
+            "name": "electrolyte_screening"
+          },
+          "id": "call_00_ET_SCvPHOX3YyqG9zPVk15N4235",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 17183,
+        "output_tokens": 51,
+        "total_tokens": 17234,
+        "input_token_details": {
+          "cache_read": 16384
+        },
+        "output_token_details": {
+          "reasoning": 0
+        }
+      }
+    },
+    {
+      "content": "---\nname: electrolyte_screening\ndescription: 钠离子电池电解液文献对比与模型性质初筛\ntriggers:\n  - 作用是什么\n  - 对比\n  - 比较\n  - 差异\n  - 性能\n  - 优缺点\n  - FEC\n  - NaPF6\n  - NaFSI\n  - 成膜\nworkflow:\n  steps:\n    - id: load_skill\n      tool: load_skill\n      required: true\n      description: 加载本 SKILL.md 全文，确保遵守 screening 工作流\n    - id: resolve_paper\n      tool: resolve_literature_papers\n      required: false\n      description: 当问题指定作者、论文题名或 DOI 时，先解析 paper_id\n    - id: retrieve\n      tool: search_literature_multiview\n      required: true\n      description: 多角度检索文献证据；对比任务禁止跳过此步\n    - id: retrieve_paper\n      tool: search_paper_chunks\n      required: false\n      description: named-study 问题在已解析的单篇论文内部做一次有界聚焦检索\n    - id: retrieve_focused\n      tool: search_literature_chunks\n      required: true\n      description: 用题目中的实体、数值或原始短语做聚焦检索，核验首轮检索未覆盖的直接实验事实\n    - id: numeric\n      tool: extract_numeric_properties\n      required: true\n      description: 涉及数值/性能对比时必须抽取具体数值证据\n    - id: report\n      tool: synthesize_design_report\n      required: true\n      description: 生成带 chunk_id 引用的简洁回答\n---\n\n# 电解液 Screening Skill\n\n## 适用场景\n\n- 解释某种组分/添加剂的作用（如\"FEC 的作用\"）\n- 对比两种或多种材料/体系（如\"NaPF6 vs NaFSI\"）\n- 回答事实性、机理性问题\n- 对用户提供的候选进行模型性质初筛，明确计算指标、组成与温度\n\n## 模型性质初筛\n\n当任务要求用预测模型筛选既有配方时，文献解释研究背景，模型计算评价候选。\n两类来源分别保存。不要把预测值、模型排序或模型成员统计引用为某篇论文的实验结果，\n也不要为性质预测编造电极、电压、倍率或循环数。\n\n- 先明确候选组成、比例基准、目标温度及用户指定的筛选指标。已有候选保持身份一致，\n  不自行增加配方或修改比例。\n- 用现有性质预测能力获得目标温度下的计算结果。可在一次单温度请求中计算多种候选；\n  由任务需要决定调用，不规定检索与计算的交替顺序。\n- 未给出最低电导率要求时，不自行设置 1 mS/cm 等阈值。对于“目标温度范围内最低\n  电导率尽可能高”的任务，可直接比较单点预测，不必调用要求阈值的集成排序工具。\n- 编译报告时传 `task_type=\"candidate_screening\"`、候选清单及\n  `model_comparison={\"candidate_ids\":[...],\"temperatures_c\":[...],\n  \"objective\":\"maximise_minimum_conductivity\",\"priority_count\":1}`。若用户要求前 N 种优先候选，\n  必须把 `priority_count` 设为 N（例如要求四种则传 4），并按筛选指标列出该数量的候选；\n  并列末位可一同保留。此字段仅控制报告列出多少个优先候选，不改变预测模型或实验事实。\n  编译器读取本轮工具消息，不在\n  `claims` 内复制预测数值或给它们拼接文献 chunk_id。未完成计算应继续补齐相关温度，\n  不用已知答案填补工具返回。\n  用户要求比较参照温度时，把该温度传入 `reference_temperature_c`，不能只在文字建议中\n  提及参照结果；`temperatures_c` 应只包含目标筛选温度，单独传入的参照温度不改变初筛指标。\n  提交前对照用户问题检查候选、目标\n  温度和参照温度是否完整，不能为了修复其他字段错误而省略已要求的比较。\n- 用户要求文献解释时，只把直接相关且来源完整的背景事实作为 `claim_type=\"fact\"` 放入\n  `claims`，逐条附真实 `chunk_id` 与完整、有边界的逐字 `evidence_quote`。不要引用截在\n  冠词、形容词或句中连词后的不完整摘句；不能仅凭一句关于容量的数据扩展出未获证实的\n  电导率—电池表现因果关系。模型排序由编译器使用已执行预测计算，不需要用文献\n  `claim_type=\"comparison\"` 代替模型排序。这类非 fact 的文献声明在模型初筛编译时\n  不会自动用于支持配方优先级。`next_steps` 必须明确给出至少两项尚未执行的具体验证，\n  包括目标配方、温度下的独立电导率复测，以及在相同电极、电芯类型、倍率和电压范围下\n  的实际容量、循环或阻抗比较；不能把建议写成已做实验。若模型遗漏 `next_steps`，\n  报告编译器只会补充标明来源的通用复测项目，不算 Agent 独立设计的方案。\n  这些背景事实并未被用来证明给定候选的电池性能，不需为它们编造目标电极或实验工况。\n  工具接口公开了请求字段结构，不要添加结构以外的字段。\n- `model_assessed` 表示已按显式指标完成模型初筛。展示具体候选、组成、温度、数值和\n  选择理由，区分预测与实测；提出相应实验验证建议。这个状态不表示电池循环性能已被验证。\n\n下方文献工作流适用于从论文实验数据得出事实和实验比较的任务。模型初筛中的背景\n检索按实际证据缺口安排，不为凑文献数或操作数追加查询。\n\n## 工作流\n\n0. **论文身份解析（named-study 问题强制）**：如果问题以作者、论文题名或 DOI\n   指定某项既有研究，先调用 `resolve_literature_papers`，只传身份标识本身\n   （例如 `Fondard`），不要把整段问题当成身份查询。选择题名、作者和主题均\n   与问题一致的首位结果，并记录其 `paper_id`。随后所有\n   `search_literature_multiview` 调用都必须传入 `paper_ids=[该 paper_id]`，\n   内容 query 去掉作者名，改用盐、溶剂、添加剂、循环次数、容量保持率或原文短语。\n   只有 resolver 与限定论文检索都没有结果时，才能说明当前语料未找到该研究；\n   禁止仅凭普通向量检索失败就声称论文未收录。\n   完成限定论文的 `search_literature_multiview` 后，调用一次\n   `search_paper_chunks(paper_id=..., query=..., top_k=8)` 做论文内聚焦。\n   该工具替代 named-study 的通用 `search_literature_chunks` 必需步骤，\n   query 只保留 4–8 个英文技术词，例如\n   `\"EC:DMC HC Na voltage cycles rate\"`；不要堆叠完整句子、作者名或大量近义词。\n   named-study 下这一步仍计入 `retrieve_focused` 必需步骤，不得跳过。\n   两次检索已覆盖问题中的组分、工况和指标后立即进入数值抽取与报告合成；\n   禁止为了补齐无关细节反复改写查询，也禁止用 `read_file` 绕过检索访问原文路径。\n   若仍缺少某个明确事实，最多再做一次短 query 的限定论文检索；仍未命中就在\n   报告中标为未验证，不继续追逐空结果。\n\n1. **检索**：优先调用 `search_literature_multiview`，用 2–4 个不同角度查询同一主题。\n   查询模板（按问题类型选择，全部用英文）：\n   - **机理解释**（如 FEC 的作用）:\n     - `\"FEC SEI film formation mechanism sodium ion battery\"`\n     - `\"FEC reductive decomposition sodium ion battery\"`\n     - `\"FEC cycling performance sodium ion battery\"`\n   - **材料对比**（如 NaPF6 vs NaFSI）:\n     - `\"NaPF6 sodium salt carbonate electrolyte common use\"`\n     - `\"NaFSI aluminum corrosion sodium ion battery carbonate\"`\n     - `\"NaPF6 NaFSI dual salt low temperature performance sodium ion battery\"`\n     - `\"FSI anion solvation structure Na+ compared PF6\"`\n     - **必须有至少一个查询直接指向实验对比**：包含两种材料、温度条件、容量/循环等关键指标，例如 `\"NaFSI-E NaPF6-E -10°C capacity retention cycling comparison\"`。\n   - **性能/属性查询**:\n     - `\"{material} ionic conductivity low temperature sodium ion battery\"`\n     - `\"{material} cycling stability sodium ion battery\"`\n   - 参数建议：`top_k=12`，`per_query_top_k=10`，`max_per_paper=2`。\n   - 如果 `search_literature_multiview` 返回的 top chunks 中没有直接对比两种材料的实验证据，必须再用 `search_literature_chunks` 做一次聚焦检索，查询要同时包含两种材料名和温度/性能关键词（`top_k=8`）。\n2. **数值抽取**：涉及具体数值对比时调用 `extract_numeric_properties`；\n3. **综合**：先按用户任务选择 canonical `task_type`：\n   - 单一材料作用、事实、机理或研究现状：`evidence_synthesis`；\n   - 用户明确给出两个及以上候选并要求比较/筛选：`candidate_screening`。\n   调用 `synthesize_design_report` 时不得再传旧的 `screening` 标签。候选比较必须传入\n   `comparison_axes`，并为每个候选传入一条 `comparison_records`：\n   `{\"candidate_id\":\"...\",\"conditions\":{\"temperature_c\":...,\"electrode\":\"...\",\n   \"voltage_window_v\":[lower,upper],\"rate\":\"...\",\"cycle_count\":...,\n   \"measurement_definition\":\"...\"},\"evidence_ids\":[\"实际 chunk_id\",...]}`。\n   六类条件必须来自本轮原文证据，不能用模型常识补齐。报告编译器会确定性比较全部字段：\n   缺字段或 evidence id 不属于本轮 ledger 时返回 `insufficient_evidence`，字段冲突时返回\n   `not_comparable`，全部一致且存在通过逐字引文校验的 `comparison`/`ranking` claim\n   时才允许 `compared`。旧 `condition_comparable` 布尔值不再具有准入权限；\n   除 `comparison_records` 外，还必须在 `claims` 中显式提交至少一条\n   `claim_type=\"comparison\"` 或 `claim_type=\"ranking\"` 的声明，直接回答“谁更好/有何不同”。\n   每条 claim 必须包含 `text`（结论句，内嵌 `[chunk_id]`）、`chunk_id`、\n   `evidence_quote`（逐字原文片段，≥12 字符）。示例：\n   `{\"claim_type\":\"comparison\",\"text\":\"在 Fondard 的 NaPF6/EC:DMC 硬碳体系中，3% FEC 在 130 周后容量保持率为 94%，循环稳定性优于 DMCF [0053_paper4_fondard_sei::sec5::child2]\",\"chunk_id\":\"0053_paper4_fondard_sei::sec5::child2\",\"evidence_quote\":\"65%, 72% and 94% capacity retention was measured after 130 cycles with 0%, 1.5% or 3% FEC, respectively\"}`\n   若 `claims` 为空或只有 `fact` 类型，报告将退化为证据清单，`answer_relevancy` 会大幅降低；\n   对比任务禁止以“仅列证据”收尾。\n4. **输出**：采用\"直接结论 + 8–12 条证据\"，每条证据独立成句并带 `[chunk_id]` 引用；\n   其中至少 6 条使用不同的 chunk_id，且这些证据应来自至少 4 篇不同文献\n   （避免 3 条以上证据来自同一篇 paper），尽量覆盖本次检索返回的多数关键来源，\n   控制在 **300–500 个中文字**。\n   **named-study 例外**：当问题指定作者、题名或 DOI 时，不适用“至少 4 篇文献”\n   与“每篇不超过 3 条证据”的要求。所有事实证据必须来自步骤 0 解析出的目标\n   `paper_id`；不要为了凑文献数执行未传 `paper_ids` 的检索，也不要引入综述或其他论文。\n   named-study 回答使用 4–8 条直接相关证据即可，不适用普通 screening 的\n   “8–12 条证据”要求。\n\n## 工作流顺序纪律（严禁违反）\n\n- **`synthesize_design_report` 必须是最后一步**。在完成充分检索和数值抽取之前，**严禁**调用 `synthesize_design_report`。\n- 提前调用会导致系统要求回退补全，造成重复调用和额外 token 消耗。\n\n## 禁止行为\n\n- 禁止调用 `query_formulation_space`、`screen_formulations`、`optimize_formulations` 等设计专用工具；\n- **禁止直接使用 `kg_query` 的 `compare_materials` 等结构化查询做材料对比；对比结论必须来自文献 chunk 原文；**\n- 文献事实问答不自行生成新的候选配方；模型初筛可以比较用户给定的候选。\n- 文献事实问答不扩展成配方设计任务；模型初筛可提出有计算依据的测试优先级和验证建议。\n- 禁止把\"对比两种盐\"改写成\"推荐一套双盐完整配方\"；\n- 禁止输出\"【推断】\"句，无直接证据的陈述直接删除。\n\n## 引用纪律\n\n- 只能引用本次检索实际返回的文献；\n- 文献数值、配方、性能值必须能在返回 chunk 原文中找到；预测值绑定实际工具计算。\n- 使用 `[chunk_id]` 格式引用，禁止改为 `[1]` 或 `[作者]`。\n\n## KG 质量反馈\n\n同 `electrolyte_design`：筛选过程中若发现 KG 实体标签错误、关系语义错误、数值异常、同名异义或证据与 KG 矛盾，**必须**调用 `flag_suspicious_kg_item` 记录，供后续离线人工审查。\n\n## 知识沉淀\n\n筛选流程结束后，调用 `reflect_now` 进行知识反思和 Wiki 沉淀，\n将本次筛选发现的有效对比维度、检索关键词、被否决的候选理由记录到 LLM Wiki，\n供下次相似筛选问题直接复用。\n",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "tool",
+      "name": "load_skill",
+      "id": "f6c2c07b-0382-48fc-9552-a0599d4d7cd9",
+      "tool_call_id": "call_00_ET_SCvPHOX3YyqG9zPVk15N4235",
+      "artifact": null,
+      "status": "success"
+    },
+    {
+      "content": "",
+      "additional_kwargs": {
+        "reasoning_content": "Now let's plan. Task: candidate_screening with 5 candidates, model prediction at -20, -10, 0 °C (screening metric = minimum predicted conductivity across these), plus reference at 20 °C. Then literature background explanation.\n\nLet me write todos, then do literature retrieval and prediction.\n\nFirst prediction: candidate compositions include molar_ratios. Call predict_formulation_conductivity with candidates and temperature_c. But temperature_c is single per request — \"可在一次单温度请求中计算多种候选\" — so I need 4 calls (one per temperature). Let me do them in parallel.\n\nAlso retrieve literature in parallel. Let me first do todos and start.\n\nActually let me call prediction tool for 4 temperatures in parallel, plus literature multiview retrieval in parallel. Independent calls—fine.\n\nWait, prediction tool request requires `candidates` and `temperature_c`. Candidates need composition_inputs? Let's pass candidates with composition_inputs.molar_ratios as given, plus candidate_id, salt, solvents.\n\nNote: the model features: x_NaSalt=NaPF6/(NaPF6+EC+EMC+PC), x_EC=EC/(EC+EMC), x_PC=PC/(EC+EMC+PC). Compute ourselves later to sanity-check.\n\nLet me do it."
+      },
+      "response_metadata": {
+        "finish_reason": "tool_calls",
+        "model_name": "deepseek-flash",
+        "system_fingerprint": "e72d3c7f663d3e1383b00b3884cb4501",
+        "model_provider": "deepseek"
+      },
+      "type": "ai",
+      "name": null,
+      "id": "lc_run--01a15de9-86ad-7633-b1e9-634c0429f219",
+      "tool_calls": [
+        {
+          "name": "write_todos",
+          "args": {
+            "todos": [
+              {
+                "id": "1",
+                "content": "加载 electrolyte_screening skill 并确认工作流",
+                "status": "completed"
+              },
+              {
+                "id": "2",
+                "content": "用模型在 −20/−10/0 ℃ 及 20 ℃ 计算 5 个候选 NaPF6-EC/EMC/PC 配方的离子电导率",
+                "status": "in_progress"
+              },
+              {
+                "id": "3",
+                "content": "多角度检索文献证据：低温输运意义、EC/PC/EMC 溶剂角色、NaPF6 碳酸酯体系低温性能",
+                "status": "pending"
+              },
+              {
+                "id": "4",
+                "content": "抽取数值证据（文献实测电导率/温度）并核对",
+                "status": "pending"
+              },
+              {
+                "id": "5",
+                "content": "合成 candidate_screening 报告（含 model_comparison、20 ℃ 参照、文献背景与后续验证需求）",
+                "status": "pending"
+              }
+            ]
+          },
+          "id": "call_00_aqzMcqrAUnp51OqNQCs81681",
+          "type": "tool_call"
+        },
+        {
+          "name": "predict_formulation_conductivity",
+          "args": {
+            "request": {
+              "candidates": [
+                {
+                  "candidate_id": "C1",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.12828314652601666,
+                      "EC": 0.5694935118915765,
+                      "EMC": 0.2849609994814937,
+                      "PC": 0.01726234210091304
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C2",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.19951783307955084,
+                      "EC": 0.17508760594792486,
+                      "EMC": 0.36168693219858494,
+                      "PC": 0.2637076287739395
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C3",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.13659165981340052,
+                      "EC": 0.09913935791043874,
+                      "EMC": 0.22127296310046693,
+                      "PC": 0.5429960191756938
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C4",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.09766791771234627,
+                      "EC": 0.013536078619457399,
+                      "EMC": 0.0011761179656606918,
+                      "PC": 0.8876198857025356
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C5",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.0852192419102328,
+                      "EC": 0.17361285375612137,
+                      "EMC": 0.736772576595408,
+                      "PC": 0.004395327738237865
+                    }
+                  }
+                }
+              ],
+              "temperature_c": -20
+            }
+          },
+          "id": "call_01_Ok6ko9fEJlrvslZFtyiA3196",
+          "type": "tool_call"
+        },
+        {
+          "name": "predict_formulation_conductivity",
+          "args": {
+            "request": {
+              "candidates": [
+                {
+                  "candidate_id": "C1",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.12828314652601666,
+                      "EC": 0.5694935118915765,
+                      "EMC": 0.2849609994814937,
+                      "PC": 0.01726234210091304
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C2",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.19951783307955084,
+                      "EC": 0.17508760594792486,
+                      "EMC": 0.36168693219858494,
+                      "PC": 0.2637076287739395
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C3",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.13659165981340052,
+                      "EC": 0.09913935791043874,
+                      "EMC": 0.22127296310046693,
+                      "PC": 0.5429960191756938
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C4",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.09766791771234627,
+                      "EC": 0.013536078619457399,
+                      "EMC": 0.0011761179656606918,
+                      "PC": 0.8876198857025356
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C5",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.0852192419102328,
+                      "EC": 0.17361285375612137,
+                      "EMC": 0.736772576595408,
+                      "PC": 0.004395327738237865
+                    }
+                  }
+                }
+              ],
+              "temperature_c": -10
+            }
+          },
+          "id": "call_02_rF3kUnubyo2A3j0p4hqc6351",
+          "type": "tool_call"
+        },
+        {
+          "name": "predict_formulation_conductivity",
+          "args": {
+            "request": {
+              "candidates": [
+                {
+                  "candidate_id": "C1",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.12828314652601666,
+                      "EC": 0.5694935118915765,
+                      "EMC": 0.2849609994814937,
+                      "PC": 0.01726234210091304
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C2",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.19951783307955084,
+                      "EC": 0.17508760594792486,
+                      "EMC": 0.36168693219858494,
+                      "PC": 0.2637076287739395
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C3",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.13659165981340052,
+                      "EC": 0.09913935791043874,
+                      "EMC": 0.22127296310046693,
+                      "PC": 0.5429960191756938
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C4",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.09766791771234627,
+                      "EC": 0.013536078619457399,
+                      "EMC": 0.0011761179656606918,
+                      "PC": 0.8876198857025356
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C5",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.0852192419102328,
+                      "EC": 0.17361285375612137,
+                      "EMC": 0.736772576595408,
+                      "PC": 0.004395327738237865
+                    }
+                  }
+                }
+              ],
+              "temperature_c": 0
+            }
+          },
+          "id": "call_03_geWf19jw8nGNq2Be29km9792",
+          "type": "tool_call"
+        },
+        {
+          "name": "predict_formulation_conductivity",
+          "args": {
+            "request": {
+              "candidates": [
+                {
+                  "candidate_id": "C1",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.12828314652601666,
+                      "EC": 0.5694935118915765,
+                      "EMC": 0.2849609994814937,
+                      "PC": 0.01726234210091304
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C2",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.19951783307955084,
+                      "EC": 0.17508760594792486,
+                      "EMC": 0.36168693219858494,
+                      "PC": 0.2637076287739395
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C3",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.13659165981340052,
+                      "EC": 0.09913935791043874,
+                      "EMC": 0.22127296310046693,
+                      "PC": 0.5429960191756938
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C4",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.09766791771234627,
+                      "EC": 0.013536078619457399,
+                      "EMC": 0.0011761179656606918,
+                      "PC": 0.8876198857025356
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "C5",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "molar_ratios": {
+                      "NaPF6": 0.0852192419102328,
+                      "EC": 0.17361285375612137,
+                      "EMC": 0.736772576595408,
+                      "PC": 0.004395327738237865
+                    }
+                  }
+                }
+              ],
+              "temperature_c": 20
+            }
+          },
+          "id": "call_04_ARXwOffsn2zTbCT41Mn10608",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 20464,
+        "output_tokens": 2767,
+        "total_tokens": 23231,
+        "input_token_details": {
+          "cache_read": 17152
+        },
+        "output_token_details": {
+          "reasoning": 273
+        }
+      }
+    },
+    {
+      "content": "{'todo_list': [TodoItem(id='1', content='加载 electrolyte_screening skill 并确认工作流', status='completed'), TodoItem(id='2', content='用模型在 −20/−10/0 ℃ 及 20 ℃ 计算 5 个候选 NaPF6-EC/EMC/PC 配方的离子电导率', status='in_progress'), TodoItem(id='3', content='多角度检索文献证据：低温输运意义、EC/PC/EMC 溶剂角色、NaPF6 碳酸酯体系低温性能', status='pending'), TodoItem(id='4', content='抽取数值证据（文献实测电导率/温度）并核对', status='pending'), TodoItem(id='5', content='合成 candidate_screening 报告（含 model_comparison、20 ℃ 参照、文献背景与后续验证需求）', status='pending')]}",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "tool",
+      "name": "write_todos",
+      "id": "6d896115-e46c-4261-bf6d-29d19e8d57ae",
+      "tool_call_id": "call_00_aqzMcqrAUnp51OqNQCs81681",
+      "artifact": null,
+      "status": "success"
+    },
+    {
+      "content": "[{\"candidate_id\": \"C1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.12828314652601666, \"EC\": 0.5694935118915765, \"EMC\": 0.2849609994814937, \"PC\": 0.01726234210091304}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.4178494203752665, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.18915060517798277, \"estimated_factor_1sigma\": 1.545790397710345, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.12828314652601666, \"x_EC\": 0.6664995085302152, \"x_PC\": 0.019802693996472377}, \"reason\": \"\"}]}, {\"candidate_id\": \"C2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.19951783307955084, \"EC\": 0.17508760594792486, \"EMC\": 0.36168693219858494, \"PC\": 0.2637076287739395}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 0.49875241818894755, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.2196004036928746, \"estimated_factor_1sigma\": 1.658060616337216, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.19951783307955084, \"x_EC\": 0.3261846334077337, \"x_PC\": 0.32943598205123586}, \"reason\": \"\"}]}, {\"candidate_id\": \"C3\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.2418644454008225, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.1016837207825427, \"estimated_factor_1sigma\": 1.2638156261202176, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.13659165981340052, \"x_EC\": 0.30941181536856194, \"x_PC\": 0.6288982789514654}, \"reason\": \"\"}]}, {\"candidate_id\": \"C4\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.09766791771234627, \"EC\": 0.013536078619457399, \"EMC\": 0.0011761179656606918, \"PC\": 0.8876198857025356}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.2416024173805078, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.08044451579898504, \"estimated_factor_1sigma\": 1.2034956248652835, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.09766791771234627, \"x_EC\": 0.9200583027248034, \"x_PC\": 0.9836953635209127}, \"reason\": \"\"}]}, {\"candidate_id\": \"C5\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.0852192419102328, \"EC\": 0.17361285375612137, \"EMC\": 0.736772576595408, \"PC\": 0.004395327738237865}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 2.3004257242081674, \"unit\": \"mS/cm\", \"temperature_c\": -20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09106914931792585, \"estimated_factor_1sigma\": 1.2333011865107715, \"features\": {\"inverse_temperature\": 3.950227138060439, \"x_NaSalt\": 0.0852192419102328, \"x_EC\": 0.1907025837277337, \"x_PC\": 0.00480478814116743}, \"reason\": \"\"}]}]",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "tool",
+      "name": "predict_formulation_conductivity",
+      "id": "f0feae81-a393-4f44-b43d-1085768b1cbb",
+      "tool_call_id": "call_01_Ok6ko9fEJlrvslZFtyiA3196",
+      "artifact": null,
+      "status": "success"
+    },
+    {
+      "content": "[{\"candidate_id\": \"C1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.12828314652601666, \"EC\": 0.5694935118915765, \"EMC\": 0.2849609994814937, \"PC\": 0.01726234210091304}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 2.3059821340238638, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.24735931890973437, \"estimated_factor_1sigma\": 1.767499578532824, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.12828314652601666, \"x_EC\": 0.6664995085302152, \"x_PC\": 0.019802693996472377}, \"reason\": \"\"}]}, {\"candidate_id\": \"C2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.19951783307955084, \"EC\": 0.17508760594792486, \"EMC\": 0.36168693219858494, \"PC\": 0.2637076287739395}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.1784756794254354, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.15060718401007087, \"estimated_factor_1sigma\": 1.4145137844261253, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.19951783307955084, \"x_EC\": 0.3261846334077337, \"x_PC\": 0.32943598205123586}, \"reason\": \"\"}]}, {\"candidate_id\": \"C3\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 2.1329028495857365, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.08678676989297986, \"estimated_factor_1sigma\": 1.2211999276391323, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.13659165981340052, \"x_EC\": 0.30941181536856194, \"x_PC\": 0.6288982789514654}, \"reason\": \"\"}]}, {\"candidate_id\": \"C4\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.09766791771234627, \"EC\": 0.013536078619457399, \"EMC\": 0.0011761179656606918, \"PC\": 0.8876198857025356}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 1.8005299314298344, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.11699605372466339, \"estimated_factor_1sigma\": 1.3091700269954818, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.09766791771234627, \"x_EC\": 0.9200583027248034, \"x_PC\": 0.9836953635209127}, \"reason\": \"\"}]}, {\"candidate_id\": \"C5\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.0852192419102328, \"EC\": 0.17361285375612137, \"EMC\": 0.736772576595408, \"PC\": 0.004395327738237865}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.1812954022363247, \"unit\": \"mS/cm\", \"temperature_c\": -10.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09617092645410516, \"estimated_factor_1sigma\": 1.2478745469692925, \"features\": {\"inverse_temperature\": 3.800114003420103, \"x_NaSalt\": 0.0852192419102328, \"x_EC\": 0.1907025837277337, \"x_PC\": 0.00480478814116743}, \"reason\": \"\"}]}]",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "tool",
+      "name": "predict_formulation_conductivity",
+      "id": "5b536085-8cae-4bb3-8a9c-7fdf803fd581",
+      "tool_call_id": "call_02_rF3kUnubyo2A3j0p4hqc6351",
+      "artifact": null,
+      "status": "success"
+    },
+    {
+      "content": "[{\"candidate_id\": \"C1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.12828314652601666, \"EC\": 0.5694935118915765, \"EMC\": 0.2849609994814937, \"PC\": 0.01726234210091304}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.4065009926353578, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.2281554273161246, \"estimated_factor_1sigma\": 1.6910460227256041, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.12828314652601666, \"x_EC\": 0.6664995085302152, \"x_PC\": 0.019802693996472377}, \"reason\": \"\"}]}, {\"candidate_id\": \"C2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.19951783307955084, \"EC\": 0.17508760594792486, \"EMC\": 0.36168693219858494, \"PC\": 0.2637076287739395}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 2.0496580016052626, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09704139083654219, \"estimated_factor_1sigma\": 1.2503781929872135, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.19951783307955084, \"x_EC\": 0.3261846334077337, \"x_PC\": 0.32943598205123586}, \"reason\": \"\"}]}, {\"candidate_id\": \"C3\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.2607902679914744, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.0715898183648156, \"estimated_factor_1sigma\": 1.1792063749187005, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.13659165981340052, \"x_EC\": 0.30941181536856194, \"x_PC\": 0.6288982789514654}, \"reason\": \"\"}]}, {\"candidate_id\": \"C4\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.09766791771234627, \"EC\": 0.013536078619457399, \"EMC\": 0.0011761179656606918, \"PC\": 0.8876198857025356}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.1849200254643804, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.05164171462167791, \"estimated_factor_1sigma\": 1.1262679213976226, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.09766791771234627, \"x_EC\": 0.9200583027248034, \"x_PC\": 0.9836953635209127}, \"reason\": \"\"}]}, {\"candidate_id\": \"C5\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.0852192419102328, \"EC\": 0.17361285375612137, \"EMC\": 0.736772576595408, \"PC\": 0.004395327738237865}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 3.882327036880985, \"unit\": \"mS/cm\", \"temperature_c\": 0.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.11701892631987826, \"estimated_factor_1sigma\": 1.3092389776864908, \"features\": {\"inverse_temperature\": 3.660992128866923, \"x_NaSalt\": 0.0852192419102328, \"x_EC\": 0.1907025837277337, \"x_PC\": 0.00480478814116743}, \"reason\": \"\"}]}]",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "tool",
+      "name": "predict_formulation_conductivity",
+      "id": "3301ff9e-b853-43a6-81f1-82c5c6c1f09e",
+      "tool_call_id": "call_03_geWf19jw8nGNq2Be29km9792",
+      "artifact": null,
+      "status": "success"
+    },
+    {
+      "content": "[{\"candidate_id\": \"C1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.12828314652601666, \"EC\": 0.5694935118915765, \"EMC\": 0.2849609994814937, \"PC\": 0.01726234210091304}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 7.408869556693787, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09978100593673696, \"estimated_factor_1sigma\": 1.2582907555782883, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.12828314652601666, \"x_EC\": 0.6664995085302152, \"x_PC\": 0.019802693996472377}, \"reason\": \"\"}]}, {\"candidate_id\": \"C2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.19951783307955084, \"EC\": 0.17508760594792486, \"EMC\": 0.36168693219858494, \"PC\": 0.2637076287739395}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 4.6263159828404845, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.06257322704976374, \"estimated_factor_1sigma\": 1.1549767106433586, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.19951783307955084, \"x_EC\": 0.3261846334077337, \"x_PC\": 0.32943598205123586}, \"reason\": \"\"}]}, {\"candidate_id\": \"C3\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 6.3832989706090375, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.04266401870141507, \"estimated_factor_1sigma\": 1.1032248068033692, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.13659165981340052, \"x_EC\": 0.30941181536856194, \"x_PC\": 0.6288982789514654}, \"reason\": \"\"}]}, {\"candidate_id\": \"C4\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.09766791771234627, \"EC\": 0.013536078619457399, \"EMC\": 0.0011761179656606918, \"PC\": 0.8876198857025356}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 5.904341683066327, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.024943777299972665, \"estimated_factor_1sigma\": 1.0591166056599406, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.09766791771234627, \"x_EC\": 0.9200583027248034, \"x_PC\": 0.9836953635209127}, \"reason\": \"\"}]}, {\"candidate_id\": \"C5\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"composition_inputs\": {\"molar_ratios\": {\"NaPF6\": 0.0852192419102328, \"EC\": 0.17361285375612137, \"EMC\": 0.736772576595408, \"PC\": 0.004395327738237865}}, \"model_predictions\": [{\"property_name\": \"ionic_conductivity\", \"status\": \"predicted\", \"numeric_value\": 5.974245911278196, \"unit\": \"mS/cm\", \"temperature_c\": 20.0, \"model_id\": \"na-conductivity-rf-v1\", \"source_data_doi\": \"10.5281/zenodo.18429013\", \"ensemble_std_log10\": 0.09716747133026007, \"estimated_factor_1sigma\": 1.250741244308871, \"features\": {\"inverse_temperature\": 3.4112229234180456, \"x_NaSalt\": 0.0852192419102328, \"x_EC\": 0.1907025837277337, \"x_PC\": 0.00480478814116743}, \"reason\": \"\"}]}]",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "tool",
+      "name": "predict_formulation_conductivity",
+      "id": "cf34eda2-d9a4-4370-a903-0314035af5b8",
+      "tool_call_id": "call_04_ARXwOffsn2zTbCT41Mn10608",
+      "artifact": null,
+      "status": "success"
+    },
+    {
+      "content": "",
+      "additional_kwargs": {
+        "reasoning_content": "Predictions:\n\nC1: -20: 1.4178, -10: 2.3060, 0: 3.4065, 20: 7.4089\nC2: -20: 0.4988, -10: 1.1785, 0: 2.0497, 20: 4.6263\nC3: -20: 1.2419, -10: 2.1329, 0: 3.2608, 20: 6.3833\nC4: -20: 1.2416, -10: 1.8005, 0: 3.1849, 20: 5.9043\nC5: -20: 2.3004, -10: 3.1813, 0: 3.8823, 20: 5.9742\n\nMinimum over target temps (−20, −10, 0): C5 = 2.300 > C1 = 1.4178 > C3 = 1.2419 ≈ C4 = 1.2416 > C2 = 0.4988.\n\nSo priority: C5 first. At 20 °C ranking: C1 7.4089 > C3 6.383 > C5 5.974 ≈ C4 5.904 > C2 4.626. So 20 °C ranking differs — C1 ranks first at room temperature but second at low temperature screening; C5 is 5.97 (3rd) at 20 °C but 1st at low temp. So priority is not consistent. \n\nNow literature retrieval. Need background: low-temperature transport significance in Na-ion batteries (desolvation, viscosity, ionic conductivity at low T, freezing point of EC, PC as low-T co-solvent, EMC low viscosity), and need for cell-level validation (conductivity is not sufficient; half/full cell rate + cycling).\n\nDo multiview search."
+      },
+      "response_metadata": {
+        "finish_reason": "tool_calls",
+        "model_name": "deepseek-flash",
+        "system_fingerprint": "e72d3c7f663d3e1383b00b3884cb4501",
+        "model_provider": "deepseek"
+      },
+      "type": "ai",
+      "name": null,
+      "id": "lc_run--01a15de9-ae3f-7473-b771-7ef4ded75b78",
+      "tool_calls": [
+        {
+          "name": "search_literature_multiview",
+          "args": {
+            "queries": [
+              "low temperature electrolyte ionic conductivity sodium ion battery rate performance",
+              "NaPF6 carbonate electrolyte ethylene carbonate propylene carbonate low temperature transport",
+              "ethyl methyl carbonate low viscosity co-solvent electrolyte ionic conductivity temperature dependence",
+              "desolvation energy barrier Na+ low temperature electrolyte sodium ion battery"
+            ],
+            "top_k": 12,
+            "per_query_top_k": 8,
+            "max_per_paper": 2
+          },
+          "id": "call_00_p1FY7zEtowkBoJbxBRnF2729",
+          "type": "tool_call"
+        },
+        {
+          "name": "search_literature_multiview",
+          "args": {
+            "queries": [
+              "-20 °C sodium ion battery electrolyte capacity retention hard carbon",
+              "propylene carbonate electrolyte sodium ion battery SEI compatibility graphite",
+              "electrolyte ionic conductivity measurement Arrhenius temperature celsius mS/cm carbonate",
+              "low temperature sodium ion full cell impedance charge transfer polarization"
+            ],
+            "top_k": 12,
+            "per_query_top_k": 8,
+            "max_per_paper": 2
+          },
+          "id": "call_01_TBsWezurnxPagPAHT1dW5914",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 29363,
+        "output_tokens": 730,
+        "total_tokens": 30093,
+        "input_token_details": {
+          "cache_read": 23168
+        },
+        "output_token_details": {
+          "reasoning": 431
+        }
+      }
+    }
+  ],
+  "sample": {
+    "question": "请为钠离子电池低温电解液实验筛选候选。给定以下五种 NaPF6–EC/EMC/PC 配方，molar_ratios 表示包含盐的全组分摩尔比例。评价 −20、−10 和 0 °C 的电导率，以这三个目标温度下的最低预测电导率作为初筛指标，提出优先开展后续实验的配方及理由。同时评价 20 °C 的电导率，说明室温数值的优先级是否与低温初筛一致。结合文献解释该体系低温输运评价的意义和后续电池验证需求。请列出候选组成、测试温度、模型名称、计算数值及出处，区分预测值与文献实测。目标是既有候选的性质初筛，不生成新配方；如果候选接近或证据不足，可提出并行测试。不预设最低电导率通过阈值。\n\n候选组成：\n[\n  {\n    \"candidate_id\": \"C1\",\n    \"salt\": \"NaPF6\",\n    \"solvents\": [\n      \"EC\",\n      \"EMC\",\n      \"PC\"\n    ],\n    \"additives\": [],\n    \"composition_inputs\": {\n      \"molar_ratios\": {\n        \"NaPF6\": 0.12828314652601666,\n        \"EC\": 0.5694935118915765,\n        \"EMC\": 0.2849609994814937,\n        \"PC\": 0.01726234210091304\n      }\n    }\n  },\n  {\n    \"candidate_id\": \"C2\",\n    \"salt\": \"NaPF6\",\n    \"solvents\": [\n      \"EC\",\n      \"EMC\",\n      \"PC\"\n    ],\n    \"additives\": [],\n    \"composition_inputs\": {\n      \"molar_ratios\": {\n        \"NaPF6\": 0.19951783307955084,\n        \"EC\": 0.17508760594792486,\n        \"EMC\": 0.36168693219858494,\n        \"PC\": 0.2637076287739395\n      }\n    }\n  },\n  {\n    \"candidate_id\": \"C3\",\n    \"salt\": \"NaPF6\",\n    \"solvents\": [\n      \"EC\",\n      \"EMC\",\n      \"PC\"\n    ],\n    \"additives\": [],\n    \"composition_inputs\": {\n      \"molar_ratios\": {\n        \"NaPF6\": 0.13659165981340052,\n        \"EC\": 0.09913935791043874,\n        \"EMC\": 0.22127296310046693,\n        \"PC\": 0.5429960191756938\n      }\n    }\n  },\n  {\n    \"candidate_id\": \"C4\",\n    \"salt\": \"NaPF6\",\n    \"solvents\": [\n      \"EC\",\n      \"EMC\",\n      \"PC\"\n    ],\n    \"additives\": [],\n    \"composition_inputs\": {\n      \"molar_ratios\": {\n        \"NaPF6\": 0.09766791771234627,\n        \"EC\": 0.013536078619457399,\n        \"EMC\": 0.0011761179656606918,\n        \"PC\": 0.8876198857025356\n      }\n    }\n  },\n  {\n    \"candidate_id\": \"C5\",\n    \"salt\": \"NaPF6\",\n    \"solvents\": [\n      \"EC\",\n      \"EMC\",\n      \"PC\"\n    ],\n    \"additives\": [],\n    \"composition_inputs\": {\n      \"molar_ratios\": {\n        \"NaPF6\": 0.0852192419102328,\n        \"EC\": 0.17361285375612137,\n        \"EMC\": 0.736772576595408,\n        \"PC\": 0.004395327738237865\n      }\n    }\n  }\n]",
+    "task_type": "candidate_screening",
+    "source_task_type": null,
+    "expected_tools": [],
+    "ground_truth": "",
+    "tags": [],
+    "benchmark_case_id": "LT_SCREEN_01",
+    "contract_version": null
+  },
+  "runtime_snapshot_before_close": [],
+  "root_resources_before_close": {
+    "resources": {
+      "bge-m3-model": {
+        "resource_id": "bge-m3-model",
+        "resident": false,
+        "host_ram_mib": 0.0,
+        "host_ram_measurement": "not_resident",
+        "gpu_allocated_mib": 0.0,
+        "gpu_vram_pressure": null,
+        "load_count": 0,
+        "release_count": 0,
+        "last_load_seconds": 0.0
+      },
+      "neo4j-session": {
+        "resource_id": "neo4j-session",
+        "resident": false,
+        "connection_slots": 0.0,
+        "open_count": 0,
+        "close_count": 0,
+        "last_open_seconds": 0.0
+      }
+    }
+  },
+  "root_telemetry_before_close": {
+    "schema_version": "resource-residency-v1",
+    "pid": 3944,
+    "process_rss_mib": 136.625,
+    "host_ram_pressure": 0.706,
+    "resources": [],
+    "telemetry_write_errors": 0
+  },
+  "timing": {
+    "task_wall_seconds": 15.719,
+    "model_request_union_seconds": 12.422,
+    "tool_function_union_seconds": 1.9060000000000006,
+    "model_tool_overlap_seconds": 0.0,
+    "outside_model_and_tool_seconds": 1.3909999999999982,
+    "incomplete_events": [],
+    "model_request_includes_network_and_provider_wait": true,
+    "outside_intervals_is_not_a_resource_preparation_measurement": true
+  },
+  "common_prediction_process": true,
+  "runtime_enabled_observed": false
+}

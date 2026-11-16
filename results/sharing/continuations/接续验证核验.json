@@ -1,0 +1,254 @@
+{
+  "execution_kind": "paired archived real scientific call continuation; no new autonomous agent planning",
+  "actual_jev_calls": 2,
+  "main_model_calls": 0,
+  "branches": [
+    {
+      "id": "point",
+      "checks": {
+        "completed": true,
+        "real_jev_assessed": true,
+        "same_relevance_version_after_api": true,
+        "only_incoming_goal_survived_gap": true,
+        "incoming_goal_became_active_once": true,
+        "sent_exact_received_goal": true,
+        "no_future_tool_observations_sent": true,
+        "no_local_path_sent": true,
+        "two_legal_idle_choices": true,
+        "semantic_selection_applied": true,
+        "selected_victim_actually_released": true,
+        "kept_original_process_actually_reused": true,
+        "all_171_incoming_numeric_checks_match_branch_part": true,
+        "restoration_scientific_numeric_values_match": true,
+        "all_host_guard_checks_passed": true,
+        "all_requests_completed": true,
+        "all_owned_processes_and_client_closed": true
+      },
+      "released": "process:robust-ranking-worker",
+      "retained": "process:na-conductivity-rf",
+      "reused_pid": 20636,
+      "lru_shadow_release": [
+        "process:robust-ranking-worker"
+      ],
+      "cost_shadow_release": [
+        "process:na-conductivity-rf"
+      ],
+      "choice_differs_from_lru": false,
+      "choice_differs_from_cost_only": true,
+      "measured_costs": {
+        "process:na-conductivity-rf": 1.3317686999998841,
+        "process:robust-ranking-worker": 5.169752499999959
+      },
+      "jev_answers": {
+        "q0": {
+          "type": "choice",
+          "choice": "relevant",
+          "confidence": 0.77,
+          "probabilities": {
+            "relevant": 0.85,
+            "not_relevant": 0.02,
+            "unknown": 0.13
+          }
+        },
+        "q1": {
+          "type": "choice",
+          "choice": "not_relevant",
+          "confidence": 0.82,
+          "probabilities": {
+            "relevant": 0.01,
+            "not_relevant": 0.88,
+            "unknown": 0.11
+          }
+        }
+      },
+      "incoming_numeric_comparisons": [
+        {
+          "tool_call_id": "call_00_H9ix0w5NXIRXhjdEOgy45510",
+          "numeric_values": 22,
+          "differences": {}
+        },
+        {
+          "tool_call_id": "call_01_WALjk0dMKK8tfQUzIGa17605",
+          "numeric_values": 22,
+          "differences": {}
+        },
+        {
+          "tool_call_id": "call_00_vxUYaUzKN2HlpONCNSD67226",
+          "numeric_values": 9,
+          "differences": {}
+        },
+        {
+          "tool_call_id": "call_01_ZRdRZRWnRdp8D36CZyTT0192",
+          "numeric_values": 9,
+          "differences": {}
+        }
+      ],
+      "restoration_numeric_comparisons": [
+        {
+          "call_id": "call_00_JeWrqTDdaUX3ptoNpa3T9481",
+          "numeric_count": 93,
+          "differences": {}
+        },
+        {
+          "call_id": "call_00_h6x0qsjP44rLzJrecbhq6919",
+          "numeric_count": 13,
+          "differences": {}
+        }
+      ],
+      "incoming_numeric_count": 62,
+      "incoming_tool_calls": 4,
+      "restoration_tool_calls": 2,
+      "input_tokens": 2484,
+      "output_tokens": 90
+    },
+    {
+      "id": "ranking",
+      "checks": {
+        "completed": true,
+        "real_jev_assessed": true,
+        "same_relevance_version_after_api": true,
+        "only_incoming_goal_survived_gap": true,
+        "incoming_goal_became_active_once": true,
+        "sent_exact_received_goal": true,
+        "no_future_tool_observations_sent": true,
+        "no_local_path_sent": true,
+        "two_legal_idle_choices": true,
+        "semantic_selection_applied": true,
+        "selected_victim_actually_released": true,
+        "kept_original_process_actually_reused": true,
+        "all_171_incoming_numeric_checks_match_branch_part": true,
+        "restoration_scientific_numeric_values_match": true,
+        "all_host_guard_checks_passed": true,
+        "all_requests_completed": true,
+        "all_owned_processes_and_client_closed": true
+      },
+      "released": "process:na-conductivity-rf",
+      "retained": "process:robust-ranking-worker",
+      "reused_pid": 8704,
+      "lru_shadow_release": [
+        "process:robust-ranking-worker"
+      ],
+      "cost_shadow_release": [
+        "process:na-conductivity-rf"
+      ],
+      "choice_differs_from_lru": true,
+      "choice_differs_from_cost_only": false,
+      "measured_costs": {
+        "process:na-conductivity-rf": 1.3825199999992037,
+        "process:robust-ranking-worker": 5.269444599998678
+      },
+      "jev_answers": {
+        "q0": {
+          "type": "choice",
+          "choice": "relevant",
+          "confidence": 0.7,
+          "probabilities": {
+            "relevant": 0.8,
+            "not_relevant": 0.05,
+            "unknown": 0.15
+          }
+        },
+        "q1": {
+          "type": "choice",
+          "choice": "relevant",
+          "confidence": 0.74,
+          "probabilities": {
+            "relevant": 0.83,
+            "not_relevant": 0.0,
+            "unknown": 0.17
+          }
+        }
+      },
+      "incoming_numeric_comparisons": [
+        {
+          "tool_call_id": "call_00_FJP1glRVqFwAA7ioQP3q2184",
+          "numeric_values": 22,
+          "differences": {}
+        },
+        {
+          "tool_call_id": "call_01_nFeUHRYhaGfbvOL3yTEt7675",
+          "numeric_values": 22,
+          "differences": {}
+        },
+        {
+          "tool_call_id": "call_00_QYwmfLh4coE6pqvGinDA4616",
+          "numeric_values": 65,
+          "differences": {}
+        }
+      ],
+      "restoration_numeric_comparisons": [
+        {
+          "call_id": "call_00_JeWrqTDdaUX3ptoNpa3T9481",
+          "numeric_count": 93,
+          "differences": {}
+        },
+        {
+          "call_id": "call_00_h6x0qsjP44rLzJrecbhq6919",
+          "numeric_count": 13,
+          "differences": {}
+        }
+      ],
+      "incoming_numeric_count": 109,
+      "incoming_tool_calls": 3,
+      "restoration_tool_calls": 2,
+      "input_tokens": 2548,
+      "output_tokens": 89
+    }
+  ],
+  "checks": {
+    "all_branch_checks_pass": true,
+    "retained_choice_changes_with_goal": true,
+    "choice_difference_survives_identical_costs": true,
+    "same_scientific_inputs": true,
+    "same_previous_real_calls": true,
+    "source_hashes_still_unchanged": true,
+    "exactly_two_paid_requests": true
+  },
+  "common_cost_attribution_check": [
+    {
+      "id": "point",
+      "fixed_costs": {
+        "process:na-conductivity-rf": 1.3317686999998841,
+        "process:robust-ranking-worker": 5.169752499999959
+      },
+      "scores": {
+        "process:na-conductivity-rf": [
+          1.1320033949999015,
+          1.3051333259998865
+        ],
+        "process:robust-ranking-worker": [
+          0.051697524999999585,
+          0.620370299999995
+        ]
+      },
+      "dominant_release": "process:robust-ranking-worker"
+    },
+    {
+      "id": "ranking",
+      "fixed_costs": {
+        "process:na-conductivity-rf": 1.3317686999998841,
+        "process:robust-ranking-worker": 5.169752499999959
+      },
+      "scores": {
+        "process:na-conductivity-rf": [
+          1.0654149599999074,
+          1.26518026499989
+        ],
+        "process:robust-ranking-worker": [
+          4.290894574999966,
+          5.169752499999959
+        ]
+      },
+      "dominant_release": "process:na-conductivity-rf"
+    }
+  ],
+  "numeric_values_compared": 171,
+  "scope_notes": [
+    "真实科学工具执行与真实Jev请求；调用顺序取自已有真实任务记录，不是新一轮自主主模型规划。",
+    "LRU/成本策略只记录同状态影子选择，没有另跑两套性能实验。",
+    "Jev与实测重建成本共同决定保留选择；排序分支Jev将两种能力都判为相关，不能表述为准确排除了点预测需求。",
+    "请求经济门控在隔离能力验证中显式触发；未修改生产默认门控。",
+    "本次支持任务需求影响真实选择及后续原实例复用，不据此估计普遍加速或分类准确率。",
+    "前次v1被整机保护在科学调用前阻止，零Jev请求，原始记录完整保留。"
+  ]
+}

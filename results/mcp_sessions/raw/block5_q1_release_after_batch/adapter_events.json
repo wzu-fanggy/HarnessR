@@ -1,0 +1,300 @@
+{
+  "A": [
+    {
+      "type": "open",
+      "generation": 1,
+      "pid": 22592,
+      "elapsed_s": 0.21716179999930318,
+      "protocol_version": "2025-11-25",
+      "server_info": {
+        "name": "secure-filesystem-server",
+        "title": null,
+        "version": "2.1.0",
+        "websiteUrl": null,
+        "icons": null
+      },
+      "tool_names": [
+        "create_directory",
+        "directory_tree",
+        "edit_file",
+        "get_file_info",
+        "list_allowed_directories",
+        "list_directory",
+        "list_directory_with_sizes",
+        "move_file",
+        "read_file",
+        "read_media_file",
+        "read_multiple_files",
+        "read_text_file",
+        "search_files",
+        "write_file"
+      ]
+    },
+    {
+      "type": "call",
+      "generation": 1,
+      "tool": "list_directory",
+      "arguments": {
+        "path": "${MCP_EXPERIMENT}\\materials\\A"
+      },
+      "is_error": false
+    },
+    {
+      "type": "call",
+      "generation": 1,
+      "tool": "read_text_file",
+      "arguments": {
+        "path": "${MCP_EXPERIMENT}\\materials\\A\\evidence.json"
+      },
+      "is_error": false
+    },
+    {
+      "type": "close",
+      "generation": 1,
+      "process_exit_confirmed": true,
+      "exit_code": 0,
+      "elapsed_s": 0.013015599994105287
+    },
+    {
+      "type": "open",
+      "generation": 2,
+      "pid": 2444,
+      "elapsed_s": 0.21680330000526737,
+      "protocol_version": "2025-11-25",
+      "server_info": {
+        "name": "secure-filesystem-server",
+        "title": null,
+        "version": "2.1.0",
+        "websiteUrl": null,
+        "icons": null
+      },
+      "tool_names": [
+        "create_directory",
+        "directory_tree",
+        "edit_file",
+        "get_file_info",
+        "list_allowed_directories",
+        "list_directory",
+        "list_directory_with_sizes",
+        "move_file",
+        "read_file",
+        "read_media_file",
+        "read_multiple_files",
+        "read_text_file",
+        "search_files",
+        "write_file"
+      ]
+    },
+    {
+      "type": "call",
+      "generation": 2,
+      "tool": "read_text_file",
+      "arguments": {
+        "path": "${MCP_EXPERIMENT}\\materials\\A\\report.md"
+      },
+      "is_error": false
+    },
+    {
+      "type": "close",
+      "generation": 2,
+      "process_exit_confirmed": true,
+      "exit_code": 0,
+      "elapsed_s": 0.014379699998244178
+    },
+    {
+      "type": "open",
+      "generation": 3,
+      "pid": 19164,
+      "elapsed_s": 0.22135890000208747,
+      "protocol_version": "2025-11-25",
+      "server_info": {
+        "name": "secure-filesystem-server",
+        "title": null,
+        "version": "2.1.0",
+        "websiteUrl": null,
+        "icons": null
+      },
+      "tool_names": [
+        "create_directory",
+        "directory_tree",
+        "edit_file",
+        "get_file_info",
+        "list_allowed_directories",
+        "list_directory",
+        "list_directory_with_sizes",
+        "move_file",
+        "read_file",
+        "read_media_file",
+        "read_multiple_files",
+        "read_text_file",
+        "search_files",
+        "write_file"
+      ]
+    },
+    {
+      "type": "call",
+      "generation": 3,
+      "tool": "read_text_file",
+      "arguments": {
+        "path": "${MCP_EXPERIMENT}\\materials\\A\\evidence.json"
+      },
+      "is_error": false
+    },
+    {
+      "type": "close",
+      "generation": 3,
+      "process_exit_confirmed": true,
+      "exit_code": 0,
+      "elapsed_s": 0.013192500002332963
+    },
+    {
+      "type": "open",
+      "generation": 4,
+      "pid": 5748,
+      "elapsed_s": 0.21974560000671772,
+      "protocol_version": "2025-11-25",
+      "server_info": {
+        "name": "secure-filesystem-server",
+        "title": null,
+        "version": "2.1.0",
+        "websiteUrl": null,
+        "icons": null
+      },
+      "tool_names": [
+        "create_directory",
+        "directory_tree",
+        "edit_file",
+        "get_file_info",
+        "list_allowed_directories",
+        "list_directory",
+        "list_directory_with_sizes",
+        "move_file",
+        "read_file",
+        "read_media_file",
+        "read_multiple_files",
+        "read_text_file",
+        "search_files",
+        "write_file"
+      ]
+    },
+    {
+      "type": "call",
+      "generation": 4,
+      "tool": "read_text_file",
+      "arguments": {
+        "path": "${MCP_EXPERIMENT}\\materials\\A\\report.md"
+      },
+      "is_error": false
+    },
+    {
+      "type": "close",
+      "generation": 4,
+      "process_exit_confirmed": true,
+      "exit_code": 0,
+      "elapsed_s": 0.013770500001555774
+    }
+  ],
+  "B": [
+    {
+      "type": "open",
+      "generation": 1,
+      "pid": 20168,
+      "elapsed_s": 0.21945720000076108,
+      "protocol_version": "2025-11-25",
+      "server_info": {
+        "name": "secure-filesystem-server",
+        "title": null,
+        "version": "2.1.0",
+        "websiteUrl": null,
+        "icons": null
+      },
+      "tool_names": [
+        "create_directory",
+        "directory_tree",
+        "edit_file",
+        "get_file_info",
+        "list_allowed_directories",
+        "list_directory",
+        "list_directory_with_sizes",
+        "move_file",
+        "read_file",
+        "read_media_file",
+        "read_multiple_files",
+        "read_text_file",
+        "search_files",
+        "write_file"
+      ]
+    },
+    {
+      "type": "call",
+      "generation": 1,
+      "tool": "list_directory",
+      "arguments": {
+        "path": "${MCP_EXPERIMENT}\\materials\\B"
+      },
+      "is_error": false
+    },
+    {
+      "type": "call",
+      "generation": 1,
+      "tool": "read_text_file",
+      "arguments": {
+        "path": "${MCP_EXPERIMENT}\\materials\\B\\evidence.json"
+      },
+      "is_error": false
+    },
+    {
+      "type": "close",
+      "generation": 1,
+      "process_exit_confirmed": true,
+      "exit_code": 0,
+      "elapsed_s": 0.013390100000833627
+    },
+    {
+      "type": "open",
+      "generation": 2,
+      "pid": 9680,
+      "elapsed_s": 0.2179508999979589,
+      "protocol_version": "2025-11-25",
+      "server_info": {
+        "name": "secure-filesystem-server",
+        "title": null,
+        "version": "2.1.0",
+        "websiteUrl": null,
+        "icons": null
+      },
+      "tool_names": [
+        "create_directory",
+        "directory_tree",
+        "edit_file",
+        "get_file_info",
+        "list_allowed_directories",
+        "list_directory",
+        "list_directory_with_sizes",
+        "move_file",
+        "read_file",
+        "read_media_file",
+        "read_multiple_files",
+        "read_text_file",
+        "search_files",
+        "write_file"
+      ]
+    },
+    {
+      "type": "call",
+      "generation": 2,
+      "tool": "read_text_file",
+      "arguments": {
+        "path": "${MCP_EXPERIMENT}\\materials\\B\\report.md"
+      },
+      "is_error": false
+    },
+    {
+      "type": "close",
+      "generation": 2,
+      "process_exit_confirmed": true,
+      "exit_code": 0,
+      "elapsed_s": 0.013424700002360623
+    }
+  ]
+}

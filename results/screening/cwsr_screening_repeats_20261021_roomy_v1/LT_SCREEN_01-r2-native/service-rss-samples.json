@@ -1,0 +1,3155 @@
+[
+  {
+    "sampled_at_monotonic": 35137.468,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.062,
+      "host_ram_pressure": 0.649,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35137.984,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.066,
+      "host_ram_pressure": 0.652,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35138.484,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.066,
+      "host_ram_pressure": 0.654,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35139.0,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.066,
+      "host_ram_pressure": 0.655,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35139.515,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.074,
+      "host_ram_pressure": 0.661,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35140.031,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.109,
+      "host_ram_pressure": 0.66,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35140.546,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.172,
+      "host_ram_pressure": 0.662,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35141.046,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.172,
+      "host_ram_pressure": 0.682,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35141.562,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.18,
+      "host_ram_pressure": 0.686,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35142.062,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.18,
+      "host_ram_pressure": 0.696,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35142.593,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.184,
+      "host_ram_pressure": 0.692,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35143.109,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.188,
+      "host_ram_pressure": 0.695,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35143.64,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.191,
+      "host_ram_pressure": 0.697,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35144.171,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.195,
+      "host_ram_pressure": 0.7,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35144.687,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.195,
+      "host_ram_pressure": 0.701,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35145.203,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.195,
+      "host_ram_pressure": 0.701,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35145.734,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.199,
+      "host_ram_pressure": 0.701,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35146.25,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.203,
+      "host_ram_pressure": 0.701,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35146.765,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.203,
+      "host_ram_pressure": 0.703,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35147.281,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.211,
+      "host_ram_pressure": 0.706,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35147.796,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.211,
+      "host_ram_pressure": 0.71,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35148.328,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.211,
+      "host_ram_pressure": 0.709,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35148.859,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.211,
+      "host_ram_pressure": 0.711,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35149.39,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.211,
+      "host_ram_pressure": 0.71,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35149.921,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.211,
+      "host_ram_pressure": 0.71,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35150.453,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.211,
+      "host_ram_pressure": 0.709,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35150.968,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.211,
+      "host_ram_pressure": 0.709,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35151.484,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.211,
+      "host_ram_pressure": 0.709,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35152.0,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.211,
+      "host_ram_pressure": 0.711,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35152.515,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.219,
+      "host_ram_pressure": 0.716,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35153.031,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.359,
+      "host_ram_pressure": 0.708,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35153.531,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.5,
+      "host_ram_pressure": 0.712,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35154.062,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.621,
+      "host_ram_pressure": 0.714,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35154.593,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.621,
+      "host_ram_pressure": 0.707,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35155.125,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.621,
+      "host_ram_pressure": 0.705,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35155.64,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.621,
+      "host_ram_pressure": 0.706,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35156.156,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.621,
+      "host_ram_pressure": 0.705,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35156.687,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.621,
+      "host_ram_pressure": 0.699,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35157.218,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.625,
+      "host_ram_pressure": 0.698,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35157.734,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.625,
+      "host_ram_pressure": 0.698,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35158.265,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.629,
+      "host_ram_pressure": 0.697,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35158.781,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.633,
+      "host_ram_pressure": 0.697,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35159.312,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 136.633,
+      "host_ram_pressure": 0.699,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35159.843,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 348.219,
+      "host_ram_pressure": 0.722,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35160.734,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 393.496,
+      "host_ram_pressure": 0.725,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35161.25,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 410.914,
+      "host_ram_pressure": 0.731,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35161.781,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 428.848,
+      "host_ram_pressure": 0.728,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35162.312,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 434.695,
+      "host_ram_pressure": 0.731,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35162.843,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 485.473,
+      "host_ram_pressure": 0.735,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35163.375,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 524.102,
+      "host_ram_pressure": 0.74,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35163.906,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 552.535,
+      "host_ram_pressure": 0.736,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35164.437,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 576.23,
+      "host_ram_pressure": 0.74,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35164.953,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 591.0,
+      "host_ram_pressure": 0.734,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35165.484,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 608.316,
+      "host_ram_pressure": 0.738,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35166.0,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 635.453,
+      "host_ram_pressure": 0.736,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35166.515,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 664.559,
+      "host_ram_pressure": 0.735,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35167.187,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 691.102,
+      "host_ram_pressure": 0.736,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35169.062,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 779.289,
+      "host_ram_pressure": 0.744,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35169.562,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 779.414,
+      "host_ram_pressure": 0.742,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35170.078,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 779.543,
+      "host_ram_pressure": 0.741,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35170.609,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 779.676,
+      "host_ram_pressure": 0.741,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35171.125,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 784.168,
+      "host_ram_pressure": 0.742,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35171.64,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 786.012,
+      "host_ram_pressure": 0.742,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35172.171,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 891.41,
+      "host_ram_pressure": 0.747,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 1,
+          "load_count": 0,
+          "use_count": 0,
+          "failure_count": 0,
+          "last_load_seconds": null,
+          "last_use_seconds": null,
+          "last_idle_gap_seconds": null,
+          "rss_mib_at_last_load": null,
+          "rss_delta_mib_last_load": null,
+          "gpu_allocated_mib_at_last_load": null,
+          "gpu_delta_mib_last_load": null,
+          "last_host_ram_pressure": 0.747,
+          "last_gpu_vram_pressure": 0.166599,
+          "idle_seconds": null
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35172.812,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 951.922,
+      "host_ram_pressure": 0.751,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 1,
+          "load_count": 0,
+          "use_count": 0,
+          "failure_count": 0,
+          "last_load_seconds": null,
+          "last_use_seconds": null,
+          "last_idle_gap_seconds": null,
+          "rss_mib_at_last_load": null,
+          "rss_delta_mib_last_load": null,
+          "gpu_allocated_mib_at_last_load": null,
+          "gpu_delta_mib_last_load": null,
+          "last_host_ram_pressure": 0.747,
+          "last_gpu_vram_pressure": 0.166599,
+          "idle_seconds": null
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35173.906,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 2532.184,
+      "host_ram_pressure": 0.851,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 1,
+          "load_count": 0,
+          "use_count": 0,
+          "failure_count": 0,
+          "last_load_seconds": null,
+          "last_use_seconds": null,
+          "last_idle_gap_seconds": null,
+          "rss_mib_at_last_load": null,
+          "rss_delta_mib_last_load": null,
+          "gpu_allocated_mib_at_last_load": null,
+          "gpu_delta_mib_last_load": null,
+          "last_host_ram_pressure": 0.747,
+          "last_gpu_vram_pressure": 0.166599,
+          "idle_seconds": null
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35174.437,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1150.539,
+      "host_ram_pressure": 0.765,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 1,
+          "load_count": 1,
+          "use_count": 0,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": null,
+          "last_idle_gap_seconds": null,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.765,
+          "last_gpu_vram_pressure": 0.522422,
+          "idle_seconds": null
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35175.0,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1352.477,
+      "host_ram_pressure": 0.776,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 2,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.016,
+          "last_idle_gap_seconds": 0.187,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.776,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": 0.156
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35175.531,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1352.652,
+      "host_ram_pressure": 0.776,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 3,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.016,
+          "last_idle_gap_seconds": 0.484,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.776,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": 0.172
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35176.031,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1352.777,
+      "host_ram_pressure": 0.776,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 3,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.016,
+          "last_idle_gap_seconds": 0.484,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.776,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": 0.687
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35176.562,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1352.902,
+      "host_ram_pressure": 0.776,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 3,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.016,
+          "last_idle_gap_seconds": 0.484,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.776,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": 1.203
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35177.078,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.027,
+      "host_ram_pressure": 0.777,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 3,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.016,
+          "last_idle_gap_seconds": 0.484,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.776,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": 1.734
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35177.609,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.027,
+      "host_ram_pressure": 0.778,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 3,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.016,
+          "last_idle_gap_seconds": 0.484,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.776,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": 2.25
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35178.125,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.094,
+      "host_ram_pressure": 0.784,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 5,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.016,
+          "last_idle_gap_seconds": 0.14,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.78,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": 0.328
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35178.656,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.18,
+      "host_ram_pressure": 0.778,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 7,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.015,
+          "last_idle_gap_seconds": 0.438,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.778,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": 0.016
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35179.156,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.18,
+      "host_ram_pressure": 0.778,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 7,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.015,
+          "last_idle_gap_seconds": 0.438,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.778,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": 0.531
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35179.687,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.18,
+      "host_ram_pressure": 0.783,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 7,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.015,
+          "last_idle_gap_seconds": 0.438,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.778,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": 1.047
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35180.203,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.18,
+      "host_ram_pressure": 0.786,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 7,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.015,
+          "last_idle_gap_seconds": 0.438,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.778,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": 1.578
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35180.718,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.18,
+      "host_ram_pressure": 0.779,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 7,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.015,
+          "last_idle_gap_seconds": 0.438,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.778,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": 2.078
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35181.234,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.18,
+      "host_ram_pressure": 0.783,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 7,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.015,
+          "last_idle_gap_seconds": 0.438,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.778,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": 2.61
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35181.765,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.336,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 2,
+          "load_count": 1,
+          "use_count": 7,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.015,
+          "last_idle_gap_seconds": null,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.786,
+          "last_gpu_vram_pressure": 0.527305,
+          "idle_seconds": null
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35182.296,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.336,
+      "host_ram_pressure": 0.779,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 9,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.265,
+          "last_idle_gap_seconds": null,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.78,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 0.344
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35182.828,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.352,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 9,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.265,
+          "last_idle_gap_seconds": null,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.78,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 0.875
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35183.359,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.352,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 9,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.265,
+          "last_idle_gap_seconds": null,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.78,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 1.407
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35183.875,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.352,
+      "host_ram_pressure": 0.787,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 9,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.265,
+          "last_idle_gap_seconds": null,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.78,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 1.922
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35184.406,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.371,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 0.203
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35184.937,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.371,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 0.735
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35185.453,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.371,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 1.25
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35185.984,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.371,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 1.782
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35186.515,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.371,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 2.313
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35187.031,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.387,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 2.813
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35187.546,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.508,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 3.328
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35188.062,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.637,
+      "host_ram_pressure": 0.782,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 3.86
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35188.578,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.762,
+      "host_ram_pressure": 0.787,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 4.375
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35189.109,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.824,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 4.907
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35189.625,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.824,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 5.422
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35190.156,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.824,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 5.938
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35190.671,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.824,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 6.469
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35191.203,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.824,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 7.0
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35191.734,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.824,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 7.532
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35192.25,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.824,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 8.047
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35192.781,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.82,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 8.578
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35193.312,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.805,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 9.094
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35193.828,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.805,
+      "host_ram_pressure": 0.784,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 9.61
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35194.343,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.805,
+      "host_ram_pressure": 0.787,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 10.141
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35194.875,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.805,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 10.672
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35195.406,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.805,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 11.188
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35195.921,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.805,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 11.703
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35196.421,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.805,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 12.219
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35196.953,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.738,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 12.75
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35197.468,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.863,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 13.266
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35198.0,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.988,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 13.797
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35198.531,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.988,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 14.328
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35199.062,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.988,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 14.86
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35199.578,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.988,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 15.375
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35200.109,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.988,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 15.891
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35200.625,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.988,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 16.407
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35201.14,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.988,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 16.938
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35201.671,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.988,
+      "host_ram_pressure": 0.779,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 17.469
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35202.203,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.988,
+      "host_ram_pressure": 0.779,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 18.0
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35202.734,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.988,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 18.532
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35203.25,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1353.988,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 19.032
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35203.765,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 19.563
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35204.281,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 20.078
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35204.812,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 20.61
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35205.343,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 21.125
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35205.859,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 21.641
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35206.375,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 22.172
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35206.89,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 22.672
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35207.406,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 23.203
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35207.937,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 23.735
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35208.468,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 24.266
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35208.984,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 24.782
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35209.515,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.78,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 25.297
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35210.031,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 25.828
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35210.562,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 26.36
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35211.078,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 26.86
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35211.593,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 27.375
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35212.093,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 27.891
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35212.625,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 28.422
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35213.156,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 28.953
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35213.687,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 29.485
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35214.203,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.781,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 30.016
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35214.734,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.775,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 30.532
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35215.265,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 2596,
+      "process_rss_mib": 1354.051,
+      "host_ram_pressure": 0.772,
+      "resources": [
+        {
+          "resource_key": "embedding:bge-m3:cuda",
+          "resident": true,
+          "active_count": 0,
+          "load_count": 1,
+          "use_count": 10,
+          "failure_count": 0,
+          "last_load_seconds": 2.188,
+          "last_use_seconds": 0.047,
+          "last_idle_gap_seconds": 2.203,
+          "rss_mib_at_last_load": 1150.449,
+          "rss_delta_mib_last_load": 259.101,
+          "gpu_allocated_mib_at_last_load": 2165.938,
+          "gpu_delta_mib_last_load": 2165.938,
+          "last_host_ram_pressure": 0.787,
+          "last_gpu_vram_pressure": 0.532188,
+          "idle_seconds": 31.047
+        }
+      ],
+      "telemetry_write_errors": 0
+    }
+  }
+]

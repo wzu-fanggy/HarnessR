@@ -1,0 +1,761 @@
+{
+  "schema_version": "cwsr-real-rag-kg-trace-replay-v2",
+  "status": "PASS",
+  "selection_rule": {
+    "arm": "G_evidence_governed",
+    "repeat_index": 1,
+    "one_trace_per_research_task_family": true,
+    "selected_trace_count": 1,
+    "policy_result_blind_selection": true
+  },
+  "replayed_operation_types": [
+    "kg_query",
+    "search_literature_chunks",
+    "search_literature_multiview",
+    "search_paper_chunks"
+  ],
+  "resource_mapping": {
+    "rag": [
+      "external CUDA BGE-M3 MODEL",
+      "Neo4j DRIVER/POOL"
+    ],
+    "kg_query": [
+      "Neo4j DRIVER/POOL"
+    ]
+  },
+  "budget": {
+    "host_ram_mib": 4096.0,
+    "gpu_vram_mib": 3000.0,
+    "process_slots": 1,
+    "connection_slots": 1
+  },
+  "paired": [
+    {
+      "family_id": "STUDY4C_D1_FAN_NAFSI_CORROSION",
+      "order": [
+        "cwsr",
+        "release_all"
+      ],
+      "cwsr": {
+        "family_id": "STUDY4C_D1_FAN_NAFSI_CORROSION",
+        "trace_path": "${ORION_SOURCE}\\benchmark\\self_evolution_study4c_v1_20260822\\formal_run_v1\\raw\\008__STUDY4C_D1_FAN_NAFSI_CORROSION__G_evidence_governed__R1.json",
+        "strategy": "cwsr",
+        "operation_count": 11,
+        "operation_start": 0,
+        "operation_stop": null,
+        "full_operation_count": 11,
+        "rag_operation_count": 9,
+        "kg_operation_count": 2,
+        "complete": true,
+        "elapsed_to_last_result_s": 5.546999999998661,
+        "policy_cycle_elapsed_s": 5.546999999998661,
+        "rows": [
+          {
+            "source_index": 2,
+            "tool": "search_literature_multiview",
+            "materialization_s": 4.827999999997701,
+            "query_execution_s": 0.4070000000028813,
+            "elapsed_s": 5.235000000000582,
+            "signature": "d8432c20c69c2a8c395bd7d64158c01d997bb56ca3a575120c92ff27a773b274",
+            "result_kind": "multiview_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 534.6484375,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 3,
+            "tool": "search_literature_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.030999999999039574,
+            "elapsed_s": 0.030999999999039574,
+            "signature": "7cbadc41a3605f8308efe6575d6a7cf3c94f4bd290c076dd767f6acf9ef156f9",
+            "result_kind": "vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 534.66015625,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 5,
+            "tool": "search_literature_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.06199999999807915,
+            "elapsed_s": 0.06199999999807915,
+            "signature": "4eb4a044cf532fe5a0b1001021289b5cdcacb1df2949596edafd9157b9810b76",
+            "result_kind": "vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 534.671875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 6,
+            "tool": "kg_query",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.01600000000325963,
+            "elapsed_s": 0.01600000000325963,
+            "signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "result_kind": "structured_kg",
+            "measured": {
+              "prompt_tokens": 24.0,
+              "host_ram_mb": 534.671875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 7,
+            "tool": "kg_query",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.01599999999962165,
+            "elapsed_s": 0.01599999999962165,
+            "signature": "2f8ef2744792453da79696573085b1ae9117a22c70c79b01f193ba33f0b4cb6d",
+            "result_kind": "structured_kg",
+            "measured": {
+              "prompt_tokens": 24.0,
+              "host_ram_mb": 534.671875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 9,
+            "tool": "search_paper_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.030999999999039574,
+            "elapsed_s": 0.030999999999039574,
+            "signature": "3c30f070a7f36dc4e07171be860ee5acadb2a182580cbbdf971ee5b358e8be44",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 24.0,
+              "host_ram_mb": 534.67578125,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 10,
+            "tool": "search_paper_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.030999999999039574,
+            "elapsed_s": 0.030999999999039574,
+            "signature": "181f4c93d0d8727a499607a8db29a84ab62a0b9b0a2109dd1849cbc0b0a8b8e1",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 24.0,
+              "host_ram_mb": 534.68359375,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 11,
+            "tool": "search_paper_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.030999999999039574,
+            "elapsed_s": 0.030999999999039574,
+            "signature": "e66dd5c5246d1beebc17a2b84814b65e69aa820b836717820ed0ee2cf6a4eadf",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 24.0,
+              "host_ram_mb": 534.6875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 12,
+            "tool": "search_paper_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.03200000000288128,
+            "elapsed_s": 0.03200000000288128,
+            "signature": "3a83e8272e263edc242177238b141073325fce3f742beb7554f553aeb0069e66",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 24.0,
+              "host_ram_mb": 534.69921875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 13,
+            "tool": "search_paper_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.030999999999039574,
+            "elapsed_s": 0.030999999999039574,
+            "signature": "22a97d173734be181fe4724fe2590ce524e9c5a234b332a97dc4e64a24036546",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 24.0,
+              "host_ram_mb": 534.703125,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 14,
+            "tool": "search_paper_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.030999999999039574,
+            "elapsed_s": 0.030999999999039574,
+            "signature": "a3becd487c6e98ef21bc404543fe23897acd3b82093ac2a45a31b52273ef75ea",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 24.0,
+              "host_ram_mb": 534.71875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          }
+        ],
+        "output_signature": "9879ec7dcf875e23497106609520d031e790e25aaa86e4e64cf8b56a194a134b",
+        "transport_startup_s_excluded": 9.562000000001717,
+        "model_load_count": 1,
+        "model_load_total_s": 2.7659999999996217,
+        "model_load_latencies_s": [
+          2.7659999999996217
+        ],
+        "model_shutdown_total_s": 0,
+        "model_shutdown_latencies_s": [],
+        "worker_cleanup_total_s": 0,
+        "worker_cleanup_latencies_s": [],
+        "worker_cleanup_allocated_mib": [],
+        "worker_cleanup_reserved_mib": [],
+        "model_embed_count": 14,
+        "model_embed_total_s": 0.3289999999979045,
+        "query_gpu_telemetry": [
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.595703125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.689453125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.689453125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.845703125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.533203125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.626953125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.720703125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.814453125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.595703125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.564453125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.564453125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.751953125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.720703125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.689453125,
+            "torch_peak_reserved_mib": 2188.0
+          }
+        ],
+        "query_peak_allocated_mib": 2175.845703125,
+        "query_peak_reserved_mib": 2188.0,
+        "model_promotions": 1,
+        "model_demotions": 0,
+        "model_refaults": 0,
+        "explicit_release_count": 0,
+        "peak_measured": {
+          "prompt_tokens": 24.0,
+          "host_ram_mb": 534.71875,
+          "gpu_vram_mb": 2174.0634765625,
+          "process_slots": 0.0,
+          "connection_slots": 1.0
+        },
+        "event_counts": {
+          "active_enter": 11,
+          "active_exit": 11,
+          "compulsory_fault": 2,
+          "promote": 4
+        },
+        "neo4j_driver_initializations": 1,
+        "neo4j_sessions_created": 16,
+        "driver_promotions": 1,
+        "driver_demotions": 0,
+        "driver_refaults": 0,
+        "neo4j_query_count": 16
+      },
+      "release_all": {
+        "family_id": "STUDY4C_D1_FAN_NAFSI_CORROSION",
+        "trace_path": "${ORION_SOURCE}\\benchmark\\self_evolution_study4c_v1_20260822\\formal_run_v1\\raw\\008__STUDY4C_D1_FAN_NAFSI_CORROSION__G_evidence_governed__R1.json",
+        "strategy": "release_all",
+        "operation_count": 11,
+        "operation_start": 0,
+        "operation_stop": null,
+        "full_operation_count": 11,
+        "rag_operation_count": 9,
+        "kg_operation_count": 2,
+        "complete": true,
+        "elapsed_to_last_result_s": 46.7970000000023,
+        "policy_cycle_elapsed_s": 47.125,
+        "rows": [
+          {
+            "source_index": 2,
+            "tool": "search_literature_multiview",
+            "materialization_s": 4.46900000000096,
+            "query_execution_s": 0.1720000000022992,
+            "elapsed_s": 4.64100000000326,
+            "signature": "d8432c20c69c2a8c395bd7d64158c01d997bb56ca3a575120c92ff27a773b274",
+            "result_kind": "multiview_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 537.34765625,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 3,
+            "tool": "search_literature_chunks",
+            "materialization_s": 4.172000000002299,
+            "query_execution_s": 0.26599999999962165,
+            "elapsed_s": 4.438000000001921,
+            "signature": "7cbadc41a3605f8308efe6575d6a7cf3c94f4bd290c076dd767f6acf9ef156f9",
+            "result_kind": "vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 544.13671875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 5,
+            "tool": "search_literature_chunks",
+            "materialization_s": 4.172000000002299,
+            "query_execution_s": 0.25,
+            "elapsed_s": 4.422000000002299,
+            "signature": "4eb4a044cf532fe5a0b1001021289b5cdcacb1df2949596edafd9157b9810b76",
+            "result_kind": "vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 546.22265625,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 6,
+            "tool": "kg_query",
+            "materialization_s": 2.0790000000015425,
+            "query_execution_s": 0.0,
+            "elapsed_s": 2.0790000000015425,
+            "signature": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "result_kind": "structured_kg",
+            "measured": {
+              "prompt_tokens": 11.0,
+              "host_ram_mb": 0.0,
+              "gpu_vram_mb": 0.0,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 7,
+            "tool": "kg_query",
+            "materialization_s": 2.0459999999984575,
+            "query_execution_s": 0.01600000000325963,
+            "elapsed_s": 2.062000000001717,
+            "signature": "2f8ef2744792453da79696573085b1ae9117a22c70c79b01f193ba33f0b4cb6d",
+            "result_kind": "structured_kg",
+            "measured": {
+              "prompt_tokens": 11.0,
+              "host_ram_mb": 0.0,
+              "gpu_vram_mb": 0.0,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 9,
+            "tool": "search_paper_chunks",
+            "materialization_s": 4.202999999997701,
+            "query_execution_s": 0.20300000000133878,
+            "elapsed_s": 4.40599999999904,
+            "signature": "3c30f070a7f36dc4e07171be860ee5acadb2a182580cbbdf971ee5b358e8be44",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 547.12109375,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 10,
+            "tool": "search_paper_chunks",
+            "materialization_s": 4.1560000000026776,
+            "query_execution_s": 0.21899999999732245,
+            "elapsed_s": 4.375,
+            "signature": "181f4c93d0d8727a499607a8db29a84ab62a0b9b0a2109dd1849cbc0b0a8b8e1",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 548.28125,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 11,
+            "tool": "search_paper_chunks",
+            "materialization_s": 4.187000000001717,
+            "query_execution_s": 0.2029999999977008,
+            "elapsed_s": 4.389999999999418,
+            "signature": "e66dd5c5246d1beebc17a2b84814b65e69aa820b836717820ed0ee2cf6a4eadf",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 549.5625,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 12,
+            "tool": "search_paper_chunks",
+            "materialization_s": 4.139999999999418,
+            "query_execution_s": 0.21900000000096043,
+            "elapsed_s": 4.359000000000378,
+            "signature": "3a83e8272e263edc242177238b141073325fce3f742beb7554f553aeb0069e66",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 554.953125,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 13,
+            "tool": "search_paper_chunks",
+            "materialization_s": 4.1709999999984575,
+            "query_execution_s": 0.26600000000325963,
+            "elapsed_s": 4.437000000001717,
+            "signature": "22a97d173734be181fe4724fe2590ce524e9c5a234b332a97dc4e64a24036546",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 559.04296875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 14,
+            "tool": "search_paper_chunks",
+            "materialization_s": 4.312000000001717,
+            "query_execution_s": 0.2809999999990396,
+            "elapsed_s": 4.593000000000757,
+            "signature": "a3becd487c6e98ef21bc404543fe23897acd3b82093ac2a45a31b52273ef75ea",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 557.24609375,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          }
+        ],
+        "output_signature": "9879ec7dcf875e23497106609520d031e790e25aaa86e4e64cf8b56a194a134b",
+        "transport_startup_s_excluded": 6.577999999997701,
+        "model_load_count": 9,
+        "model_load_total_s": 19.4220000000023,
+        "model_load_latencies_s": [
+          2.422000000002299,
+          2.110000000000582,
+          2.125,
+          2.1409999999996217,
+          2.0940000000009604,
+          2.125,
+          2.077999999997701,
+          2.0930000000007567,
+          2.2340000000003783
+        ],
+        "model_shutdown_total_s": 2.922999999987951,
+        "model_shutdown_latencies_s": [
+          0.3279999999977008,
+          0.3429999999971187,
+          0.3279999999977008,
+          0.3129999999982829,
+          0.3440000000009604,
+          0.31300000000192085,
+          0.3129999999982829,
+          0.3129999999982829,
+          0.3279999999977008
+        ],
+        "worker_cleanup_total_s": 0.21999999999752617,
+        "worker_cleanup_latencies_s": [
+          0.014999999999417923,
+          0.014999999999417923,
+          0.030999999999039574,
+          0.01599999999962165,
+          0.0319999999992433,
+          0.03200000000288128,
+          0.0319999999992433,
+          0.01599999999962165,
+          0.030999999999039574
+        ],
+        "worker_cleanup_allocated_mib": [
+          8.125,
+          8.125,
+          8.125,
+          8.125,
+          8.125,
+          8.125,
+          8.125,
+          8.125,
+          8.125
+        ],
+        "worker_cleanup_reserved_mib": [
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "model_embed_count": 14,
+        "model_embed_total_s": 0.8919999999925494,
+        "query_gpu_telemetry": [
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.595703125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.689453125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.689453125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.845703125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.533203125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.626953125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.720703125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.814453125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.595703125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.564453125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.564453125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.751953125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.720703125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.689453125,
+            "torch_peak_reserved_mib": 2188.0
+          }
+        ],
+        "query_peak_allocated_mib": 2175.845703125,
+        "query_peak_reserved_mib": 2188.0,
+        "model_promotions": 9,
+        "model_demotions": 9,
+        "model_refaults": 0,
+        "explicit_release_count": 31,
+        "peak_measured": {
+          "prompt_tokens": 13.0,
+          "host_ram_mb": 559.04296875,
+          "gpu_vram_mb": 2174.0634765625,
+          "process_slots": 0.0,
+          "connection_slots": 1.0
+        },
+        "event_counts": {
+          "active_enter": 11,
+          "active_exit": 11,
+          "compulsory_fault": 2,
+          "demote": 31,
+          "promote": 31,
+          "refault": 9
+        },
+        "neo4j_driver_initializations": 11,
+        "neo4j_sessions_created": 16,
+        "driver_promotions": 11,
+        "driver_demotions": 11,
+        "driver_refaults": 0,
+        "neo4j_query_count": 16
+      },
+      "scientific_outputs_identical": true,
+      "seconds_saved_release_minus_cwsr": 41.25000000000364,
+      "model_loads_saved": 8,
+      "driver_initializations_saved": 10,
+      "sessions_created_difference": 0
+    }
+  ],
+  "summary": {
+    "task_family_count": 1,
+    "seconds_saved_release_minus_cwsr": {
+      "median": 41.25000000000364,
+      "q1": 41.25000000000364,
+      "q3": 41.25000000000364,
+      "min": 41.25000000000364,
+      "max": 41.25000000000364
+    },
+    "model_loads_saved": {
+      "median": 8.0,
+      "q1": 8.0,
+      "q3": 8.0,
+      "min": 8.0,
+      "max": 8.0
+    },
+    "all_scientific_outputs_identical": true,
+    "all_policy_runs_complete": true,
+    "positive_time_saving_family_count": 1,
+    "driver_initializations_saved": {
+      "median": 10.0,
+      "q1": 10.0,
+      "q3": 10.0,
+      "min": 10.0,
+      "max": 10.0
+    },
+    "session_creation_equal_between_policies": true
+  },
+  "interpretation_guard": "The replay uses real BGE-M3 embeddings, the real Neo4j kg-v1 vector index, and frozen production KG Cypher templates with query arguments taken from preselected real agent traces. search_literature_multiview is replayed as its vector-backed query set and does not reconstruct the production RRF/graph merge; therefore this experiment evaluates runtime backing-resource behavior and query-path timing, not retrieval-quality equivalence to the full production hybrid retriever. Local screening/report calls and LLM time are excluded. The Neo4j driver and pool are retained across calls under CWSR; every query creates and closes its own session in both policies, matching the root KG/RAG service lifecycle. Driver initializations and session creations are reported separately."
+}

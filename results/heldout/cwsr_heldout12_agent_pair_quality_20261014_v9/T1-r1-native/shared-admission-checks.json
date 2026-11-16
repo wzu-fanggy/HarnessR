@@ -1,0 +1,80 @@
+{
+  "arm": "native",
+  "budget_mib": 479.0,
+  "bge_declared_mib": 414.0,
+  "rf_declared_mib": 214.0,
+  "checks": [
+    {
+      "tool": "predict_formulation_conductivity",
+      "arm": "native",
+      "need_bge": false,
+      "need_rf": true,
+      "observed_bge_resident": false,
+      "observed_rf_running": false,
+      "planned_bge_resident": false,
+      "planned_rf_resident": true,
+      "projected_mib": 214.0,
+      "budget_mib": 479.0,
+      "admitted": true,
+      "time_monotonic": 7487.5
+    },
+    {
+      "tool": "predict_formulation_conductivity",
+      "arm": "native",
+      "need_bge": false,
+      "need_rf": true,
+      "observed_bge_resident": false,
+      "observed_rf_running": true,
+      "planned_bge_resident": false,
+      "planned_rf_resident": true,
+      "projected_mib": 214.0,
+      "budget_mib": 479.0,
+      "admitted": true,
+      "time_monotonic": 7489.375
+    },
+    {
+      "tool": "predict_formulation_conductivity",
+      "arm": "native",
+      "need_bge": false,
+      "need_rf": true,
+      "observed_bge_resident": false,
+      "observed_rf_running": true,
+      "planned_bge_resident": false,
+      "planned_rf_resident": true,
+      "projected_mib": 214.0,
+      "budget_mib": 479.0,
+      "admitted": true,
+      "time_monotonic": 7498.484
+    },
+    {
+      "tool": "search_literature_multiview",
+      "arm": "native",
+      "need_bge": true,
+      "need_rf": false,
+      "observed_bge_resident": false,
+      "observed_rf_running": true,
+      "planned_bge_resident": true,
+      "planned_rf_resident": true,
+      "projected_mib": 628.0,
+      "budget_mib": 479.0,
+      "admitted": false,
+      "time_monotonic": 7498.5
+    },
+    {
+      "tool": "predict_formulation_conductivity",
+      "arm": "native",
+      "need_bge": false,
+      "need_rf": true,
+      "observed_bge_resident": false,
+      "observed_rf_running": true,
+      "planned_bge_resident": false,
+      "planned_rf_resident": true,
+      "projected_mib": 214.0,
+      "budget_mib": 479.0,
+      "admitted": true,
+      "time_monotonic": 7498.89
+    }
+  ],
+  "refusal_count": 1,
+  "reclaimer_in_this_checker": false
+}

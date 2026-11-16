@@ -1,0 +1,458 @@
+{
+  "scope": "post_development_real_agent_runtime_comparison_not_heldout_science",
+  "cases": [
+    {
+      "label": "配方1",
+      "measurements": [
+        {
+          "temperature_c": -30.0,
+          "conductivity_ms_cm": 1.851699327963
+        },
+        {
+          "temperature_c": -20.0,
+          "conductivity_ms_cm": 1.840177574978
+        },
+        {
+          "temperature_c": -10.0,
+          "conductivity_ms_cm": 2.759636752722
+        },
+        {
+          "temperature_c": 0.0,
+          "conductivity_ms_cm": 3.8058648593
+        },
+        {
+          "temperature_c": 10.0,
+          "conductivity_ms_cm": 4.992309253987
+        },
+        {
+          "temperature_c": 20.0,
+          "conductivity_ms_cm": 6.156483956922
+        },
+        {
+          "temperature_c": 30.0,
+          "conductivity_ms_cm": 7.437532198843
+        },
+        {
+          "temperature_c": 40.0,
+          "conductivity_ms_cm": 8.829673135487
+        },
+        {
+          "temperature_c": 50.0,
+          "conductivity_ms_cm": 10.220288169566
+        },
+        {
+          "temperature_c": 60.0,
+          "conductivity_ms_cm": 11.603756421658
+        }
+      ],
+      "prediction_request": {
+        "temperature_c": 20.0,
+        "candidates": [
+          {
+            "candidate_id": "配方1",
+            "salt": "NaPF6",
+            "solvents": [
+              "EC",
+              "EMC",
+              "PC"
+            ]
+          }
+        ],
+        "composition_inputs": {
+          "配方1": {
+            "component_mmol": {
+              "EC": 0.8301158301158301,
+              "EMC": 15.91085922866337,
+              "PC": 6.127006827376113,
+              "NaPF6": 3.8648407264066686
+            }
+          }
+        }
+      }
+    },
+    {
+      "label": "配方2",
+      "measurements": [
+        {
+          "temperature_c": -30.0,
+          "conductivity_ms_cm": 1.653227261534
+        },
+        {
+          "temperature_c": -20.0,
+          "conductivity_ms_cm": 1.660382527732
+        },
+        {
+          "temperature_c": -10.0,
+          "conductivity_ms_cm": 2.6046795002
+        },
+        {
+          "temperature_c": 0.0,
+          "conductivity_ms_cm": 3.727320182887
+        },
+        {
+          "temperature_c": 10.0,
+          "conductivity_ms_cm": 5.119281608486
+        },
+        {
+          "temperature_c": 20.0,
+          "conductivity_ms_cm": 6.490036905405
+        },
+        {
+          "temperature_c": 30.0,
+          "conductivity_ms_cm": 8.011972200772
+        },
+        {
+          "temperature_c": 40.0,
+          "conductivity_ms_cm": 9.538101999457
+        },
+        {
+          "temperature_c": 50.0,
+          "conductivity_ms_cm": 11.072841349535
+        },
+        {
+          "temperature_c": 60.0,
+          "conductivity_ms_cm": 12.775211305443
+        }
+      ],
+      "prediction_request": {
+        "temperature_c": 20.0,
+        "candidates": [
+          {
+            "candidate_id": "配方2",
+            "salt": "NaPF6",
+            "solvents": [
+              "EC",
+              "EMC",
+              "PC"
+            ]
+          }
+        ],
+        "composition_inputs": {
+          "配方2": {
+            "component_mmol": {
+              "EC": 2.2768566886213946,
+              "EMC": 0.0778060611882234,
+              "PC": 24.644183016779472,
+              "NaPF6": 1.7231318844894314
+            }
+          }
+        }
+      }
+    }
+  ],
+  "prompts": {
+    "point": "请分别分析下面两种电解液的温度测量。数据来自已归档Zenodo测量，保持全部10个温度点、组成及原值，不平均、不删点、不补值。不查文献，不调用子代理。明确区分测量值、拟合参数与模型估计。拟合比较Arrhenius与VTF的AICc和留一温度误差。0.1仅为本次工作条件，不是通用科学标准。这些配方可能出现在预测模型训练集中，不能称为独立留出验证。对每种配方，若AICc优选模型的loo_rmse_log10低于0.1，再用独立电导率模型对20℃作计算核对；先看到拟合结果再判断条件。没有最低电导率门槛，不需作达标排序。最后比较两种配方并说明证据边界。树间差异只描述模型分歧，不解释成已校准预测区间。\n[{\"label\": \"配方1\", \"measurements\": [{\"temperature_c\": -30.0, \"conductivity_ms_cm\": 1.851699327963}, {\"temperature_c\": -20.0, \"conductivity_ms_cm\": 1.840177574978}, {\"temperature_c\": -10.0, \"conductivity_ms_cm\": 2.759636752722}, {\"temperature_c\": 0.0, \"conductivity_ms_cm\": 3.8058648593}, {\"temperature_c\": 10.0, \"conductivity_ms_cm\": 4.992309253987}, {\"temperature_c\": 20.0, \"conductivity_ms_cm\": 6.156483956922}, {\"temperature_c\": 30.0, \"conductivity_ms_cm\": 7.437532198843}, {\"temperature_c\": 40.0, \"conductivity_ms_cm\": 8.829673135487}, {\"temperature_c\": 50.0, \"conductivity_ms_cm\": 10.220288169566}, {\"temperature_c\": 60.0, \"conductivity_ms_cm\": 11.603756421658}], \"prediction_request\": {\"temperature_c\": 20.0, \"candidates\": [{\"candidate_id\": \"配方1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"]}], \"composition_inputs\": {\"配方1\": {\"component_mmol\": {\"EC\": 0.8301158301158301, \"EMC\": 15.91085922866337, \"PC\": 6.127006827376113, \"NaPF6\": 3.8648407264066686}}}}}, {\"label\": \"配方2\", \"measurements\": [{\"temperature_c\": -30.0, \"conductivity_ms_cm\": 1.653227261534}, {\"temperature_c\": -20.0, \"conductivity_ms_cm\": 1.660382527732}, {\"temperature_c\": -10.0, \"conductivity_ms_cm\": 2.6046795002}, {\"temperature_c\": 0.0, \"conductivity_ms_cm\": 3.727320182887}, {\"temperature_c\": 10.0, \"conductivity_ms_cm\": 5.119281608486}, {\"temperature_c\": 20.0, \"conductivity_ms_cm\": 6.490036905405}, {\"temperature_c\": 30.0, \"conductivity_ms_cm\": 8.011972200772}, {\"temperature_c\": 40.0, \"conductivity_ms_cm\": 9.538101999457}, {\"temperature_c\": 50.0, \"conductivity_ms_cm\": 11.072841349535}, {\"temperature_c\": 60.0, \"conductivity_ms_cm\": 12.775211305443}], \"prediction_request\": {\"temperature_c\": 20.0, \"candidates\": [{\"candidate_id\": \"配方2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"]}], \"composition_inputs\": {\"配方2\": {\"component_mmol\": {\"EC\": 2.2768566886213946, \"EMC\": 0.0778060611882234, \"PC\": 24.644183016779472, \"NaPF6\": 1.7231318844894314}}}}}]",
+    "ranking": "请评价下面两种电解液能否用于一个演示筛选条件：在0、20、40℃均达到3.0 mS/cm。数据来自已归档Zenodo测量，保持全部10个温度点、组成及原值，不平均、不删点、不补值。不查文献，不调用子代理。明确区分测量值、拟合参数与模型估计。拟合比较Arrhenius与VTF的AICc和留一温度误差。0.1仅为本次工作条件，不是通用科学标准。这些配方可能出现在预测模型训练集中，不能称为独立留出验证。先检查每种配方的温度测量；若两种配方的AICc优选模型loo_rmse_log10均低于0.1，再按演示条件对两者作多温度稳健排序，使用完整可用集成成员。若条件不满足则报告不能继续的原因，不补造或修改输入。3.0 mS/cm是本任务明确给定的演示阈值，不是领域通用标准。最后报告排序、逐温度估计与适用边界；集成达标频率不是已校准的物理概率。\n[{\"label\": \"配方1\", \"measurements\": [{\"temperature_c\": -30.0, \"conductivity_ms_cm\": 1.851699327963}, {\"temperature_c\": -20.0, \"conductivity_ms_cm\": 1.840177574978}, {\"temperature_c\": -10.0, \"conductivity_ms_cm\": 2.759636752722}, {\"temperature_c\": 0.0, \"conductivity_ms_cm\": 3.8058648593}, {\"temperature_c\": 10.0, \"conductivity_ms_cm\": 4.992309253987}, {\"temperature_c\": 20.0, \"conductivity_ms_cm\": 6.156483956922}, {\"temperature_c\": 30.0, \"conductivity_ms_cm\": 7.437532198843}, {\"temperature_c\": 40.0, \"conductivity_ms_cm\": 8.829673135487}, {\"temperature_c\": 50.0, \"conductivity_ms_cm\": 10.220288169566}, {\"temperature_c\": 60.0, \"conductivity_ms_cm\": 11.603756421658}], \"prediction_request\": {\"temperature_c\": 20.0, \"candidates\": [{\"candidate_id\": \"配方1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"]}], \"composition_inputs\": {\"配方1\": {\"component_mmol\": {\"EC\": 0.8301158301158301, \"EMC\": 15.91085922866337, \"PC\": 6.127006827376113, \"NaPF6\": 3.8648407264066686}}}}}, {\"label\": \"配方2\", \"measurements\": [{\"temperature_c\": -30.0, \"conductivity_ms_cm\": 1.653227261534}, {\"temperature_c\": -20.0, \"conductivity_ms_cm\": 1.660382527732}, {\"temperature_c\": -10.0, \"conductivity_ms_cm\": 2.6046795002}, {\"temperature_c\": 0.0, \"conductivity_ms_cm\": 3.727320182887}, {\"temperature_c\": 10.0, \"conductivity_ms_cm\": 5.119281608486}, {\"temperature_c\": 20.0, \"conductivity_ms_cm\": 6.490036905405}, {\"temperature_c\": 30.0, \"conductivity_ms_cm\": 8.011972200772}, {\"temperature_c\": 40.0, \"conductivity_ms_cm\": 9.538101999457}, {\"temperature_c\": 50.0, \"conductivity_ms_cm\": 11.072841349535}, {\"temperature_c\": 60.0, \"conductivity_ms_cm\": 12.775211305443}], \"prediction_request\": {\"temperature_c\": 20.0, \"candidates\": [{\"candidate_id\": \"配方2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"]}], \"composition_inputs\": {\"配方2\": {\"component_mmol\": {\"EC\": 2.2768566886213946, \"EMC\": 0.0778060611882234, \"PC\": 24.644183016779472, \"NaPF6\": 1.7231318844894314}}}}}]"
+  },
+  "order": [
+    {
+      "id": "point-r0-lru",
+      "case": "point",
+      "repeat": 0,
+      "arm": "lru",
+      "process_slots": 2
+    },
+    {
+      "id": "point-r0-cost",
+      "case": "point",
+      "repeat": 0,
+      "arm": "cost",
+      "process_slots": 2
+    },
+    {
+      "id": "point-r0-sync",
+      "case": "point",
+      "repeat": 0,
+      "arm": "sync",
+      "process_slots": 2
+    },
+    {
+      "id": "point-r0-async",
+      "case": "point",
+      "repeat": 0,
+      "arm": "async",
+      "process_slots": 2
+    },
+    {
+      "id": "ranking-r0-cost",
+      "case": "ranking",
+      "repeat": 0,
+      "arm": "cost",
+      "process_slots": 2
+    },
+    {
+      "id": "ranking-r0-sync",
+      "case": "ranking",
+      "repeat": 0,
+      "arm": "sync",
+      "process_slots": 2
+    },
+    {
+      "id": "ranking-r0-async",
+      "case": "ranking",
+      "repeat": 0,
+      "arm": "async",
+      "process_slots": 2
+    },
+    {
+      "id": "ranking-r0-lru",
+      "case": "ranking",
+      "repeat": 0,
+      "arm": "lru",
+      "process_slots": 2
+    },
+    {
+      "id": "point-r1-cost",
+      "case": "point",
+      "repeat": 1,
+      "arm": "cost",
+      "process_slots": 2
+    },
+    {
+      "id": "point-r1-sync",
+      "case": "point",
+      "repeat": 1,
+      "arm": "sync",
+      "process_slots": 2
+    },
+    {
+      "id": "point-r1-async",
+      "case": "point",
+      "repeat": 1,
+      "arm": "async",
+      "process_slots": 2
+    },
+    {
+      "id": "point-r1-lru",
+      "case": "point",
+      "repeat": 1,
+      "arm": "lru",
+      "process_slots": 2
+    },
+    {
+      "id": "ranking-r1-sync",
+      "case": "ranking",
+      "repeat": 1,
+      "arm": "sync",
+      "process_slots": 2
+    },
+    {
+      "id": "ranking-r1-async",
+      "case": "ranking",
+      "repeat": 1,
+      "arm": "async",
+      "process_slots": 2
+    },
+    {
+      "id": "ranking-r1-lru",
+      "case": "ranking",
+      "repeat": 1,
+      "arm": "lru",
+      "process_slots": 2
+    },
+    {
+      "id": "ranking-r1-cost",
+      "case": "ranking",
+      "repeat": 1,
+      "arm": "cost",
+      "process_slots": 2
+    },
+    {
+      "id": "point-r2-sync",
+      "case": "point",
+      "repeat": 2,
+      "arm": "sync",
+      "process_slots": 2
+    },
+    {
+      "id": "point-r2-async",
+      "case": "point",
+      "repeat": 2,
+      "arm": "async",
+      "process_slots": 2
+    },
+    {
+      "id": "point-r2-lru",
+      "case": "point",
+      "repeat": 2,
+      "arm": "lru",
+      "process_slots": 2
+    },
+    {
+      "id": "point-r2-cost",
+      "case": "point",
+      "repeat": 2,
+      "arm": "cost",
+      "process_slots": 2
+    },
+    {
+      "id": "ranking-r2-async",
+      "case": "ranking",
+      "repeat": 2,
+      "arm": "async",
+      "process_slots": 2
+    },
+    {
+      "id": "ranking-r2-lru",
+      "case": "ranking",
+      "repeat": 2,
+      "arm": "lru",
+      "process_slots": 2
+    },
+    {
+      "id": "ranking-r2-cost",
+      "case": "ranking",
+      "repeat": 2,
+      "arm": "cost",
+      "process_slots": 2
+    },
+    {
+      "id": "ranking-r2-sync",
+      "case": "ranking",
+      "repeat": 2,
+      "arm": "sync",
+      "process_slots": 2
+    },
+    {
+      "id": "point-ample-async",
+      "case": "point",
+      "repeat": 0,
+      "arm": "async",
+      "process_slots": 3
+    },
+    {
+      "id": "ranking-ample-async",
+      "case": "ranking",
+      "repeat": 0,
+      "arm": "async",
+      "process_slots": 3
+    }
+  ],
+  "arms": {
+    "lru": "原容量LRU；全部语义顾问关闭",
+    "cost": "原执行器与实测重建成本顾问；不请求Jev",
+    "sync": "任务语义、实测成本、最小最大后悔值；准入时同步解释",
+    "async": "与sync相同；在已满容量且有至少两个已知成本的空闲实例时机会性预取语义"
+  },
+  "development_disclosure": [
+    "任务配方和点预测分支已用于开发试跑，不作为留出科学验证。",
+    "最小最大后悔值是采用已有稳健决策准则，不主张其数学方法原创。",
+    "预热库存模拟前任务遗留的空闲资源，预热成本另记；本实验不是冷启动比较。",
+    "任务仅两次科学调用批次，不称长程科研任务；检验资源阶段转换。"
+  ],
+  "max_primary_requests_per_run": 16,
+  "max_run_seconds": 240,
+  "max_live_jev_calls_total": 12,
+  "max_live_jev_calls_per_run": 1,
+  "request_retries": 0,
+  "warm_inventory": [
+    "process:na-conductivity-rf",
+    "process:robust-ranking-worker"
+  ],
+  "allowed_tools": [
+    "board_create",
+    "board_list",
+    "board_get",
+    "board_claim",
+    "board_set_execution_intent",
+    "board_complete",
+    "board_escalate",
+    "board_fail",
+    "fit_conductivity_temperature_law",
+    "predict_formulation_conductivity",
+    "rank_formulations_under_uncertainty"
+  ],
+  "interface_mode": "完整生产任务工具说明；提示仅给科学目标与条件，不要求建卡、写意图、选择资源或固定调用序列。",
+  "selection_rule": "minimax_regret",
+  "latency_calibration": [
+    {
+      "path": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-1.json",
+      "sha256": "ad654fd7c98e3fe46cbd18510f0faa5845cb000a48cd87490416cc7f4526bf61",
+      "elapsed_s": 1.0630000000001019,
+      "model": "jev-1.14.0"
+    },
+    {
+      "path": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-2.json",
+      "sha256": "1c464913d86a515cd399b3a60e6ec2e233b223d73467ed396494a8e8fa031650",
+      "elapsed_s": 1.0469999999986612,
+      "model": "jev-1.14.0"
+    },
+    {
+      "path": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-3.json",
+      "sha256": "2c2260c7e5329caa017274f3ec673b0879768c08f1d1bf1a122ae01af3be2932",
+      "elapsed_s": 1.0,
+      "model": "jev-1.14.0"
+    },
+    {
+      "path": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-4.json",
+      "sha256": "4e94d6215b87665a57950cdffdb62fde29736f4d7a21aca2e1bba7e6eaf67019",
+      "elapsed_s": 1.0939999999991414,
+      "model": "jev-1.14.0"
+    },
+    {
+      "path": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-5.json",
+      "sha256": "df5336afc351cac51f9da8cd4ab13a175800d07292724ae39e87e82036047140",
+      "elapsed_s": 1.0469999999986612,
+      "model": "jev-1.14.0"
+    },
+    {
+      "path": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-6.json",
+      "sha256": "8893e9e4e77bf5dee104a5807549697fcdadb06ff51360a5c6a2fd6f2c5f1340",
+      "elapsed_s": 1.0630000000001019,
+      "model": "jev-1.14.0"
+    },
+    {
+      "path": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-7.json",
+      "sha256": "6f039c2584b8b9fbb474400a2c51642884aa649ce707802cc75c131d988537c0",
+      "elapsed_s": 1.0160000000014406,
+      "model": "jev-1.14.0"
+    },
+    {
+      "path": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-8.json",
+      "sha256": "61ecb7b54e732ac3a5b047851fdbc80d8f99d1dbc5f57095a2001a8b38081662",
+      "elapsed_s": 1.0,
+      "model": "jev-1.14.0"
+    },
+    {
+      "path": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-9.json",
+      "sha256": "65b201c82ac7bfad83708263b9b62c50c08bef9417a3f02b7d213e722c06a01e",
+      "elapsed_s": 1.0630000000001019,
+      "model": "jev-1.14.0"
+    }
+  ],
+  "source_hashes": {
+    "capvm/demand_coordinator.py": "7b6d442b75eb554ee33f7b61675102386709b99e887c4b4be82bd42448ce5a62",
+    "capvm/governor.py": "9f69311f7e0e684f8ec69acf4241509ca5f57ba04dd140814d8f5d35400f388f",
+    "capvm/jev_task_intent.py": "ac852a7863a1663c5eff4337b7adcb2fd67e282752844d97a790cb5ccaff4c28",
+    "capvm/semantic_plan.py": "789ca135b25bdd221d20088d719e5804ed81c87b0b5c461fa5ff6654ef38d37b",
+    "capvm/shared_runtime.py": "47744eead5928de880e3253945303fbb236bdbdd13edd001e6192df57656a039",
+    "capvm/task_intent.py": "b232bc42db464a6c17a3d65a3cc8fcbad513ba6f3212579593f7923dd392bbc8",
+    "core/default_resource_runtime.py": "6e6966fea595c9c95e8fb6102331f9155aa38ac2dd1e42e5c79a57460055d86f",
+    "core/langgraph_residency.py": "b96afe18b7d59ff51ea528bcfd0a3cbfed5097a0de0e85da2009747134838f66",
+    "core/resource_task_graph.py": "d6b1c2822b2d6a6a36e3ae56fa24fa39b334ffe68f94a8b07bb3525c23a39d60",
+    "core/resource_tool_node.py": "c67e854d0bfa01f5cdd8aed6de2596b0dfd66915f7a11009c31ae62f0226f69b",
+    "core/task_board_intent.py": "09658682ee4a6c64b4b6465b1712df7a45b5ae4475dab6d0960b38b13b8d3d81",
+    "core/tasks/board.py": "2b9126b16bac7eef985f9a7670acda178af8503335283b0be95abce28deebbb8",
+    "core/tasks/tools.py": "93a74b4cb813c0d45a644ab67eabbeda33f6796a82ebd837f7dad2e47d536057",
+    "llms.py": "143967e879ab40be7e7d2a1bae507ea582ab97da3a3c5d9a76abe3621e85a7e2",
+    "main.py": "13232328de34c8ceab0cc5370d334ce212d5977282f3f5505e842e3b5b7333be",
+    "model_config.py": "e696a9413b36d60c2b281b69958ae82d300f325cbe70d155a742e4f5ddb01787",
+    "tools/electrolyte_design/conductivity_tool.py": "c34c207adf5e19d090850aee6be8b5c4fd00bd3d70a05ccdb6828cf1f1df12ff",
+    "tools/electrolyte_design/temperature_fit.py": "5a92eac7041cf6c4a0789682f39d560ead36f7a53f3ddde00f5eeaafde45a82b",
+    "tools/electrolyte_design/robust_ranking_tool.py": "4ec9ef64349a7df742954ba1854c64ed3cc19ee47f2b4c0a43b724640d0b72ce",
+    "tools/electrolyte_design/robust_ranking.py": "9c055061177faaa1f1c78f4599052941462b6a41c0e6ba5ffe8c2a5c96d0921c",
+    "tools/electrolyte_design/robust_ranking_process.py": "6499dba9e70eed9915cafa5f2ba1c4df23d26b0125d5b153f62b05604ae07f0d",
+    "tools/electrolyte_design/conductivity_ml.py": "f6eba047f8eb2d3e5603c852ac4c069c982abe4a046cdb4cf180b572dd07f43c"
+  },
+  "primary_metric": "实际graph.ainvoke任务交付耗时，含主模型、科学计算、Jev与检查点；全部运行和失败保留。",
+  "secondary_metrics": [
+    "主模型请求数和等待时间",
+    "工具边界时间",
+    "Jev总调用与关键路径等待",
+    "实际进程建立/重载次数和耗时",
+    "科学参数与输出一致性",
+    "调用结束清理"
+  ],
+  "stop_rule": "预算到达、鉴权失败或连续两次基础设施错误时停止；科学无优势不停止、不选跑。",
+  "analysis_rule": "分支分别报告全部三次数据和中位数；不以局部控制开销替代端到端；不作小样本显著性声明。"
+}

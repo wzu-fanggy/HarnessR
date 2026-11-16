@@ -1,0 +1,595 @@
+{
+  "status": "planning only, not an executed experiment",
+  "scientific_question": "Follow up the archived low-temperature shortlist with intermediate-temperature checks, model-member threshold agreement, and temperature interpretation against measured reference formulations.",
+  "candidate_selection_rule": "Reuse the three candidates already selected and checked at 0 and 20 C by the archived screening agent. Do not select candidates using new model outputs.",
+  "reference_selection_rule": "Two distinct formulations nearest to the shortlist centroid by L1 distance in all-component mole fractions with a complete positive first source sweep. Selection is fixed before inference or fitting. Preserve and analyze all source-order sweeps for the selected formulations separately; do not pool or relabel them as independent experimental repeats.",
+  "complete_temperature_series_available": 67,
+  "candidates": [
+    {
+      "candidate": {
+        "additives": [],
+        "candidate_id": "B3-gen-0029",
+        "component_mmol": {
+          "EC": 2617.814903,
+          "EMC": 5231.903969,
+          "NaPF6": 886.897596,
+          "PC": 2150.281129
+        },
+        "salt": "NaPF6",
+        "solvents": [
+          "EC",
+          "EMC",
+          "PC"
+        ]
+      },
+      "composition_id": "4bf66317bdf5d1f631edb4ed3431254e7d188ae0578ac16255437f0b0edf65da",
+      "mole_fractions": {
+        "NaPF6": 0.08146467697504513,
+        "EC": 0.24045554573061906,
+        "EMC": 0.480568860172039,
+        "PC": 0.19751091712229688
+      },
+      "existing_temperatures_c": [
+        -20.0,
+        0.0,
+        20.0
+      ],
+      "existing_predictions": [
+        {
+          "temperature_c": -20.0,
+          "prediction_mS_cm": 2.5262117248512066,
+          "record_id": "86247a648762fda806197c4e8ff0787e91956934b645d23eb3f97de4e635bf3f",
+          "record_path": "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0_resume\\A\\reports\\transport_predictions\\86247a648762fda806197c4e8ff0787e91956934b645d23eb3f97de4e635bf3f.json"
+        },
+        {
+          "temperature_c": 0.0,
+          "prediction_mS_cm": 4.815292654210056,
+          "record_id": "e50666ef5a33265dc0f2ef8f40c509fba356821f42a8949eba581797fbde4b6e",
+          "record_path": "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0_resume\\A\\reports\\transport_predictions\\e50666ef5a33265dc0f2ef8f40c509fba356821f42a8949eba581797fbde4b6e.json"
+        },
+        {
+          "temperature_c": 20.0,
+          "prediction_mS_cm": 7.377323169552955,
+          "record_id": "c6750288c0c43307d1309323bd32c8da41f45407b1f81a2c70dbd50c1087868e",
+          "record_path": "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0_resume\\A\\reports\\transport_predictions\\c6750288c0c43307d1309323bd32c8da41f45407b1f81a2c70dbd50c1087868e.json"
+        }
+      ],
+      "new_requested_temperatures_c": [
+        -10.0
+      ],
+      "conditional_followup_temperature_c": 25.0
+    },
+    {
+      "candidate": {
+        "additives": [],
+        "candidate_id": "B3-gen-0031",
+        "component_mmol": {
+          "EC": 2822.280563,
+          "EMC": 5354.106565,
+          "NaPF6": 873.584306,
+          "PC": 1823.612872
+        },
+        "salt": "NaPF6",
+        "solvents": [
+          "EC",
+          "EMC",
+          "PC"
+        ]
+      },
+      "composition_id": "e44569442076ee24adf0e4527872fb43f236cfda22515ce4436a2aa2fad93abf",
+      "mole_fractions": {
+        "NaPF6": 0.0803400499242885,
+        "EC": 0.25955384016682304,
+        "EMC": 0.4923957376267939,
+        "PC": 0.16771037228209446
+      },
+      "existing_temperatures_c": [
+        -20.0,
+        0.0,
+        20.0
+      ],
+      "existing_predictions": [
+        {
+          "temperature_c": -20.0,
+          "prediction_mS_cm": 2.5262117248512066,
+          "record_id": "e7bc969991ee8442fa171e1743105565428ba0bd3ebcdf78bc32db725eaf15b0",
+          "record_path": "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0_resume\\A\\reports\\transport_predictions\\e7bc969991ee8442fa171e1743105565428ba0bd3ebcdf78bc32db725eaf15b0.json"
+        },
+        {
+          "temperature_c": 0.0,
+          "prediction_mS_cm": 4.815292654210056,
+          "record_id": "64f6e406d4ec47932f998bed89960539c90aac99616df7ab48e62cf284484ade",
+          "record_path": "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0_resume\\A\\reports\\transport_predictions\\64f6e406d4ec47932f998bed89960539c90aac99616df7ab48e62cf284484ade.json"
+        },
+        {
+          "temperature_c": 20.0,
+          "prediction_mS_cm": 7.377323169552955,
+          "record_id": "d52da84251fd0410b5b6dcb4b6d4b7ffe1e9de7bc2fc3a1ad5a8baddf7b046da",
+          "record_path": "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0_resume\\A\\reports\\transport_predictions\\d52da84251fd0410b5b6dcb4b6d4b7ffe1e9de7bc2fc3a1ad5a8baddf7b046da.json"
+        }
+      ],
+      "new_requested_temperatures_c": [
+        -10.0
+      ],
+      "conditional_followup_temperature_c": 25.0
+    },
+    {
+      "candidate": {
+        "additives": [],
+        "candidate_id": "B3-gen-0016",
+        "component_mmol": {
+          "EC": 3022.483883,
+          "EMC": 5140.71071,
+          "NaPF6": 871.352075,
+          "PC": 1836.805407
+        },
+        "salt": "NaPF6",
+        "solvents": [
+          "EC",
+          "EMC",
+          "PC"
+        ]
+      },
+      "composition_id": "94e7c8c72c8e4e6ccf26cdb1c15ddfad4894d0282da23d0d96355511853fd873",
+      "mole_fractions": {
+        "NaPF6": 0.08015121476966791,
+        "EC": 0.27802281281558067,
+        "EMC": 0.4728676501814058,
+        "PC": 0.16895832223334556
+      },
+      "existing_temperatures_c": [
+        -20.0,
+        0.0,
+        20.0
+      ],
+      "existing_predictions": [
+        {
+          "temperature_c": -20.0,
+          "prediction_mS_cm": 2.5092254489565273,
+          "record_id": "a0d36a4ea0de57d782a73fd729e853edece2f7e8de5e3374d241cb3febe61a4d",
+          "record_path": "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0_resume\\A\\reports\\transport_predictions\\a0d36a4ea0de57d782a73fd729e853edece2f7e8de5e3374d241cb3febe61a4d.json"
+        },
+        {
+          "temperature_c": 0.0,
+          "prediction_mS_cm": 4.826700014711963,
+          "record_id": "4c6d4d759ffc091696aa78d84401cd2a75ef2252d59c7ca4408764bfb32a3058",
+          "record_path": "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0_resume\\A\\reports\\transport_predictions\\4c6d4d759ffc091696aa78d84401cd2a75ef2252d59c7ca4408764bfb32a3058.json"
+        },
+        {
+          "temperature_c": 20.0,
+          "prediction_mS_cm": 7.563336951446481,
+          "record_id": "e4d50899a8d20a8417620c53efb55c0b5cb760088548ed9e9d7f5ec948cbca0b",
+          "record_path": "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0_resume\\A\\reports\\transport_predictions\\e4d50899a8d20a8417620c53efb55c0b5cb760088548ed9e9d7f5ec948cbca0b.json"
+        }
+      ],
+      "new_requested_temperatures_c": [
+        -10.0
+      ],
+      "conditional_followup_temperature_c": 25.0
+    }
+  ],
+  "references": [
+    {
+      "reference_id": "Ref-1",
+      "source_member": "data/Na/raw/hts_data_gen0.csv",
+      "component_mmol": {
+        "NaPF6": 2.7127121167013994,
+        "EC": 6.937315466727231,
+        "EMC": 13.79472647807502,
+        "PC": 4.988784296055403
+      },
+      "mole_fractions": {
+        "NaPF6": 0.09540536540293885,
+        "EC": 0.24398354434431288,
+        "EMC": 0.4851568701933185,
+        "PC": 0.17545422005942976
+      },
+      "distance_to_shortlist_centroid": 0.03593234475968782,
+      "previous_B_formulation": false,
+      "source_temperature_sweep_count": 3,
+      "source_sweeps": [
+        {
+          "source_sweep_id": "sweep-1",
+          "measurements": [
+            {
+              "row_zero_based": 510,
+              "temperature_c": -30.0,
+              "conductivity_ms_cm": 2.7692567834237
+            },
+            {
+              "row_zero_based": 511,
+              "temperature_c": -20.0,
+              "conductivity_ms_cm": 2.8367825647504
+            },
+            {
+              "row_zero_based": 512,
+              "temperature_c": -10.0,
+              "conductivity_ms_cm": 4.0354302659956005
+            },
+            {
+              "row_zero_based": 513,
+              "temperature_c": 0.0,
+              "conductivity_ms_cm": 5.2111761224513
+            },
+            {
+              "row_zero_based": 514,
+              "temperature_c": 10.0,
+              "conductivity_ms_cm": 6.5115521141465
+            },
+            {
+              "row_zero_based": 515,
+              "temperature_c": 20.0,
+              "conductivity_ms_cm": 7.81359061804
+            },
+            {
+              "row_zero_based": 516,
+              "temperature_c": 30.0,
+              "conductivity_ms_cm": 9.299096726098
+            },
+            {
+              "row_zero_based": 517,
+              "temperature_c": 40.0,
+              "conductivity_ms_cm": 10.9466075128586
+            },
+            {
+              "row_zero_based": 518,
+              "temperature_c": 50.0,
+              "conductivity_ms_cm": 12.6864615645393
+            },
+            {
+              "row_zero_based": 519,
+              "temperature_c": 60.0,
+              "conductivity_ms_cm": 14.4868275372604
+            }
+          ],
+          "fit_input_valid": true
+        },
+        {
+          "source_sweep_id": "sweep-2",
+          "measurements": [
+            {
+              "row_zero_based": 520,
+              "temperature_c": -30.0,
+              "conductivity_ms_cm": 2.8065104396954
+            },
+            {
+              "row_zero_based": 521,
+              "temperature_c": -20.0,
+              "conductivity_ms_cm": 2.8120364262859003
+            },
+            {
+              "row_zero_based": 522,
+              "temperature_c": -10.0,
+              "conductivity_ms_cm": 4.1094520276952995
+            },
+            {
+              "row_zero_based": 523,
+              "temperature_c": 0.0,
+              "conductivity_ms_cm": 5.4734617227172
+            },
+            {
+              "row_zero_based": 524,
+              "temperature_c": 10.0,
+              "conductivity_ms_cm": 6.8567937465304
+            },
+            {
+              "row_zero_based": 525,
+              "temperature_c": 20.0,
+              "conductivity_ms_cm": 8.0500988180585
+            },
+            {
+              "row_zero_based": 526,
+              "temperature_c": 30.0,
+              "conductivity_ms_cm": 9.4928060154124
+            },
+            {
+              "row_zero_based": 527,
+              "temperature_c": 40.0,
+              "conductivity_ms_cm": 11.1624288017195
+            },
+            {
+              "row_zero_based": 528,
+              "temperature_c": 50.0,
+              "conductivity_ms_cm": 12.953125106286398
+            },
+            {
+              "row_zero_based": 529,
+              "temperature_c": 60.0,
+              "conductivity_ms_cm": 14.8020132793522
+            }
+          ],
+          "fit_input_valid": true
+        },
+        {
+          "source_sweep_id": "sweep-3",
+          "measurements": [
+            {
+              "row_zero_based": 530,
+              "temperature_c": -30.0,
+              "conductivity_ms_cm": 2.832591135216
+            },
+            {
+              "row_zero_based": 531,
+              "temperature_c": -20.0,
+              "conductivity_ms_cm": 2.8534033157498
+            },
+            {
+              "row_zero_based": 532,
+              "temperature_c": -10.0,
+              "conductivity_ms_cm": 4.2021265513733
+            },
+            {
+              "row_zero_based": 533,
+              "temperature_c": 0.0,
+              "conductivity_ms_cm": 5.708527363184
+            },
+            {
+              "row_zero_based": 534,
+              "temperature_c": 10.0,
+              "conductivity_ms_cm": 7.3302994869809
+            },
+            {
+              "row_zero_based": 535,
+              "temperature_c": 20.0,
+              "conductivity_ms_cm": 8.4432954380748
+            },
+            {
+              "row_zero_based": 536,
+              "temperature_c": 30.0,
+              "conductivity_ms_cm": 9.5332957911963
+            },
+            {
+              "row_zero_based": 537,
+              "temperature_c": 40.0,
+              "conductivity_ms_cm": 11.023993594875899
+            },
+            {
+              "row_zero_based": 538,
+              "temperature_c": 50.0,
+              "conductivity_ms_cm": 12.6973856084951
+            },
+            {
+              "row_zero_based": 539,
+              "temperature_c": 60.0,
+              "conductivity_ms_cm": 14.6478382978723
+            }
+          ],
+          "fit_input_valid": true
+        }
+      ],
+      "measurement_handling": "Every raw sweep retained separately. Invalid inputs are flagged, not silently removed. Sweep identity does not establish independent experimental replication."
+    },
+    {
+      "reference_id": "Ref-2",
+      "source_member": "data/Na/raw/hts_data_gen2.csv",
+      "component_mmol": {
+        "NaPF6": 1.4956832390592438,
+        "EC": 4.089257324551442,
+        "EMC": 16.62744344652034,
+        "PC": 6.478660776381393
+      },
+      "mole_fractions": {
+        "NaPF6": 0.052130664818534615,
+        "EC": 0.1425273061674558,
+        "EMC": 0.5795342613084922,
+        "PC": 0.22580776770551741
+      },
+      "distance_to_shortlist_centroid": 0.2906761516160354,
+      "previous_B_formulation": false,
+      "source_temperature_sweep_count": 3,
+      "source_sweeps": [
+        {
+          "source_sweep_id": "sweep-1",
+          "measurements": [
+            {
+              "row_zero_based": 240,
+              "temperature_c": -30.0,
+              "conductivity_ms_cm": 2.2438950619171
+            },
+            {
+              "row_zero_based": 241,
+              "temperature_c": -20.0,
+              "conductivity_ms_cm": 2.9923175535168003
+            },
+            {
+              "row_zero_based": 242,
+              "temperature_c": -10.0,
+              "conductivity_ms_cm": 3.8959434436382003
+            },
+            {
+              "row_zero_based": 243,
+              "temperature_c": 0.0,
+              "conductivity_ms_cm": 5.0088675433407
+            },
+            {
+              "row_zero_based": 244,
+              "temperature_c": 10.0,
+              "conductivity_ms_cm": 6.0253363255699
+            },
+            {
+              "row_zero_based": 245,
+              "temperature_c": 20.0,
+              "conductivity_ms_cm": 6.8718323241151
+            },
+            {
+              "row_zero_based": 246,
+              "temperature_c": 30.0,
+              "conductivity_ms_cm": 7.2872834516657
+            },
+            {
+              "row_zero_based": 247,
+              "temperature_c": 40.0,
+              "conductivity_ms_cm": 8.0838555508637
+            },
+            {
+              "row_zero_based": 248,
+              "temperature_c": 50.0,
+              "conductivity_ms_cm": 8.9627000488519
+            },
+            {
+              "row_zero_based": 249,
+              "temperature_c": 60.0,
+              "conductivity_ms_cm": 9.867988794513701
+            }
+          ],
+          "fit_input_valid": true
+        },
+        {
+          "source_sweep_id": "sweep-2",
+          "measurements": [
+            {
+              "row_zero_based": 250,
+              "temperature_c": -30.0,
+              "conductivity_ms_cm": 2.1639999999999
+            },
+            {
+              "row_zero_based": 251,
+              "temperature_c": -20.0,
+              "conductivity_ms_cm": 2.8658453088075
+            },
+            {
+              "row_zero_based": 252,
+              "temperature_c": -10.0,
+              "conductivity_ms_cm": 3.745766758494
+            },
+            {
+              "row_zero_based": 253,
+              "temperature_c": 0.0,
+              "conductivity_ms_cm": 4.6213028477264
+            },
+            {
+              "row_zero_based": 254,
+              "temperature_c": 10.0,
+              "conductivity_ms_cm": 5.5770977565098
+            },
+            {
+              "row_zero_based": 255,
+              "temperature_c": 20.0,
+              "conductivity_ms_cm": 6.471556933727499
+            },
+            {
+              "row_zero_based": 256,
+              "temperature_c": 30.0,
+              "conductivity_ms_cm": 7.395105148658399
+            },
+            {
+              "row_zero_based": 257,
+              "temperature_c": 40.0,
+              "conductivity_ms_cm": 8.314286243699899
+            },
+            {
+              "row_zero_based": 258,
+              "temperature_c": 50.0,
+              "conductivity_ms_cm": 9.2136632443531
+            },
+            {
+              "row_zero_based": 259,
+              "temperature_c": 60.0,
+              "conductivity_ms_cm": 10.1201091614416
+            }
+          ],
+          "fit_input_valid": true
+        },
+        {
+          "source_sweep_id": "sweep-3",
+          "measurements": [
+            {
+              "row_zero_based": 260,
+              "temperature_c": -30.0,
+              "conductivity_ms_cm": 2.1201240032086
+            },
+            {
+              "row_zero_based": 261,
+              "temperature_c": -20.0,
+              "conductivity_ms_cm": 2.8285670758577
+            },
+            {
+              "row_zero_based": 262,
+              "temperature_c": -10.0,
+              "conductivity_ms_cm": 3.6598344872524997
+            },
+            {
+              "row_zero_based": 263,
+              "temperature_c": 0.0,
+              "conductivity_ms_cm": 4.5538358941095
+            },
+            {
+              "row_zero_based": 264,
+              "temperature_c": 10.0,
+              "conductivity_ms_cm": 5.427855520657101
+            },
+            {
+              "row_zero_based": 265,
+              "temperature_c": 20.0,
+              "conductivity_ms_cm": 6.2552084754493
+            },
+            {
+              "row_zero_based": 266,
+              "temperature_c": 30.0,
+              "conductivity_ms_cm": 7.1344079772621996
+            },
+            {
+              "row_zero_based": 267,
+              "temperature_c": 40.0,
+              "conductivity_ms_cm": 8.100196142058701
+            },
+            {
+              "row_zero_based": 268,
+              "temperature_c": 50.0,
+              "conductivity_ms_cm": 8.9550150473343
+            },
+            {
+              "row_zero_based": 269,
+              "temperature_c": 60.0,
+              "conductivity_ms_cm": 9.8740331831666
+            }
+          ],
+          "fit_input_valid": true
+        }
+      ],
+      "measurement_handling": "Every raw sweep retained separately. Invalid inputs are flagged, not silently removed. Sweep identity does not establish independent experimental replication."
+    }
+  ],
+  "screening_temperature_points_c": [
+    -20,
+    -10,
+    0,
+    20
+  ],
+  "task_specific_conductivity_target_mS_cm": 2.0,
+  "target_provenance": "The archived screening request used 2.0 mS/cm as its demonstration criterion at -20, 0 and 20 C. This proposal adds the -10 C intermediate check used elsewhere in the manuscript. It is not a universal electrolyte requirement.",
+  "model": {
+    "path": "${PROJECT_SOURCE}\\reports\\cwsr_inputs\\cwsr_conductivity_rf_formal_v1.joblib",
+    "sha256": "cb60829a64e6ac4f1590b49a496b650f06a73563c0b002d3b1579e1de642e182",
+    "retrain": false
+  },
+  "ranking_backend": {
+    "method": "existing group-bootstrap RF ensemble",
+    "members": 32,
+    "trees_per_member": 96,
+    "seed": 20260924,
+    "initialization": "the existing worker fits its ensemble from the frozen bundle at startup; keep the existing implementation and reserved split unchanged",
+    "same_model_as_point_predictor": false
+  },
+  "design_classification": "prospectively staged integration validation with real chemical inputs and numerical tools; not an unconstrained autonomous scheduling experiment",
+  "stage_protocol": "Candidate comparison followed by reference temperature interpretation is a predefined research sequence. Reference fitting is not claimed to be mathematically dependent on candidate ranking. No access order or timestamps may be tuned after observing a policy outcome.",
+  "same_snapshot_controls": "At a genuine decision, preserve candidates, ownership, capacities and measured costs, and record the existing fallback and cost-only decisions without semantic relevance. This is a local decision comparison, not a second executed scientific run.",
+  "task_information_effect_rule": "Actual advice and subsequent reuse establish an integrated path. An incremental effect of task information requires a different choice from the same-state no-task-information decision. A difference from LRU alone is insufficient if cost-only selects the same plan.",
+  "tie_rule": "Keep candidates tied under the predefined scientific ranking. Evaluate every tied priority candidate at 25 C, at most the three already fixed candidates. Do not break scientific ties using a resource outcome.",
+  "sharing_identity_rule": "Use resource identity, process PID, creation generation or ordered creation/exit events, model hash and task ownership together. A reused cached number or matching PID alone is insufficient.",
+  "source": {
+    "path": "${PROJECT_SOURCE}\\reports\\cwsr_inputs\\na_conductivity_training_source_v1.zip",
+    "sha256": "1fbe50073d50a372e891217dcc757cbe8042cbdb2e85e42bb4c89ef05981cea5",
+    "new_measurements": false
+  },
+  "protected_working_file_hashes": {
+    "${USER_HOME}\\Desktop\\文章\\20261102-SA-TRRR-SI_工作稿.docx": "65883ace05bd8de7f3adedd9466e45be998e1504ddbbbb0798d6b79889cbb760",
+    "${USER_HOME}\\Desktop\\文章\\20261102-SA-TRRR-SI_工作稿.pdf": "8ada8684b38a85fbae20ff76785b028ce3b042c77b56b3f13659b2dd05a4077a",
+    "${USER_HOME}\\Desktop\\文章\\20261102-SA-TRRR_工作稿.docx": "a8c8ad99f3b5c72ef7a72ae0f570c2f61d3448f20018130a46a84c2eeb2e557f",
+    "${USER_HOME}\\Desktop\\文章\\20261102-SA-TRRR_工作稿.pdf": "fda8780a5a2c20f7681800715161be8d3b2cddcd2051b4dd90083eb9de5d7b53"
+  },
+  "scientific_calls_executed": 0,
+  "API_calls": 0,
+  "experiments_executed": 0,
+  "working_files_unchanged": true
+}

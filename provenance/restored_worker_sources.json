@@ -1,0 +1,23 @@
+[
+  {
+    "path": "src/orion/benchmark/cwsr_na_conductivity_ml_worker_v1.py",
+    "role": "required_subprocess_worker",
+    "source_label": "${ORION_SOURCE}/benchmark/cwsr_na_conductivity_ml_worker_v1.py",
+    "source_sha256": "b23dbae3ebdc17ff5c5085b0b0bb8e1720480c4bc23c79f38c14d258d3dc6a38",
+    "packaged_sha256": "b23dbae3ebdc17ff5c5085b0b0bb8e1720480c4bc23c79f38c14d258d3dc6a38"
+  },
+  {
+    "path": "versions/task_aware/orion/benchmark/cwsr_na_conductivity_ml_worker_v1.py",
+    "role": "required_subprocess_worker",
+    "source_label": "${ORION_SOURCE}/benchmark/cwsr_na_conductivity_ml_worker_v1.py",
+    "source_sha256": "b23dbae3ebdc17ff5c5085b0b0bb8e1720480c4bc23c79f38c14d258d3dc6a38",
+    "packaged_sha256": "b23dbae3ebdc17ff5c5085b0b0bb8e1720480c4bc23c79f38c14d258d3dc6a38"
+  },
+  {
+    "path": "src/orion/benchmark/cwsr_bgem3_external_worker_v1.py",
+    "role": "required_subprocess_worker",
+    "source_label": "${ORION_SOURCE}/benchmark/cwsr_bgem3_external_worker_v1.py",
+    "source_sha256": "2e2e773be081b4c2a53b1ee174beb5337bd83f8a7da5bfb0631c622bdd169b1f",
+    "packaged_sha256": "2e2e773be081b4c2a53b1ee174beb5337bd83f8a7da5bfb0631c622bdd169b1f"
+  }
+]

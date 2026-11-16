@@ -1,0 +1,514 @@
+{
+  "ok": false,
+  "answer": "I'll start by loading the required skill.",
+  "contexts": [],
+  "tool_calls": [
+    {
+      "name": "load_skill",
+      "args": {
+        "name": "electrolyte_design"
+      },
+      "result": "---\nname: electrolyte_design\ndescription: 钠离子电池电解液配方正向设计与候选配方筛选\ntriggers:\n  - 设计\n  - 配方设计\n  - 推荐电解液\n  - 优化电解液\nmethod:\n  objective: 在用户硬约束下形成可追溯候选，并由结构化 DecisionState 决定推荐或暂停\n  evidence_gaps:\n    - 候选组成或浓度缺失\n    - 目标工况与性能没有同实验绑定\n    - 硬约束缺少可验证原文\n  capabilities:\n    - 文献与论文内检索\n    - KG 候选发现\n    - 原文证据补全\n    - 纯约束评估与有界重规划\n  exit_conditions:\n    - DecisionState 为 recommend 且只报告 approved candidates\n    - DecisionState 为 hold 且报告缺口和验证计划\nworkflow:\n  steps:\n    - id: retrieve\n      tool: search_literature_multiview\n      required: false\n      description: 多角度背景检索，补齐候选、机理或替代体系证据\n    - id: kg_structured\n      tool: kg_query\n      required: false\n      description: 需要结构化材料、配方、条件或关系路径时查询领域知识图谱\n    - id: retrieve_fallback\n      tool: search_literature_chunks\n      required: false\n      description: 聚焦补充检索\n    - id: resolve_paper\n      tool: resolve_literature_papers\n      required: false\n      description: 用作者、题名、DOI 或用户给出的具体实验标识定位候选论文\n    - id: retrieve_paper\n      tool: search_paper_chunks\n      required: false\n      description: 已锁定具体论文时，在论文内部补取任务相关原文证据\n    - id: numeric\n      tool: extract_numeric_properties\n      required: false\n      description: 从证据块抽取数值属性\n    - id: formulate\n      tool: query_formulation_space\n      required: true\n      description: 获取可评估候选配方\n    - id: enrich\n      tool: enrich_formulation_evidence\n      required: false\n      description: 补齐候选 evidence 原文与元数据\n    - id: conductivity_ml\n      tool: predict_formulation_conductivity\n      required: false\n      description: 对具有明确摩尔组成且位于 NaPF6–EC/EMC/PC 适用域内的候选估计离子电导率；预测只作定量辅助，不替代文献证据\n    - id: screen\n      tool: screen_formulations\n      required: true\n      description: 按结构化 constraint_records 评估候选\n    - id: optimize\n      tool: optimize_formulations\n      required: false\n      description: 将 DecisionState 翻译为动作列表或推荐/暂停\n    - id: report\n      tool: synthesize_design_report\n      required: true\n      description: 编译最终设计报告与 TaskArtifact\n---\n\n# 电解液正向设计 Skill\n\n当性能段已经引用具体子图，但缺少电极或电池类型时，可在\n`enrich_formulation_evidence` 的 request 中设置 `include_figure_context: true`。\n工具沿同篇论文的明确图号、子图补取图注。筛选保留性能段和图注两个出处，\n不会把图注中其他子图的温度、倍率或循环数补到当前性能结果上。\n同论文、相邻段落或同一种盐本身不能证明属于同一组试验。\n\n## 任务要求与测试类型\n\n整理配方前，先检查候选是否报告了用户要求的温度、倍率和电池配置下的结果。\n标题相关或正文分别出现这些条件，不代表同一次试验满足全部条件。\n先补取与目标工况相符的性能段，再整理对应配方的浓度、比例和添加剂用量。\n若已选候选缺少目标条件下的结果，应检查本轮检索返回的其他候选，\n不要围绕同一候选重复查询，或把另一温度下的表现当作目标条件的结果。\n\n先把用户明确要求的条件写入 `constraint_records`，不要在筛选过程中增加用户没有\n提出的性能要求。放电容量、倍率性能和循环寿命是不同测试。用户要求某温度、某倍率\n的放电结果时，不将缺少同温度、同倍率的循环寿命结果记为阻断缺口。\n`unresolved_gaps` 应对应候选组成缺失或用户必需条件，额外研究建议写进验证计划。\n若原文已经明写倍率与电流的对应关系，应引用该原句，不将它再次列为缺失。\n用户给出的数值与单位须原样保留在至少一个检索查询中，包括括号内的电流或容量。\n不能用倍率替换具体电流后就认为已经检索了全部条件。具体标识未命中时先核查\n原标识的字面检索结果，再继续扩展候选；不由系统填写论文名称或配方。\n在形成候选前，逐项检查用户目标是否已有相关证据。近似温度是选材目标，仍需\n优先考察接近该目标的实际测试结果；室温表现不能替代高温或低温使用依据。\n近似目标没有容差时不虚构数值阈值。报告必须写出文献实测条件，并在 next_steps\n交代目标条件下的验证；不能省略这个目标后把基础配方写成完整解决方案。\n成本等定性目标也逐项说明已有依据和待验证事项，不能随硬条件通过而消失。\n联合条件的 `electrode` 只写正负极材料，`cell_configuration` 单独写软包、扣式等\n电池类型，不把两种信息混写在一个字段中。\n\n## 适用场景\n\n- 用户要求设计适用于特定工况（低温、高压、长循环等）的钠离子电池电解液；\n- 用户提供多套候选配方要求评分筛选。\n\n## 证据能力选择\n\n检索查询根据当前用户问题生成，使用英文。先检索用户给出的电极对、电池形式、\n温度、倍率或电流及目标性能，不预先限定用户没有指定的盐、溶剂或添加剂。\n可把这些条件拆成多个查询，用 `search_literature_multiview` 合并结果；\n不必在每个查询中同时塞入所有条件。用户给出的具体电流、容量或电压范围也可用来\n定位相关实验，不能只用宽泛的“低温电解液”替代这些信息。\n对于有辨识度的电极缩写、明确电流或容量，`resolve_literature_papers` 可补充\n字面检索。向量结果未覆盖这些具体标识时，先用原标识检查字面命中，避免继续\n围绕不符合电极或电流条件的论文扩展检索。使用用户原本给出的标识，不猜作者或题名。先查看返回的正文命中，\n再决定是否值得进行论文内检索；无关的引用、另一种电池的结果不能用于推荐。\n找到相关论文后，使用论文内检索分别取得组成、测试条件和性能，核对是否属于\n同一配方与同一测试。机理或替代体系检索用于解决实际缺口，不是必做的检索次数。\n参数建议：`top_k=10`，`per_query_top_k=8`，`max_per_paper=2`。\n盐未指定时，不要只锚定向量检索第一次命中的盐：先用 `kg_query` 的\n`find_materials_for_condition`，把 `material_types` 设为 `[\"SodiumSalt\", \"Electrolyte\"]`，\n查目标温度/条件下测试过的盐与电解液，再对返回的具体盐名逐个补向量检索。\n双盐体系必须用「dual salt + 具体盐名」组合查询才能召回，单独查一个盐名往往召不回对应论文。\n后续查询依据已有结果和 `DecisionState.evidence_gaps` 调整。\n\n## 工作流\n\n### 逆向设计例外：先诊断，筛选仅决定能否推荐配方\n\n对于容量骤降、首圈库仑效率低、高压衰减、阻抗增长等 `inverse_design` 问题，先从检索证据中建立至少两个可区分的电解液侧假设，并提出能区分它们的 EIS、Raman、XPS、LSV、ICP、产气或对照实验。仍执行候选配方筛选，但筛选 `hold` 只禁止“推荐进入实验”的完整配方；不得因此省略诊断、混杂因素和条件化调整方向。报告必须区分“已被证据支持的诊断事实”与“待验证的调整方向”。\n\n1. 解析用户目标与约束；把用户要求的每项条件写成结构化 `constraint_records`，例如：\n   不得把整段用户问题放入 `target_conditions`，再把旧文本检查识别到的部分词语当成全部要求。\n   推荐前逐项核对用户要求与检查条件，避免漏掉正极、负极、电池形式、温度、倍率或指标定义。\n   检索前先解释用户给出的数值条件：它描述什么物理量、单位如何理解、哪些信息尚不明确。\n   这一解释依据用户描述的工作场景，在检索前定下，不能由后来检索到的论文或知识图谱记录\n   反过来改写；其它论文里恰好出现同样的 “N C” 写法，只说明那些论文的用法，不能用来判断\n   用户这句话。\n   温度与倍率的单位必须分清。省略度符号的 C 不能直接视为充放电倍率。\n   按它在句中的位置判断：直接修饰电芯、电池或其使用环境时（如 “a pouch cell at -30 C”、\n   “a full cell around 50 C”），是温度；只有与充放电动作或倍率词连用时\n   （如 “discharged at 1 C”、“cycled at 0.5 C”、“1 C rate”），才是倍率。\n   按上下文确定一种解释后，就用这一种建立约束，\n   不因缺少度符号再补一条互斥的倍率或温度约束，也不因检索结果改回另一种解释。\n   检索查询和筛选断言须明确写出所采用的\n   物理量与单位。只有上下文确实无法确定物理量时，才同时列出两种解释并说明需要澄清，\n   此时暂缓推荐，而不是把两种解释同时写成两条互斥的数值约束。\n   接近目标温度的文献结果应保留实测温度，不能改写为目标温度。\n   硬约束来自用户问题，不得自行加上某一正极、软包形式、长循环寿命或数值阈值。\n   在若干可替代选项之间尚未确定时（例如某类溶剂或某类盐有多种候选），不得把它们\n   同时写成必需的 `required_component`；每个选项应作为独立候选分别比较，不叠加互斥的必需组分。\n   近似目标也必须进入筛选，不得因用户没有给出容差而省略。保留用户对目标的原话，\n   用现有 `evidence_claim` 表达候选须有相应工况下的直接测试依据，而非把近似目标\n   改成精确相等、单边不等式或自行设定容差。逐候选判断时，`supported` 须引用该\n   候选的实际测试条件与性能原句，`basis` 写清实测条件与目标的差别及其关联依据。\n   只有其他工况的结果、测试建议或机理预测时，不能据此判近似工况要求已满足。\n   没有相应测试依据就保留 `not_found` 并补证，不能删掉该要求后批准推荐，再把它\n   放进 `next_steps`。有邻近条件下的直接依据时，在报告中明确实际条件与目标的\n   差别，精确目标下的后续验证可以另列。电极、电池形式和其他明确要求仍须检查。\n   联合条件也须保留近似目标的含义：不得把近似值写成 `target_context` 中要求\n   精确匹配的数值。近似工况及其电极、全电池归属可写在同一 `evidence_claim`\n   中，引用实际共同测试的结果；组分身份等与工况无关的要求不并入该测试条件组。\n   “低成本”等定性目标须区分文献提出的成本动机与已量化的价格优势；未提供价格数据\n   时不得称已验证低成本。数值明确的用户要求仍按原值建立硬约束，不得因此放宽。\n   无法从问题得出数值判据的定性目标，保留为选材目标，在报告中说明依据和待验证\n   条件。定性或近似目标通过断言及其原文依据判断，不变成必须命中字面词的关键词条件。\n   这不允许省略用户明确给出的电极、电池形式、精确温度或倍率要求。\n   当用户目标包含某项性能指标（如 capacity retention relative to room-temperature\n   capacity、离子电导率、倍率性能、首圈库仑效率），先分清用户给的是**数值阈值**还是\n   **只要报告**：给了明确数值时写成对应数值约束——保持率用 `minimum_retention`、\n   电导率用 `minimum_conductivity`、倍率用 `c_rate`，`value` 取用户给出的数值；\n   只要求“报告该指标”“有无该结果”而未给数值时，不得把阈值填 0 了事——`value: 0`\n   会让任何数字都通过，等于没有检查。这类“须被报告/须成立”的指标改用\n   `kind: \"evidence_claim\"`（见下），把该指标写成一句断言。\n   `field_presence` 只用于检查候选的配方字段（`concentration_mol_l`、\n   `solvent_ratios`、`additives` 等）是否显式填写，绝不用于表达“某项性能必须被报告”。\n   禁止把“capacity retention … must be reported”写成\n   `\"kind\": \"field_presence\", \"field\": \"additives\"` 这类把性能指标错配到配方字段的约束。\n   ```json\n   {\n     \"request\": {\n       \"candidates\": candidates,\n       \"constraint_records\": [\n         {\n           \"constraint_id\": \"temp-low\",\n           \"description\": \"operating temperature ≤ -20°C\",\n           \"kind\": \"temperature\",\n           \"operator\": \"<=\",\n           \"value\": -20,\n           \"unit\": \"°C\",\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find low-temperature cycling evidence\"\n         },\n         {\n           \"constraint_id\": \"electrode-hard-carbon\",\n           \"description\": \"hard carbon anode\",\n           \"kind\": \"electrode_material\",\n           \"evidence_terms\": [\"hard carbon\", \"hard-carbon\"],\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find hard carbon anode evidence\"\n         },\n         {\n           \"constraint_id\": \"cell-half\",\n           \"description\": \"sodium half-cell configuration\",\n           \"kind\": \"cell_configuration\",\n           \"evidence_terms\": [\"half-cell\", \"half cell\", \"Na||HC\", \"HC||Na\", \"pure Na\"],\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find half-cell configuration evidence\"\n         },\n         {\n           \"constraint_id\": \"field-concentration\",\n           \"description\": \"explicit salt concentration must be present\",\n           \"kind\": \"field_presence\",\n           \"field\": \"concentration_mol_l\",\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": false\n         },\n         {\n           \"constraint_id\": \"salt-napf6\",\n           \"description\": \"NaPF6 as salt\",\n           \"kind\": \"required_component\",\n           \"value\": \"NaPF6\",\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find NaPF6 electrolyte evidence\"\n         },\n         {\n           \"constraint_id\": \"solvent-thf\",\n           \"description\": \"THF as solvent\",\n           \"kind\": \"required_component\",\n           \"value\": \"THF\",\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find THF solvent evidence\"\n         }\n       ]\n     }\n   }\n   ```\n   定性或断言型要求（如“无集流体/壳体腐蚀被观测到”“无析钠/无枝晶”“提高首圈库仑效率”\n   “该添加剂抑制产气”）不得写成 `mechanism_keyword` 关键词表——关键词命中分不清\n   “发生腐蚀”与“未发生腐蚀”。改用 `kind: \"evidence_claim\"`：在 `claim` 里用一句\n   用户原话写出对单个候选须成立的断言，在 `claim_verdicts` 里**逐候选**给出判定。\n   语义判断（这段原文是否为该候选建立或推翻该断言）由你负责；程序只做两件可机械\n   核验的事：判定须指向本次请求的候选，`quote` 须在该候选证据正文中逐字存在。\n   因此措辞、否定、同义称呼的变化都不影响判定，你只需如实读原文：\n   - `supported`：有原文明确为该候选建立断言，附 `chunk_id` 与逐字 `quote`；\n   - `refuted`：有原文明确反驳（如原文说“会持续腐蚀铝箔”），附 `chunk_id` 与逐字 `quote`；\n   - `not_found`：检索到的证据未直接提及，如实填写，由补证机制驱动下一轮检索。\n   背景介绍、他人体系的结果、无实验支撑的预测都不算 `supported`。例如：\n   ```json\n   {\n     \"constraint_id\": \"no-corrosion\",\n     \"description\": \"no current-collector or case corrosion observed\",\n     \"kind\": \"evidence_claim\",\n     \"claim\": \"该候选电解液不腐蚀铝箔或钢壳\",\n     \"claim_verdicts\": [\n       {\n         \"candidate_id\": \"candidate-1\",\n         \"verdict\": \"refuted\",\n         \"chunk_id\": \"fan2024::sec3\",\n         \"quote\": \"the single NaFSI system can continuously corrode aluminum foil and stainless steel sheets\",\n         \"basis\": \"原文明确说明单盐 NaFSI 会持续腐蚀铝箔与不锈钢，与该断言相反。\"\n       }\n     ],\n     \"can_replan\": true,\n     \"search_hint\": \"find corrosion test evidence for the candidate electrolyte\"\n   }\n   ```\n   `evidence_claim` 不得把 `required_evidence_scope` 设为 `component` 或 `background`：\n   断言必须由候选自身绑定的证据支持，不能借用别篇论文或背景段落的措辞。\n   给出 `supported` 前，逐句核对引文是否真正支持所写断言。引文必须从指定\n   `chunk_id` 返回的原文复制，不能把题名、摘要或另一块文字放在该块的标识下。\n   配方、测试条件和性能必须对应同一候选；一种优点不能替代另一项目标的证据。\n   成本动机与价格比较分别表述，安全性或无氟组成不能自行推导出成本优势。\n   `basis` 说明原句与断言的推理关系，不得以重复断言代替理由。程序核验引文\n   存在及归属，不代替科学含义判断；证据未支持完整断言时应补证或保留 `not_found`。\n   `criteria`/`target_conditions` 仅用于兼容旧调用方；新设计任务必须优先使用\n   `constraint_records`，避免 evaluator 再从自由文本猜测硬约束。\n\n   `required_evidence_kinds` 描述的是**支持记录本身的语义角色**，不是实验条件元数据。\n   数值性能约束通常只要求 `property`；温度、电极、循环数等共同实例化条件应由该\n   observation 的 `condition_scope` 和 `joint_context_requirements` 表达。除非硬约束本身\n   确实要求一条独立的 condition 记录，否则不要把同一数值约束写成\n   `required_evidence_kinds=[\"property\", \"condition\"]`，否则会把“带条件上下文的性能观测”\n   错当成缺少第二种证据角色。\n\n   当两个及以上硬约束必须在**同一个目标实验上下文**中同时成立时，还必须显式写\n   `joint_context_requirements`。分别在多个倍率测试的要求，按倍率分别建立条件组，\n   每组的 `target_context.rate` 只填一个倍率。不能把 `0.5 C and 1 C` 当成一次测试的倍率。\n   同一论文的不同盐浓度或溶剂比例必须分别对应其性能段，不能因来自同篇论文就互换结果。\n   `target_context.cell_configuration` 使用条件检查器的外形名称 `pouch` 或 `coin`，\n   不拼成 `pouch full cell` 这样的新标签。全电池要求另用 cell_configuration 检查条件\n   和明确的正负极对验证；外形名称不能代替电极与全电池要求。\n   它描述的是 evidence composition obligation，不要求所有\n   支持证据拥有相同 `experiment_id`。`constraint_ids` 只能引用本次 `constraint_records`；\n   `context_fields` 只列对联合决策真正相关的字段；`target_context` 只填写用户明确给出的\n   目标条件，未知字段保持未知，禁止为了让 join 成立而补默认值。例如：\n   ```json\n   {\n     \"joint_context_requirements\": [\n       {\n         \"group_id\": \"low-temp-high-voltage\",\n         \"constraint_ids\": [\"retention\", \"voltage\"],\n         \"context_fields\": [\"temperature_c\", \"electrode\"],\n         \"target_context\": {\"temperature_c\": -20.0, \"electrode\": \"hard carbon\"},\n         \"can_replan\": true,\n         \"search_hint\": \"find evidence satisfying both hard constraints at the target operating context\"\n       }\n     ]\n   }\n   ```\n   只有约束确实需要共同实例化时才声明 joint group；互不相关的硬约束不要强行合组。\n   原文条件检查器分别识别 `electrode` 与 `cell_configuration`。涉及电池形式的用户要求\n   使用独立的 cell_configuration 条件；只有相关观测明确提供该字段时，才作联合检查。\n2. 检查用户输入与已有 ledger；存在组分、机理或替代体系缺口时，选择相应检索能力；\n3. 如证据不足，再做有界补充检索：\n   - 区分“已有候选缺少一段证据”和“已有候选并不适合目标”。先检查最相关论文；\n     若当前候选仍不能满足目标，按缺口与完整目标检索其他候选，不反复只查原来的\n     盐、溶剂或论文。新证据支持新的组成时重新组装候选，再用原任务的全部条件\n     筛选。不能把不同候选的成本、工况或性能拼成一个通过的候选。\n   - 尚未定位候选论文时，用 `search_literature_chunks` 做 1–2 次聚焦补充（`top_k=10`）；\n   - 若返回结果已经给出明确 `paper_id`，且该论文与目标组分/机理直接相关但缺少显式配方或目标工况证据，必须对最相关的 1 篇论文调用一次 `search_paper_chunks(paper_id=..., query=..., top_k=8)`；`query` 用 4–8 个英文技术词描述缺失事实，不含作者名。将结果追加到 `evidence_chunks`，不得跨论文拼接配方与性能。\n   - 对 **named-study / named-candidate** 设计任务，在进入 `query_formulation_space` 或\n     `screen_formulations` 前，必须先取得同一论文中可追溯的配方/组成证据：至少有一条\n     `evidence_kind=\"formulation\"` 的记录能支持候选的盐、溶剂或添加剂组成。只有性能、温度、\n     机理 chunk 不能建立候选配方归属；若当前只找到性能证据，应继续检索 formulation /\n     composition 段落，而不是手工构造一个 `formulation_evidence_ids=[]` 的候选进入筛选。\n4. 用户没有提供可评估候选时，调用 `query_formulation_space`，把目标转成：\n   `{\"request\":{\"task_type\":\"design\",\"target_conditions\":[...],\"preferred_salts\":[...],\"preferred_solvents\":[...],\"preferred_additives\":[...],\"excluded_components\":[...],\"evidence_chunks\": evidence_chunks,\"max_candidates\":3}}`；其中 `evidence_chunks` 必须传入前面检索实际返回、与目标最相关的最多 12 个 chunk，不得只传组分偏好而丢失文献上下文。工具会优先从这些同论文原文块组装候选，再使用 KG fallback；保留工具原样返回的 `candidates`。\n   如果候选 evidence 只有 `chunk_id` 而 `text/excerpt` 为空，先调用\n   `enrich_formulation_evidence({\"request\":{\"candidates\": candidates}})`，并用返回候选\n   替换原列表；证据已有原文时不得为形式完整重复调用。enrichment 只补齐原文和元数据，\n   必须保留原 evidence 的 `paper_id`、`evidence_kind` 和 `chunk_id`。\n5. 若任务涉及离子电导率、温度下的传输性质或需要在多个 NaPF6–EC/EMC/PC 候选之间增加一个轻量定量参考，可在筛选前调用 `predict_formulation_conductivity`。只有以下两种情况允许数值预测：候选已有明确的 NaPF6/EC/EMC/PC 摩尔组成，或调用参数中的 `composition_inputs[candidate_id]` 显式给出 `component_mmol`、`molar_ratios` 或 `x_NaSalt/x_EC/x_PC`。现有 `solvent_ratios` 没有保存 v/v、w/w 或 molar 基准，因此**不得**仅凭“1 M + 1:1”之类字段推导模型输入。含其他盐、其他溶剂或添加剂的候选按域外处理；组成不足时保留 `insufficient_composition`，继续依赖文献/KG 证据。`model_predictions` 与 literature evidence 必须分开：模型预测可以辅助候选比较和后续实验优先级，但不能单独把实验事实型硬约束判为满足。\n6. 只有需要形成配方推荐或明确 hold 时才调用 `screen_formulations`：\n   传入当前候选和完整的结构化 `constraint_records`。旧文本字段用于兼容历史输入，\n   新设计任务不能用它们替代结构化条件。\n   每项 `claim_verdicts` 只判定本次 `candidates` 中实际提交的候选。候选集合变更时，\n   同步更新各断言的候选判定，保持原任务的全部条件。工具返回参数错误后，修复\n   指出的字段并重新提交完整请求，不得删去 `constraint_records` 或联合条件来消除报错。\n    倍率与循环次数是两种不同测试，分别建立约束：指定 1 C 测试使用\n    `{\"kind\":\"c_rate\",\"operator\":\"==\",\"value\":1,\"unit\":\"C\"}`；\n    100 次循环使用 `{\"kind\":\"minimum_cycles\",\"value\":100,\"unit\":\"cycles\"}`。\n    指定 2.0–4.0 V 测试使用\n    `{\"kind\":\"voltage_window\",\"operator\":\"==\",\"value\":[2.0,4.0],\"unit\":\"V\"}`。\n    若任务要求 0.5 C 和 1 C，各自建立条件。\n    双盐配方同时保存 `salts` 与 `salt_concentrations_mol_l`，分别记录各盐浓度；\n    `concentration_mol_l` 表示总盐浓度，不得将它归给某一个盐。\n    `solvent_ratio_basis` 按原文填写 `mass`、`volume` 或 `molar`；原文未说明时填\n    `unknown`。不得把质量比例当成体积比例，或把溶剂比例直接当成包括盐的摩尔组成。\n   若本任务已声明 `joint_context_requirements`，每次首次筛选和补证后的重新筛选都必须携带\n   同一份 joint-context 合同；除非用户明确修改任务目标，否则不得在 re-screen 时删除、\n   放宽 `context_fields` 或改写 `target_context`。runtime 会在字段被意外省略时保留上一版\n   显式合同，但 Agent 仍应主动原样传递。\n   保留工具原样返回的 `screening_results`、其中的 `criteria_evaluations` 与 `gaps`，\n   不得手写分数、validations 或 scores。任何 `failed`、`insufficient_evidence` 或\n   `unsupported` 判定都不得在报告中表述为性能已验证。\n7. 旧调用方需要动作列表时，可调用 `optimize_formulations`：\n   `{\"candidates\": candidates,\"screening_results\": screening_results,\"request\":{\"task_type\":\"design\",\"objectives\":[目标性能...],\"constraints\":[用户硬约束...]}}`。\n   不得同时传入 `validations` 或 `scores`。该兼容工具只翻译筛选后已经产生的\n   `DecisionState`，不会再按 score 独立裁决；若 proposal 为\n   `retrieve_more_evidence`，先执行对应的补充检索和重新筛选，再进入报告。\n8. `DecisionState` 已达到 `recommend` 或 `hold` 后，必须**立即**调用 `synthesize_design_report`\n   生成完整报告，并传入同一份原始 `screening_results`：\n   `{\"request\":{\"task_type\":\"design\",\"question\":用户问题,\"evidence_chunks\": evidence_chunks,\"candidates\": candidates,\"screening_results\": screening_results}}`。\n   为提升 `claim_supported_ratio`，请在 `request.claims` 中提交**所有**被 `evidence_chunks` 直接支持的事实声明（`claim_type=\"fact\"`），每条包含 `text`、对应 `chunk_id` 和唯一逐字原文引文 `evidence_quote`（必须从该 chunk 的 `content` 中逐字截取，且只出现一次）。**禁止为凑数量编造 claim**；若当前证据能直接支持的 claim 不足 2 条，应优先通过 `search_literature_chunks` 或 `search_paper_chunks` 补充检索，最多尝试 2 轮；若仍无法找到更多直接支持，则在报告中明确标注“证据不足”，并只提交已被验证的 claim。报告将渲染“已校验事实”小节，避免裁判从自由文本中抽取不被检索上下文支持的论断。\n   报告要让使用者能安排下一步工作。用简明中文分别提交配方组成、文献的测试条件与数值、同条件基准配方的结果，并保留逐字引文。比例需说明质量比或体积比；浓度、添加剂用量不得省略或猜测。文献筛选不能写成新配方已由本智能体实验验证。\n   当目标是某项性能时，报告必须包含已检索到的该项性能结果，不能只列出温度、\n   电极和电压范围等测试设置。不同盐浓度、溶剂比例和添加剂分支的结果分别绑定到\n   其配方。不得借用另一分支较好的结果；保留同一分支完整组成与性能已明确的候选，\n   不必强求选取数值最高但组成仍缺失的分支。\n   `next_steps` 按本次缺口列出具体核查或实验，包括要比较的配方、温度、倍率、电池类型和测量项目；这些是验证计划，不是已取得的结果。即使为 `hold`，也要展示已取得的候选资料、文献结果和暂缓原因，不得只写状态或检索流程。\n   对没有数值判据的选材目标，`next_steps` 也要交代其验证状态。例如成本目标\n   需要区分文献的成本动机与实际价格比较，不能因筛选通过就宣称全部目标已验证。\n   性能类 `claims` 应优先包含与当前候选直接相连的实验结果，少选一般背景介绍。\n   **关键纪律**：一旦 `screen_formulations` 返回 `hold` 或 `recommend`，**不得**再尝试重新构建候选、重新检索或输出自由文本；下一动作必须是 `synthesize_design_report`。若状态为 `search`，最多只做一轮补充检索 + 重新筛选，然后必须进入报告。\n9. 直接输出报告全文，不得改写或截断。\n\n## 退出纪律\n\n- 不要求无条件调用所有工具；根据用户已有候选和结构化 evidence gaps 选择能力。\n- `synthesize_design_report` 是终端编译能力。调用前必须已有终态 `DecisionState`；\n  `search` 状态必须先按缺口补证或换候选，不能用固定工具次数代替状态判断。\n- `recommend` 只推荐 approved candidates；`hold` 展示已检索的候选资料与文献结果，说明缺口和验证计划，不推荐或排序候选。\n\n## 候选方案纪律\n\n- 候选配方必须来自 KG 结构化证据或文献 chunk；\n- 对于\"建议组合\"（无完整配方直接实验数据），summary 只写组分和证据来源，不写性能声明；\n- 性能/效果声明只能绑定到直接支持该声明的 chunk_id；\n- 禁止在\"证据摘要\"里写入未被任何 chunk 直接支持的推断句；无来源支撑的直接删除；\n- **直接回答（direct_answer）只给出候选方案标识和最精简组成**，不要包含\"已在某温度验证\"、\"性能最优\"、\"最有效\"等需要跨证据推断的断言；\n- 推荐完整配方必须有原文明确的钠盐浓度。若浓度未知，列为待补资料，不得填入\n  “参考基准配方”的浓度并作为已有文献验证的配方推荐。\n\n## 推荐/排序纪律\n\n- 排序理由必须逐条绑定到具体 chunk_id，禁止写\"C1/C3/C4 无法满足需求\"、\"某候选明显优于其他\"等无直接对比证据的绝对化断言；\n- 无直接对比证据时，只陈述各候选的组分、证据来源与评分，不给出相对优劣结论；\n- 对\"建议组合\"的推荐，只能说明其组分和所依据的证据，不得把多篇证据的性能迁移到该组合上。\n\n## 证据摘要纪律\n\n- 配方段落若讨论多种浓度、多个溶剂比例或不同研究，先定位到单一配方的原文。\n  不得把某段的浓度、另一配方的溶剂比例和第三个体系的添加剂拼成候选。\n  原文工具返回中的数值、温度符号、配方标识和 chunk_id 应原样沿用，\n  不得手工改写成另一温度或用整篇论文的共同身份代替相同测试条件。\n- 每条 bullet 必须附带 `[chunk_id]`；\n- 禁止输出以\"【推断】\"开头的句子；\n- 禁止把多篇证据的性能迁移到某个候选配方上。\n\n## 引用纪律\n\n- 使用 `[chunk_id]` 格式；\n- 禁止引用模型参数知识里的文献；\n- 单篇报道就写\"某文献报道/某体系显示\"，不得升格为普适结论。\n\n## KG 质量反馈\n\n检索或分析过程中，若发现以下可疑情况，**必须**调用 `flag_suspicious_kg_item` 记录，供后续离线人工审查与 KG 矫正；不阻塞当前设计流程。\n\n- **实体标签错误**：如 `ionic conductivity` 被标为 `Additive`，`NaPF6` 被标为 `Solvent`；\n- **关系方向/语义错误**：如 `SEI DECOMPOSITION::FORMS::FEC`、明显违背化学常识的关系；\n- **属性单位或数值异常**：如电导率 `100 mS/cm` 与上下文矛盾、温度单位混用；\n- **同名异义**：如 `TMP` 同时指 `trimethyl phosphate` 与 `2,4,6-trimethylpyridine` 而未区分；\n- **证据与 KG 矛盾**：chunk 中的明确结论与 KG 检索结果冲突。\n\n记录时尽量提供：item_type（`entity`/`relation`/`property`）、具体名称/ID、问题描述、触发工具、证据 chunk_id。\n\n## 知识沉淀\n\n设计流程全部结束后，调用 `reflect_now` 进行知识反思和 Wiki 沉淀，\n将本次设计的关键结论、发现的知识缺口、改进的检索关键词记录到 LLM Wiki，\n供下次相似问题时直接检索复用，减少重复检索成本。\n"
+    },
+    {
+      "name": "write_todos",
+      "args": {
+        "todos": [
+          {
+            "id": "t1",
+            "content": "Load electrolyte_design skill and plan constraints",
+            "status": "completed"
+          },
+          {
+            "id": "t2",
+            "content": "Run predict_formulation_conductivity for both candidates at 0 °C",
+            "status": "in_progress"
+          },
+          {
+            "id": "t3",
+            "content": "Retrieve literature on NaPF6 EC/EMC/PC low-temperature transport & KG structured queries",
+            "status": "pending"
+          },
+          {
+            "id": "t4",
+            "content": "Extract numeric evidence (conductivity, temperature, viscosity)",
+            "status": "pending"
+          },
+          {
+            "id": "t5",
+            "content": "Enrich candidate evidence + screen_formulations with structured constraints",
+            "status": "pending"
+          },
+          {
+            "id": "t6",
+            "content": "Synthesize design report with DecisionState",
+            "status": "pending"
+          }
+        ]
+      },
+      "result": "{'todo_list': [TodoItem(id='t1', content='Load electrolyte_design skill and plan constraints', status='completed'), TodoItem(id='t2', content='Run predict_formulation_conductivity for both candidates at 0 °C', status='in_progress'), TodoItem(id='t3', content='Retrieve literature on NaPF6 EC/EMC/PC low-temperature transport & KG structured queries', status='pending'), TodoItem(id='t4', content='Extract numeric evidence (conductivity, temperature, viscosity)', status='pending'), TodoItem(id='t5', content='Enrich candidate evidence + screen_formulations with structured constraints', status='pending'), TodoItem(id='t6', content='Synthesize design report with DecisionState', status='pending')]}"
+    },
+    {
+      "name": "predict_formulation_conductivity",
+      "args": {
+        "request": {
+          "temperature_c": 0,
+          "candidates": [
+            {
+              "candidate_id": "candidate-a",
+              "salt": "NaPF6",
+              "salts": [
+                "NaPF6"
+              ],
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "solvent_ratio_basis": "molar",
+              "molar_ratios": {
+                "NaPF6": 0.12438287472883666,
+                "EC": 0.2772805705914771,
+                "EMC": 0.14636492480234797,
+                "PC": 0.45197162987733824
+              }
+            },
+            {
+              "candidate_id": "candidate-b",
+              "salt": "NaPF6",
+              "salts": [
+                "NaPF6"
+              ],
+              "solvents": [
+                "EC",
+                "EMC",
+                "PC"
+              ],
+              "additives": [],
+              "solvent_ratio_basis": "molar",
+              "molar_ratios": {
+                "NaPF6": 0.13659165981340052,
+                "EC": 0.09913935791043874,
+                "EMC": 0.22127296310046693,
+                "PC": 0.5429960191756938
+              }
+            }
+          ],
+          "composition_inputs": {
+            "candidate-a": {
+              "molar_ratios": {
+                "NaPF6": 0.12438287472883666,
+                "EC": 0.2772805705914771,
+                "EMC": 0.14636492480234797,
+                "PC": 0.45197162987733824
+              }
+            },
+            "candidate-b": {
+              "molar_ratios": {
+                "NaPF6": 0.13659165981340052,
+                "EC": 0.09913935791043874,
+                "EMC": 0.22127296310046693,
+                "PC": 0.5429960191756938
+              }
+            }
+          }
+        }
+      },
+      "result": null
+    },
+    {
+      "name": "search_literature_multiview",
+      "args": {
+        "queries": [
+          "NaPF6 EC EMC PC carbonate electrolyte ionic conductivity sodium-ion battery",
+          "low temperature ionic conductivity electrolyte sodium ion battery 0 °C PC-based carbonate",
+          "ethylene carbonate propylene carbonate ethyl methyl carbonate electrolyte ion transport viscosity low temperature",
+          "sodium electrolyte low temperature transport limitation PC freezing conductivity decrease"
+        ],
+        "top_k": 12,
+        "per_query_top_k": 8,
+        "max_per_paper": 2
+      },
+      "result": null
+    },
+    {
+      "name": "kg_query",
+      "args": {
+        "query_type": "find_materials_for_condition",
+        "params": {
+          "condition": "0°C",
+          "material_types": [
+            "SodiumSalt",
+            "Electrolyte"
+          ],
+          "limit": 10
+        }
+      },
+      "result": null
+    }
+  ],
+  "tool_messages": [
+    "---\nname: electrolyte_design\ndescription: 钠离子电池电解液配方正向设计与候选配方筛选\ntriggers:\n  - 设计\n  - 配方设计\n  - 推荐电解液\n  - 优化电解液\nmethod:\n  objective: 在用户硬约束下形成可追溯候选，并由结构化 DecisionState 决定推荐或暂停\n  evidence_gaps:\n    - 候选组成或浓度缺失\n    - 目标工况与性能没有同实验绑定\n    - 硬约束缺少可验证原文\n  capabilities:\n    - 文献与论文内检索\n    - KG 候选发现\n    - 原文证据补全\n    - 纯约束评估与有界重规划\n  exit_conditions:\n    - DecisionState 为 recommend 且只报告 approved candidates\n    - DecisionState 为 hold 且报告缺口和验证计划\nworkflow:\n  steps:\n    - id: retrieve\n      tool: search_literature_multiview\n      required: false\n      description: 多角度背景检索，补齐候选、机理或替代体系证据\n    - id: kg_structured\n      tool: kg_query\n      required: false\n      description: 需要结构化材料、配方、条件或关系路径时查询领域知识图谱\n    - id: retrieve_fallback\n      tool: search_literature_chunks\n      required: false\n      description: 聚焦补充检索\n    - id: resolve_paper\n      tool: resolve_literature_papers\n      required: false\n      description: 用作者、题名、DOI 或用户给出的具体实验标识定位候选论文\n    - id: retrieve_paper\n      tool: search_paper_chunks\n      required: false\n      description: 已锁定具体论文时，在论文内部补取任务相关原文证据\n    - id: numeric\n      tool: extract_numeric_properties\n      required: false\n      description: 从证据块抽取数值属性\n    - id: formulate\n      tool: query_formulation_space\n      required: true\n      description: 获取可评估候选配方\n    - id: enrich\n      tool: enrich_formulation_evidence\n      required: false\n      description: 补齐候选 evidence 原文与元数据\n    - id: conductivity_ml\n      tool: predict_formulation_conductivity\n      required: false\n      description: 对具有明确摩尔组成且位于 NaPF6–EC/EMC/PC 适用域内的候选估计离子电导率；预测只作定量辅助，不替代文献证据\n    - id: screen\n      tool: screen_formulations\n      required: true\n      description: 按结构化 constraint_records 评估候选\n    - id: optimize\n      tool: optimize_formulations\n      required: false\n      description: 将 DecisionState 翻译为动作列表或推荐/暂停\n    - id: report\n      tool: synthesize_design_report\n      required: true\n      description: 编译最终设计报告与 TaskArtifact\n---\n\n# 电解液正向设计 Skill\n\n当性能段已经引用具体子图，但缺少电极或电池类型时，可在\n`enrich_formulation_evidence` 的 request 中设置 `include_figure_context: true`。\n工具沿同篇论文的明确图号、子图补取图注。筛选保留性能段和图注两个出处，\n不会把图注中其他子图的温度、倍率或循环数补到当前性能结果上。\n同论文、相邻段落或同一种盐本身不能证明属于同一组试验。\n\n## 任务要求与测试类型\n\n整理配方前，先检查候选是否报告了用户要求的温度、倍率和电池配置下的结果。\n标题相关或正文分别出现这些条件，不代表同一次试验满足全部条件。\n先补取与目标工况相符的性能段，再整理对应配方的浓度、比例和添加剂用量。\n若已选候选缺少目标条件下的结果，应检查本轮检索返回的其他候选，\n不要围绕同一候选重复查询，或把另一温度下的表现当作目标条件的结果。\n\n先把用户明确要求的条件写入 `constraint_records`，不要在筛选过程中增加用户没有\n提出的性能要求。放电容量、倍率性能和循环寿命是不同测试。用户要求某温度、某倍率\n的放电结果时，不将缺少同温度、同倍率的循环寿命结果记为阻断缺口。\n`unresolved_gaps` 应对应候选组成缺失或用户必需条件，额外研究建议写进验证计划。\n若原文已经明写倍率与电流的对应关系，应引用该原句，不将它再次列为缺失。\n用户给出的数值与单位须原样保留在至少一个检索查询中，包括括号内的电流或容量。\n不能用倍率替换具体电流后就认为已经检索了全部条件。具体标识未命中时先核查\n原标识的字面检索结果，再继续扩展候选；不由系统填写论文名称或配方。\n在形成候选前，逐项检查用户目标是否已有相关证据。近似温度是选材目标，仍需\n优先考察接近该目标的实际测试结果；室温表现不能替代高温或低温使用依据。\n近似目标没有容差时不虚构数值阈值。报告必须写出文献实测条件，并在 next_steps\n交代目标条件下的验证；不能省略这个目标后把基础配方写成完整解决方案。\n成本等定性目标也逐项说明已有依据和待验证事项，不能随硬条件通过而消失。\n联合条件的 `electrode` 只写正负极材料，`cell_configuration` 单独写软包、扣式等\n电池类型，不把两种信息混写在一个字段中。\n\n## 适用场景\n\n- 用户要求设计适用于特定工况（低温、高压、长循环等）的钠离子电池电解液；\n- 用户提供多套候选配方要求评分筛选。\n\n## 证据能力选择\n\n检索查询根据当前用户问题生成，使用英文。先检索用户给出的电极对、电池形式、\n温度、倍率或电流及目标性能，不预先限定用户没有指定的盐、溶剂或添加剂。\n可把这些条件拆成多个查询，用 `search_literature_multiview` 合并结果；\n不必在每个查询中同时塞入所有条件。用户给出的具体电流、容量或电压范围也可用来\n定位相关实验，不能只用宽泛的“低温电解液”替代这些信息。\n对于有辨识度的电极缩写、明确电流或容量，`resolve_literature_papers` 可补充\n字面检索。向量结果未覆盖这些具体标识时，先用原标识检查字面命中，避免继续\n围绕不符合电极或电流条件的论文扩展检索。使用用户原本给出的标识，不猜作者或题名。先查看返回的正文命中，\n再决定是否值得进行论文内检索；无关的引用、另一种电池的结果不能用于推荐。\n找到相关论文后，使用论文内检索分别取得组成、测试条件和性能，核对是否属于\n同一配方与同一测试。机理或替代体系检索用于解决实际缺口，不是必做的检索次数。\n参数建议：`top_k=10`，`per_query_top_k=8`，`max_per_paper=2`。\n盐未指定时，不要只锚定向量检索第一次命中的盐：先用 `kg_query` 的\n`find_materials_for_condition`，把 `material_types` 设为 `[\"SodiumSalt\", \"Electrolyte\"]`，\n查目标温度/条件下测试过的盐与电解液，再对返回的具体盐名逐个补向量检索。\n双盐体系必须用「dual salt + 具体盐名」组合查询才能召回，单独查一个盐名往往召不回对应论文。\n后续查询依据已有结果和 `DecisionState.evidence_gaps` 调整。\n\n## 工作流\n\n### 逆向设计例外：先诊断，筛选仅决定能否推荐配方\n\n对于容量骤降、首圈库仑效率低、高压衰减、阻抗增长等 `inverse_design` 问题，先从检索证据中建立至少两个可区分的电解液侧假设，并提出能区分它们的 EIS、Raman、XPS、LSV、ICP、产气或对照实验。仍执行候选配方筛选，但筛选 `hold` 只禁止“推荐进入实验”的完整配方；不得因此省略诊断、混杂因素和条件化调整方向。报告必须区分“已被证据支持的诊断事实”与“待验证的调整方向”。\n\n1. 解析用户目标与约束；把用户要求的每项条件写成结构化 `constraint_records`，例如：\n   不得把整段用户问题放入 `target_conditions`，再把旧文本检查识别到的部分词语当成全部要求。\n   推荐前逐项核对用户要求与检查条件，避免漏掉正极、负极、电池形式、温度、倍率或指标定义。\n   检索前先解释用户给出的数值条件：它描述什么物理量、单位如何理解、哪些信息尚不明确。\n   这一解释依据用户描述的工作场景，在检索前定下，不能由后来检索到的论文或知识图谱记录\n   反过来改写；其它论文里恰好出现同样的 “N C” 写法，只说明那些论文的用法，不能用来判断\n   用户这句话。\n   温度与倍率的单位必须分清。省略度符号的 C 不能直接视为充放电倍率。\n   按它在句中的位置判断：直接修饰电芯、电池或其使用环境时（如 “a pouch cell at -30 C”、\n   “a full cell around 50 C”），是温度；只有与充放电动作或倍率词连用时\n   （如 “discharged at 1 C”、“cycled at 0.5 C”、“1 C rate”），才是倍率。\n   按上下文确定一种解释后，就用这一种建立约束，\n   不因缺少度符号再补一条互斥的倍率或温度约束，也不因检索结果改回另一种解释。\n   检索查询和筛选断言须明确写出所采用的\n   物理量与单位。只有上下文确实无法确定物理量时，才同时列出两种解释并说明需要澄清，\n   此时暂缓推荐，而不是把两种解释同时写成两条互斥的数值约束。\n   接近目标温度的文献结果应保留实测温度，不能改写为目标温度。\n   硬约束来自用户问题，不得自行加上某一正极、软包形式、长循环寿命或数值阈值。\n   在若干可替代选项之间尚未确定时（例如某类溶剂或某类盐有多种候选），不得把它们\n   同时写成必需的 `required_component`；每个选项应作为独立候选分别比较，不叠加互斥的必需组分。\n   近似目标也必须进入筛选，不得因用户没有给出容差而省略。保留用户对目标的原话，\n   用现有 `evidence_claim` 表达候选须有相应工况下的直接测试依据，而非把近似目标\n   改成精确相等、单边不等式或自行设定容差。逐候选判断时，`supported` 须引用该\n   候选的实际测试条件与性能原句，`basis` 写清实测条件与目标的差别及其关联依据。\n   只有其他工况的结果、测试建议或机理预测时，不能据此判近似工况要求已满足。\n   没有相应测试依据就保留 `not_found` 并补证，不能删掉该要求后批准推荐，再把它\n   放进 `next_steps`。有邻近条件下的直接依据时，在报告中明确实际条件与目标的\n   差别，精确目标下的后续验证可以另列。电极、电池形式和其他明确要求仍须检查。\n   联合条件也须保留近似目标的含义：不得把近似值写成 `target_context` 中要求\n   精确匹配的数值。近似工况及其电极、全电池归属可写在同一 `evidence_claim`\n   中，引用实际共同测试的结果；组分身份等与工况无关的要求不并入该测试条件组。\n   “低成本”等定性目标须区分文献提出的成本动机与已量化的价格优势；未提供价格数据\n   时不得称已验证低成本。数值明确的用户要求仍按原值建立硬约束，不得因此放宽。\n   无法从问题得出数值判据的定性目标，保留为选材目标，在报告中说明依据和待验证\n   条件。定性或近似目标通过断言及其原文依据判断，不变成必须命中字面词的关键词条件。\n   这不允许省略用户明确给出的电极、电池形式、精确温度或倍率要求。\n   当用户目标包含某项性能指标（如 capacity retention relative to room-temperature\n   capacity、离子电导率、倍率性能、首圈库仑效率），先分清用户给的是**数值阈值**还是\n   **只要报告**：给了明确数值时写成对应数值约束——保持率用 `minimum_retention`、\n   电导率用 `minimum_conductivity`、倍率用 `c_rate`，`value` 取用户给出的数值；\n   只要求“报告该指标”“有无该结果”而未给数值时，不得把阈值填 0 了事——`value: 0`\n   会让任何数字都通过，等于没有检查。这类“须被报告/须成立”的指标改用\n   `kind: \"evidence_claim\"`（见下），把该指标写成一句断言。\n   `field_presence` 只用于检查候选的配方字段（`concentration_mol_l`、\n   `solvent_ratios`、`additives` 等）是否显式填写，绝不用于表达“某项性能必须被报告”。\n   禁止把“capacity retention … must be reported”写成\n   `\"kind\": \"field_presence\", \"field\": \"additives\"` 这类把性能指标错配到配方字段的约束。\n   ```json\n   {\n     \"request\": {\n       \"candidates\": candidates,\n       \"constraint_records\": [\n         {\n           \"constraint_id\": \"temp-low\",\n           \"description\": \"operating temperature ≤ -20°C\",\n           \"kind\": \"temperature\",\n           \"operator\": \"<=\",\n           \"value\": -20,\n           \"unit\": \"°C\",\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find low-temperature cycling evidence\"\n         },\n         {\n           \"constraint_id\": \"electrode-hard-carbon\",\n           \"description\": \"hard carbon anode\",\n           \"kind\": \"electrode_material\",\n           \"evidence_terms\": [\"hard carbon\", \"hard-carbon\"],\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find hard carbon anode evidence\"\n         },\n         {\n           \"constraint_id\": \"cell-half\",\n           \"description\": \"sodium half-cell configuration\",\n           \"kind\": \"cell_configuration\",\n           \"evidence_terms\": [\"half-cell\", \"half cell\", \"Na||HC\", \"HC||Na\", \"pure Na\"],\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find half-cell configuration evidence\"\n         },\n         {\n           \"constraint_id\": \"field-concentration\",\n           \"description\": \"explicit salt concentration must be present\",\n           \"kind\": \"field_presence\",\n           \"field\": \"concentration_mol_l\",\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": false\n         },\n         {\n           \"constraint_id\": \"salt-napf6\",\n           \"description\": \"NaPF6 as salt\",\n           \"kind\": \"required_component\",\n           \"value\": \"NaPF6\",\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find NaPF6 electrolyte evidence\"\n         },\n         {\n           \"constraint_id\": \"solvent-thf\",\n           \"description\": \"THF as solvent\",\n           \"kind\": \"required_component\",\n           \"value\": \"THF\",\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find THF solvent evidence\"\n         }\n       ]\n     }\n   }\n   ```\n   定性或断言型要求（如“无集流体/壳体腐蚀被观测到”“无析钠/无枝晶”“提高首圈库仑效率”\n   “该添加剂抑制产气”）不得写成 `mechanism_keyword` 关键词表——关键词命中分不清\n   “发生腐蚀”与“未发生腐蚀”。改用 `kind: \"evidence_claim\"`：在 `claim` 里用一句\n   用户原话写出对单个候选须成立的断言，在 `claim_verdicts` 里**逐候选**给出判定。\n   语义判断（这段原文是否为该候选建立或推翻该断言）由你负责；程序只做两件可机械\n   核验的事：判定须指向本次请求的候选，`quote` 须在该候选证据正文中逐字存在。\n   因此措辞、否定、同义称呼的变化都不影响判定，你只需如实读原文：\n   - `supported`：有原文明确为该候选建立断言，附 `chunk_id` 与逐字 `quote`；\n   - `refuted`：有原文明确反驳（如原文说“会持续腐蚀铝箔”），附 `chunk_id` 与逐字 `quote`；\n   - `not_found`：检索到的证据未直接提及，如实填写，由补证机制驱动下一轮检索。\n   背景介绍、他人体系的结果、无实验支撑的预测都不算 `supported`。例如：\n   ```json\n   {\n     \"constraint_id\": \"no-corrosion\",\n     \"description\": \"no current-collector or case corrosion observed\",\n     \"kind\": \"evidence_claim\",\n     \"claim\": \"该候选电解液不腐蚀铝箔或钢壳\",\n     \"claim_verdicts\": [\n       {\n         \"candidate_id\": \"candidate-1\",\n         \"verdict\": \"refuted\",\n         \"chunk_id\": \"fan2024::sec3\",\n         \"quote\": \"the single NaFSI system can continuously corrode aluminum foil and stainless steel sheets\",\n         \"basis\": \"原文明确说明单盐 NaFSI 会持续腐蚀铝箔与不锈钢，与该断言相反。\"\n       }\n     ],\n     \"can_replan\": true,\n     \"search_hint\": \"find corrosion test evidence for the candidate electrolyte\"\n   }\n   ```\n   `evidence_claim` 不得把 `required_evidence_scope` 设为 `component` 或 `background`：\n   断言必须由候选自身绑定的证据支持，不能借用别篇论文或背景段落的措辞。\n   给出 `supported` 前，逐句核对引文是否真正支持所写断言。引文必须从指定\n   `chunk_id` 返回的原文复制，不能把题名、摘要或另一块文字放在该块的标识下。\n   配方、测试条件和性能必须对应同一候选；一种优点不能替代另一项目标的证据。\n   成本动机与价格比较分别表述，安全性或无氟组成不能自行推导出成本优势。\n   `basis` 说明原句与断言的推理关系，不得以重复断言代替理由。程序核验引文\n   存在及归属，不代替科学含义判断；证据未支持完整断言时应补证或保留 `not_found`。\n   `criteria`/`target_conditions` 仅用于兼容旧调用方；新设计任务必须优先使用\n   `constraint_records`，避免 evaluator 再从自由文本猜测硬约束。\n\n   `required_evidence_kinds` 描述的是**支持记录本身的语义角色**，不是实验条件元数据。\n   数值性能约束通常只要求 `property`；温度、电极、循环数等共同实例化条件应由该\n   observation 的 `condition_scope` 和 `joint_context_requirements` 表达。除非硬约束本身\n   确实要求一条独立的 condition 记录，否则不要把同一数值约束写成\n   `required_evidence_kinds=[\"property\", \"condition\"]`，否则会把“带条件上下文的性能观测”\n   错当成缺少第二种证据角色。\n\n   当两个及以上硬约束必须在**同一个目标实验上下文**中同时成立时，还必须显式写\n   `joint_context_requirements`。分别在多个倍率测试的要求，按倍率分别建立条件组，\n   每组的 `target_context.rate` 只填一个倍率。不能把 `0.5 C and 1 C` 当成一次测试的倍率。\n   同一论文的不同盐浓度或溶剂比例必须分别对应其性能段，不能因来自同篇论文就互换结果。\n   `target_context.cell_configuration` 使用条件检查器的外形名称 `pouch` 或 `coin`，\n   不拼成 `pouch full cell` 这样的新标签。全电池要求另用 cell_configuration 检查条件\n   和明确的正负极对验证；外形名称不能代替电极与全电池要求。\n   它描述的是 evidence composition obligation，不要求所有\n   支持证据拥有相同 `experiment_id`。`constraint_ids` 只能引用本次 `constraint_records`；\n   `context_fields` 只列对联合决策真正相关的字段；`target_context` 只填写用户明确给出的\n   目标条件，未知字段保持未知，禁止为了让 join 成立而补默认值。例如：\n   ```json\n   {\n     \"joint_context_requirements\": [\n       {\n         \"group_id\": \"low-temp-high-voltage\",\n         \"constraint_ids\": [\"retention\", \"voltage\"],\n         \"context_fields\": [\"temperature_c\", \"electrode\"],\n         \"target_context\": {\"temperature_c\": -20.0, \"electrode\": \"hard carbon\"},\n         \"can_replan\": true,\n         \"search_hint\": \"find evidence satisfying both hard constraints at the target operating context\"\n       }\n     ]\n   }\n   ```\n   只有约束确实需要共同实例化时才声明 joint group；互不相关的硬约束不要强行合组。\n   原文条件检查器分别识别 `electrode` 与 `cell_configuration`。涉及电池形式的用户要求\n   使用独立的 cell_configuration 条件；只有相关观测明确提供该字段时，才作联合检查。\n2. 检查用户输入与已有 ledger；存在组分、机理或替代体系缺口时，选择相应检索能力；\n3. 如证据不足，再做有界补充检索：\n   - 区分“已有候选缺少一段证据”和“已有候选并不适合目标”。先检查最相关论文；\n     若当前候选仍不能满足目标，按缺口与完整目标检索其他候选，不反复只查原来的\n     盐、溶剂或论文。新证据支持新的组成时重新组装候选，再用原任务的全部条件\n     筛选。不能把不同候选的成本、工况或性能拼成一个通过的候选。\n   - 尚未定位候选论文时，用 `search_literature_chunks` 做 1–2 次聚焦补充（`top_k=10`）；\n   - 若返回结果已经给出明确 `paper_id`，且该论文与目标组分/机理直接相关但缺少显式配方或目标工况证据，必须对最相关的 1 篇论文调用一次 `search_paper_chunks(paper_id=..., query=..., top_k=8)`；`query` 用 4–8 个英文技术词描述缺失事实，不含作者名。将结果追加到 `evidence_chunks`，不得跨论文拼接配方与性能。\n   - 对 **named-study / named-candidate** 设计任务，在进入 `query_formulation_space` 或\n     `screen_formulations` 前，必须先取得同一论文中可追溯的配方/组成证据：至少有一条\n     `evidence_kind=\"formulation\"` 的记录能支持候选的盐、溶剂或添加剂组成。只有性能、温度、\n     机理 chunk 不能建立候选配方归属；若当前只找到性能证据，应继续检索 formulation /\n     composition 段落，而不是手工构造一个 `formulation_evidence_ids=[]` 的候选进入筛选。\n4. 用户没有提供可评估候选时，调用 `query_formulation_space`，把目标转成：\n   `{\"request\":{\"task_type\":\"design\",\"target_conditions\":[...],\"preferred_salts\":[...],\"preferred_solvents\":[...],\"preferred_additives\":[...],\"excluded_components\":[...],\"evidence_chunks\": evidence_chunks,\"max_candidates\":3}}`；其中 `evidence_chunks` 必须传入前面检索实际返回、与目标最相关的最多 12 个 chunk，不得只传组分偏好而丢失文献上下文。工具会优先从这些同论文原文块组装候选，再使用 KG fallback；保留工具原样返回的 `candidates`。\n   如果候选 evidence 只有 `chunk_id` 而 `text/excerpt` 为空，先调用\n   `enrich_formulation_evidence({\"request\":{\"candidates\": candidates}})`，并用返回候选\n   替换原列表；证据已有原文时不得为形式完整重复调用。enrichment 只补齐原文和元数据，\n   必须保留原 evidence 的 `paper_id`、`evidence_kind` 和 `chunk_id`。\n5. 若任务涉及离子电导率、温度下的传输性质或需要在多个 NaPF6–EC/EMC/PC 候选之间增加一个轻量定量参考，可在筛选前调用 `predict_formulation_conductivity`。只有以下两种情况允许数值预测：候选已有明确的 NaPF6/EC/EMC/PC 摩尔组成，或调用参数中的 `composition_inputs[candidate_id]` 显式给出 `component_mmol`、`molar_ratios` 或 `x_NaSalt/x_EC/x_PC`。现有 `solvent_ratios` 没有保存 v/v、w/w 或 molar 基准，因此**不得**仅凭“1 M + 1:1”之类字段推导模型输入。含其他盐、其他溶剂或添加剂的候选按域外处理；组成不足时保留 `insufficient_composition`，继续依赖文献/KG 证据。`model_predictions` 与 literature evidence 必须分开：模型预测可以辅助候选比较和后续实验优先级，但不能单独把实验事实型硬约束判为满足。\n6. 只有需要形成配方推荐或明确 hold 时才调用 `screen_formulations`：\n   传入当前候选和完整的结构化 `constraint_records`。旧文本字段用于兼容历史输入，\n   新设计任务不能用它们替代结构化条件。\n   每项 `claim_verdicts` 只判定本次 `candidates` 中实际提交的候选。候选集合变更时，\n   同步更新各断言的候选判定，保持原任务的全部条件。工具返回参数错误后，修复\n   指出的字段并重新提交完整请求，不得删去 `constraint_records` 或联合条件来消除报错。\n    倍率与循环次数是两种不同测试，分别建立约束：指定 1 C 测试使用\n    `{\"kind\":\"c_rate\",\"operator\":\"==\",\"value\":1,\"unit\":\"C\"}`；\n    100 次循环使用 `{\"kind\":\"minimum_cycles\",\"value\":100,\"unit\":\"cycles\"}`。\n    指定 2.0–4.0 V 测试使用\n    `{\"kind\":\"voltage_window\",\"operator\":\"==\",\"value\":[2.0,4.0],\"unit\":\"V\"}`。\n    若任务要求 0.5 C 和 1 C，各自建立条件。\n    双盐配方同时保存 `salts` 与 `salt_concentrations_mol_l`，分别记录各盐浓度；\n    `concentration_mol_l` 表示总盐浓度，不得将它归给某一个盐。\n    `solvent_ratio_basis` 按原文填写 `mass`、`volume` 或 `molar`；原文未说明时填\n    `unknown`。不得把质量比例当成体积比例，或把溶剂比例直接当成包括盐的摩尔组成。\n   若本任务已声明 `joint_context_requirements`，每次首次筛选和补证后的重新筛选都必须携带\n   同一份 joint-context 合同；除非用户明确修改任务目标，否则不得在 re-screen 时删除、\n   放宽 `context_fields` 或改写 `target_context`。runtime 会在字段被意外省略时保留上一版\n   显式合同，但 Agent 仍应主动原样传递。\n   保留工具原样返回的 `screening_results`、其中的 `criteria_evaluations` 与 `gaps`，\n   不得手写分数、validations 或 scores。任何 `failed`、`insufficient_evidence` 或\n   `unsupported` 判定都不得在报告中表述为性能已验证。\n7. 旧调用方需要动作列表时，可调用 `optimize_formulations`：\n   `{\"candidates\": candidates,\"screening_results\": screening_results,\"request\":{\"task_type\":\"design\",\"objectives\":[目标性能...],\"constraints\":[用户硬约束...]}}`。\n   不得同时传入 `validations` 或 `scores`。该兼容工具只翻译筛选后已经产生的\n   `DecisionState`，不会再按 score 独立裁决；若 proposal 为\n   `retrieve_more_evidence`，先执行对应的补充检索和重新筛选，再进入报告。\n8. `DecisionState` 已达到 `recommend` 或 `hold` 后，必须**立即**调用 `synthesize_design_report`\n   生成完整报告，并传入同一份原始 `screening_results`：\n   `{\"request\":{\"task_type\":\"design\",\"question\":用户问题,\"evidence_chunks\": evidence_chunks,\"candidates\": candidates,\"screening_results\": screening_results}}`。\n   为提升 `claim_supported_ratio`，请在 `request.claims` 中提交**所有**被 `evidence_chunks` 直接支持的事实声明（`claim_type=\"fact\"`），每条包含 `text`、对应 `chunk_id` 和唯一逐字原文引文 `evidence_quote`（必须从该 chunk 的 `content` 中逐字截取，且只出现一次）。**禁止为凑数量编造 claim**；若当前证据能直接支持的 claim 不足 2 条，应优先通过 `search_literature_chunks` 或 `search_paper_chunks` 补充检索，最多尝试 2 轮；若仍无法找到更多直接支持，则在报告中明确标注“证据不足”，并只提交已被验证的 claim。报告将渲染“已校验事实”小节，避免裁判从自由文本中抽取不被检索上下文支持的论断。\n   报告要让使用者能安排下一步工作。用简明中文分别提交配方组成、文献的测试条件与数值、同条件基准配方的结果，并保留逐字引文。比例需说明质量比或体积比；浓度、添加剂用量不得省略或猜测。文献筛选不能写成新配方已由本智能体实验验证。\n   当目标是某项性能时，报告必须包含已检索到的该项性能结果，不能只列出温度、\n   电极和电压范围等测试设置。不同盐浓度、溶剂比例和添加剂分支的结果分别绑定到\n   其配方。不得借用另一分支较好的结果；保留同一分支完整组成与性能已明确的候选，\n   不必强求选取数值最高但组成仍缺失的分支。\n   `next_steps` 按本次缺口列出具体核查或实验，包括要比较的配方、温度、倍率、电池类型和测量项目；这些是验证计划，不是已取得的结果。即使为 `hold`，也要展示已取得的候选资料、文献结果和暂缓原因，不得只写状态或检索流程。\n   对没有数值判据的选材目标，`next_steps` 也要交代其验证状态。例如成本目标\n   需要区分文献的成本动机与实际价格比较，不能因筛选通过就宣称全部目标已验证。\n   性能类 `claims` 应优先包含与当前候选直接相连的实验结果，少选一般背景介绍。\n   **关键纪律**：一旦 `screen_formulations` 返回 `hold` 或 `recommend`，**不得**再尝试重新构建候选、重新检索或输出自由文本；下一动作必须是 `synthesize_design_report`。若状态为 `search`，最多只做一轮补充检索 + 重新筛选，然后必须进入报告。\n9. 直接输出报告全文，不得改写或截断。\n\n## 退出纪律\n\n- 不要求无条件调用所有工具；根据用户已有候选和结构化 evidence gaps 选择能力。\n- `synthesize_design_report` 是终端编译能力。调用前必须已有终态 `DecisionState`；\n  `search` 状态必须先按缺口补证或换候选，不能用固定工具次数代替状态判断。\n- `recommend` 只推荐 approved candidates；`hold` 展示已检索的候选资料与文献结果，说明缺口和验证计划，不推荐或排序候选。\n\n## 候选方案纪律\n\n- 候选配方必须来自 KG 结构化证据或文献 chunk；\n- 对于\"建议组合\"（无完整配方直接实验数据），summary 只写组分和证据来源，不写性能声明；\n- 性能/效果声明只能绑定到直接支持该声明的 chunk_id；\n- 禁止在\"证据摘要\"里写入未被任何 chunk 直接支持的推断句；无来源支撑的直接删除；\n- **直接回答（direct_answer）只给出候选方案标识和最精简组成**，不要包含\"已在某温度验证\"、\"性能最优\"、\"最有效\"等需要跨证据推断的断言；\n- 推荐完整配方必须有原文明确的钠盐浓度。若浓度未知，列为待补资料，不得填入\n  “参考基准配方”的浓度并作为已有文献验证的配方推荐。\n\n## 推荐/排序纪律\n\n- 排序理由必须逐条绑定到具体 chunk_id，禁止写\"C1/C3/C4 无法满足需求\"、\"某候选明显优于其他\"等无直接对比证据的绝对化断言；\n- 无直接对比证据时，只陈述各候选的组分、证据来源与评分，不给出相对优劣结论；\n- 对\"建议组合\"的推荐，只能说明其组分和所依据的证据，不得把多篇证据的性能迁移到该组合上。\n\n## 证据摘要纪律\n\n- 配方段落若讨论多种浓度、多个溶剂比例或不同研究，先定位到单一配方的原文。\n  不得把某段的浓度、另一配方的溶剂比例和第三个体系的添加剂拼成候选。\n  原文工具返回中的数值、温度符号、配方标识和 chunk_id 应原样沿用，\n  不得手工改写成另一温度或用整篇论文的共同身份代替相同测试条件。\n- 每条 bullet 必须附带 `[chunk_id]`；\n- 禁止输出以\"【推断】\"开头的句子；\n- 禁止把多篇证据的性能迁移到某个候选配方上。\n\n## 引用纪律\n\n- 使用 `[chunk_id]` 格式；\n- 禁止引用模型参数知识里的文献；\n- 单篇报道就写\"某文献报道/某体系显示\"，不得升格为普适结论。\n\n## KG 质量反馈\n\n检索或分析过程中，若发现以下可疑情况，**必须**调用 `flag_suspicious_kg_item` 记录，供后续离线人工审查与 KG 矫正；不阻塞当前设计流程。\n\n- **实体标签错误**：如 `ionic conductivity` 被标为 `Additive`，`NaPF6` 被标为 `Solvent`；\n- **关系方向/语义错误**：如 `SEI DECOMPOSITION::FORMS::FEC`、明显违背化学常识的关系；\n- **属性单位或数值异常**：如电导率 `100 mS/cm` 与上下文矛盾、温度单位混用；\n- **同名异义**：如 `TMP` 同时指 `trimethyl phosphate` 与 `2,4,6-trimethylpyridine` 而未区分；\n- **证据与 KG 矛盾**：chunk 中的明确结论与 KG 检索结果冲突。\n\n记录时尽量提供：item_type（`entity`/`relation`/`property`）、具体名称/ID、问题描述、触发工具、证据 chunk_id。\n\n## 知识沉淀\n\n设计流程全部结束后，调用 `reflect_now` 进行知识反思和 Wiki 沉淀，\n将本次设计的关键结论、发现的知识缺口、改进的检索关键词记录到 LLM Wiki，\n供下次相似问题时直接检索复用，减少重复检索成本。\n",
+    "{'todo_list': [TodoItem(id='t1', content='Load electrolyte_design skill and plan constraints', status='completed'), TodoItem(id='t2', content='Run predict_formulation_conductivity for both candidates at 0 °C', status='in_progress'), TodoItem(id='t3', content='Retrieve literature on NaPF6 EC/EMC/PC low-temperature transport & KG structured queries', status='pending'), TodoItem(id='t4', content='Extract numeric evidence (conductivity, temperature, viscosity)', status='pending'), TodoItem(id='t5', content='Enrich candidate evidence + screen_formulations with structured constraints', status='pending'), TodoItem(id='t6', content='Synthesize design report with DecisionState', status='pending')]}"
+  ],
+  "task_artifact": null,
+  "event_trace_count": 36,
+  "failure_reasons": [
+    "agent_error:CommonBudgetExceeded"
+  ],
+  "error_type": "CommonBudgetExceeded",
+  "error_message": "Common before budget check refused ['search_literature_multiview']: ['host_ram_mb']; resident=['process:na-conductivity-rf']; required=['root-rag:bge-m3-model', 'root-rag:neo4j-session']",
+  "grounding_status": "pending",
+  "grounding_error": null,
+  "grounding_duration_seconds": null,
+  "grounding_fallback_used": false,
+  "grounding_primary_error": null,
+  "claim_contract_summary": null,
+  "configured_task_type": "design",
+  "run_duration_seconds": 14.719,
+  "evaluation_timed_out": false,
+  "evaluation_timeout_seconds": 600.0,
+  "llm_request_max_retries": 2,
+  "llm_transport_retry_count": 0,
+  "arm": "native",
+  "task": "T1",
+  "messages": [
+    {
+      "content": "Assess two supplied NaPF6–EC/EMC/PC electrolyte candidates for sodium-ion use at 0 °C. Obtain their ionic-conductivity estimates with the available prediction tool, and use literature retrieved in this task to interpret the predictions, model applicability and low-temperature transport considerations. Give a substantiated comparison and advice on whether either candidate merits priority for subsequent experimental evaluation or the available information does not distinguish them. Report the candidate compositions, prediction units and temperature, prediction uncertainty returned by the tool, relevant source evidence and the reasoning behind the advice. These are supplied candidates for assessment. Their molar proportions (not volume ratios) are: [{\"candidate_id\": \"candidate-a\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"molar_ratios\": {\"NaPF6\": 0.12438287472883666, \"EC\": 0.2772805705914771, \"EMC\": 0.14636492480234797, \"PC\": 0.45197162987733824}}, {\"candidate_id\": \"candidate-b\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}].",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "human",
+      "name": null,
+      "id": "92d115d1-a6bc-4015-b1f2-d3386e5d6299"
+    },
+    {
+      "content": "你是一个可使用多种工具完成任务的智能助手。\n\n核心工作方式：\n1. 判断用户请求是否匹配某个 skill 的触发词（triggers）。\n2. 如果匹配，先调用 load_skill(name=\"<skill_name>\") 加载完整指引，再按指引执行。\n3. 使用检索工具查找事实时，在回答中用 [n] 标注来源，n 为检索结果中的序号。\n4. 如果工具需要用户才能确定的参数而用户没有给出，必须先询问用户，严禁自行假设。\n5. 问题涉及性能数值（电导率、容量、循环次数、倍率、库仑效率、粘度等）时，检索后必须调用 extract_numeric_properties 抽取数值证据，再组织回答。\n\n## 可用 Skills\n按需调用 load_skill 工具加载完整步骤。\n\n- **electrolyte_design**: 钠离子电池电解液配方正向设计与候选配方筛选  (`electrolyte_design/SKILL.md`)  triggers: [设计, 配方设计, 推荐电解液, 优化电解液]\n- **electrolyte_inverse_design**: 钠离子电池电解液故障逆向设计与性能问题调整  (`electrolyte_inverse_design/SKILL.md`)  triggers: [逆向, 容量骤降, 失效, 如何调整, 为什么, 性能下降]\n- **electrolyte_screening**: 钠离子电池电解液事实查询、材料对比与机理解释  (`electrolyte_screening/SKILL.md`)  triggers: [作用是什么, 对比, 比较, 差异, 性能, 优缺点, FEC, NaPF6, NaFSI, 成膜]\n- **kg_retrieval**: 将用户自然语言查询转换为结构化知识图谱检索计划，确保高召回率和高精度  (`kg-retrieval/SKILL.md`)  triggers: [知识图谱, 图谱检索, 结构化查询, KG 查询, 查询规划]\n- **literature_review**: 文献综述检索，根据研究主题系统检索钠离子电池相关文献并汇总  (`literature_review/SKILL.md`)  triggers: [文献综述, 文献调研, 相关研究, 研究现状]\n- **rag_evaluation**: 自动评估 RAG 召回质量、知识图谱查询质量和 agent 设计任务表现，输出评估报告  (`rag_evaluation/SKILL.md`)  triggers: [评估, 测试召回, RAG评估, 测试效果, 跑baseline]\n\n当前所在目录：${ORION_SOURCE}\\reports\\cwsr_complete_common_budget_20261011_v2\\T1-r2-native\\agent-state-nzzq9q1g\n\n检索与证据纪律（严禁违反）：\n- 只要用户问题涉及钠离子电池、电解液、电极材料、添加剂、电池性能、机理等专业概念，无论问题看起来多简单，都必须先调用 search_literature_chunks 或 search_literature_multiview 获取文献证据，再组织回答；禁止仅凭参数知识直接回答。\n- 当问题指定作者、论文题名或 DOI 时，必须先调用 resolve_literature_papers 解析 paper_id，再调用 search_paper_chunks 在该论文内部检索正文；禁止因普通向量检索未命中作者名就声称论文未收录。\n- 指定论文的问题一旦解析出 paper_id，search_literature_multiview 必须传入该 paper_ids，search_paper_chunks 必须传入该 paper_id；此时只回答目标论文，不执行跨论文补充检索，也不追求多论文覆盖。\n- 如果问题匹配某个 skill 的触发词，必须先调用 load_skill 加载该 skill，再按 workflow 执行；load_skill 必须发生在该任务的检索/设计工具之前，不能先检索后跳过 Skill 直接收尾。\n\nSkill 执行纪律：\n- 当 skill 指引要求特定引用格式（如 chunk_id）时，严格按 skill 格式输出，不要自行改为 [n] 编号。\n- 调用 `synthesize_design_report` 时，凡声明或推荐依赖温度、组分、电极、电池构型、电压窗口、倍率、循环数或测量定义，必须在 `request.applicability_inputs` 中提交 source scope、target scope、relevant_fields 与证据角色。条件缺失/不匹配不得省略该输入来绕过门禁；普通 bridge 证据不能直接标为 transferable，只有带逐字引文且 `review.status=\"reviewed\"` 的 TransferContract 才可请求限定性回答。\n- 当调用 `synthesize_design_report` 生成最终报告后，你只需输出一句简短确认（例如\"报告已生成，正在进行 grounding 校验\"），**不要**重复报告全文； grounding 节点会自动取得报告并完成校验后输出最终版本。\n- 输出 `synthesize_design_report` 的结果后，不要再调用 write_todos 等状态更新工具；最终答案将由 grounding 节点负责交付。\n\n当前文献辅助设计采用有出处的模型语义审查。screen_formulations 的数值和字段评估保留为诊断资料，最终 DecisionState 依据原始问题与本轮检索原文判断候选适用性。不同段落可依据明确的实验关联共同支持结论，不要求各句重复全部条件。收到语义审查缺口后按缺口检索或更换候选；报告只推荐 DecisionState 获准的候选。",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "system",
+      "name": null,
+      "id": "305d8486-893f-4b86-8074-74441b9ecac1"
+    },
+    {
+      "content": "## Structured task contract (authoritative)\n- task_type: `design`\n- required Skill: `electrolyte_design`\nActivate this procedure with `load_skill(name=\"electrolyte_design\")` before domain retrieval or synthesis. Do not load a different Skill. The load_skill boundary will reject a mismatched route and ask you to correct it.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "system",
+      "name": null,
+      "id": "f57eb519-76c4-4116-afb8-44eb749444fa"
+    },
+    {
+      "content": "I'll start by loading the required skill.",
+      "additional_kwargs": {
+        "reasoning_content": ""
+      },
+      "response_metadata": {
+        "finish_reason": "tool_calls",
+        "model_name": "deepseek-flash",
+        "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+        "model_provider": "deepseek"
+      },
+      "type": "ai",
+      "name": null,
+      "id": "lc_run--01a12887-b72c-73c2-a707-867eb5d4bf63",
+      "tool_calls": [
+        {
+          "name": "load_skill",
+          "args": {
+            "name": "electrolyte_design"
+          },
+          "id": "call_00_ET_fTMXqJh1AbhZTgsNfQpo2101",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 10078,
+        "output_tokens": 51,
+        "total_tokens": 10129,
+        "input_token_details": {
+          "cache_read": 9216
+        },
+        "output_token_details": {
+          "reasoning": 0
+        }
+      }
+    },
+    {
+      "content": "---\nname: electrolyte_design\ndescription: 钠离子电池电解液配方正向设计与候选配方筛选\ntriggers:\n  - 设计\n  - 配方设计\n  - 推荐电解液\n  - 优化电解液\nmethod:\n  objective: 在用户硬约束下形成可追溯候选，并由结构化 DecisionState 决定推荐或暂停\n  evidence_gaps:\n    - 候选组成或浓度缺失\n    - 目标工况与性能没有同实验绑定\n    - 硬约束缺少可验证原文\n  capabilities:\n    - 文献与论文内检索\n    - KG 候选发现\n    - 原文证据补全\n    - 纯约束评估与有界重规划\n  exit_conditions:\n    - DecisionState 为 recommend 且只报告 approved candidates\n    - DecisionState 为 hold 且报告缺口和验证计划\nworkflow:\n  steps:\n    - id: retrieve\n      tool: search_literature_multiview\n      required: false\n      description: 多角度背景检索，补齐候选、机理或替代体系证据\n    - id: kg_structured\n      tool: kg_query\n      required: false\n      description: 需要结构化材料、配方、条件或关系路径时查询领域知识图谱\n    - id: retrieve_fallback\n      tool: search_literature_chunks\n      required: false\n      description: 聚焦补充检索\n    - id: resolve_paper\n      tool: resolve_literature_papers\n      required: false\n      description: 用作者、题名、DOI 或用户给出的具体实验标识定位候选论文\n    - id: retrieve_paper\n      tool: search_paper_chunks\n      required: false\n      description: 已锁定具体论文时，在论文内部补取任务相关原文证据\n    - id: numeric\n      tool: extract_numeric_properties\n      required: false\n      description: 从证据块抽取数值属性\n    - id: formulate\n      tool: query_formulation_space\n      required: true\n      description: 获取可评估候选配方\n    - id: enrich\n      tool: enrich_formulation_evidence\n      required: false\n      description: 补齐候选 evidence 原文与元数据\n    - id: conductivity_ml\n      tool: predict_formulation_conductivity\n      required: false\n      description: 对具有明确摩尔组成且位于 NaPF6–EC/EMC/PC 适用域内的候选估计离子电导率；预测只作定量辅助，不替代文献证据\n    - id: screen\n      tool: screen_formulations\n      required: true\n      description: 按结构化 constraint_records 评估候选\n    - id: optimize\n      tool: optimize_formulations\n      required: false\n      description: 将 DecisionState 翻译为动作列表或推荐/暂停\n    - id: report\n      tool: synthesize_design_report\n      required: true\n      description: 编译最终设计报告与 TaskArtifact\n---\n\n# 电解液正向设计 Skill\n\n当性能段已经引用具体子图，但缺少电极或电池类型时，可在\n`enrich_formulation_evidence` 的 request 中设置 `include_figure_context: true`。\n工具沿同篇论文的明确图号、子图补取图注。筛选保留性能段和图注两个出处，\n不会把图注中其他子图的温度、倍率或循环数补到当前性能结果上。\n同论文、相邻段落或同一种盐本身不能证明属于同一组试验。\n\n## 任务要求与测试类型\n\n整理配方前，先检查候选是否报告了用户要求的温度、倍率和电池配置下的结果。\n标题相关或正文分别出现这些条件，不代表同一次试验满足全部条件。\n先补取与目标工况相符的性能段，再整理对应配方的浓度、比例和添加剂用量。\n若已选候选缺少目标条件下的结果，应检查本轮检索返回的其他候选，\n不要围绕同一候选重复查询，或把另一温度下的表现当作目标条件的结果。\n\n先把用户明确要求的条件写入 `constraint_records`，不要在筛选过程中增加用户没有\n提出的性能要求。放电容量、倍率性能和循环寿命是不同测试。用户要求某温度、某倍率\n的放电结果时，不将缺少同温度、同倍率的循环寿命结果记为阻断缺口。\n`unresolved_gaps` 应对应候选组成缺失或用户必需条件，额外研究建议写进验证计划。\n若原文已经明写倍率与电流的对应关系，应引用该原句，不将它再次列为缺失。\n用户给出的数值与单位须原样保留在至少一个检索查询中，包括括号内的电流或容量。\n不能用倍率替换具体电流后就认为已经检索了全部条件。具体标识未命中时先核查\n原标识的字面检索结果，再继续扩展候选；不由系统填写论文名称或配方。\n在形成候选前，逐项检查用户目标是否已有相关证据。近似温度是选材目标，仍需\n优先考察接近该目标的实际测试结果；室温表现不能替代高温或低温使用依据。\n近似目标没有容差时不虚构数值阈值。报告必须写出文献实测条件，并在 next_steps\n交代目标条件下的验证；不能省略这个目标后把基础配方写成完整解决方案。\n成本等定性目标也逐项说明已有依据和待验证事项，不能随硬条件通过而消失。\n联合条件的 `electrode` 只写正负极材料，`cell_configuration` 单独写软包、扣式等\n电池类型，不把两种信息混写在一个字段中。\n\n## 适用场景\n\n- 用户要求设计适用于特定工况（低温、高压、长循环等）的钠离子电池电解液；\n- 用户提供多套候选配方要求评分筛选。\n\n## 证据能力选择\n\n检索查询根据当前用户问题生成，使用英文。先检索用户给出的电极对、电池形式、\n温度、倍率或电流及目标性能，不预先限定用户没有指定的盐、溶剂或添加剂。\n可把这些条件拆成多个查询，用 `search_literature_multiview` 合并结果；\n不必在每个查询中同时塞入所有条件。用户给出的具体电流、容量或电压范围也可用来\n定位相关实验，不能只用宽泛的“低温电解液”替代这些信息。\n对于有辨识度的电极缩写、明确电流或容量，`resolve_literature_papers` 可补充\n字面检索。向量结果未覆盖这些具体标识时，先用原标识检查字面命中，避免继续\n围绕不符合电极或电流条件的论文扩展检索。使用用户原本给出的标识，不猜作者或题名。先查看返回的正文命中，\n再决定是否值得进行论文内检索；无关的引用、另一种电池的结果不能用于推荐。\n找到相关论文后，使用论文内检索分别取得组成、测试条件和性能，核对是否属于\n同一配方与同一测试。机理或替代体系检索用于解决实际缺口，不是必做的检索次数。\n参数建议：`top_k=10`，`per_query_top_k=8`，`max_per_paper=2`。\n盐未指定时，不要只锚定向量检索第一次命中的盐：先用 `kg_query` 的\n`find_materials_for_condition`，把 `material_types` 设为 `[\"SodiumSalt\", \"Electrolyte\"]`，\n查目标温度/条件下测试过的盐与电解液，再对返回的具体盐名逐个补向量检索。\n双盐体系必须用「dual salt + 具体盐名」组合查询才能召回，单独查一个盐名往往召不回对应论文。\n后续查询依据已有结果和 `DecisionState.evidence_gaps` 调整。\n\n## 工作流\n\n### 逆向设计例外：先诊断，筛选仅决定能否推荐配方\n\n对于容量骤降、首圈库仑效率低、高压衰减、阻抗增长等 `inverse_design` 问题，先从检索证据中建立至少两个可区分的电解液侧假设，并提出能区分它们的 EIS、Raman、XPS、LSV、ICP、产气或对照实验。仍执行候选配方筛选，但筛选 `hold` 只禁止“推荐进入实验”的完整配方；不得因此省略诊断、混杂因素和条件化调整方向。报告必须区分“已被证据支持的诊断事实”与“待验证的调整方向”。\n\n1. 解析用户目标与约束；把用户要求的每项条件写成结构化 `constraint_records`，例如：\n   不得把整段用户问题放入 `target_conditions`，再把旧文本检查识别到的部分词语当成全部要求。\n   推荐前逐项核对用户要求与检查条件，避免漏掉正极、负极、电池形式、温度、倍率或指标定义。\n   检索前先解释用户给出的数值条件：它描述什么物理量、单位如何理解、哪些信息尚不明确。\n   这一解释依据用户描述的工作场景，在检索前定下，不能由后来检索到的论文或知识图谱记录\n   反过来改写；其它论文里恰好出现同样的 “N C” 写法，只说明那些论文的用法，不能用来判断\n   用户这句话。\n   温度与倍率的单位必须分清。省略度符号的 C 不能直接视为充放电倍率。\n   按它在句中的位置判断：直接修饰电芯、电池或其使用环境时（如 “a pouch cell at -30 C”、\n   “a full cell around 50 C”），是温度；只有与充放电动作或倍率词连用时\n   （如 “discharged at 1 C”、“cycled at 0.5 C”、“1 C rate”），才是倍率。\n   按上下文确定一种解释后，就用这一种建立约束，\n   不因缺少度符号再补一条互斥的倍率或温度约束，也不因检索结果改回另一种解释。\n   检索查询和筛选断言须明确写出所采用的\n   物理量与单位。只有上下文确实无法确定物理量时，才同时列出两种解释并说明需要澄清，\n   此时暂缓推荐，而不是把两种解释同时写成两条互斥的数值约束。\n   接近目标温度的文献结果应保留实测温度，不能改写为目标温度。\n   硬约束来自用户问题，不得自行加上某一正极、软包形式、长循环寿命或数值阈值。\n   在若干可替代选项之间尚未确定时（例如某类溶剂或某类盐有多种候选），不得把它们\n   同时写成必需的 `required_component`；每个选项应作为独立候选分别比较，不叠加互斥的必需组分。\n   近似目标也必须进入筛选，不得因用户没有给出容差而省略。保留用户对目标的原话，\n   用现有 `evidence_claim` 表达候选须有相应工况下的直接测试依据，而非把近似目标\n   改成精确相等、单边不等式或自行设定容差。逐候选判断时，`supported` 须引用该\n   候选的实际测试条件与性能原句，`basis` 写清实测条件与目标的差别及其关联依据。\n   只有其他工况的结果、测试建议或机理预测时，不能据此判近似工况要求已满足。\n   没有相应测试依据就保留 `not_found` 并补证，不能删掉该要求后批准推荐，再把它\n   放进 `next_steps`。有邻近条件下的直接依据时，在报告中明确实际条件与目标的\n   差别，精确目标下的后续验证可以另列。电极、电池形式和其他明确要求仍须检查。\n   联合条件也须保留近似目标的含义：不得把近似值写成 `target_context` 中要求\n   精确匹配的数值。近似工况及其电极、全电池归属可写在同一 `evidence_claim`\n   中，引用实际共同测试的结果；组分身份等与工况无关的要求不并入该测试条件组。\n   “低成本”等定性目标须区分文献提出的成本动机与已量化的价格优势；未提供价格数据\n   时不得称已验证低成本。数值明确的用户要求仍按原值建立硬约束，不得因此放宽。\n   无法从问题得出数值判据的定性目标，保留为选材目标，在报告中说明依据和待验证\n   条件。定性或近似目标通过断言及其原文依据判断，不变成必须命中字面词的关键词条件。\n   这不允许省略用户明确给出的电极、电池形式、精确温度或倍率要求。\n   当用户目标包含某项性能指标（如 capacity retention relative to room-temperature\n   capacity、离子电导率、倍率性能、首圈库仑效率），先分清用户给的是**数值阈值**还是\n   **只要报告**：给了明确数值时写成对应数值约束——保持率用 `minimum_retention`、\n   电导率用 `minimum_conductivity`、倍率用 `c_rate`，`value` 取用户给出的数值；\n   只要求“报告该指标”“有无该结果”而未给数值时，不得把阈值填 0 了事——`value: 0`\n   会让任何数字都通过，等于没有检查。这类“须被报告/须成立”的指标改用\n   `kind: \"evidence_claim\"`（见下），把该指标写成一句断言。\n   `field_presence` 只用于检查候选的配方字段（`concentration_mol_l`、\n   `solvent_ratios`、`additives` 等）是否显式填写，绝不用于表达“某项性能必须被报告”。\n   禁止把“capacity retention … must be reported”写成\n   `\"kind\": \"field_presence\", \"field\": \"additives\"` 这类把性能指标错配到配方字段的约束。\n   ```json\n   {\n     \"request\": {\n       \"candidates\": candidates,\n       \"constraint_records\": [\n         {\n           \"constraint_id\": \"temp-low\",\n           \"description\": \"operating temperature ≤ -20°C\",\n           \"kind\": \"temperature\",\n           \"operator\": \"<=\",\n           \"value\": -20,\n           \"unit\": \"°C\",\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find low-temperature cycling evidence\"\n         },\n         {\n           \"constraint_id\": \"electrode-hard-carbon\",\n           \"description\": \"hard carbon anode\",\n           \"kind\": \"electrode_material\",\n           \"evidence_terms\": [\"hard carbon\", \"hard-carbon\"],\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find hard carbon anode evidence\"\n         },\n         {\n           \"constraint_id\": \"cell-half\",\n           \"description\": \"sodium half-cell configuration\",\n           \"kind\": \"cell_configuration\",\n           \"evidence_terms\": [\"half-cell\", \"half cell\", \"Na||HC\", \"HC||Na\", \"pure Na\"],\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find half-cell configuration evidence\"\n         },\n         {\n           \"constraint_id\": \"field-concentration\",\n           \"description\": \"explicit salt concentration must be present\",\n           \"kind\": \"field_presence\",\n           \"field\": \"concentration_mol_l\",\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": false\n         },\n         {\n           \"constraint_id\": \"salt-napf6\",\n           \"description\": \"NaPF6 as salt\",\n           \"kind\": \"required_component\",\n           \"value\": \"NaPF6\",\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find NaPF6 electrolyte evidence\"\n         },\n         {\n           \"constraint_id\": \"solvent-thf\",\n           \"description\": \"THF as solvent\",\n           \"kind\": \"required_component\",\n           \"value\": \"THF\",\n           \"required_evidence_scope\": \"candidate_same_paper\",\n           \"can_replan\": true,\n           \"search_hint\": \"find THF solvent evidence\"\n         }\n       ]\n     }\n   }\n   ```\n   定性或断言型要求（如“无集流体/壳体腐蚀被观测到”“无析钠/无枝晶”“提高首圈库仑效率”\n   “该添加剂抑制产气”）不得写成 `mechanism_keyword` 关键词表——关键词命中分不清\n   “发生腐蚀”与“未发生腐蚀”。改用 `kind: \"evidence_claim\"`：在 `claim` 里用一句\n   用户原话写出对单个候选须成立的断言，在 `claim_verdicts` 里**逐候选**给出判定。\n   语义判断（这段原文是否为该候选建立或推翻该断言）由你负责；程序只做两件可机械\n   核验的事：判定须指向本次请求的候选，`quote` 须在该候选证据正文中逐字存在。\n   因此措辞、否定、同义称呼的变化都不影响判定，你只需如实读原文：\n   - `supported`：有原文明确为该候选建立断言，附 `chunk_id` 与逐字 `quote`；\n   - `refuted`：有原文明确反驳（如原文说“会持续腐蚀铝箔”），附 `chunk_id` 与逐字 `quote`；\n   - `not_found`：检索到的证据未直接提及，如实填写，由补证机制驱动下一轮检索。\n   背景介绍、他人体系的结果、无实验支撑的预测都不算 `supported`。例如：\n   ```json\n   {\n     \"constraint_id\": \"no-corrosion\",\n     \"description\": \"no current-collector or case corrosion observed\",\n     \"kind\": \"evidence_claim\",\n     \"claim\": \"该候选电解液不腐蚀铝箔或钢壳\",\n     \"claim_verdicts\": [\n       {\n         \"candidate_id\": \"candidate-1\",\n         \"verdict\": \"refuted\",\n         \"chunk_id\": \"fan2024::sec3\",\n         \"quote\": \"the single NaFSI system can continuously corrode aluminum foil and stainless steel sheets\",\n         \"basis\": \"原文明确说明单盐 NaFSI 会持续腐蚀铝箔与不锈钢，与该断言相反。\"\n       }\n     ],\n     \"can_replan\": true,\n     \"search_hint\": \"find corrosion test evidence for the candidate electrolyte\"\n   }\n   ```\n   `evidence_claim` 不得把 `required_evidence_scope` 设为 `component` 或 `background`：\n   断言必须由候选自身绑定的证据支持，不能借用别篇论文或背景段落的措辞。\n   给出 `supported` 前，逐句核对引文是否真正支持所写断言。引文必须从指定\n   `chunk_id` 返回的原文复制，不能把题名、摘要或另一块文字放在该块的标识下。\n   配方、测试条件和性能必须对应同一候选；一种优点不能替代另一项目标的证据。\n   成本动机与价格比较分别表述，安全性或无氟组成不能自行推导出成本优势。\n   `basis` 说明原句与断言的推理关系，不得以重复断言代替理由。程序核验引文\n   存在及归属，不代替科学含义判断；证据未支持完整断言时应补证或保留 `not_found`。\n   `criteria`/`target_conditions` 仅用于兼容旧调用方；新设计任务必须优先使用\n   `constraint_records`，避免 evaluator 再从自由文本猜测硬约束。\n\n   `required_evidence_kinds` 描述的是**支持记录本身的语义角色**，不是实验条件元数据。\n   数值性能约束通常只要求 `property`；温度、电极、循环数等共同实例化条件应由该\n   observation 的 `condition_scope` 和 `joint_context_requirements` 表达。除非硬约束本身\n   确实要求一条独立的 condition 记录，否则不要把同一数值约束写成\n   `required_evidence_kinds=[\"property\", \"condition\"]`，否则会把“带条件上下文的性能观测”\n   错当成缺少第二种证据角色。\n\n   当两个及以上硬约束必须在**同一个目标实验上下文**中同时成立时，还必须显式写\n   `joint_context_requirements`。分别在多个倍率测试的要求，按倍率分别建立条件组，\n   每组的 `target_context.rate` 只填一个倍率。不能把 `0.5 C and 1 C` 当成一次测试的倍率。\n   同一论文的不同盐浓度或溶剂比例必须分别对应其性能段，不能因来自同篇论文就互换结果。\n   `target_context.cell_configuration` 使用条件检查器的外形名称 `pouch` 或 `coin`，\n   不拼成 `pouch full cell` 这样的新标签。全电池要求另用 cell_configuration 检查条件\n   和明确的正负极对验证；外形名称不能代替电极与全电池要求。\n   它描述的是 evidence composition obligation，不要求所有\n   支持证据拥有相同 `experiment_id`。`constraint_ids` 只能引用本次 `constraint_records`；\n   `context_fields` 只列对联合决策真正相关的字段；`target_context` 只填写用户明确给出的\n   目标条件，未知字段保持未知，禁止为了让 join 成立而补默认值。例如：\n   ```json\n   {\n     \"joint_context_requirements\": [\n       {\n         \"group_id\": \"low-temp-high-voltage\",\n         \"constraint_ids\": [\"retention\", \"voltage\"],\n         \"context_fields\": [\"temperature_c\", \"electrode\"],\n         \"target_context\": {\"temperature_c\": -20.0, \"electrode\": \"hard carbon\"},\n         \"can_replan\": true,\n         \"search_hint\": \"find evidence satisfying both hard constraints at the target operating context\"\n       }\n     ]\n   }\n   ```\n   只有约束确实需要共同实例化时才声明 joint group；互不相关的硬约束不要强行合组。\n   原文条件检查器分别识别 `electrode` 与 `cell_configuration`。涉及电池形式的用户要求\n   使用独立的 cell_configuration 条件；只有相关观测明确提供该字段时，才作联合检查。\n2. 检查用户输入与已有 ledger；存在组分、机理或替代体系缺口时，选择相应检索能力；\n3. 如证据不足，再做有界补充检索：\n   - 区分“已有候选缺少一段证据”和“已有候选并不适合目标”。先检查最相关论文；\n     若当前候选仍不能满足目标，按缺口与完整目标检索其他候选，不反复只查原来的\n     盐、溶剂或论文。新证据支持新的组成时重新组装候选，再用原任务的全部条件\n     筛选。不能把不同候选的成本、工况或性能拼成一个通过的候选。\n   - 尚未定位候选论文时，用 `search_literature_chunks` 做 1–2 次聚焦补充（`top_k=10`）；\n   - 若返回结果已经给出明确 `paper_id`，且该论文与目标组分/机理直接相关但缺少显式配方或目标工况证据，必须对最相关的 1 篇论文调用一次 `search_paper_chunks(paper_id=..., query=..., top_k=8)`；`query` 用 4–8 个英文技术词描述缺失事实，不含作者名。将结果追加到 `evidence_chunks`，不得跨论文拼接配方与性能。\n   - 对 **named-study / named-candidate** 设计任务，在进入 `query_formulation_space` 或\n     `screen_formulations` 前，必须先取得同一论文中可追溯的配方/组成证据：至少有一条\n     `evidence_kind=\"formulation\"` 的记录能支持候选的盐、溶剂或添加剂组成。只有性能、温度、\n     机理 chunk 不能建立候选配方归属；若当前只找到性能证据，应继续检索 formulation /\n     composition 段落，而不是手工构造一个 `formulation_evidence_ids=[]` 的候选进入筛选。\n4. 用户没有提供可评估候选时，调用 `query_formulation_space`，把目标转成：\n   `{\"request\":{\"task_type\":\"design\",\"target_conditions\":[...],\"preferred_salts\":[...],\"preferred_solvents\":[...],\"preferred_additives\":[...],\"excluded_components\":[...],\"evidence_chunks\": evidence_chunks,\"max_candidates\":3}}`；其中 `evidence_chunks` 必须传入前面检索实际返回、与目标最相关的最多 12 个 chunk，不得只传组分偏好而丢失文献上下文。工具会优先从这些同论文原文块组装候选，再使用 KG fallback；保留工具原样返回的 `candidates`。\n   如果候选 evidence 只有 `chunk_id` 而 `text/excerpt` 为空，先调用\n   `enrich_formulation_evidence({\"request\":{\"candidates\": candidates}})`，并用返回候选\n   替换原列表；证据已有原文时不得为形式完整重复调用。enrichment 只补齐原文和元数据，\n   必须保留原 evidence 的 `paper_id`、`evidence_kind` 和 `chunk_id`。\n5. 若任务涉及离子电导率、温度下的传输性质或需要在多个 NaPF6–EC/EMC/PC 候选之间增加一个轻量定量参考，可在筛选前调用 `predict_formulation_conductivity`。只有以下两种情况允许数值预测：候选已有明确的 NaPF6/EC/EMC/PC 摩尔组成，或调用参数中的 `composition_inputs[candidate_id]` 显式给出 `component_mmol`、`molar_ratios` 或 `x_NaSalt/x_EC/x_PC`。现有 `solvent_ratios` 没有保存 v/v、w/w 或 molar 基准，因此**不得**仅凭“1 M + 1:1”之类字段推导模型输入。含其他盐、其他溶剂或添加剂的候选按域外处理；组成不足时保留 `insufficient_composition`，继续依赖文献/KG 证据。`model_predictions` 与 literature evidence 必须分开：模型预测可以辅助候选比较和后续实验优先级，但不能单独把实验事实型硬约束判为满足。\n6. 只有需要形成配方推荐或明确 hold 时才调用 `screen_formulations`：\n   传入当前候选和完整的结构化 `constraint_records`。旧文本字段用于兼容历史输入，\n   新设计任务不能用它们替代结构化条件。\n   每项 `claim_verdicts` 只判定本次 `candidates` 中实际提交的候选。候选集合变更时，\n   同步更新各断言的候选判定，保持原任务的全部条件。工具返回参数错误后，修复\n   指出的字段并重新提交完整请求，不得删去 `constraint_records` 或联合条件来消除报错。\n    倍率与循环次数是两种不同测试，分别建立约束：指定 1 C 测试使用\n    `{\"kind\":\"c_rate\",\"operator\":\"==\",\"value\":1,\"unit\":\"C\"}`；\n    100 次循环使用 `{\"kind\":\"minimum_cycles\",\"value\":100,\"unit\":\"cycles\"}`。\n    指定 2.0–4.0 V 测试使用\n    `{\"kind\":\"voltage_window\",\"operator\":\"==\",\"value\":[2.0,4.0],\"unit\":\"V\"}`。\n    若任务要求 0.5 C 和 1 C，各自建立条件。\n    双盐配方同时保存 `salts` 与 `salt_concentrations_mol_l`，分别记录各盐浓度；\n    `concentration_mol_l` 表示总盐浓度，不得将它归给某一个盐。\n    `solvent_ratio_basis` 按原文填写 `mass`、`volume` 或 `molar`；原文未说明时填\n    `unknown`。不得把质量比例当成体积比例，或把溶剂比例直接当成包括盐的摩尔组成。\n   若本任务已声明 `joint_context_requirements`，每次首次筛选和补证后的重新筛选都必须携带\n   同一份 joint-context 合同；除非用户明确修改任务目标，否则不得在 re-screen 时删除、\n   放宽 `context_fields` 或改写 `target_context`。runtime 会在字段被意外省略时保留上一版\n   显式合同，但 Agent 仍应主动原样传递。\n   保留工具原样返回的 `screening_results`、其中的 `criteria_evaluations` 与 `gaps`，\n   不得手写分数、validations 或 scores。任何 `failed`、`insufficient_evidence` 或\n   `unsupported` 判定都不得在报告中表述为性能已验证。\n7. 旧调用方需要动作列表时，可调用 `optimize_formulations`：\n   `{\"candidates\": candidates,\"screening_results\": screening_results,\"request\":{\"task_type\":\"design\",\"objectives\":[目标性能...],\"constraints\":[用户硬约束...]}}`。\n   不得同时传入 `validations` 或 `scores`。该兼容工具只翻译筛选后已经产生的\n   `DecisionState`，不会再按 score 独立裁决；若 proposal 为\n   `retrieve_more_evidence`，先执行对应的补充检索和重新筛选，再进入报告。\n8. `DecisionState` 已达到 `recommend` 或 `hold` 后，必须**立即**调用 `synthesize_design_report`\n   生成完整报告，并传入同一份原始 `screening_results`：\n   `{\"request\":{\"task_type\":\"design\",\"question\":用户问题,\"evidence_chunks\": evidence_chunks,\"candidates\": candidates,\"screening_results\": screening_results}}`。\n   为提升 `claim_supported_ratio`，请在 `request.claims` 中提交**所有**被 `evidence_chunks` 直接支持的事实声明（`claim_type=\"fact\"`），每条包含 `text`、对应 `chunk_id` 和唯一逐字原文引文 `evidence_quote`（必须从该 chunk 的 `content` 中逐字截取，且只出现一次）。**禁止为凑数量编造 claim**；若当前证据能直接支持的 claim 不足 2 条，应优先通过 `search_literature_chunks` 或 `search_paper_chunks` 补充检索，最多尝试 2 轮；若仍无法找到更多直接支持，则在报告中明确标注“证据不足”，并只提交已被验证的 claim。报告将渲染“已校验事实”小节，避免裁判从自由文本中抽取不被检索上下文支持的论断。\n   报告要让使用者能安排下一步工作。用简明中文分别提交配方组成、文献的测试条件与数值、同条件基准配方的结果，并保留逐字引文。比例需说明质量比或体积比；浓度、添加剂用量不得省略或猜测。文献筛选不能写成新配方已由本智能体实验验证。\n   当目标是某项性能时，报告必须包含已检索到的该项性能结果，不能只列出温度、\n   电极和电压范围等测试设置。不同盐浓度、溶剂比例和添加剂分支的结果分别绑定到\n   其配方。不得借用另一分支较好的结果；保留同一分支完整组成与性能已明确的候选，\n   不必强求选取数值最高但组成仍缺失的分支。\n   `next_steps` 按本次缺口列出具体核查或实验，包括要比较的配方、温度、倍率、电池类型和测量项目；这些是验证计划，不是已取得的结果。即使为 `hold`，也要展示已取得的候选资料、文献结果和暂缓原因，不得只写状态或检索流程。\n   对没有数值判据的选材目标，`next_steps` 也要交代其验证状态。例如成本目标\n   需要区分文献的成本动机与实际价格比较，不能因筛选通过就宣称全部目标已验证。\n   性能类 `claims` 应优先包含与当前候选直接相连的实验结果，少选一般背景介绍。\n   **关键纪律**：一旦 `screen_formulations` 返回 `hold` 或 `recommend`，**不得**再尝试重新构建候选、重新检索或输出自由文本；下一动作必须是 `synthesize_design_report`。若状态为 `search`，最多只做一轮补充检索 + 重新筛选，然后必须进入报告。\n9. 直接输出报告全文，不得改写或截断。\n\n## 退出纪律\n\n- 不要求无条件调用所有工具；根据用户已有候选和结构化 evidence gaps 选择能力。\n- `synthesize_design_report` 是终端编译能力。调用前必须已有终态 `DecisionState`；\n  `search` 状态必须先按缺口补证或换候选，不能用固定工具次数代替状态判断。\n- `recommend` 只推荐 approved candidates；`hold` 展示已检索的候选资料与文献结果，说明缺口和验证计划，不推荐或排序候选。\n\n## 候选方案纪律\n\n- 候选配方必须来自 KG 结构化证据或文献 chunk；\n- 对于\"建议组合\"（无完整配方直接实验数据），summary 只写组分和证据来源，不写性能声明；\n- 性能/效果声明只能绑定到直接支持该声明的 chunk_id；\n- 禁止在\"证据摘要\"里写入未被任何 chunk 直接支持的推断句；无来源支撑的直接删除；\n- **直接回答（direct_answer）只给出候选方案标识和最精简组成**，不要包含\"已在某温度验证\"、\"性能最优\"、\"最有效\"等需要跨证据推断的断言；\n- 推荐完整配方必须有原文明确的钠盐浓度。若浓度未知，列为待补资料，不得填入\n  “参考基准配方”的浓度并作为已有文献验证的配方推荐。\n\n## 推荐/排序纪律\n\n- 排序理由必须逐条绑定到具体 chunk_id，禁止写\"C1/C3/C4 无法满足需求\"、\"某候选明显优于其他\"等无直接对比证据的绝对化断言；\n- 无直接对比证据时，只陈述各候选的组分、证据来源与评分，不给出相对优劣结论；\n- 对\"建议组合\"的推荐，只能说明其组分和所依据的证据，不得把多篇证据的性能迁移到该组合上。\n\n## 证据摘要纪律\n\n- 配方段落若讨论多种浓度、多个溶剂比例或不同研究，先定位到单一配方的原文。\n  不得把某段的浓度、另一配方的溶剂比例和第三个体系的添加剂拼成候选。\n  原文工具返回中的数值、温度符号、配方标识和 chunk_id 应原样沿用，\n  不得手工改写成另一温度或用整篇论文的共同身份代替相同测试条件。\n- 每条 bullet 必须附带 `[chunk_id]`；\n- 禁止输出以\"【推断】\"开头的句子；\n- 禁止把多篇证据的性能迁移到某个候选配方上。\n\n## 引用纪律\n\n- 使用 `[chunk_id]` 格式；\n- 禁止引用模型参数知识里的文献；\n- 单篇报道就写\"某文献报道/某体系显示\"，不得升格为普适结论。\n\n## KG 质量反馈\n\n检索或分析过程中，若发现以下可疑情况，**必须**调用 `flag_suspicious_kg_item` 记录，供后续离线人工审查与 KG 矫正；不阻塞当前设计流程。\n\n- **实体标签错误**：如 `ionic conductivity` 被标为 `Additive`，`NaPF6` 被标为 `Solvent`；\n- **关系方向/语义错误**：如 `SEI DECOMPOSITION::FORMS::FEC`、明显违背化学常识的关系；\n- **属性单位或数值异常**：如电导率 `100 mS/cm` 与上下文矛盾、温度单位混用；\n- **同名异义**：如 `TMP` 同时指 `trimethyl phosphate` 与 `2,4,6-trimethylpyridine` 而未区分；\n- **证据与 KG 矛盾**：chunk 中的明确结论与 KG 检索结果冲突。\n\n记录时尽量提供：item_type（`entity`/`relation`/`property`）、具体名称/ID、问题描述、触发工具、证据 chunk_id。\n\n## 知识沉淀\n\n设计流程全部结束后，调用 `reflect_now` 进行知识反思和 Wiki 沉淀，\n将本次设计的关键结论、发现的知识缺口、改进的检索关键词记录到 LLM Wiki，\n供下次相似问题时直接检索复用，减少重复检索成本。\n",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "tool",
+      "name": "load_skill",
+      "id": "c27d4cc9-86c4-45c8-ab50-039a79180b96",
+      "tool_call_id": "call_00_ET_fTMXqJh1AbhZTgsNfQpo2101",
+      "artifact": null,
+      "status": "success"
+    },
+    {
+      "content": "",
+      "additional_kwargs": {
+        "reasoning_content": "Let me plan. The task: assess two supplied NaPF6–EC/EMC/PC candidates at 0 °C. Need conductivity prediction, literature evidence, comparison, advice.\n\nSteps: set up todos, do prediction with predict_formulation_conductivity, do literature retrieval (NaPF6 EC/EMC/PC low temperature conductivity 0°C), numeric extraction, query_formulation_space? The skill says query_formulation_space is required, but candidates are supplied. Hmm — step \"formulate\" is required: true. But we have supplied candidates. The contract may require. Let me think: the skill says \"用户没有提供可评估候选时，调用 query_formulation_space\" — since candidates are supplied, we can skip. But workflow marks required: true... The instruction \"不要求无条件调用所有工具\". I'll consider calling it to see if literature-derived candidates exist for NaPF6 EC/EMC/PC. Actually it might return other candidates which would then need screening too. The task is specifically about the two supplied candidates. I think loading a formulation space query could help find evidence chunks. But risk: adds other candidates. I can pass it but only use as evidence retrieval. Actually the skill says \"保留工具原样返回的 candidates\". Hmm. Since user supplied candidates, the design target is comparing those two. I'll do the required screen_formulations with the two supplied candidates.\n\nKey: predictions at 0 °C. Model features: x_NaSalt = NaPF6/(NaPF6+EC+EMC+PC), x_EC = EC/(EC+EMC), x_PC = PC/(EC+EMC+PC).\n\nCandidate A: NaPF6=0.12438287472883666, EC=0.2772805705914771, EMC=0.14636492480234797, PC=0.45197162987733824. Sum = 0.12438287+0.27728057+0.14636492+0.45197163 = 1.0 (exactly? 0.12438287+0.27728057=0.40166344; +0.14636492=0.54802836; +0.45197163=1.0). Yes sum = 1.\n\nmolar_ratios provided as fractions summing to 1 → molar fractions. The tool expects molar_ratios; providing complete molar_ratios is preferred. Note whether ratios vs fractions matter — \"molar_ratios\" — I'll provide the same numbers.\n\nCandidate B: 0.13659166+0.09913936+0.22127296+0.54299602 = 1.0. Yes.\n\nConstraint records: user asks about 0 °C use. Constraints? The user's question is an assessment, not with hard numeric thresholds. Constraints from user: NaPF6 salt (required_component? that's internal to candidate identity). Temperature 0 °C — user asks assessment at 0 °C. Hmm. The task says \"Assess two supplied NaPF6–EC/EMC/PC electrolyte candidates for sodium-ion use at 0 °C\". Applying skill: user's near-target temperature must be included as a constraint — but no tolerance given. Hmm, 0 °C is an exact number, not approximate. Actually the target is 0 °C. We should build a constraint: temperature at 0 °C — but as evidence supports? The literature may have conductivity at 0 °C or -20/-40 °C. The candidate's low-temperature use evidence is likely absent → not_found. Since the user asks whether either merits priority for experimental evaluation, hold may result. Actually recommended outcome likely: predictions only distinguish them; literature evidence missing → hold? Or the model prediction gives numeric values and we compare. Advice may be \"candidate with higher predicted conductivity merits priority, but that relies on model prediction; literature doesn't distinguish → hold for experimental recommendation\"? Hmm.\n\nThe skill's discipline: model predictions can't satisfy experimental-fact hard constraints. DecisionState. Let me think about what constraints the user gives:\n- 0 °C operation temperature (assessment target).\n- NaPF6 salt.\n- solvents EC/EMC/PC.\n- no additives.\n- \"ionic-conductivity estimates\" required? User asks to obtain conductivity estimates with the prediction tool — that's a tool requirement, not an experimental constraint. Hmm, but \"报告…预测不确定度\" — reporting.\n- \"sodium-ion use\" → cell context unspecified, electrode unspecified.\n\nSo constraint_records: \n1. salt-napf6 required_component NaPF6.\n2. temp-0c: temperature == 0 °C? The user asks for assessment at 0 °C. Hmm — \"for sodium-ion use at 0 °C\". This is a target condition. Should we make it a hard constraint requiring literature evidence at 0 °C? The skill mandates including near-target conditions in screening. Since 0 is exact and it's the target condition, add constraint kind temperature, operator ==, value 0, unit °C. Then candidates likely get insufficient_evidence → search state → retrieve more evidence → then hold.\n\nAlternatively use evidence_claim for \"该候选在 0 °C 下用于钠离子电池时有离子电导率实测数据\" with not_found verdicts → gap → hold.\n\nHmm, but the final advice \"whether either candidate merits priority for subsequent experimental evaluation or the available information does not distinguish them\" — the model predictions do distinguish them (higher NaPF6 and higher PC for B?). Let's compute:\n\nA: x_NaSalt=0.12438, x_EC=0.27728/(0.27728+0.14636)=0.27728/0.42365=0.65453, x_PC=0.45197/(0.42365+0.45197)=0.45197/0.87562=0.51617.\nB: x_NaSalt=0.13659, x_EC=0.09914/(0.09914+0.22127)=0.09914/0.32041=0.30941, x_PC=0.45197? no B: PC=0.542996/(0.32041+0.542996)=0.542996/0.863406=0.62889.\n\nSo A has higher EC fraction, B has higher PC and higher salt fraction. Prediction values unknown until tool call.\n\nLet me do the plan and calls. First write_todos, then predict + literature retrieval in parallel? The skill says load_skill first (done). Then retrieve. I can call predict_formulation_conductivity and search_literature_multiview together in one block since independent.\n\nLet me do that.\n\nQueries for literature: \n- \"NaPF6 EC EMC PC electrolyte ionic conductivity sodium-ion battery low temperature 0 °C\"\n- \"NaPF6 PC-based electrolyte low-temperature performance sodium ion battery\"\n- \"ion transport low temperature electrolyte viscosity EC PC binary carbonate\"\n- \"0 °C ionic conductivity sodium electrolyte EC/EMC\"\n\nAlso kg_query find_materials_for_condition condition \"0°C\" with material_types [\"SodiumSalt\",\"Electrolyte\"] — the skill says for unspecified salts use it; salt is specified here. Still could be useful. Maybe do find_formulations with salt NaPF6 and solvent EC? Let's do a couple of kg queries.\n\nLet me start."
+      },
+      "response_metadata": {
+        "finish_reason": "tool_calls",
+        "model_name": "deepseek-flash",
+        "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+        "model_provider": "deepseek"
+      },
+      "type": "ai",
+      "name": null,
+      "id": "lc_run--01a12887-b9ea-72f3-b757-bc6550d6f4f6",
+      "tool_calls": [
+        {
+          "name": "write_todos",
+          "args": {
+            "todos": [
+              {
+                "id": "t1",
+                "content": "Load electrolyte_design skill and plan constraints",
+                "status": "completed"
+              },
+              {
+                "id": "t2",
+                "content": "Run predict_formulation_conductivity for both candidates at 0 °C",
+                "status": "in_progress"
+              },
+              {
+                "id": "t3",
+                "content": "Retrieve literature on NaPF6 EC/EMC/PC low-temperature transport & KG structured queries",
+                "status": "pending"
+              },
+              {
+                "id": "t4",
+                "content": "Extract numeric evidence (conductivity, temperature, viscosity)",
+                "status": "pending"
+              },
+              {
+                "id": "t5",
+                "content": "Enrich candidate evidence + screen_formulations with structured constraints",
+                "status": "pending"
+              },
+              {
+                "id": "t6",
+                "content": "Synthesize design report with DecisionState",
+                "status": "pending"
+              }
+            ]
+          },
+          "id": "call_00_1DSg8s87h3LzZnjOgh8K4819",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 17973,
+        "output_tokens": 1806,
+        "total_tokens": 19779,
+        "input_token_details": {
+          "cache_read": 10112
+        },
+        "output_token_details": {
+          "reasoning": 1582
+        }
+      }
+    },
+    {
+      "content": "{'todo_list': [TodoItem(id='t1', content='Load electrolyte_design skill and plan constraints', status='completed'), TodoItem(id='t2', content='Run predict_formulation_conductivity for both candidates at 0 °C', status='in_progress'), TodoItem(id='t3', content='Retrieve literature on NaPF6 EC/EMC/PC low-temperature transport & KG structured queries', status='pending'), TodoItem(id='t4', content='Extract numeric evidence (conductivity, temperature, viscosity)', status='pending'), TodoItem(id='t5', content='Enrich candidate evidence + screen_formulations with structured constraints', status='pending'), TodoItem(id='t6', content='Synthesize design report with DecisionState', status='pending')]}",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "tool",
+      "name": "write_todos",
+      "id": "81c1b3f5-6f5f-4998-8e34-f5fd3c5955de",
+      "tool_call_id": "call_00_1DSg8s87h3LzZnjOgh8K4819",
+      "artifact": null,
+      "status": "success"
+    },
+    {
+      "content": "",
+      "additional_kwargs": {
+        "reasoning_content": "Now run prediction + literature retrieval in parallel."
+      },
+      "response_metadata": {
+        "finish_reason": "tool_calls",
+        "model_name": "deepseek-flash",
+        "system_fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+        "model_provider": "deepseek"
+      },
+      "type": "ai",
+      "name": null,
+      "id": "lc_run--01a12887-db87-7b33-959d-3ea35bdaff34",
+      "tool_calls": [
+        {
+          "name": "predict_formulation_conductivity",
+          "args": {
+            "request": {
+              "temperature_c": 0,
+              "candidates": [
+                {
+                  "candidate_id": "candidate-a",
+                  "salt": "NaPF6",
+                  "salts": [
+                    "NaPF6"
+                  ],
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "solvent_ratio_basis": "molar",
+                  "molar_ratios": {
+                    "NaPF6": 0.12438287472883666,
+                    "EC": 0.2772805705914771,
+                    "EMC": 0.14636492480234797,
+                    "PC": 0.45197162987733824
+                  }
+                },
+                {
+                  "candidate_id": "candidate-b",
+                  "salt": "NaPF6",
+                  "salts": [
+                    "NaPF6"
+                  ],
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "solvent_ratio_basis": "molar",
+                  "molar_ratios": {
+                    "NaPF6": 0.13659165981340052,
+                    "EC": 0.09913935791043874,
+                    "EMC": 0.22127296310046693,
+                    "PC": 0.5429960191756938
+                  }
+                }
+              ],
+              "composition_inputs": {
+                "candidate-a": {
+                  "molar_ratios": {
+                    "NaPF6": 0.12438287472883666,
+                    "EC": 0.2772805705914771,
+                    "EMC": 0.14636492480234797,
+                    "PC": 0.45197162987733824
+                  }
+                },
+                "candidate-b": {
+                  "molar_ratios": {
+                    "NaPF6": 0.13659165981340052,
+                    "EC": 0.09913935791043874,
+                    "EMC": 0.22127296310046693,
+                    "PC": 0.5429960191756938
+                  }
+                }
+              }
+            }
+          },
+          "id": "call_00_2UfIDJ8AxgS9rY8jjhJg8948",
+          "type": "tool_call"
+        },
+        {
+          "name": "search_literature_multiview",
+          "args": {
+            "queries": [
+              "NaPF6 EC EMC PC carbonate electrolyte ionic conductivity sodium-ion battery",
+              "low temperature ionic conductivity electrolyte sodium ion battery 0 °C PC-based carbonate",
+              "ethylene carbonate propylene carbonate ethyl methyl carbonate electrolyte ion transport viscosity low temperature",
+              "sodium electrolyte low temperature transport limitation PC freezing conductivity decrease"
+            ],
+            "top_k": 12,
+            "per_query_top_k": 8,
+            "max_per_paper": 2
+          },
+          "id": "call_01_GqG0hNC77lZcvLMHZr1K9453",
+          "type": "tool_call"
+        },
+        {
+          "name": "kg_query",
+          "args": {
+            "query_type": "find_materials_for_condition",
+            "params": {
+              "condition": "0°C",
+              "material_types": [
+                "SodiumSalt",
+                "Electrolyte"
+              ],
+              "limit": 10
+            }
+          },
+          "id": "call_02_oTrIFG7ee9jKbF8ielvA9575",
+          "type": "tool_call"
+        }
+      ],
+      "invalid_tool_calls": [],
+      "usage_metadata": {
+        "input_tokens": 19956,
+        "output_tokens": 668,
+        "total_tokens": 20624,
+        "input_token_details": {
+          "cache_read": 19712
+        },
+        "output_token_details": {
+          "reasoning": 9
+        }
+      }
+    }
+  ],
+  "sample": {
+    "question": "Assess two supplied NaPF6–EC/EMC/PC electrolyte candidates for sodium-ion use at 0 °C. Obtain their ionic-conductivity estimates with the available prediction tool, and use literature retrieved in this task to interpret the predictions, model applicability and low-temperature transport considerations. Give a substantiated comparison and advice on whether either candidate merits priority for subsequent experimental evaluation or the available information does not distinguish them. Report the candidate compositions, prediction units and temperature, prediction uncertainty returned by the tool, relevant source evidence and the reasoning behind the advice. These are supplied candidates for assessment. Their molar proportions (not volume ratios) are: [{\"candidate_id\": \"candidate-a\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"molar_ratios\": {\"NaPF6\": 0.12438287472883666, \"EC\": 0.2772805705914771, \"EMC\": 0.14636492480234797, \"PC\": 0.45197162987733824}}, {\"candidate_id\": \"candidate-b\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}].",
+    "task_type": "design",
+    "source_task_type": null,
+    "expected_tools": [],
+    "ground_truth": "",
+    "tags": [],
+    "benchmark_case_id": "CWSR_T1_COMMON_PROCESS",
+    "contract_version": null
+  },
+  "runtime_snapshot_before_close": [],
+  "root_resources_before_close": {
+    "resources": {
+      "bge-m3-model": {
+        "resource_id": "bge-m3-model",
+        "resident": false,
+        "host_ram_mib": 0.0,
+        "gpu_allocated_mib": 0.0,
+        "gpu_vram_pressure": 0.166599,
+        "device": "cuda",
+        "load_count": 0,
+        "release_count": 0,
+        "last_load_seconds": 0.0
+      },
+      "neo4j-session": {
+        "resource_id": "neo4j-session",
+        "resident": false,
+        "connection_slots": 0.0,
+        "open_count": 0,
+        "close_count": 0,
+        "last_open_seconds": 0.0
+      }
+    }
+  },
+  "root_telemetry_before_close": {
+    "schema_version": "resource-residency-v1",
+    "pid": 3432,
+    "process_rss_mib": 778.777,
+    "host_ram_pressure": 0.839,
+    "resources": [],
+    "telemetry_write_errors": 0
+  },
+  "timing": {
+    "task_wall_seconds": 14.719,
+    "model_request_union_seconds": 11.577000000000002,
+    "tool_function_union_seconds": 1.5470000000000006,
+    "model_tool_overlap_seconds": 0.0,
+    "outside_model_and_tool_seconds": 1.594999999999997,
+    "incomplete_events": [],
+    "model_request_includes_network_and_provider_wait": true,
+    "outside_intervals_is_not_a_resource_preparation_measurement": true
+  },
+  "common_prediction_process": true,
+  "runtime_enabled_observed": false
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "content": "{\"conductivity_unit\": \"mS/cm\", \"formulation_id\": null, \"interpretation_boundary\": \"Statistical fit to supplied measurements; it does not establish a transport mechanism or authorize extrapolation beyond the observed temperature range.\", \"measurement_count\": 10, \"models\": [{\"aicc\": -61.97318636474868, \"loo_rmse_log10\": 0.04739866150425472, \"model\": \"arrhenius\", \"parameters\": {\"activation_energy_j_mol\": 15049.593729270107, \"activation_energy_kj_mol\": 15.049593729270107, \"intercept_log10_ms_cm\": 3.4489502012201485, \"slope_per_1000_over_k\": -0.7860947618235268}, \"residual_summary_log10\": {\"max_absolute\": 0.0788376060377447, \"mean\": 2.7755575615628914e-16, \"mean_absolute\": 0.026268510823032165}, \"rmse_log10\": 0.03389886981467195}, {\"aicc\": -57.7863108209591, \"loo_rmse_log10\": 0.07986546475249695, \"model\": \"vtf\", \"parameters\": {\"b_kelvin\": 619.1604983970942, \"intercept_log10_ms_cm\": 3.1384632926183587, \"t0_kelvin\": 31.684843295529898}, \"residual_summary_log10\": {\"max_absolute\": 0.07785678022096776, \"mean\": -2.4370363893577718e-08, \"mean_absolute\": 0.025045906565071198}, \"rmse_log10\": 0.03373175700302856}], \"preferred_by_aicc\": \"arrhenius\", \"provenance\": null, \"response_scale\": \"log10(mS/cm)\", \"status\": \"fitted\", \"temperature_range_c\": [-30.0, 60.0]}",
+    "additional_kwargs": {},
+    "response_metadata": {},
+    "type": "tool",
+    "name": "fit_conductivity_temperature_law",
+    "id": null,
+    "tool_call_id": "call_00_FJP1glRVqFwAA7ioQP3q2184",
+    "artifact": null,
+    "status": "success"
+  },
+  {
+    "content": "{\"conductivity_unit\": \"mS/cm\", \"formulation_id\": null, \"interpretation_boundary\": \"Statistical fit to supplied measurements; it does not establish a transport mechanism or authorize extrapolation beyond the observed temperature range.\", \"measurement_count\": 10, \"models\": [{\"aicc\": -59.11013733285481, \"loo_rmse_log10\": 0.05362733673405973, \"model\": \"arrhenius\", \"parameters\": {\"activation_energy_j_mol\": 16779.131581808168, \"activation_energy_kj_mol\": 16.77913158180817, \"intercept_log10_ms_cm\": 3.770455971887213, \"slope_per_1000_over_k\": -0.8764347849971371}, \"residual_summary_log10\": {\"max_absolute\": 0.08813134481805146, \"mean\": 1.582067810090848e-15, \"mean_absolute\": 0.03193071230856212}, \"rmse_log10\": 0.03911609920515032}, {\"aicc\": -55.173865174069874, \"loo_rmse_log10\": 0.09254720416290359, \"model\": \"vtf\", \"parameters\": {\"b_kelvin\": 566.4908096455027, \"intercept_log10_ms_cm\": 3.1673961135870004, \"t0_kelvin\": 55.15280909519806}, \"residual_summary_log10\": {\"max_absolute\": 0.08608267227377314, \"mean\": -2.237896062906586e-09, \"mean_absolute\": 0.02935761998151773}, \"rmse_log10\": 0.03843859451232181}], \"preferred_by_aicc\": \"arrhenius\", \"provenance\": null, \"response_scale\": \"log10(mS/cm)\", \"status\": \"fitted\", \"temperature_range_c\": [-30.0, 60.0]}",
+    "additional_kwargs": {},
+    "response_metadata": {},
+    "type": "tool",
+    "name": "fit_conductivity_temperature_law",
+    "id": null,
+    "tool_call_id": "call_01_nFeUHRYhaGfbvOL3yTEt7675",
+    "artifact": null,
+    "status": "success"
+  }
+]

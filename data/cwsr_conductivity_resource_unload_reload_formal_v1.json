@@ -1,0 +1,89 @@
+{
+  "schema_version": "cwsr-conductivity-resource-unload-reload-canary-v1",
+  "model_path": "${PROJECT_SOURCE}\\reports\\cwsr_inputs\\cwsr_conductivity_rf_formal_v1.joblib",
+  "model_sha256": "cb60829a64e6ac4f1590b49a496b650f06a73563c0b002d3b1579e1de642e182",
+  "first_pid": 18280,
+  "second_pid": 5696,
+  "pid_changed_after_unload": true,
+  "scientific_output_identical": true,
+  "first_output": [
+    {
+      "candidate_id": "canary-candidate",
+      "salt": "NaPF6",
+      "solvents": [
+        "EC",
+        "EMC",
+        "PC"
+      ],
+      "additives": [],
+      "model_predictions": [
+        {
+          "property_name": "ionic_conductivity",
+          "status": "predicted",
+          "numeric_value": 3.4487655311733025,
+          "unit": "mS/cm",
+          "temperature_c": 0.0,
+          "model_id": "na-conductivity-rf-v1",
+          "source_data_doi": "10.5281/zenodo.18429013",
+          "ensemble_std_log10": 0.11976765887899131,
+          "estimated_factor_1sigma": 1.3175516793241504,
+          "features": {
+            "inverse_temperature": 3.660992128866923,
+            "x_NaSalt": 0.12438287472883666,
+            "x_EC": 0.6545108436328688,
+            "x_PC": 0.5161749545925916
+          },
+          "reason": ""
+        }
+      ]
+    }
+  ],
+  "second_output": [
+    {
+      "candidate_id": "canary-candidate",
+      "salt": "NaPF6",
+      "solvents": [
+        "EC",
+        "EMC",
+        "PC"
+      ],
+      "additives": [],
+      "model_predictions": [
+        {
+          "property_name": "ionic_conductivity",
+          "status": "predicted",
+          "numeric_value": 3.4487655311733025,
+          "unit": "mS/cm",
+          "temperature_c": 0.0,
+          "model_id": "na-conductivity-rf-v1",
+          "source_data_doi": "10.5281/zenodo.18429013",
+          "ensemble_std_log10": 0.11976765887899131,
+          "estimated_factor_1sigma": 1.3175516793241504,
+          "features": {
+            "inverse_temperature": 3.660992128866923,
+            "x_NaSalt": 0.12438287472883666,
+            "x_EC": 0.6545108436328688,
+            "x_PC": 0.5161749545925916
+          },
+          "reason": ""
+        }
+      ]
+    }
+  ],
+  "promotions": 2,
+  "demotions": 1,
+  "refaults": 1,
+  "first_prepare_seconds": 5.515999999999622,
+  "second_prepare_seconds": 5.515999999999622,
+  "second_measured_cost": {
+    "host_ram_mb": 382.51953125,
+    "gpu_vram_mb": 0.0,
+    "process_slots": 1.0,
+    "connection_slots": 0.0
+  },
+  "active_count_after_second_call": 0,
+  "resident_after_second_call": true,
+  "event_path": "${PROJECT_SOURCE}\\reports\\cwsr_inputs\\cwsr_conductivity_resource_unload_reload_formal_v1.jsonl",
+  "pass": true,
+  "interpretation_guard": "This canary validates physical unload/reload feasibility and output stability for one RF resource. It is not evidence that any TTL or adaptive retention policy improves a workload."
+}

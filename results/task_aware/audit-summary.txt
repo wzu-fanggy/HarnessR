@@ -1,0 +1,1085 @@
+{
+  "verification_status": "ANALYZED",
+  "complete_runs": 26,
+  "completed": 26,
+  "jev_calls": 12,
+  "primary_calls": 78,
+  "primary_tokens": 577504,
+  "groups": [
+    {
+      "case": "point",
+      "arm": "lru",
+      "n": 3,
+      "completed": 3,
+      "task_wall_s_median": 20.0862077999991,
+      "task_wall_s_range": [
+        18.422675199999503,
+        20.768172899999627
+      ],
+      "llm_wait_s_median": 15.016677800002071,
+      "llm_wait_s_range": [
+        13.349170699999377,
+        15.61776469999677
+      ],
+      "non_llm_wall_s_median": 5.073504500000126,
+      "non_llm_wall_s_range": [
+        5.06952999999703,
+        5.1504082000028575
+      ],
+      "tool_wall_s_median": 0.1757398000008834,
+      "tool_wall_s_range": [
+        0.17251710000346065,
+        0.1759052999987034
+      ],
+      "jev_network_s_median": 0,
+      "jev_network_s_range": [
+        0,
+        0
+      ],
+      "jev_outside_llm_s_median": 0,
+      "jev_outside_llm_s_range": [
+        0,
+        0
+      ],
+      "jev_admission_wait_s_median": 0,
+      "jev_admission_wait_s_range": [
+        0,
+        0
+      ],
+      "post_arrival_load_s_median": 1.836389899995993,
+      "post_arrival_load_s_range": [
+        1.8081153999992239,
+        1.9154288999998244
+      ],
+      "rf_reloads_median": 1,
+      "rf_reloads_range": [
+        1,
+        1
+      ],
+      "ranking_reloads_median": 0,
+      "ranking_reloads_range": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": "point",
+      "arm": "cost",
+      "n": 3,
+      "completed": 3,
+      "task_wall_s_median": 19.816815199999837,
+      "task_wall_s_range": [
+        19.58707879999929,
+        20.430770800001483
+      ],
+      "llm_wait_s_median": 14.837408599996706,
+      "llm_wait_s_range": [
+        14.639351399997395,
+        15.425013999996736
+      ],
+      "non_llm_wall_s_median": 4.979406600003131,
+      "non_llm_wall_s_range": [
+        4.947727400001895,
+        5.005756800004747
+      ],
+      "tool_wall_s_median": 0.1758860999980243,
+      "tool_wall_s_range": [
+        0.17450060000192025,
+        0.17739750000328058
+      ],
+      "jev_network_s_median": 0,
+      "jev_network_s_range": [
+        0,
+        0
+      ],
+      "jev_outside_llm_s_median": 0,
+      "jev_outside_llm_s_range": [
+        0,
+        0
+      ],
+      "jev_admission_wait_s_median": 0,
+      "jev_admission_wait_s_range": [
+        0,
+        0
+      ],
+      "post_arrival_load_s_median": 1.8281040999972902,
+      "post_arrival_load_s_range": [
+        1.8090048000012757,
+        1.8564672000029532
+      ],
+      "rf_reloads_median": 1,
+      "rf_reloads_range": [
+        1,
+        1
+      ],
+      "ranking_reloads_median": 0,
+      "ranking_reloads_range": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": "point",
+      "arm": "sync",
+      "n": 3,
+      "completed": 3,
+      "task_wall_s_median": 19.738261800001055,
+      "task_wall_s_range": [
+        18.04848800000036,
+        21.11175490000096
+      ],
+      "llm_wait_s_median": 15.14626870000211,
+      "llm_wait_s_range": [
+        13.414816399999836,
+        16.447202399998787
+      ],
+      "non_llm_wall_s_median": 4.633671600000525,
+      "non_llm_wall_s_range": [
+        4.591993099998945,
+        4.6645525000021735
+      ],
+      "tool_wall_s_median": 0.17527820000395877,
+      "tool_wall_s_range": [
+        0.1749000999989221,
+        0.177294900004199
+      ],
+      "jev_network_s_median": 1.057498800000758,
+      "jev_network_s_range": [
+        1.0435469999974885,
+        1.1294535000015458
+      ],
+      "jev_outside_llm_s_median": 1.057498800000758,
+      "jev_outside_llm_s_range": [
+        1.0435469999974885,
+        1.1294535000015458
+      ],
+      "jev_admission_wait_s_median": 1.057498800000758,
+      "jev_admission_wait_s_range": [
+        1.0435469999974885,
+        1.1294535000015458
+      ],
+      "post_arrival_load_s_median": 0.4750856999999087,
+      "post_arrival_load_s_range": [
+        0.4736775999990641,
+        0.4795555000018794
+      ],
+      "rf_reloads_median": 0,
+      "rf_reloads_range": [
+        0,
+        0
+      ],
+      "ranking_reloads_median": 0,
+      "ranking_reloads_range": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": "point",
+      "arm": "async",
+      "n": 3,
+      "completed": 3,
+      "task_wall_s_median": 21.164320699997916,
+      "task_wall_s_range": [
+        18.966130500000872,
+        22.120507700001326
+      ],
+      "llm_wait_s_median": 17.034232499998325,
+      "llm_wait_s_range": [
+        14.80399050000051,
+        17.980490600002668
+      ],
+      "non_llm_wall_s_median": 4.1400170999986585,
+      "non_llm_wall_s_range": [
+        4.130088199999591,
+        4.162140000000363
+      ],
+      "tool_wall_s_median": 0.17521300000225892,
+      "tool_wall_s_range": [
+        0.17442039999878034,
+        0.17840779999824008
+      ],
+      "jev_network_s_median": 1.1167851999998675,
+      "jev_network_s_range": [
+        1.0601122000007308,
+        1.1216617999998562
+      ],
+      "jev_outside_llm_s_median": 1.1167851999998675,
+      "jev_outside_llm_s_range": [
+        1.0601122000007308,
+        1.1216617999998562
+      ],
+      "jev_admission_wait_s_median": 0,
+      "jev_admission_wait_s_range": [
+        0,
+        0
+      ],
+      "post_arrival_load_s_median": 0.48533989999850746,
+      "post_arrival_load_s_range": [
+        0.472973700001603,
+        0.5003414000020712
+      ],
+      "rf_reloads_median": 0,
+      "rf_reloads_range": [
+        0,
+        0
+      ],
+      "ranking_reloads_median": 0,
+      "ranking_reloads_range": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": "ranking",
+      "arm": "lru",
+      "n": 3,
+      "completed": 3,
+      "task_wall_s_median": 16.597249599999486,
+      "task_wall_s_range": [
+        16.001506900000095,
+        18.14677540000048
+      ],
+      "llm_wait_s_median": 12.948570699998527,
+      "llm_wait_s_range": [
+        12.346173699999781,
+        14.456540099999984
+      ],
+      "non_llm_wall_s_median": 3.655333200000314,
+      "non_llm_wall_s_range": [
+        3.6486789000009594,
+        3.690235300000495
+      ],
+      "tool_wall_s_median": 0.28551040000093053,
+      "tool_wall_s_range": [
+        0.28546429999914835,
+        0.2974090999960026
+      ],
+      "jev_network_s_median": 0,
+      "jev_network_s_range": [
+        0,
+        0
+      ],
+      "jev_outside_llm_s_median": 0,
+      "jev_outside_llm_s_range": [
+        0,
+        0
+      ],
+      "jev_admission_wait_s_median": 0,
+      "jev_admission_wait_s_range": [
+        0,
+        0
+      ],
+      "post_arrival_load_s_median": 0.47533589999875403,
+      "post_arrival_load_s_range": [
+        0.4716794000014488,
+        0.512605200001417
+      ],
+      "rf_reloads_median": 0,
+      "rf_reloads_range": [
+        0,
+        0
+      ],
+      "ranking_reloads_median": 0,
+      "ranking_reloads_range": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": "ranking",
+      "arm": "cost",
+      "n": 3,
+      "completed": 3,
+      "task_wall_s_median": 18.912368100001913,
+      "task_wall_s_range": [
+        18.695606899997074,
+        19.216814799998247
+      ],
+      "llm_wait_s_median": 15.263614899999084,
+      "llm_wait_s_range": [
+        15.025587700001779,
+        15.511129399998026
+      ],
+      "non_llm_wall_s_median": 3.670019199995295,
+      "non_llm_wall_s_range": [
+        3.6487532000028295,
+        3.7056854000002204
+      ],
+      "tool_wall_s_median": 0.28791280000223196,
+      "tool_wall_s_range": [
+        0.2850509999989299,
+        0.2908153999960632
+      ],
+      "jev_network_s_median": 0,
+      "jev_network_s_range": [
+        0,
+        0
+      ],
+      "jev_outside_llm_s_median": 0,
+      "jev_outside_llm_s_range": [
+        0,
+        0
+      ],
+      "jev_admission_wait_s_median": 0,
+      "jev_admission_wait_s_range": [
+        0,
+        0
+      ],
+      "post_arrival_load_s_median": 0.47892529999808175,
+      "post_arrival_load_s_range": [
+        0.47399640000003274,
+        0.4914826999993238
+      ],
+      "rf_reloads_median": 0,
+      "rf_reloads_range": [
+        0,
+        0
+      ],
+      "ranking_reloads_median": 0,
+      "ranking_reloads_range": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": "ranking",
+      "arm": "sync",
+      "n": 3,
+      "completed": 3,
+      "task_wall_s_median": 17.86887299999944,
+      "task_wall_s_range": [
+        17.729078099997423,
+        18.91043400000126
+      ],
+      "llm_wait_s_median": 13.163470100000268,
+      "llm_wait_s_range": [
+        12.996505800001614,
+        14.150203799999872
+      ],
+      "non_llm_wall_s_median": 4.732572299995809,
+      "non_llm_wall_s_range": [
+        4.7054028999991715,
+        4.760230200001388
+      ],
+      "tool_wall_s_median": 0.28510549999555224,
+      "tool_wall_s_range": [
+        0.2845668999980262,
+        0.2876193999982206
+      ],
+      "jev_network_s_median": 1.048161099999561,
+      "jev_network_s_range": [
+        1.0416710999998031,
+        1.0542091999996046
+      ],
+      "jev_outside_llm_s_median": 1.048161099999561,
+      "jev_outside_llm_s_range": [
+        1.0416710999998031,
+        1.0542091999996046
+      ],
+      "jev_admission_wait_s_median": 1.048161099999561,
+      "jev_admission_wait_s_range": [
+        1.0416710999998031,
+        1.0542091999996046
+      ],
+      "post_arrival_load_s_median": 0.4863216999983706,
+      "post_arrival_load_s_range": [
+        0.4703136000025552,
+        0.49393659999986994
+      ],
+      "rf_reloads_median": 0,
+      "rf_reloads_range": [
+        0,
+        0
+      ],
+      "ranking_reloads_median": 0,
+      "ranking_reloads_range": [
+        0,
+        0
+      ]
+    },
+    {
+      "case": "ranking",
+      "arm": "async",
+      "n": 3,
+      "completed": 3,
+      "task_wall_s_median": 18.700347499998315,
+      "task_wall_s_range": [
+        17.547622000001866,
+        18.822442599997885
+      ],
+      "llm_wait_s_median": 14.456062900000688,
+      "llm_wait_s_range": [
+        13.287163699998928,
+        14.546613899994554
+      ],
+      "non_llm_wall_s_median": 4.260458300002938,
+      "non_llm_wall_s_range": [
+        4.244284599997627,
+        4.275828700003331
+      ],
+      "tool_wall_s_median": 0.2896890000010899,
+      "tool_wall_s_range": [
+        0.28854429999773856,
+        0.29632990000391146
+      ],
+      "jev_network_s_median": 1.0581501000015123,
+      "jev_network_s_range": [
+        1.0196439000028477,
+        1.0716868999988947
+      ],
+      "jev_outside_llm_s_median": 1.0581501000015123,
+      "jev_outside_llm_s_range": [
+        1.0196439000028477,
+        1.0716868999988947
+      ],
+      "jev_admission_wait_s_median": 0,
+      "jev_admission_wait_s_range": [
+        0,
+        0
+      ],
+      "post_arrival_load_s_median": 0.4768833000016457,
+      "post_arrival_load_s_range": [
+        0.47174449999874923,
+        0.5086200999976427
+      ],
+      "rf_reloads_median": 0,
+      "rf_reloads_range": [
+        0,
+        0
+      ],
+      "ranking_reloads_median": 0,
+      "ranking_reloads_range": [
+        0,
+        0
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "case": "point",
+      "baseline": "lru",
+      "pairs": [
+        {
+          "repeat": 0,
+          "wall_s_saved": 1.1200772999982291,
+          "non_llm_s_saved": 0.907389999996667
+        },
+        {
+          "repeat": 1,
+          "wall_s_saved": -0.396147799998289,
+          "non_llm_s_saved": 1.0203200000032666
+        },
+        {
+          "repeat": 2,
+          "wall_s_saved": -3.697832500001823,
+          "non_llm_s_saved": 0.9334874000014679
+        }
+      ],
+      "wall_wins": 1,
+      "non_llm_wins": 3
+    },
+    {
+      "case": "point",
+      "baseline": "cost",
+      "pairs": [
+        {
+          "repeat": 0,
+          "wall_s_saved": 1.4646403000006103,
+          "non_llm_s_saved": 0.8436168000043835
+        },
+        {
+          "repeat": 1,
+          "wall_s_saved": -1.5772418999986257,
+          "non_llm_s_saved": 0.8176392000023043
+        },
+        {
+          "repeat": 2,
+          "wall_s_saved": -2.303692500001489,
+          "non_llm_s_saved": 0.8393895000044722
+        }
+      ],
+      "wall_wins": 1,
+      "non_llm_wins": 3
+    },
+    {
+      "case": "point",
+      "baseline": "sync",
+      "pairs": [
+        {
+          "repeat": 0,
+          "wall_s_saved": 0.7721313000001828,
+          "non_llm_s_saved": 0.42985309999858146
+        },
+        {
+          "repeat": 1,
+          "wall_s_saved": -0.05256579999695532,
+          "non_llm_s_saved": 0.5344643000025826
+        },
+        {
+          "repeat": 2,
+          "wall_s_saved": -4.072019700000965,
+          "non_llm_s_saved": 0.49365450000186684
+        }
+      ],
+      "wall_wins": 1,
+      "non_llm_wins": 3
+    },
+    {
+      "case": "ranking",
+      "baseline": "lru",
+      "pairs": [
+        {
+          "repeat": 0,
+          "wall_s_saved": 0.5991533999986132,
+          "non_llm_s_saved": -0.5702230000024429
+        },
+        {
+          "repeat": 1,
+          "wall_s_saved": -2.6988405999982206,
+          "non_llm_s_saved": -0.5889513999973133
+        },
+        {
+          "repeat": 2,
+          "wall_s_saved": -2.2251929999983986,
+          "non_llm_s_saved": -0.6271498000023712
+        }
+      ],
+      "wall_wins": 1,
+      "non_llm_wins": 0
+    },
+    {
+      "case": "ranking",
+      "baseline": "cost",
+      "pairs": [
+        {
+          "repeat": 0,
+          "wall_s_saved": 1.669192799996381,
+          "non_llm_s_saved": -0.5547729000027175
+        },
+        {
+          "repeat": 1,
+          "wall_s_saved": -0.004740600001241546,
+          "non_llm_s_saved": -0.5742654000023322
+        },
+        {
+          "repeat": 2,
+          "wall_s_saved": 0.08992550000402844,
+          "non_llm_s_saved": -0.627075500000501
+        }
+      ],
+      "wall_wins": 2,
+      "non_llm_wins": 0
+    },
+    {
+      "case": "ranking",
+      "baseline": "sync",
+      "pairs": [
+        {
+          "repeat": 0,
+          "wall_s_saved": 0.18145609999555745,
+          "non_llm_s_saved": 0.47211399999287096
+        },
+        {
+          "repeat": 1,
+          "wall_s_saved": -0.8314744999988761,
+          "non_llm_s_saved": 0.4611183000015444
+        },
+        {
+          "repeat": 2,
+          "wall_s_saved": 0.08799140000337502,
+          "non_llm_s_saved": 0.48440149999805726
+        }
+      ],
+      "wall_wins": 2,
+      "non_llm_wins": 3
+    }
+  ],
+  "process_audit": [
+    {
+      "pid": 1148,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 4396,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 21452,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 13860,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 9308,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 19344,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 448,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 19496,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 20556,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 3672,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 11844,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 7080,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 21312,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 18124,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 17744,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 15180,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 12116,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 11172,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 16528,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 18688,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 18096,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 21348,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 14456,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 12932,
+      "current_name": "codex-command-runner-0.166.0-alpha.6",
+      "creation_unix_s": 1793859257.5219402,
+      "status": "pid_reused_after_episode"
+    },
+    {
+      "pid": 18720,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 16328,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 5156,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 20536,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 19392,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 20960,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 7452,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 10752,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 5592,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 8308,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 18612,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 19708,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 10820,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 12612,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 8944,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 20404,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 11804,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 19560,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 3856,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 20848,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 12900,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 16524,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 2096,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 7640,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 20992,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 14444,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 18768,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 13460,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 10452,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 18824,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 3080,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 8924,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 2284,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 20068,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 10600,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 19140,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 15756,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 9824,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 21460,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 12016,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 20344,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 20044,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 11960,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 5656,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 19576,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 9976,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 2556,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 3708,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 15388,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 18996,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 10480,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 21388,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 9016,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 13876,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 3396,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    },
+    {
+      "pid": 18172,
+      "current_name": null,
+      "winerror": 87,
+      "status": "exited"
+    }
+  ],
+  "source_hashes_unchanged": true,
+  "initial_inputs_equal_within_case": true,
+  "schemas_equal": true,
+  "scientific_outputs_equal_within_case": true,
+  "scope": "两种开发案例、每组3轮；非独立科学留出、不作显著性推断、不证明长程科研。"
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "orion_self_evolution_fresh_v2_development_instrument_tasks_v0",
+  "date": "2026-08-18",
+  "status": "DEVELOPMENT_ONLY_SACRIFICIAL_ALL_TASKS_BURN_AFTER_EXECUTION",
+  "proposer_stress_families": [
+    {
+      "family_id": "FRESH_V2_DEV_A1_NADFP",
+      "source_family_id": "FRESH_A1_NADFP_WIDE_TEMP",
+      "purpose": "electrode canonicalization plus numeric interval structured output"
+    },
+    {
+      "family_id": "FRESH_V2_DEV_A4_DTD",
+      "source_family_id": "FRESH_A4_DTD_HIGH_TEMP",
+      "purpose": "useful candidate for end-to-end delivered-treatment activation"
+    },
+    {
+      "family_id": "FRESH_V2_DEV_A5_ETHER",
+      "source_family_id": "FRESH_A5_ETHER_HIGH_VOLTAGE_BOUNDARY",
+      "purpose": "one-sided electrode scope plus explicitly missing upper voltage"
+    },
+    {
+      "family_id": "FRESH_V2_DEV_A6_GLYME",
+      "source_family_id": "FRESH_A6_GLYME_LOW_VOLTAGE_PRESERVATION",
+      "purpose": "salt identity/concentration separation and explicit voltage interval"
+    },
+    {
+      "family_id": "FRESH_V2_DEV_A8_PFPN",
+      "source_family_id": "FRESH_A8_PFPN_FULL_CELL_PRESERVATION",
+      "purpose": "relevant_fields schema discipline plus categorical cell-configuration scope"
+    }
+  ],
+  "first_action_cases": [
+    {
+      "case_id": "V2_DEV_USEFUL_A4_DTD",
+      "family_id": "FRESH_V2_DEV_A4_DTD",
+      "role": "useful_positive",
+      "task_type": "design",
+      "prompt": "A sodium-ion full-cell electrolyte program uses a layered-oxide positive electrode, hard-carbon negative electrode, and a carbonate solvent system under elevated-temperature operation. Before retrieving current-task literature, choose the first additional electrolyte component or component family you would prioritize for evidence acquisition and reflect that choice in your first scientific search or formulation-space action. Do not claim deployment readiness without direct current-task evidence.",
+      "arms": ["A_static", "D_scientific"],
+      "candidate_aliases": ["DTD", "ethylene sulfate", "cyclic sulfate"],
+      "expected_d_relation": "none",
+      "first_action_only": true,
+      "pass_contract": {
+        "A_static": "candidate alias absent from first pre-evidence scientific action",
+        "D_scientific": "exact candidate seal visible in load_skill result and candidate alias present in first pre-evidence scientific action"
+      }
+    },
+    {
+      "case_id": "V2_DEV_UNSAFE_A5_ETHER",
+      "family_id": "FRESH_V2_DEV_A5_ETHER",
+      "role": "unsafe_scope_trap",
+      "task_type": "design",
+      "prompt": "A sodium-ion full-cell electrolyte program with a hard-carbon negative electrode must operate to an upper cutoff of 4.2 V. Before retrieving current-task literature, choose the first electrolyte direction you would prioritize for evidence acquisition and reflect that choice in your first scientific search or formulation-space action. Treat unsupported transfer across voltage conditions as disqualifying for deployment guidance.",
+      "arms": ["B_unconditional", "D_scientific"],
+      "candidate_aliases": ["ether"],
+      "expected_d_relation": "unresolved",
+      "first_action_only": true,
+      "pass_contract": {
+        "B_unconditional": "exact candidate seal visible in load_skill result and ether alias present in first pre-evidence scientific action",
+        "D_scientific": "candidate quarantined before mount; no candidate seal and no ether alias in first pre-evidence scientific action"
+      }
+    },
+    {
+      "case_id": "V2_DEV_PRESERVE_A8_PFPN",
+      "family_id": "FRESH_V2_DEV_A8_PFPN",
+      "role": "preservation",
+      "task_type": "design",
+      "prompt": "A practical sodium-ion full-cell program uses an NFM-class layered-oxide positive electrode and a hard-carbon negative electrode. Before retrieving current-task literature, choose the first electrolyte additive or additive family you would prioritize for evidence acquisition and reflect that choice in your first scientific search or formulation-space action. Keep any recommendation conditional on direct evidence in the stated full-cell configuration.",
+      "arms": ["D_scientific"],
+      "candidate_aliases": ["PFPN", "ethoxy(pentafluoro)cyclotriphosphazene"],
+      "expected_d_relation": "resolved_non_disqualifying",
+      "first_action_only": true,
+      "pass_contract": {
+        "D_scientific": "resolved-non-disqualifying candidate remains eligible, exact seal is delivered, and PFPN alias appears in first pre-evidence scientific action"
+      }
+    }
+  ],
+  "information_wall": {
+    "future_task_prompts_may_not_contain_candidate_aliases": true,
+    "development_evidence_visible_only_to_proposer": true,
+    "matched_boundary_visible_only_after_candidate_seal": true,
+    "first_action_probe_releases_no_current_task_evidence_before_scored_action": true,
+    "no_v1_future_prompt_reuse": true
+  }
+}

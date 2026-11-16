@@ -1,0 +1,141 @@
+{
+  "arm": "runtime",
+  "elapsed_s": 6.996977,
+  "tool_s": 6.754236,
+  "overhead_s": 0.237778,
+  "outputs_sha256": "2e3dca5d9a91ca654d628fad26778ac64bc2007cc494d3a1ae3229f01548e52f",
+  "rows": [
+    {
+      "batch": 0,
+      "source_message_index": 5,
+      "tool_names": [
+        "kg_query"
+      ],
+      "tool_s": 0.031369,
+      "total_s": 0.037157,
+      "overhead_s": 0.005788,
+      "output_sha256": "e4ec3f1fe0b4b8522957531fbc0e63e660c1d4f4126fdac36c74db3cac4a271f"
+    },
+    {
+      "batch": 1,
+      "source_message_index": 8,
+      "tool_names": [
+        "kg_query",
+        "search_literature_multiview"
+      ],
+      "tool_s": 3.677961,
+      "total_s": 3.69781,
+      "overhead_s": 0.019849,
+      "output_sha256": "37d77263edc205ecd07182af8a77f9f391851c3773fb126ef1bc9dab5da86420"
+    },
+    {
+      "batch": 2,
+      "source_message_index": 11,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.174323,
+      "total_s": 0.204019,
+      "overhead_s": 0.029695,
+      "output_sha256": "4c0c1273382635349b84b899e650a29d7e9e78514b829d504d5128783658798a"
+    },
+    {
+      "batch": 3,
+      "source_message_index": 14,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.149307,
+      "total_s": 0.175762,
+      "overhead_s": 0.026455,
+      "output_sha256": "5dc526f7c0c6273af2ce310a7b1a6590d23b4e648819a17edd79c4befe0ebf9d"
+    },
+    {
+      "batch": 4,
+      "source_message_index": 17,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.082731,
+      "total_s": 0.105489,
+      "overhead_s": 0.022758,
+      "output_sha256": "338e35384d7a3e5b634559f38e236162e1d6813c2893649f017d60987ac2df2d"
+    },
+    {
+      "batch": 5,
+      "source_message_index": 20,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.063351,
+      "total_s": 0.087779,
+      "overhead_s": 0.024428,
+      "output_sha256": "60ca4b2a5c0991a967b8754d26b05b2dda107ddbd11d296b53267eaa85a7293f"
+    },
+    {
+      "batch": 6,
+      "source_message_index": 23,
+      "tool_names": [
+        "search_literature_multiview",
+        "search_paper_chunks"
+      ],
+      "tool_s": 1.314508,
+      "total_s": 1.343344,
+      "overhead_s": 0.028836,
+      "output_sha256": "a61c970f133bac7631297a21079d69d2bb43bef3242aceab5ae6e9c8a7b0d009"
+    },
+    {
+      "batch": 7,
+      "source_message_index": 26,
+      "tool_names": [
+        "query_formulation_space"
+      ],
+      "tool_s": 0.043049,
+      "total_s": 0.07231,
+      "overhead_s": 0.029262,
+      "output_sha256": "a63ba5c27aa7fa3967dd996dcaab15fa3107370a9c690b09b0e8312976587712"
+    },
+    {
+      "batch": 8,
+      "source_message_index": 28,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.061509,
+      "total_s": 0.080059,
+      "overhead_s": 0.01855,
+      "output_sha256": "b68879affbfd666cdcb0471cf6f1b74c1c8a51dfbf8c4cc1f15dc458ffa29177"
+    },
+    {
+      "batch": 9,
+      "source_message_index": 38,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_literature_multiview"
+      ],
+      "tool_s": 1.075064,
+      "total_s": 1.079956,
+      "overhead_s": 0.004892,
+      "output_sha256": "bd933aa27b4b52d0b7ee9ea6376c49ae02fd250609f9bebd7d5d7110f232321a"
+    },
+    {
+      "batch": 10,
+      "source_message_index": 41,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.081064,
+      "total_s": 0.108329,
+      "overhead_s": 0.027265,
+      "output_sha256": "883da5409c7ebff23a1fa56bfbb9424fda1b2f3ad99e1f218683e675adf7d506"
+    }
+  ],
+  "task": "D1",
+  "pair": 0
+}

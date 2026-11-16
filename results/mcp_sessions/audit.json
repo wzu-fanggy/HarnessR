@@ -1,0 +1,100 @@
+{
+  "original_and_frozen_materials_unchanged": true,
+  "runtime_source_files_unchanged": 37,
+  "formal_implementation_unchanged": true,
+  "preflight": {
+    "batch_sharing_single_creation": true,
+    "server_enforces_task_scope": true,
+    "active_lease_protected": true,
+    "reuse_after_batch": true,
+    "real_close_confirmed": true,
+    "closed_generation_unusable": true,
+    "recreation_preserves_output": true,
+    "impossible_batch_rejected_without_creation": true,
+    "second_workspace_available": true,
+    "all_services_closed": true
+  },
+  "formal_sequences": 36,
+  "verified_successful_calls": 258,
+  "byte_matching_file_reads": 192,
+  "confirmed_server_process_exits": 120,
+  "protocol_versions": [
+    "2025-11-25"
+  ],
+  "server_info": {
+    "name": "secure-filesystem-server",
+    "title": null,
+    "version": "2.1.0",
+    "websiteUrl": null,
+    "icons": null
+  },
+  "groups": [
+    {
+      "quota": 1,
+      "strategy": "release_after_batch",
+      "repeats": 6,
+      "completed_batches": 6,
+      "completed_calls": 8,
+      "creations": 6,
+      "repeated_creations": 4,
+      "closures_during_sequence": 6,
+      "closures_including_cleanup": 6
+    },
+    {
+      "quota": 1,
+      "strategy": "retain_all",
+      "repeats": 6,
+      "completed_batches": 2,
+      "completed_calls": 3,
+      "creations": 1,
+      "repeated_creations": 0,
+      "closures_during_sequence": 0,
+      "closures_including_cleanup": 1
+    },
+    {
+      "quota": 1,
+      "strategy": "runtime",
+      "repeats": 6,
+      "completed_batches": 6,
+      "completed_calls": 8,
+      "creations": 3,
+      "repeated_creations": 1,
+      "closures_during_sequence": 2,
+      "closures_including_cleanup": 3
+    },
+    {
+      "quota": 2,
+      "strategy": "release_after_batch",
+      "repeats": 6,
+      "completed_batches": 6,
+      "completed_calls": 8,
+      "creations": 6,
+      "repeated_creations": 4,
+      "closures_during_sequence": 6,
+      "closures_including_cleanup": 6
+    },
+    {
+      "quota": 2,
+      "strategy": "retain_all",
+      "repeats": 6,
+      "completed_batches": 6,
+      "completed_calls": 8,
+      "creations": 2,
+      "repeated_creations": 0,
+      "closures_during_sequence": 0,
+      "closures_including_cleanup": 2
+    },
+    {
+      "quota": 2,
+      "strategy": "runtime",
+      "repeats": 6,
+      "completed_batches": 6,
+      "completed_calls": 8,
+      "creations": 2,
+      "repeated_creations": 0,
+      "closures_during_sequence": 0,
+      "closures_including_cleanup": 2
+    }
+  ],
+  "success": true
+}

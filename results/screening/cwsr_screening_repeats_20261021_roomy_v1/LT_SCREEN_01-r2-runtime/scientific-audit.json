@@ -1,0 +1,19 @@
+{
+  "scientific_complete": true,
+  "comparison_status": "model_assessed",
+  "unique_prediction_points": 20,
+  "expected_prediction_points": 20,
+  "matching_full_precision": 20,
+  "priority_candidate_ids": [
+    "C5"
+  ],
+  "reference_priority_candidate_ids": [
+    "C1"
+  ],
+  "artifact_valid": true,
+  "issues": [],
+  "source_facts": 5,
+  "next_steps": 4,
+  "reference_sha256": "070cb329180cd717b87076d88da8d4d76f45bdd2afefba9ed9d59d77f85ffc96",
+  "raw_status": "model_assessed"
+}

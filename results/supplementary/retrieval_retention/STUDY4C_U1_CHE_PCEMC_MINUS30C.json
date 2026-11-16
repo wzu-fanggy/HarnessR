@@ -1,0 +1,685 @@
+{
+  "schema_version": "cwsr-real-rag-kg-trace-replay-v2",
+  "status": "PASS",
+  "selection_rule": {
+    "arm": "G_evidence_governed",
+    "repeat_index": 1,
+    "one_trace_per_research_task_family": true,
+    "selected_trace_count": 1,
+    "policy_result_blind_selection": true
+  },
+  "replayed_operation_types": [
+    "kg_query",
+    "search_literature_chunks",
+    "search_literature_multiview",
+    "search_paper_chunks"
+  ],
+  "resource_mapping": {
+    "rag": [
+      "external CUDA BGE-M3 MODEL",
+      "Neo4j DRIVER/POOL"
+    ],
+    "kg_query": [
+      "Neo4j DRIVER/POOL"
+    ]
+  },
+  "budget": {
+    "host_ram_mib": 4096.0,
+    "gpu_vram_mib": 3000.0,
+    "process_slots": 1,
+    "connection_slots": 1
+  },
+  "paired": [
+    {
+      "family_id": "STUDY4C_U1_CHE_PCEMC_MINUS30C",
+      "order": [
+        "cwsr",
+        "release_all"
+      ],
+      "cwsr": {
+        "family_id": "STUDY4C_U1_CHE_PCEMC_MINUS30C",
+        "trace_path": "${ORION_SOURCE}\\benchmark\\self_evolution_study4c_v1_20260822\\formal_run_v1\\raw\\037__STUDY4C_U1_CHE_PCEMC_MINUS30C__G_evidence_governed__R1.json",
+        "strategy": "cwsr",
+        "operation_count": 9,
+        "operation_start": 0,
+        "operation_stop": null,
+        "full_operation_count": 9,
+        "rag_operation_count": 9,
+        "kg_operation_count": 0,
+        "complete": true,
+        "elapsed_to_last_result_s": 4.937000000001717,
+        "policy_cycle_elapsed_s": 4.937000000001717,
+        "rows": [
+          {
+            "source_index": 2,
+            "tool": "search_literature_multiview",
+            "materialization_s": 4.468000000000757,
+            "query_execution_s": 0.21900000000096043,
+            "elapsed_s": 4.687000000001717,
+            "signature": "5f2b539ae2c602baa98f49b42fdbfdedc037576d6accad0d4d9f01ddd5f7a387",
+            "result_kind": "multiview_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 536.6640625,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 3,
+            "tool": "search_literature_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.046999999998661224,
+            "elapsed_s": 0.046999999998661224,
+            "signature": "c96cda396d1633770e27128ca760a39440b75879e0a196548ec87ac59b02a5ad",
+            "result_kind": "vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 536.66796875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 6,
+            "tool": "search_paper_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.01599999999962165,
+            "elapsed_s": 0.01599999999962165,
+            "signature": "7aff447d609421998eb1e353c44dcad32713b86a717fa22d99647f2b53823f2a",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 536.67578125,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 8,
+            "tool": "search_paper_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.030999999999039574,
+            "elapsed_s": 0.030999999999039574,
+            "signature": "27982875104727e8a586e411a8b27cb3f5871fdc3726a53b2e3572616edcfa74",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 536.6796875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 9,
+            "tool": "search_paper_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.031000000002677552,
+            "elapsed_s": 0.031000000002677552,
+            "signature": "ccbcf8835622c825aa20a48f3818b17dfdbbef7ed8642514b9ca86fe4d115782",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 536.68359375,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 10,
+            "tool": "search_paper_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.030999999999039574,
+            "elapsed_s": 0.030999999999039574,
+            "signature": "09643619a28d1eee646ff9b23976fcbef11827ddcd9391153b371b005c204f2c",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 536.6875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 12,
+            "tool": "search_paper_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.0319999999992433,
+            "elapsed_s": 0.0319999999992433,
+            "signature": "50cca573228b3ea0fcc70b57c023f72905f64cfe7798275ce899f6df93ec5f9e",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 536.69140625,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 13,
+            "tool": "search_paper_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.014999999999417923,
+            "elapsed_s": 0.014999999999417923,
+            "signature": "eea5d851f6ea2aca129292808b2964ae81219feb753e07fa0dbce1d6b71f7301",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 536.69921875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 14,
+            "tool": "search_paper_chunks",
+            "materialization_s": 0.0,
+            "query_execution_s": 0.0470000000022992,
+            "elapsed_s": 0.0470000000022992,
+            "signature": "a17b1e4eef39042fb6f1dc5d6a719b4f40d102f07c85eb5a31075be6470b05de",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 536.70703125,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          }
+        ],
+        "output_signature": "27eb0b6fd8f398c3bc550fe8e49f9e08a5179723213206971044d3515e858270",
+        "transport_startup_s_excluded": 6.5790000000015425,
+        "model_load_count": 1,
+        "model_load_total_s": 2.4209999999984575,
+        "model_load_latencies_s": [
+          2.4209999999984575
+        ],
+        "model_shutdown_total_s": 0,
+        "model_shutdown_latencies_s": [],
+        "worker_cleanup_total_s": 0,
+        "worker_cleanup_latencies_s": [],
+        "worker_cleanup_allocated_mib": [],
+        "worker_cleanup_reserved_mib": [],
+        "model_embed_count": 13,
+        "model_embed_total_s": 0.23299999999289867,
+        "query_gpu_telemetry": [
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2178.8193359375,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.595703125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.658203125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.720703125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.626953125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.751953125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.720703125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.626953125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.626953125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.595703125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.689453125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.751953125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.814453125,
+            "torch_peak_reserved_mib": 2190.0
+          }
+        ],
+        "query_peak_allocated_mib": 2178.8193359375,
+        "query_peak_reserved_mib": 2190.0,
+        "model_promotions": 1,
+        "model_demotions": 0,
+        "model_refaults": 0,
+        "explicit_release_count": 0,
+        "peak_measured": {
+          "prompt_tokens": 13.0,
+          "host_ram_mb": 536.70703125,
+          "gpu_vram_mb": 2174.0634765625,
+          "process_slots": 0.0,
+          "connection_slots": 1.0
+        },
+        "event_counts": {
+          "active_enter": 9,
+          "active_exit": 9,
+          "compulsory_fault": 1,
+          "promote": 3
+        },
+        "neo4j_driver_initializations": 1,
+        "neo4j_sessions_created": 13,
+        "driver_promotions": 1,
+        "driver_demotions": 0,
+        "driver_refaults": 0,
+        "neo4j_query_count": 13
+      },
+      "release_all": {
+        "family_id": "STUDY4C_U1_CHE_PCEMC_MINUS30C",
+        "trace_path": "${ORION_SOURCE}\\benchmark\\self_evolution_study4c_v1_20260822\\formal_run_v1\\raw\\037__STUDY4C_U1_CHE_PCEMC_MINUS30C__G_evidence_governed__R1.json",
+        "strategy": "release_all",
+        "operation_count": 9,
+        "operation_start": 0,
+        "operation_stop": null,
+        "full_operation_count": 9,
+        "rag_operation_count": 9,
+        "kg_operation_count": 0,
+        "complete": true,
+        "elapsed_to_last_result_s": 42.81300000000192,
+        "policy_cycle_elapsed_s": 43.15599999999904,
+        "rows": [
+          {
+            "source_index": 2,
+            "tool": "search_literature_multiview",
+            "materialization_s": 4.46900000000096,
+            "query_execution_s": 0.14099999999962165,
+            "elapsed_s": 4.610000000000582,
+            "signature": "5f2b539ae2c602baa98f49b42fdbfdedc037576d6accad0d4d9f01ddd5f7a387",
+            "result_kind": "multiview_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 537.6875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 3,
+            "tool": "search_literature_chunks",
+            "materialization_s": 4.15599999999904,
+            "query_execution_s": 0.26599999999962165,
+            "elapsed_s": 4.421999999998661,
+            "signature": "c96cda396d1633770e27128ca760a39440b75879e0a196548ec87ac59b02a5ad",
+            "result_kind": "vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 540.984375,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 6,
+            "tool": "search_paper_chunks",
+            "materialization_s": 4.171999999998661,
+            "query_execution_s": 0.2649999999994179,
+            "elapsed_s": 4.436999999998079,
+            "signature": "7aff447d609421998eb1e353c44dcad32713b86a717fa22d99647f2b53823f2a",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 542.74609375,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 8,
+            "tool": "search_paper_chunks",
+            "materialization_s": 4.187999999998283,
+            "query_execution_s": 0.2970000000022992,
+            "elapsed_s": 4.485000000000582,
+            "signature": "27982875104727e8a586e411a8b27cb3f5871fdc3726a53b2e3572616edcfa74",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 544.0,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 9,
+            "tool": "search_paper_chunks",
+            "materialization_s": 4.172000000002299,
+            "query_execution_s": 0.2649999999994179,
+            "elapsed_s": 4.437000000001717,
+            "signature": "ccbcf8835622c825aa20a48f3818b17dfdbbef7ed8642514b9ca86fe4d115782",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 545.44921875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 10,
+            "tool": "search_paper_chunks",
+            "materialization_s": 4.203000000001339,
+            "query_execution_s": 0.25,
+            "elapsed_s": 4.453000000001339,
+            "signature": "09643619a28d1eee646ff9b23976fcbef11827ddcd9391153b371b005c204f2c",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 546.8671875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 12,
+            "tool": "search_paper_chunks",
+            "materialization_s": 4.25,
+            "query_execution_s": 0.2649999999994179,
+            "elapsed_s": 4.514999999999418,
+            "signature": "50cca573228b3ea0fcc70b57c023f72905f64cfe7798275ce899f6df93ec5f9e",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 548.640625,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 13,
+            "tool": "search_paper_chunks",
+            "materialization_s": 4.15599999999904,
+            "query_execution_s": 0.2809999999990396,
+            "elapsed_s": 4.436999999998079,
+            "signature": "eea5d851f6ea2aca129292808b2964ae81219feb753e07fa0dbce1d6b71f7301",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 551.23828125,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          },
+          {
+            "source_index": 14,
+            "tool": "search_paper_chunks",
+            "materialization_s": 4.186999999998079,
+            "query_execution_s": 0.2820000000028813,
+            "elapsed_s": 4.46900000000096,
+            "signature": "a17b1e4eef39042fb6f1dc5d6a719b4f40d102f07c85eb5a31075be6470b05de",
+            "result_kind": "paper_vector",
+            "measured": {
+              "prompt_tokens": 13.0,
+              "host_ram_mb": 551.85546875,
+              "gpu_vram_mb": 2174.0634765625,
+              "process_slots": 0.0,
+              "connection_slots": 1.0
+            }
+          }
+        ],
+        "output_signature": "27eb0b6fd8f398c3bc550fe8e49f9e08a5179723213206971044d3515e858270",
+        "transport_startup_s_excluded": 6.359000000000378,
+        "model_load_count": 9,
+        "model_load_total_s": 19.39099999999962,
+        "model_load_latencies_s": [
+          2.3909999999996217,
+          2.077999999997701,
+          2.1090000000003783,
+          2.1569999999992433,
+          2.0940000000009604,
+          2.1409999999996217,
+          2.187000000001717,
+          2.1090000000003783,
+          2.125
+        ],
+        "model_shutdown_total_s": 2.8909999999996217,
+        "model_shutdown_latencies_s": [
+          0.3280000000013388,
+          0.3280000000013388,
+          0.3280000000013388,
+          0.3279999999977008,
+          0.2969999999986612,
+          0.3129999999982829,
+          0.31300000000192085,
+          0.31300000000192085,
+          0.3429999999971187
+        ],
+        "worker_cleanup_total_s": 0.2019999999938591,
+        "worker_cleanup_latencies_s": [
+          0.01599999999962165,
+          0.01599999999962165,
+          0.030999999999039574,
+          0.030999999999039574,
+          0.014999999999417923,
+          0.030999999999039574,
+          0.01599999999962165,
+          0.030999999999039574,
+          0.014999999999417923
+        ],
+        "worker_cleanup_allocated_mib": [
+          8.125,
+          8.125,
+          8.125,
+          8.125,
+          8.125,
+          8.125,
+          8.125,
+          8.125,
+          8.125
+        ],
+        "worker_cleanup_reserved_mib": [
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0,
+          20.0
+        ],
+        "model_embed_count": 13,
+        "model_embed_total_s": 1.1570000000028813,
+        "query_gpu_telemetry": [
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2178.8193359375,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.595703125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.658203125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.720703125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2190.0,
+            "torch_peak_allocated_mib": 2175.626953125,
+            "torch_peak_reserved_mib": 2190.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.751953125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.720703125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.626953125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.626953125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.595703125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.689453125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.751953125,
+            "torch_peak_reserved_mib": 2188.0
+          },
+          {
+            "torch_allocated_mib": 2174.0634765625,
+            "torch_reserved_mib": 2188.0,
+            "torch_peak_allocated_mib": 2175.814453125,
+            "torch_peak_reserved_mib": 2188.0
+          }
+        ],
+        "query_peak_allocated_mib": 2178.8193359375,
+        "query_peak_reserved_mib": 2190.0,
+        "model_promotions": 9,
+        "model_demotions": 9,
+        "model_refaults": 0,
+        "explicit_release_count": 27,
+        "peak_measured": {
+          "prompt_tokens": 13.0,
+          "host_ram_mb": 551.85546875,
+          "gpu_vram_mb": 2174.0634765625,
+          "process_slots": 0.0,
+          "connection_slots": 1.0
+        },
+        "event_counts": {
+          "active_enter": 9,
+          "active_exit": 9,
+          "compulsory_fault": 1,
+          "demote": 27,
+          "promote": 27,
+          "refault": 8
+        },
+        "neo4j_driver_initializations": 9,
+        "neo4j_sessions_created": 13,
+        "driver_promotions": 9,
+        "driver_demotions": 9,
+        "driver_refaults": 0,
+        "neo4j_query_count": 13
+      },
+      "scientific_outputs_identical": true,
+      "seconds_saved_release_minus_cwsr": 37.876000000000204,
+      "model_loads_saved": 8,
+      "driver_initializations_saved": 8,
+      "sessions_created_difference": 0
+    }
+  ],
+  "summary": {
+    "task_family_count": 1,
+    "seconds_saved_release_minus_cwsr": {
+      "median": 37.876000000000204,
+      "q1": 37.876000000000204,
+      "q3": 37.876000000000204,
+      "min": 37.876000000000204,
+      "max": 37.876000000000204
+    },
+    "model_loads_saved": {
+      "median": 8.0,
+      "q1": 8.0,
+      "q3": 8.0,
+      "min": 8.0,
+      "max": 8.0
+    },
+    "all_scientific_outputs_identical": true,
+    "all_policy_runs_complete": true,
+    "positive_time_saving_family_count": 1,
+    "driver_initializations_saved": {
+      "median": 8.0,
+      "q1": 8.0,
+      "q3": 8.0,
+      "min": 8.0,
+      "max": 8.0
+    },
+    "session_creation_equal_between_policies": true
+  },
+  "interpretation_guard": "The replay uses real BGE-M3 embeddings, the real Neo4j kg-v1 vector index, and frozen production KG Cypher templates with query arguments taken from preselected real agent traces. search_literature_multiview is replayed as its vector-backed query set and does not reconstruct the production RRF/graph merge; therefore this experiment evaluates runtime backing-resource behavior and query-path timing, not retrieval-quality equivalence to the full production hybrid retriever. Local screening/report calls and LLM time are excluded. The Neo4j driver and pool are retained across calls under CWSR; every query creates and closes its own session in both policies, matching the root KG/RAG service lifecycle. Driver initializations and session creations are reported separately."
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": "orion_self_evolution_fresh_formal_inputs_v1",
+  "status": "PREFREEZE_FORMAL_INPUTS_NO_EXECUTION_AUTHORIZED",
+  "date": "2026-08-18",
+  "formal_version_candidate": "self-evolution-fresh-v1-frozen-20260818",
+  "blueprint": "benchmark/self_evolution_fresh_v1/FORMAL_FREEZE_BLUEPRINT_V1_2026-08-18.md",
+  "family_allowlist": [
+    "FRESH_A1_NADFP_WIDE_TEMP",
+    "FRESH_A4_DTD_HIGH_TEMP",
+    "FRESH_A5_ETHER_HIGH_VOLTAGE_BOUNDARY",
+    "FRESH_A6_GLYME_LOW_VOLTAGE_PRESERVATION",
+    "FRESH_A8_PFPN_FULL_CELL_PRESERVATION",
+    "FRESH_C1_INFRASTRUCTURE_NO_UPDATE"
+  ],
+  "family_denylist": {
+    "FRESH_A7_FEC_FULL_CELL_PRESERVATION": "Burned Static headroom failure; unchanged Static Skill exposed FEC before model reasoning."
+  },
+  "source_authorities": {
+    "base": "benchmark/self_evolution_fresh_v1/FRESH_SOURCE_BUNDLES_V1_2026-08-18.json",
+    "sidecars": {
+      "FRESH_A8_PFPN_FULL_CELL_PRESERVATION": "benchmark/self_evolution_fresh_v1/A8_PFPN_SOURCE_BUNDLE_V0_2026-08-18.json"
+    }
+  },
+  "scientific_contract_authorities": {
+    "base": "benchmark/self_evolution_fresh_v1/FRESH_SCIENTIFIC_CONTRACTS_V1_2026-08-18.json",
+    "sidecars": {
+      "FRESH_A8_PFPN_FULL_CELL_PRESERVATION": "benchmark/self_evolution_fresh_v1/A8_PFPN_SCIENTIFIC_CONTRACT_V0_2026-08-18.json"
+    }
+  },
+  "generic_c_authorities": {
+    "base": "benchmark/self_evolution_fresh_v1/FRESH_ARM_C_GENERIC_TASKS_V2_2026-08-18.json",
+    "family_sidecars": {
+      "FRESH_A8_PFPN_FULL_CELL_PRESERVATION": "benchmark/self_evolution_fresh_v1/A8_PFPN_GENERIC_C_TASK_V0_2026-08-18.json"
+    },
+    "judge_prompt": "benchmark/self_evolution_fresh_v1/FRESH_GENERIC_AUDIT_PROMPT_V1_2026-08-18.md"
+  },
+  "common_proposer": {
+    "prompt": "benchmark/self_evolution_fresh_v1/COMMON_PROPOSER_PROMPT_V0_2026-08-17.md",
+    "proposal_schema_module": "benchmark/self_evolution_fresh_scope.py",
+    "native_json_mode_required": true
+  },
+  "arm_semantics": "benchmark/self_evolution_fresh_v1/FRESH_ARM_SEMANTICS_V2_2026-08-18.json",
+  "slot_statistics": "benchmark/self_evolution_fresh_v1/FRESH_SLOT_AND_STATISTICS_CONTRACT_V2_2026-08-18.json",
+  "retention_bank": "benchmark/self_evolution_fresh_v1/RETENTION_CONFIRMATORY_BANK_V3_2026-08-18.json",
+  "mechanism_ablations": "benchmark/self_evolution_fresh_v1/FRESH_SEMANTIC_ABLATIONS_V1_2026-08-18.json",
+  "behavior_scorer_module": "benchmark/self_evolution_fresh_behavior.py",
+  "productive_scorer_module": "benchmark/self_evolution_fresh_productive.py",
+  "retention_scorer_module": "benchmark/self_evolution_fresh_retention.py",
+  "parallel_admission_module": "benchmark/self_evolution_fresh_parallel_admission.py",
+  "scientific_admission_module": "benchmark/self_evolution_fresh_admission.py",
+  "scope_module": "benchmark/self_evolution_fresh_scope.py",
+  "family_manifests": {
+    "FRESH_A1_NADFP_WIDE_TEMP": "benchmark/self_evolution_fresh_v1/candidates/A1_NADFP_WIDE_TEMP_DRAFT.json",
+    "FRESH_A4_DTD_HIGH_TEMP": "benchmark/self_evolution_fresh_v1/candidates/A4_DTD_HIGH_TEMP_DRAFT.json",
+    "FRESH_A5_ETHER_HIGH_VOLTAGE_BOUNDARY": "benchmark/self_evolution_fresh_v1/candidates/A5_ETHER_HIGH_VOLTAGE_BOUNDARY_V1_2026-08-18.json",
+    "FRESH_A6_GLYME_LOW_VOLTAGE_PRESERVATION": "benchmark/self_evolution_fresh_v1/candidates/A6_GLYME_LOW_VOLTAGE_PRESERVATION_DRAFT.json",
+    "FRESH_A8_PFPN_FULL_CELL_PRESERVATION": "benchmark/self_evolution_fresh_v1/candidates/A8_PFPN_FULL_CELL_PRESERVATION_V1_2026-08-18.json",
+    "FRESH_C1_INFRASTRUCTURE_NO_UPDATE": "benchmark/self_evolution_fresh_v1/candidates/C1_INFRASTRUCTURE_NO_UPDATE_DRAFT.json"
+  },
+  "task_bundles": {
+    "FRESH_A1_NADFP_WIDE_TEMP": "benchmark/self_evolution_fresh_v1/future_tasks/A1_NADFP_BEHAVIOR_TASKS_V1_2026-08-18.json",
+    "FRESH_A4_DTD_HIGH_TEMP": "benchmark/self_evolution_fresh_v1/future_tasks/A4_DTD_BEHAVIOR_TASKS_V1_2026-08-18.json",
+    "FRESH_A5_ETHER_HIGH_VOLTAGE_BOUNDARY": "benchmark/self_evolution_fresh_v1/future_tasks/A5_ETHER_HIGH_VOLTAGE_CONTROL_V1_2026-08-18.json",
+    "FRESH_A6_GLYME_LOW_VOLTAGE_PRESERVATION": "benchmark/self_evolution_fresh_v1/future_tasks/A6_GLYME_PRESERVATION_TASKS_V1_2026-08-18.json",
+    "FRESH_A8_PFPN_FULL_CELL_PRESERVATION": "benchmark/self_evolution_fresh_v1/future_tasks/A8_PFPN_FULL_CELL_PRESERVATION_TASKS_V0_2026-08-18.json",
+    "FRESH_C1_INFRASTRUCTURE_NO_UPDATE": "benchmark/self_evolution_fresh_v1/future_tasks/C1_NO_UPDATE_CONTROL_DRAFT.json"
+  },
+  "productive_contracts": {
+    "FRESH_A1_NADFP_WIDE_TEMP": "benchmark/self_evolution_fresh_v1/future_tasks/A1_PRODUCTIVE_ACTION_CONTRACT_V1_2026-08-18.json",
+    "FRESH_A4_DTD_HIGH_TEMP": "benchmark/self_evolution_fresh_v1/future_tasks/A4_PRODUCTIVE_ACTION_CONTRACT_V1_2026-08-18.json",
+    "FRESH_A5_ETHER_HIGH_VOLTAGE_BOUNDARY": "benchmark/self_evolution_fresh_v1/future_tasks/A5_PRODUCTIVE_ACTION_CONTRACT_V1_2026-08-18.json",
+    "FRESH_A6_GLYME_LOW_VOLTAGE_PRESERVATION": "benchmark/self_evolution_fresh_v1/future_tasks/A6_PRODUCTIVE_ACTION_CONTRACT_V1_2026-08-18.json",
+    "FRESH_A8_PFPN_FULL_CELL_PRESERVATION": "benchmark/self_evolution_fresh_v1/future_tasks/A8_PRODUCTIVE_ACTION_CONTRACT_V0_2026-08-18.json"
+  },
+  "eligibility_receipts": {
+    "FRESH_A1_NADFP_WIDE_TEMP": "benchmark/self_evolution_fresh_v1/preflight/A1_NADFP_STATIC_PREFLIGHT_RECEIPT_2026-08-17.json",
+    "FRESH_A4_DTD_HIGH_TEMP": "benchmark/self_evolution_fresh_v1/preflight/A4_DTD_STATIC_PREFLIGHT_RECEIPT_2026-08-17.json",
+    "FRESH_A6_GLYME_LOW_VOLTAGE_PRESERVATION": "benchmark/self_evolution_fresh_v1/preflight/A6_GLYME_STATIC_PREFLIGHT_RECEIPT_2026-08-17.json",
+    "FRESH_A8_PFPN_FULL_CELL_PRESERVATION": "benchmark/self_evolution_fresh_v1/preflight/A8_PFPN_STATIC_PREFLIGHT_RECEIPT_V0_2026-08-18.json",
+    "retention": "benchmark/self_evolution_fresh_v1/preflight/RETENTION_STATIC_BASELINE_RESULT_V3_2026-08-18.json",
+    "D0_C_vs_D": "benchmark/self_evolution_fresh_v1/development_discriminability/C_VS_D_SCOPE_TRAP_MINIBANK_RESULT_V3_2026-08-18.json"
+  },
+  "formal_roots": {
+    "locks": "benchmark/self_evolution_fresh_formal_locks_v1",
+    "results": "benchmark/self_evolution_fresh_formal_results_v1"
+  },
+  "formal_execution": {
+    "authorized": false,
+    "production_persistence_authorized": false,
+    "requires_hash_bound_snapshot_and_report_authorization": true
+  }
+}

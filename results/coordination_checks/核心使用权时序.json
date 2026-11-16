@@ -1,0 +1,74 @@
+[
+  {
+    "sequence": 9,
+    "time_s": 19.33203830000275,
+    "event": "lease_enter",
+    "phase": "A",
+    "process:na-conductivity-rf": 1,
+    "process:robust-ranking-worker": 1,
+    "process:transport-fit-kernel": 0
+  },
+  {
+    "sequence": 13,
+    "time_s": 19.34171459999925,
+    "event": "lease_enter",
+    "phase": "B1",
+    "process:na-conductivity-rf": 2,
+    "process:robust-ranking-worker": 1,
+    "process:transport-fit-kernel": 0
+  },
+  {
+    "sequence": 15,
+    "time_s": 19.56841130000248,
+    "event": "lease_returned",
+    "phase": "B1",
+    "process:na-conductivity-rf": 1,
+    "process:robust-ranking-worker": 1,
+    "process:transport-fit-kernel": 0
+  },
+  {
+    "sequence": 19,
+    "time_s": 19.621231800003443,
+    "event": "lease_returned",
+    "phase": "A",
+    "process:na-conductivity-rf": 0,
+    "process:robust-ranking-worker": 0,
+    "process:transport-fit-kernel": 0
+  },
+  {
+    "sequence": 38,
+    "time_s": 48.75197450000269,
+    "event": "lease_enter",
+    "phase": "B2",
+    "process:na-conductivity-rf": 0,
+    "process:robust-ranking-worker": 0,
+    "process:transport-fit-kernel": 1
+  },
+  {
+    "sequence": 40,
+    "time_s": 49.121554500001366,
+    "event": "lease_returned",
+    "phase": "B2",
+    "process:na-conductivity-rf": 0,
+    "process:robust-ranking-worker": 0,
+    "process:transport-fit-kernel": 0
+  },
+  {
+    "sequence": 46,
+    "time_s": 50.42701169999782,
+    "event": "lease_enter",
+    "phase": "B2",
+    "process:na-conductivity-rf": 1,
+    "process:robust-ranking-worker": 0,
+    "process:transport-fit-kernel": 0
+  },
+  {
+    "sequence": 48,
+    "time_s": 50.45360300000175,
+    "event": "lease_returned",
+    "phase": "B2",
+    "process:na-conductivity-rf": 0,
+    "process:robust-ranking-worker": 0,
+    "process:transport-fit-kernel": 0
+  }
+]

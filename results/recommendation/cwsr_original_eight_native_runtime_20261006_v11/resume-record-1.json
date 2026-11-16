@@ -1,0 +1,213 @@
+{
+  "started_at_utc": "2026-10-06T09:48:40.301737+00:00",
+  "source_and_inputs_unchanged": true,
+  "reused_completed_runs": 23,
+  "new_runs_planned": 9,
+  "slots": [
+    {
+      "pair_id": "P2-r1",
+      "arm": "native",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P2-r1-native\\result.json"
+    },
+    {
+      "pair_id": "P2-r1",
+      "arm": "runtime",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P2-r1-runtime\\result.json"
+    },
+    {
+      "pair_id": "U2-r1",
+      "arm": "runtime",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U2-r1-runtime\\result.json"
+    },
+    {
+      "pair_id": "U2-r1",
+      "arm": "native",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U2-r1-native\\result.json"
+    },
+    {
+      "pair_id": "U1-r1",
+      "arm": "native",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U1-r1-native\\result.json"
+    },
+    {
+      "pair_id": "U1-r1",
+      "arm": "runtime",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U1-r1-runtime\\result.json"
+    },
+    {
+      "pair_id": "P1-r1",
+      "arm": "runtime",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P1-r1-runtime\\result.json"
+    },
+    {
+      "pair_id": "P1-r1",
+      "arm": "native",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P1-r1-native\\result.json"
+    },
+    {
+      "pair_id": "C1-r1",
+      "arm": "native",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C1-r1-native\\result.json"
+    },
+    {
+      "pair_id": "C1-r1",
+      "arm": "runtime",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C1-r1-runtime\\result.json"
+    },
+    {
+      "pair_id": "C2-r1",
+      "arm": "runtime",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C2-r1-runtime\\result.json"
+    },
+    {
+      "pair_id": "C2-r1",
+      "arm": "native",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C2-r1-native\\result.json"
+    },
+    {
+      "pair_id": "C3-r1",
+      "arm": "native",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C3-r1-native\\result.json"
+    },
+    {
+      "pair_id": "C3-r1",
+      "arm": "runtime",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C3-r1-runtime\\result.json"
+    },
+    {
+      "pair_id": "D1-r1",
+      "arm": "runtime",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\D1-r1-runtime\\result.json"
+    },
+    {
+      "pair_id": "D1-r1",
+      "arm": "native",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\D1-r1-native\\result.json"
+    },
+    {
+      "pair_id": "P2-r2",
+      "arm": "runtime",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P2-r2-runtime\\result.json"
+    },
+    {
+      "pair_id": "P2-r2",
+      "arm": "native",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P2-r2-native\\result.json"
+    },
+    {
+      "pair_id": "U2-r2",
+      "arm": "native",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U2-r2-native\\result.json"
+    },
+    {
+      "pair_id": "U2-r2",
+      "arm": "runtime",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U2-r2-runtime\\result.json"
+    },
+    {
+      "pair_id": "U1-r2",
+      "arm": "runtime",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U1-r2-runtime\\result.json"
+    },
+    {
+      "pair_id": "U1-r2",
+      "arm": "native",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U1-r2-native\\result.json"
+    },
+    {
+      "pair_id": "P1-r2",
+      "arm": "native",
+      "reuse": true,
+      "result_path": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P1-r2-native\\result.json"
+    },
+    {
+      "pair_id": "P1-r2",
+      "arm": "runtime",
+      "reuse": false,
+      "output": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P1-r2-runtime-resumed1",
+      "interrupted_attempt": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P1-r2-runtime"
+    },
+    {
+      "pair_id": "C1-r2",
+      "arm": "runtime",
+      "reuse": false,
+      "output": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C1-r2-runtime",
+      "interrupted_attempt": null
+    },
+    {
+      "pair_id": "C1-r2",
+      "arm": "native",
+      "reuse": false,
+      "output": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C1-r2-native",
+      "interrupted_attempt": null
+    },
+    {
+      "pair_id": "C2-r2",
+      "arm": "native",
+      "reuse": false,
+      "output": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C2-r2-native",
+      "interrupted_attempt": null
+    },
+    {
+      "pair_id": "C2-r2",
+      "arm": "runtime",
+      "reuse": false,
+      "output": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C2-r2-runtime",
+      "interrupted_attempt": null
+    },
+    {
+      "pair_id": "C3-r2",
+      "arm": "runtime",
+      "reuse": false,
+      "output": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C3-r2-runtime",
+      "interrupted_attempt": null
+    },
+    {
+      "pair_id": "C3-r2",
+      "arm": "native",
+      "reuse": false,
+      "output": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C3-r2-native",
+      "interrupted_attempt": null
+    },
+    {
+      "pair_id": "D1-r2",
+      "arm": "native",
+      "reuse": false,
+      "output": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\D1-r2-native",
+      "interrupted_attempt": null
+    },
+    {
+      "pair_id": "D1-r2",
+      "arm": "runtime",
+      "reuse": false,
+      "output": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\D1-r2-runtime",
+      "interrupted_attempt": null
+    }
+  ],
+  "interrupted_attempt_outcome": "No final result; excluded from completed-run metrics",
+  "interruption_cause": "Undetermined",
+  "collection_complete": true,
+  "completed_at_utc": "2026-10-06T10:31:43.714976+00:00"
+}

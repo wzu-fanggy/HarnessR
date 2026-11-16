@@ -1,0 +1,2 @@
+# Optional Linux process telemetry. Windows uses its native WorkingSet APIs.
+psutil>=5.9

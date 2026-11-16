@@ -1,0 +1,12 @@
+{
+  "full": {
+    "rows": 647,
+    "formulations": 72,
+    "max_log_prediction_difference_from_frozen": 0.0
+  },
+  "heldout": {
+    "rows": 539,
+    "formulations": 60,
+    "max_log_prediction_difference_from_frozen": 0.0
+  }
+}

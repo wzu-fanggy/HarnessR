@@ -1,0 +1,818 @@
+[
+  {
+    "path": "src/orion/benchmark/cwsr_conductivity_process_timing_serialized_v2.py",
+    "role": "experiment_or_required_helper",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_conductivity_process_timing_serialized_v2.py",
+    "source_sha256": "6c0b9bb8a780ad2b46e5fc9be325b16b749f22d525840e2eabd9a407e6f12b22",
+    "packaged_sha256": "1cad3015aa8d29c4e5eb97d8ca360b3b523343a6ef415f6d8e9e40b8bf7ccf23",
+    "path_redacted": true
+  },
+  {
+    "path": "src/orion/benchmark/cwsr_v17_warm_toolnode_ab_audit_v1.py",
+    "role": "experiment_or_required_helper",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_v17_warm_toolnode_ab_audit_v1.py",
+    "source_sha256": "fc6c0efba740986201dc0debe7418c239678df4c68b5c5c7f2bf74e7910584f9",
+    "packaged_sha256": "cb6da96f411e6c65e0849a60e02ea5cc00f9eb160fbd92ededbada2e1ab718ff",
+    "path_redacted": true
+  },
+  {
+    "path": "src/orion/benchmark/cwsr_v17_warm_toolnode_ab_v1.py",
+    "role": "experiment_or_required_helper",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_v17_warm_toolnode_ab_v1.py",
+    "source_sha256": "6eea884a2d53241bebea983e2f1493b94fc6cbf526c1433e4abaaf797d4889d4",
+    "packaged_sha256": "424bf063f9303ba384f731a81c29c1700457edcde91b5682b987cbdf063053fd",
+    "path_redacted": true
+  },
+  {
+    "path": "src/orion/benchmark/cwsr_fixed_pressure_replay_v1.py",
+    "role": "experiment_or_required_helper",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_fixed_pressure_replay_v1.py",
+    "source_sha256": "6322cddb5a5887582f16fa0d8a8799bfd38815a657145a8963766394346e4fb8",
+    "packaged_sha256": "d42c8e6c91dccef259bd434c9401b6fe8acb92f53771cb10e9b9403b0111772d",
+    "path_redacted": true
+  },
+  {
+    "path": "src/orion/benchmark/cwsr_run_uniform_real_rag_all8_v2.py",
+    "role": "experiment_or_required_helper",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_run_uniform_real_rag_all8_v2.py",
+    "source_sha256": "35d25f1d034c669503b9e8882804c85c33e41463749ed89ff4c20bc7f7421c89",
+    "packaged_sha256": "8989b8aba939546015bb03ed4be5f48ac131f32c98ed8b549399e65d3d5559bf",
+    "path_redacted": true
+  },
+  {
+    "path": "src/orion/benchmark/cwsr_run_uniform_real_rag_all8_v1.py",
+    "role": "experiment_or_required_helper",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_run_uniform_real_rag_all8_v1.py",
+    "source_sha256": "7c6a885cf56f9c5a1e4943531ac3ad8bca914d0ac39e90fb5196a6738f6a76bb",
+    "packaged_sha256": "4e23b088217b1aae8348d929813759420e5bdad1b7b2ece5c7006c452ca59ee3",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/cwsr_real_rag_uniform_all8_v2_result.json",
+    "role": "source",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_real_rag_uniform_all8_v2_result.json",
+    "source_sha256": "7799cdca7d99830cfd3739c6b4e2cf738af592f810333b312399388f626dad8d",
+    "packaged_sha256": "7799cdca7d99830cfd3739c6b4e2cf738af592f810333b312399388f626dad8d",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/cwsr_conductivity_process_timing_serialized_v2_result.json",
+    "role": "source",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_conductivity_process_timing_serialized_v2_result.json",
+    "source_sha256": "7f2d4dac0319bcd8fa9262bf185b1ce75a4daf6395fbee8ed3750b09ff963838",
+    "packaged_sha256": "7f2d4dac0319bcd8fa9262bf185b1ce75a4daf6395fbee8ed3750b09ff963838",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/retrieval_retention/STUDY4C_C1_CAI_NADFP_SCOPE_MISSING.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_real_rag_uniform_all8_v2\\STUDY4C_C1_CAI_NADFP_SCOPE_MISSING.json",
+    "source_sha256": "ef2ca4462ecfe6b93f000ee8265ee35c1b079226abb4a782615d062fad1d596d",
+    "packaged_sha256": "7558fc67c6731679d646b5d650bb646103e583d358fff7769e77afca544494a1",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/retrieval_retention/STUDY4C_C2_LIN_HALFCELL_LIMIT_TO_FULLCELL.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_real_rag_uniform_all8_v2\\STUDY4C_C2_LIN_HALFCELL_LIMIT_TO_FULLCELL.json",
+    "source_sha256": "8241cab9f712a23e4dc682aa7b210cfa33cdf81fe36896dd7dbbf750c199614b",
+    "packaged_sha256": "f7ac11af7436a807eeebb463c680f5b7b6e63e08bc2325c0f6714ba82cbd47a1",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/retrieval_retention/STUDY4C_C3_CUI_COIN_TO_POUCH_MINUS40C.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_real_rag_uniform_all8_v2\\STUDY4C_C3_CUI_COIN_TO_POUCH_MINUS40C.json",
+    "source_sha256": "bbdbfff0b5c767dcc6852fe0313f4c77c606d4eab3fb63066a0160a071945867",
+    "packaged_sha256": "edaf04fe094b3381e71dc6cb0c25cbf33a597b503d655af9af8580abb53324cd",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/retrieval_retention/STUDY4C_D1_FAN_NAFSI_CORROSION.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_real_rag_uniform_all8_v2\\STUDY4C_D1_FAN_NAFSI_CORROSION.json",
+    "source_sha256": "f6dedf2cb4b40cec84db33efdedec29fb36f288f01f9d2369be6c2bc05072c7a",
+    "packaged_sha256": "2276dc6eacc40a8e4b2d98947dda3d5ba56cd8db0d53ae09de237c5853cb9a61",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/retrieval_retention/STUDY4C_P1_MOGENSEN_NABOB_50C.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_real_rag_uniform_all8_v2\\STUDY4C_P1_MOGENSEN_NABOB_50C.json",
+    "source_sha256": "9ec8a58e954e278d6ed68e6cbd70a390dd9ef48654b5f07d57f38b85f339eec5",
+    "packaged_sha256": "3cd72e9bfedb59c42378c7906132b9ff5d4f3a76acc27a6c7db1660ed0dc136c",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/retrieval_retention/STUDY4C_P2_LU_SA_MINUS20C_POUCH.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_real_rag_uniform_all8_v2\\STUDY4C_P2_LU_SA_MINUS20C_POUCH.json",
+    "source_sha256": "fe7e0d146049d01b8124374c2cf6043061a3882f943d479b6dbf0f6e014066f8",
+    "packaged_sha256": "95887cf5dcc107911aace39bf0245141446974d494f80a0045a96355f6752ee9",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/retrieval_retention/STUDY4C_U1_CHE_PCEMC_MINUS30C.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_real_rag_uniform_all8_v2\\STUDY4C_U1_CHE_PCEMC_MINUS30C.json",
+    "source_sha256": "05139a6bcca9cf649a539cda3e55fbc0dc5386b436ea43820a2185cbc9e96215",
+    "packaged_sha256": "5928485e29221782797ad733403ea27e742afab34f112dbf162880501fa22dc9",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/retrieval_retention/STUDY4C_U2_FAN_DUALSALT_MINUS20C.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\benchmark\\cwsr_real_rag_uniform_all8_v2\\STUDY4C_U2_FAN_DUALSALT_MINUS20C.json",
+    "source_sha256": "bf5f218a313b650d5b370298d8ff1eb862782447ad55a5a2caf673cfb88bde9d",
+    "packaged_sha256": "491fc0889a8640dbf913b1a97c002e50957e2b0fe3164dc9f8b8c5a2012e4de4",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/summary.json",
+    "role": "source",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_aggregate_v1\\summary.json",
+    "source_sha256": "d2e8afaf3cd14a9990cbb1aef047460e05f29628bbc4a3d31d239e3b84b71027",
+    "packaged_sha256": "d2e8afaf3cd14a9990cbb1aef047460e05f29628bbc4a3d31d239e3b84b71027",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/P1-p0-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\P1-p0-native.json",
+    "source_sha256": "2314489b87476a2e1cf08a56fbc590b28b6401981d531bc888474d0d721a26df",
+    "packaged_sha256": "2314489b87476a2e1cf08a56fbc590b28b6401981d531bc888474d0d721a26df",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/P1-p0-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\P1-p0-runtime.json",
+    "source_sha256": "9ecd2e9069361c537ae8ea75d99eaf2f7cda40bdf24caf6b510ec822e3eaf7bd",
+    "packaged_sha256": "9ecd2e9069361c537ae8ea75d99eaf2f7cda40bdf24caf6b510ec822e3eaf7bd",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/P1-p1-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\P1-p1-native.json",
+    "source_sha256": "ef88af9f90242853039c457459d1e4a56fb6f32b640b190400bdbd09847acf06",
+    "packaged_sha256": "ef88af9f90242853039c457459d1e4a56fb6f32b640b190400bdbd09847acf06",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/P1-p1-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\P1-p1-runtime.json",
+    "source_sha256": "a04db417bae64f66ad62771f94e77ebb713e48417f8764744dfc60f7390fddaa",
+    "packaged_sha256": "a04db417bae64f66ad62771f94e77ebb713e48417f8764744dfc60f7390fddaa",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/P2-p0-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\P2-p0-native.json",
+    "source_sha256": "5f430862e01b77b9ed34a45fb4171bed1df0571e3e64775cd59e221e3e9b6df5",
+    "packaged_sha256": "5f430862e01b77b9ed34a45fb4171bed1df0571e3e64775cd59e221e3e9b6df5",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/P2-p0-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\P2-p0-runtime.json",
+    "source_sha256": "41a45f2515440b687279c9c846a07f52e1f812b1fdb62561e5156d65f2c75980",
+    "packaged_sha256": "41a45f2515440b687279c9c846a07f52e1f812b1fdb62561e5156d65f2c75980",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/P2-p1-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\P2-p1-native.json",
+    "source_sha256": "3c1288338d480ba216966c688c8f1996c5322dc4ef16c2be9a9951f190bf998c",
+    "packaged_sha256": "3c1288338d480ba216966c688c8f1996c5322dc4ef16c2be9a9951f190bf998c",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/P2-p1-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\P2-p1-runtime.json",
+    "source_sha256": "c6a29f5256678bdf0153fd1b2a1ba2a4840fcd16c9359c02326b9e354f2cb7ea",
+    "packaged_sha256": "c6a29f5256678bdf0153fd1b2a1ba2a4840fcd16c9359c02326b9e354f2cb7ea",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/plan.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\plan.json",
+    "source_sha256": "9ae1427c07a85c8c06d87fe58eaa9edf9a9cdad25c3f73df52f6d3346b923c6d",
+    "packaged_sha256": "e332a80000d59995213d19ecfc20da6164a2f3eef5606e829e7d052b16e0666e",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/summary.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\summary.json",
+    "source_sha256": "57f4ac76adaefc6af523b2c2a85328c862d316ec37ccb963182f44651060b327",
+    "packaged_sha256": "57f4ac76adaefc6af523b2c2a85328c862d316ec37ccb963182f44651060b327",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/U1-p0-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\U1-p0-native.json",
+    "source_sha256": "0d1bd002dd5e061d61d7f9019aae082895fdcbd761be8687dd7d584b66ad2fc2",
+    "packaged_sha256": "0d1bd002dd5e061d61d7f9019aae082895fdcbd761be8687dd7d584b66ad2fc2",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/U1-p0-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\U1-p0-runtime.json",
+    "source_sha256": "b5e70660d0786bf30ce7395221b9abb771ab046a81f9632803eba52d65fd9d80",
+    "packaged_sha256": "b5e70660d0786bf30ce7395221b9abb771ab046a81f9632803eba52d65fd9d80",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/U1-p1-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\U1-p1-native.json",
+    "source_sha256": "8a997bd7a6a7046775847bbc035bb6ff661fb4f680fbd99a999591143ba72042",
+    "packaged_sha256": "8a997bd7a6a7046775847bbc035bb6ff661fb4f680fbd99a999591143ba72042",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/U1-p1-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\U1-p1-runtime.json",
+    "source_sha256": "aff42a66e87c85e5a5bc646796a954afa75a5fea25b328fe6bc09a0da345cdb0",
+    "packaged_sha256": "aff42a66e87c85e5a5bc646796a954afa75a5fea25b328fe6bc09a0da345cdb0",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/U2-p0-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\U2-p0-native.json",
+    "source_sha256": "9edbffa3c42a17c69539552205fa25783b868221d7333b1de5376cf66a57631e",
+    "packaged_sha256": "9edbffa3c42a17c69539552205fa25783b868221d7333b1de5376cf66a57631e",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/U2-p0-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\U2-p0-runtime.json",
+    "source_sha256": "992e1f9edbaf78921aa189cd29f25ceb24700a8412d797454b8e37cbbef31df9",
+    "packaged_sha256": "992e1f9edbaf78921aa189cd29f25ceb24700a8412d797454b8e37cbbef31df9",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/U2-p1-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\U2-p1-native.json",
+    "source_sha256": "a04e4eb778ecaac3320b08ccfaa940add1e6fa142dc51b7fe1313d9b693f1bfa",
+    "packaged_sha256": "a04e4eb778ecaac3320b08ccfaa940add1e6fa142dc51b7fe1313d9b693f1bfa",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_first4_v1/U2-p1-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1\\U2-p1-runtime.json",
+    "source_sha256": "24819a4ea31fe14592b062aa2f1a17cc8fb8deead30dc51645d071fd8fdb7aa0",
+    "packaged_sha256": "24819a4ea31fe14592b062aa2f1a17cc8fb8deead30dc51645d071fd8fdb7aa0",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c1_v1/C1-p0-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c1_v1\\C1-p0-native.json",
+    "source_sha256": "d46aa39f2ffb1fd10cdd924fe373dbe73ea2592a05652b3fa17c1c1fc83926cf",
+    "packaged_sha256": "d46aa39f2ffb1fd10cdd924fe373dbe73ea2592a05652b3fa17c1c1fc83926cf",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c1_v1/C1-p0-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c1_v1\\C1-p0-runtime.json",
+    "source_sha256": "3644c5628b5bd2e22e648b0fe2814e37f77d2670b7fc3f649dc04e83a7f44027",
+    "packaged_sha256": "3644c5628b5bd2e22e648b0fe2814e37f77d2670b7fc3f649dc04e83a7f44027",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c1_v1/C1-p1-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c1_v1\\C1-p1-native.json",
+    "source_sha256": "24fca819eb3edcc5c3da5926e82c969d90f74cc0531335b538fea3d6ee233353",
+    "packaged_sha256": "24fca819eb3edcc5c3da5926e82c969d90f74cc0531335b538fea3d6ee233353",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c1_v1/C1-p1-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c1_v1\\C1-p1-runtime.json",
+    "source_sha256": "80fa804881b0ccef9d152cd59e130cef2de345f7816c70f12f203ed57ad9a5d7",
+    "packaged_sha256": "80fa804881b0ccef9d152cd59e130cef2de345f7816c70f12f203ed57ad9a5d7",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c1_v1/plan.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c1_v1\\plan.json",
+    "source_sha256": "6244a4ea1113a57f09798b00810d8fcb642d603f3407d5164bbc32bceca4f290",
+    "packaged_sha256": "843ffb942051a50a1feea0f818aaf97872fe94f16964faaf29e80cf14cd3eb85",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c1_v1/summary.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c1_v1\\summary.json",
+    "source_sha256": "7ba47b11030ee61642861e99ba8e38e8dc082b1b08ac1f1f07a185d48f8ba331",
+    "packaged_sha256": "7ba47b11030ee61642861e99ba8e38e8dc082b1b08ac1f1f07a185d48f8ba331",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c2_v1/C2-p0-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c2_v1\\C2-p0-native.json",
+    "source_sha256": "ac32c4c8916f6afcb697472e6313fa30858c581e4a0401860b0b9f3deaa208fd",
+    "packaged_sha256": "ac32c4c8916f6afcb697472e6313fa30858c581e4a0401860b0b9f3deaa208fd",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c2_v1/C2-p0-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c2_v1\\C2-p0-runtime.json",
+    "source_sha256": "e446db53ce0e84b5fe94c5aecc4732d37ff736facac25639c5c8f79c6892b053",
+    "packaged_sha256": "e446db53ce0e84b5fe94c5aecc4732d37ff736facac25639c5c8f79c6892b053",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c2_v1/C2-p1-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c2_v1\\C2-p1-native.json",
+    "source_sha256": "e4377b9f9405c1d0e6e3603de089044abb06892ca192625b11b6eefb8fd07d18",
+    "packaged_sha256": "e4377b9f9405c1d0e6e3603de089044abb06892ca192625b11b6eefb8fd07d18",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c2_v1/C2-p1-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c2_v1\\C2-p1-runtime.json",
+    "source_sha256": "92b4235ffaa153ebdd8295a821b0ba33f066cc8dc8cea2fb25c481fcc521aae5",
+    "packaged_sha256": "92b4235ffaa153ebdd8295a821b0ba33f066cc8dc8cea2fb25c481fcc521aae5",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c2_v1/plan.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c2_v1\\plan.json",
+    "source_sha256": "9b138ce7600ecf4ecc227d9d12efe7aaf2ccb4fe64e5a797b9790c7026ca733f",
+    "packaged_sha256": "4b497078f2c2fb661956386bc62f95ba98842c2a9df586dcd1c592e5dce159f3",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c2_v1/summary.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c2_v1\\summary.json",
+    "source_sha256": "77769163fb7410c20a23741b7048e52f5659a22ae9f4f87b5552be4fd985f92a",
+    "packaged_sha256": "77769163fb7410c20a23741b7048e52f5659a22ae9f4f87b5552be4fd985f92a",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c3_v1/C3-p0-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c3_v1\\C3-p0-native.json",
+    "source_sha256": "41d683e3223310825f9cda4eaa2685d2c9d99213f3f003529bcebfd188f1b354",
+    "packaged_sha256": "41d683e3223310825f9cda4eaa2685d2c9d99213f3f003529bcebfd188f1b354",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c3_v1/C3-p0-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c3_v1\\C3-p0-runtime.json",
+    "source_sha256": "6633a88df02134252b8a7b35d2057f4e3c855f67fe0c1c8e28bf89005b9d7bd9",
+    "packaged_sha256": "6633a88df02134252b8a7b35d2057f4e3c855f67fe0c1c8e28bf89005b9d7bd9",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c3_v1/C3-p1-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c3_v1\\C3-p1-native.json",
+    "source_sha256": "469ca1c33660f3ffedaa4555055e91521eb6dd004ef8fbe4204b56fb5547c5ef",
+    "packaged_sha256": "469ca1c33660f3ffedaa4555055e91521eb6dd004ef8fbe4204b56fb5547c5ef",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c3_v1/C3-p1-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c3_v1\\C3-p1-runtime.json",
+    "source_sha256": "8cdedc6f3a2ea89db27d986afe28e0df3a846d4d9dc91055cb0ea51eb0c1b9f0",
+    "packaged_sha256": "8cdedc6f3a2ea89db27d986afe28e0df3a846d4d9dc91055cb0ea51eb0c1b9f0",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c3_v1/plan.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c3_v1\\plan.json",
+    "source_sha256": "6168c5781787b9dc3307bf592e576d38d29e04b2c96bd4cf7504813a33159039",
+    "packaged_sha256": "735742f4031d58ac6f7b0d1ca75964bf225e88d6f44d5aac7d36f5d77a72e6a5",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_c3_v1/summary.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c3_v1\\summary.json",
+    "source_sha256": "e2d72ea5cec74aa4b6b096bd37def041aea95b25a0dbaf0c8cbcec7eaee3b429",
+    "packaged_sha256": "e2d72ea5cec74aa4b6b096bd37def041aea95b25a0dbaf0c8cbcec7eaee3b429",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_d1_v1/D1-p0-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_d1_v1\\D1-p0-native.json",
+    "source_sha256": "971b38e210951683eeb2913897f2fccebded59994e9f5ad7ee280f92f9c7d0af",
+    "packaged_sha256": "971b38e210951683eeb2913897f2fccebded59994e9f5ad7ee280f92f9c7d0af",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_d1_v1/D1-p0-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_d1_v1\\D1-p0-runtime.json",
+    "source_sha256": "2476e3c7c752b72c81a56e93a18cdeccd20901e3c6b08ba9cdbb84888e5baba5",
+    "packaged_sha256": "2476e3c7c752b72c81a56e93a18cdeccd20901e3c6b08ba9cdbb84888e5baba5",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_d1_v1/D1-p1-native.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_d1_v1\\D1-p1-native.json",
+    "source_sha256": "36be66aae2f8c15a78cd765c07a1d14010a8bd7549c974c9576f4b2785dd880a",
+    "packaged_sha256": "36be66aae2f8c15a78cd765c07a1d14010a8bd7549c974c9576f4b2785dd880a",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_d1_v1/D1-p1-runtime.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_d1_v1\\D1-p1-runtime.json",
+    "source_sha256": "2da2e2fa27ef5664e3c99e9fd1fc54ba8765b5211be5964a89538a83d9a36a9e",
+    "packaged_sha256": "2da2e2fa27ef5664e3c99e9fd1fc54ba8765b5211be5964a89538a83d9a36a9e",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_d1_v1/plan.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_d1_v1\\plan.json",
+    "source_sha256": "0597f9b198a87c549980f9615e5d5b882b7cff99235ca26ca154554e350dc43f",
+    "packaged_sha256": "b159b9593d03e7aafe0f94b0b242cd7f95b0c79fd0851b4f84bb15611df91c34",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/cwsr_v17_warm_toolnode_ab_20261013_d1_v1/summary.json",
+    "role": "formal_result",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_d1_v1\\summary.json",
+    "source_sha256": "b4035f9821f4863322d4406be7d24447b8bee16a14cff2fdee6457ee460f6789",
+    "packaged_sha256": "b4035f9821f4863322d4406be7d24447b8bee16a14cff2fdee6457ee460f6789",
+    "path_redacted": true
+  },
+  {
+    "path": "results/supplementary/warm_toolnode/audit.json",
+    "role": "source",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_audit_20261013_v1.json",
+    "source_sha256": "0c37efb32539fdfc7f178a34e48d9270dfb4794ebf9cffa6239a0dc9154131c2",
+    "packaged_sha256": "0500762a26b05755f30bddcb1d769366bd4e22a3fec6c041d357f551dd9ba57c",
+    "path_redacted": true
+  },
+  {
+    "path": "results/controlled/independent_lru/v17_27orders_215_v1.json",
+    "role": "source",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_strong_lru_20261010\\v17_27orders_215_v1.json",
+    "source_sha256": "6463f11f7ec6eef39f4819ca0876ee245aff1c3ebeb3be4356cd668add6a9a51",
+    "packaged_sha256": "6463f11f7ec6eef39f4819ca0876ee245aff1c3ebeb3be4356cd668add6a9a51",
+    "path_redacted": true
+  },
+  {
+    "path": "results/controlled/independent_lru/v17_capacity_19_215_24_32_v1.json",
+    "role": "source",
+    "source_label": "${ORION_SOURCE}\\reports\\cwsr_strong_lru_20261010\\v17_capacity_19_215_24_32_v1.json",
+    "source_sha256": "a29b2d1e35f1446fc9e76cad2da6e56ce73588ca36190fe3b60ebbe02bd865da",
+    "packaged_sha256": "a29b2d1e35f1446fc9e76cad2da6e56ce73588ca36190fe3b60ebbe02bd865da",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/__init__.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\__init__.py",
+    "source_sha256": "54aff5fbe430b37c8bef9d9b6af0bc147f449e2a44ce5319b0945708627390f9",
+    "packaged_sha256": "54aff5fbe430b37c8bef9d9b6af0bc147f449e2a44ce5319b0945708627390f9",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/adapters/__init__.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\adapters\\__init__.py",
+    "source_sha256": "b5de5726715bdde7390cbc65404d8aae5c5a15f661b52291b7c19869bd7ae0cf",
+    "packaged_sha256": "b5de5726715bdde7390cbc65404d8aae5c5a15f661b52291b7c19869bd7ae0cf",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/adapters/base.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\adapters\\base.py",
+    "source_sha256": "fce507cbd6713ae204348b39731d305c056ce30abe6c0acf5e206ee075c5517f",
+    "packaged_sha256": "fce507cbd6713ae204348b39731d305c056ce30abe6c0acf5e206ee075c5517f",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/adapters/model.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\adapters\\model.py",
+    "source_sha256": "efc57d77365d5a56dfc4b61faa8fc33173d70370c9ac803258872e5ad05903de",
+    "packaged_sha256": "efc57d77365d5a56dfc4b61faa8fc33173d70370c9ac803258872e5ad05903de",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/adapters/neo4j_driver.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\adapters\\neo4j_driver.py",
+    "source_sha256": "3b48b6e4703d0f7ca899ceff7040ad6ddc7cdad8da06ab28c00724bec8645574",
+    "packaged_sha256": "3b48b6e4703d0f7ca899ceff7040ad6ddc7cdad8da06ab28c00724bec8645574",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/adapters/neo4j_session.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\adapters\\neo4j_session.py",
+    "source_sha256": "bb3159f9327024891307132ceb94ee6658733c3f4be92be63cc542ac7612b4d2",
+    "packaged_sha256": "bb3159f9327024891307132ceb94ee6658733c3f4be92be63cc542ac7612b4d2",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/adapters/plugin.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\adapters\\plugin.py",
+    "source_sha256": "de9577202b5fa8516eb7a5af1c310a11535379afc42c6b12f3b66f043763a4f0",
+    "packaged_sha256": "de9577202b5fa8516eb7a5af1c310a11535379afc42c6b12f3b66f043763a4f0",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/adapters/plugin_runtime_state.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\adapters\\plugin_runtime_state.py",
+    "source_sha256": "dc7fe8a72932a98997e1d353107451d64a2daa01ff3e4c5f9ffb3989f6f8b9ef",
+    "packaged_sha256": "dc7fe8a72932a98997e1d353107451d64a2daa01ff3e4c5f9ffb3989f6f8b9ef",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/adapters/process.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\adapters\\process.py",
+    "source_sha256": "461efeae465886714bf5de294617c81e767efbe4a3ae3c63bd589a9c7ffacfa3",
+    "packaged_sha256": "461efeae465886714bf5de294617c81e767efbe4a3ae3c63bd589a9c7ffacfa3",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/adapters/root_service_resource.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\adapters\\root_service_resource.py",
+    "source_sha256": "11f5470603278653a1c676998d7f3bf27c486ad1d8160bc004c0b7c08a0824c8",
+    "packaged_sha256": "11f5470603278653a1c676998d7f3bf27c486ad1d8160bc004c0b7c08a0824c8",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/adapters/session.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\adapters\\session.py",
+    "source_sha256": "2d4ba583eb0451d5854e9ebf45005e9d0244e6f90557235f9b6c32a8a1d0a0ae",
+    "packaged_sha256": "2d4ba583eb0451d5854e9ebf45005e9d0244e6f90557235f9b6c32a8a1d0a0ae",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/adapters/skill.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\adapters\\skill.py",
+    "source_sha256": "2f8d438fcda078faf364d1177bae18478871482f1e60e984a28eba431a1e20a7",
+    "packaged_sha256": "2f8d438fcda078faf364d1177bae18478871482f1e60e984a28eba431a1e20a7",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/adapters/tool.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\adapters\\tool.py",
+    "source_sha256": "8d38b4f8c88cb126c139de31a72038e5685d432ea75927b79edcc9242dfc0e09",
+    "packaged_sha256": "8d38b4f8c88cb126c139de31a72038e5685d432ea75927b79edcc9242dfc0e09",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/capability_asset.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\capability_asset.py",
+    "source_sha256": "63fea44759c9f0f6a26eb8474f3ca0de1b048b985bb0521f9dd9a7c921e6f124",
+    "packaged_sha256": "63fea44759c9f0f6a26eb8474f3ca0de1b048b985bb0521f9dd9a7c921e6f124",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/catalog.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\catalog.py",
+    "source_sha256": "a081307f7b630ef49aadec0c6ba54b9822c1357676be8d57d799e1b19990cbc0",
+    "packaged_sha256": "a081307f7b630ef49aadec0c6ba54b9822c1357676be8d57d799e1b19990cbc0",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/deployment.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\deployment.py",
+    "source_sha256": "eccb1f93f196f9cacc9ccb384f444dfed11a3727e49f495d572ea662268ad04a",
+    "packaged_sha256": "eccb1f93f196f9cacc9ccb384f444dfed11a3727e49f495d572ea662268ad04a",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/evolvable_plugin.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\evolvable_plugin.py",
+    "source_sha256": "dac6c57562379634a6050c38a30ad35ea9514e5d07c954492b44d1b958d4fe64",
+    "packaged_sha256": "dac6c57562379634a6050c38a30ad35ea9514e5d07c954492b44d1b958d4fe64",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/governor.py",
+    "role": "historical_source",
+    "source_label": "${PROJECT_SOURCE}\\reports\\cwsr_revision_closeout_20261019\\rereview_packet\\orion\\capvm\\governor.py",
+    "source_sha256": "6b0c5babec48ebd91218d4348393cb700bd3eb3259b757b2c6e269ca3db2a6c9",
+    "packaged_sha256": "6b0c5babec48ebd91218d4348393cb700bd3eb3259b757b2c6e269ca3db2a6c9",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/lifecycle.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\lifecycle.py",
+    "source_sha256": "b7557b42f1a7c691af71edb3630cd639c2da658d951e52fd0d4eef8e70278aa8",
+    "packaged_sha256": "b7557b42f1a7c691af71edb3630cd639c2da658d951e52fd0d4eef8e70278aa8",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/local_capability_folder.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\local_capability_folder.py",
+    "source_sha256": "0e30bc4d52ab0d92b3cf25630386d9adcdb53a62f6a221f7a982fefcff182955",
+    "packaged_sha256": "0e30bc4d52ab0d92b3cf25630386d9adcdb53a62f6a221f7a982fefcff182955",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/measurement_batch.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\measurement_batch.py",
+    "source_sha256": "ae186e17fa3a36515200bdf95876c489345dfb67e800188ed0e4d7fec4c7a712",
+    "packaged_sha256": "ae186e17fa3a36515200bdf95876c489345dfb67e800188ed0e4d7fec4c7a712",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/model.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\model.py",
+    "source_sha256": "d417b476c62d2a27b351aab24ad1a33a779ac4bd705acd16a5ed05f7cac0a6fe",
+    "packaged_sha256": "d417b476c62d2a27b351aab24ad1a33a779ac4bd705acd16a5ed05f7cac0a6fe",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/parallel_preparation.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\parallel_preparation.py",
+    "source_sha256": "e533287c2f720aa3db396c138fb6ecaeb1a242d49e1a1e32a76116c352665cf2",
+    "packaged_sha256": "e533287c2f720aa3db396c138fb6ecaeb1a242d49e1a1e32a76116c352665cf2",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/plugin_bundle.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\plugin_bundle.py",
+    "source_sha256": "56ba5954c0b977f73d508a50862ddc2b86ebf93a043c277de07f7672594b95ac",
+    "packaged_sha256": "56ba5954c0b977f73d508a50862ddc2b86ebf93a043c277de07f7672594b95ac",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/plugin_evolution.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\plugin_evolution.py",
+    "source_sha256": "580571b678600135964e1897294131efd51750158ec874142477b21d4d39cde2",
+    "packaged_sha256": "580571b678600135964e1897294131efd51750158ec874142477b21d4d39cde2",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/plugin_host.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\plugin_host.py",
+    "source_sha256": "4164d8536f677f5aaeee4d293683345b1f7dd6bf81015db936056e1853a4fdae",
+    "packaged_sha256": "4164d8536f677f5aaeee4d293683345b1f7dd6bf81015db936056e1853a4fdae",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/policies/__init__.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\policies\\__init__.py",
+    "source_sha256": "86324c4a1bd716577298a7ae9b7c281a9d13d8c1557999187563c6e68e27da38",
+    "packaged_sha256": "86324c4a1bd716577298a7ae9b7c281a9d13d8c1557999187563c6e68e27da38",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/policies/laya_reuse.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\policies\\laya_reuse.py",
+    "source_sha256": "f1bc1d632ba57ed703798843d7365706954b03ab0e0e8aa3f3d71abbd28f3b9d",
+    "packaged_sha256": "f1bc1d632ba57ed703798843d7365706954b03ab0e0e8aa3f3d71abbd28f3b9d",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/policies/lru_cost.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\policies\\lru_cost.py",
+    "source_sha256": "eb3830b33d8ee52374f877d139f99ea0183006818e34debe1ce3b637ab2764bc",
+    "packaged_sha256": "eb3830b33d8ee52374f877d139f99ea0183006818e34debe1ce3b637ab2764bc",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/policies/observed_cost.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\policies\\observed_cost.py",
+    "source_sha256": "8f1ff1bf83941e2c5bce351e27ddf80718cd1b83c01d36ed07ebf6fa919051bd",
+    "packaged_sha256": "8f1ff1bf83941e2c5bce351e27ddf80718cd1b83c01d36ed07ebf6fa919051bd",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/regression_qualification.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\regression_qualification.py",
+    "source_sha256": "ef02e0c5b09bd89e3f5615e385aad2da307f2d9432023a0d322814a94f4dc12e",
+    "packaged_sha256": "ef02e0c5b09bd89e3f5615e385aad2da307f2d9432023a0d322814a94f4dc12e",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/resource_budget.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\resource_budget.py",
+    "source_sha256": "306dcdd765212663525ae18ffff285a5fe3084ab0445dff7032e87ee0433385f",
+    "packaged_sha256": "306dcdd765212663525ae18ffff285a5fe3084ab0445dff7032e87ee0433385f",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/resource_observation.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\resource_observation.py",
+    "source_sha256": "2599929380c470dc85c62f4378b8520acba9048477bbc430fef5cd06a153b931",
+    "packaged_sha256": "2599929380c470dc85c62f4378b8520acba9048477bbc430fef5cd06a153b931",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/routing.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\routing.py",
+    "source_sha256": "df984b83542f9e5f7f47ad5a188b32f08b407b996cfef51c4a968dda70371d18",
+    "packaged_sha256": "df984b83542f9e5f7f47ad5a188b32f08b407b996cfef51c4a968dda70371d18",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/stateful_graph_plugin.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\stateful_graph_plugin.py",
+    "source_sha256": "c7fa3e10401651107972c2f15d1f272ae845304239a59436339afbf92ddc0304",
+    "packaged_sha256": "c7fa3e10401651107972c2f15d1f272ae845304239a59436339afbf92ddc0304",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/telemetry.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\telemetry.py",
+    "source_sha256": "5747d426e16536fa44c2cd2f361b51dda22f2e7dfd265ad9b629df78169631e3",
+    "packaged_sha256": "5747d426e16536fa44c2cd2f361b51dda22f2e7dfd265ad9b629df78169631e3",
+    "path_redacted": true
+  },
+  {
+    "path": "provenance/frozen_sources/mcp_sessions/capvm/ttl_shadow.py",
+    "role": "historical_source",
+    "source_label": "${ORION_SOURCE}\\capvm\\ttl_shadow.py",
+    "source_sha256": "14dbcbf3198728b415c5cf0f99d93b802cfa9316a1a7c25a58adc54e779fd484",
+    "packaged_sha256": "14dbcbf3198728b415c5cf0f99d93b802cfa9316a1a7c25a58adc54e779fd484",
+    "path_redacted": true
+  },
+  {
+    "path": "experiments/task_aware/feedback-workflow-v1/feedback-native-pilot-3/result-resumed.json",
+    "role": "required_archived_input",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\feedback-workflow-v1\\feedback-native-pilot-3\\result-resumed.json",
+    "source_sha256": "29103d9f822e09ea66f06257b91108126f00a5e0e2d4c852006bd860761d8f58",
+    "packaged_sha256": "51b1c506a330966eb04782cdf69191dcaa516fd1502fe77e9e440c94f5e213d2",
+    "path_redacted": true
+  },
+  {
+    "path": "experiments/task_aware/async-comparison-v1/protocol.json",
+    "role": "required_archived_input",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\protocol.json",
+    "source_sha256": "c94643dd19482133f1082e9b19d1cada81dbbbae954f3d122166e1e2e750829c",
+    "packaged_sha256": "11fa4eedfbd98fb87e8efc38827b35ce71a1d96d72d6ef37141bc86f41043a9c",
+    "path_redacted": true
+  },
+  {
+    "path": "experiments/sharing/前瞻任务感知修订方案.json",
+    "role": "protocol",
+    "source_label": "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\前瞻任务感知修订方案.json",
+    "source_sha256": "f803228054aad3f1f44477cd90ca6290c1efabe7da2fa5fc30130fed70f813a1",
+    "packaged_sha256": "a817ef5a777b4a2d06613e36c552631419b86f714d98d16f5748a8d20fa90850",
+    "path_redacted": true
+  }
+]

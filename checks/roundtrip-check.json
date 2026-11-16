@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "verify",
+      "status": "PASS"
+    },
+    {
+      "check": "science",
+      "status": "PASS"
+    },
+    {
+      "check": "installation",
+      "status": "PASS"
+    },
+    {
+      "check": "paid-command-guard",
+      "status": "PASS"
+    }
+  ],
+  "path_has_spaces": true,
+  "original_project_source_required": false,
+  "paid_api_calls": 0,
+  "mcp_preflight": {
+    "phase": "preflight",
+    "checks": {
+      "batch_sharing_single_creation": true,
+      "server_enforces_task_scope": true,
+      "active_lease_protected": true,
+      "reuse_after_batch": true,
+      "real_close_confirmed": true,
+      "closed_generation_unusable": true,
+      "recreation_preserves_output": true,
+      "impossible_batch_rejected_without_creation": true,
+      "second_workspace_available": true,
+      "all_services_closed": true
+    },
+    "success": true
+  }
+}

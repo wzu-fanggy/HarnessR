@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "checks": {
+    "controlled": {
+      "requests": 20,
+      "orders": 27,
+      "repeated_creation_medians": {
+        "release_all": 21,
+        "pressure_flush": 10,
+        "cross_type": 7
+      }
+    },
+    "fixed_calls": {
+      "primary_trials": 3,
+      "sensitivity_budgets": 4,
+      "all_checks": true
+    },
+    "task_aware": {
+      "runs": 26,
+      "jev_calls": 12
+    },
+    "mcp_sessions": {
+      "sequences": 36,
+      "matching_file_reads": 192,
+      "confirmed_exits": 120
+    },
+    "neo4j": {
+      "rows_before": 7,
+      "rows_after": 7,
+      "unchanged": true
+    },
+    "integrated": {
+      "status": "completed",
+      "fitted_sweeps": 6,
+      "measurements": 60,
+      "jev_calls": 1
+    },
+    "continuations": {
+      "completed_branches": 2,
+      "jev_calls": 2
+    },
+    "heldout": {
+      "n": 48,
+      "n_formulations": 12,
+      "mae_ms_cm": 0.27527245151026636,
+      "rmse_ms_cm": 0.43934768119127987
+    },
+    "completion_table": {
+      "477:native": [
+        0,
+        2
+      ],
+      "477:runtime": [
+        2,
+        2
+      ],
+      "1233:native": [
+        3,
+        3
+      ],
+      "1233:runtime": [
+        3,
+        3
+      ],
+      "878:native": [
+        0,
+        3
+      ],
+      "878:runtime": [
+        3,
+        3
+      ],
+      "750:native": [
+        2,
+        2
+      ],
+      "750:runtime": [
+        2,
+        2
+      ],
+      "479:native": [
+        0,
+        1
+      ],
+      "479:runtime": [
+        1,
+        1
+      ],
+      "754:native": [
+        1,
+        1
+      ],
+      "754:runtime": [
+        1,
+        2
+      ]
+    },
+    "timing": {
+      "pairs": 16,
+      "task_count": 8
+    },
+    "retrieval_retention": {
+      "sequences": 8,
+      "unchanged_outputs": true
+    },
+    "frozen_model_hash": true,
+    "heldout_model_hash": true
+  },
+  "external_calls": 0
+}

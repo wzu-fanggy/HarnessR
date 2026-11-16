@@ -1,0 +1,89 @@
+{
+  "budget_evictions": [],
+  "complete": false,
+  "completed": 2,
+  "conductivity_model_path": "${PROJECT_SOURCE}\\reports\\cwsr_inputs\\cwsr_conductivity_rf_formal_v1.joblib",
+  "conductivity_model_sha256": "cb60829a64e6ac4f1590b49a496b650f06a73563c0b002d3b1579e1de642e182",
+  "elapsed_s": 10.21900000000096,
+  "event_counts": {
+    "active_enter": 2,
+    "active_exit": 2,
+    "compulsory_fault": 1,
+    "promote": 1
+  },
+  "explicit_release_count": 0,
+  "failure": {
+    "error_type": "ResidencyBudgetExceeded",
+    "index": 2,
+    "kind": "conductivity",
+    "measured": {
+      "connection_slots": 0.0,
+      "gpu_vram_mb": 2174.0634765625,
+      "host_ram_mb": 541.86328125,
+      "process_slots": 0.0,
+      "prompt_tokens": 0.0
+    },
+    "message": "working_set_exceeds_budget: capability=__request__, target=BOUND, dimensions=host_ram_mb",
+    "model_resident": true,
+    "process_resident": false
+  },
+  "gpu_budget_mib": 3000.0,
+  "host_budget_mib": 750.0,
+  "model_load_count": 1,
+  "model_promotions": 1,
+  "operation_sequence": [
+    "bge",
+    "bge",
+    "conductivity",
+    "conductivity",
+    "bge",
+    "bge"
+  ],
+  "process_promotions": 0,
+  "profiled_costs": {
+    "bge_host_mib": 558.13671875,
+    "process_host_mib": 383.4609375
+  },
+  "result_signature": [
+    "bc3d4192bc8bc43aaf6b1c80309b703d02660ac533a20d7f2fddfb87f1bcf63c",
+    "7bf3efea33ad07638ea47bbbd898aeca5f81cc48836ae03e3373701efed7fc35"
+  ],
+  "rows": [
+    {
+      "elapsed_s": 10.18699999999808,
+      "index": 0,
+      "kind": "bge",
+      "measured": {
+        "connection_slots": 0.0,
+        "gpu_vram_mb": 2174.0634765625,
+        "host_ram_mb": 541.82421875,
+        "process_slots": 0.0,
+        "prompt_tokens": 0.0
+      },
+      "model_load_count": 1,
+      "model_resident": true,
+      "process_pid": null,
+      "process_resident": false,
+      "result_sha256": "bc3d4192bc8bc43aaf6b1c80309b703d02660ac533a20d7f2fddfb87f1bcf63c"
+    },
+    {
+      "elapsed_s": 0.03200000000288128,
+      "index": 1,
+      "kind": "bge",
+      "measured": {
+        "connection_slots": 0.0,
+        "gpu_vram_mb": 2174.0634765625,
+        "host_ram_mb": 541.86328125,
+        "process_slots": 0.0,
+        "prompt_tokens": 0.0
+      },
+      "model_load_count": 1,
+      "model_resident": true,
+      "process_pid": null,
+      "process_resident": false,
+      "result_sha256": "7bf3efea33ad07638ea47bbbd898aeca5f81cc48836ae03e3373701efed7fc35"
+    }
+  ],
+  "schema_version": "cwsr-cross-kind-real-pressure-probe-v1.1",
+  "strategy": "type_local"
+}

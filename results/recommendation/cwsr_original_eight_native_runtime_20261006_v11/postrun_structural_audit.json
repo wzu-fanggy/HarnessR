@@ -1,0 +1,532 @@
+{
+  "runs_checked": 32,
+  "runs": [
+    {
+      "run": "C1-r1-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "cand-1-NaDFP"
+      ],
+      "citations_checked": 40,
+      "sources": 96,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "C1-r1-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "held",
+      "approved_candidates": [],
+      "citations_checked": 55,
+      "sources": 118,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "C1-r2-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "held",
+      "approved_candidates": [],
+      "citations_checked": 47,
+      "sources": 123,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "C1-r2-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "c1-sa"
+      ],
+      "citations_checked": 47,
+      "sources": 114,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "C2-r1-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "held",
+      "approved_candidates": [],
+      "citations_checked": 58,
+      "sources": 100,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "C2-r1-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "held",
+      "approved_candidates": [],
+      "citations_checked": 83,
+      "sources": 131,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "C2-r2-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "candidate-1"
+      ],
+      "citations_checked": 74,
+      "sources": 96,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "C2-r2-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "held",
+      "approved_candidates": [],
+      "citations_checked": 68,
+      "sources": 111,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "C3-r1-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "held",
+      "approved_candidates": [],
+      "citations_checked": 54,
+      "sources": 78,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "C3-r1-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "held",
+      "approved_candidates": [],
+      "citations_checked": 82,
+      "sources": 70,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "C3-r2-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "held",
+      "approved_candidates": [],
+      "citations_checked": 41,
+      "sources": 86,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "C3-r2-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "held",
+      "approved_candidates": [],
+      "citations_checked": 29,
+      "sources": 72,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "D1-r1-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "held",
+      "approved_candidates": [],
+      "citations_checked": 45,
+      "sources": 112,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "D1-r1-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "held",
+      "approved_candidates": [],
+      "citations_checked": 69,
+      "sources": 115,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "D1-r2-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "held",
+      "approved_candidates": [],
+      "citations_checked": 52,
+      "sources": 175,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "D1-r2-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "held",
+      "approved_candidates": [],
+      "citations_checked": 32,
+      "sources": 101,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "P1-r1-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "lit-nte-1"
+      ],
+      "citations_checked": 35,
+      "sources": 70,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "P1-r1-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "c2-nabob-nmp",
+        "c5-nte-naclo4-tep-emc-vc"
+      ],
+      "citations_checked": 62,
+      "sources": 96,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "P1-r2-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "cand-nabob-nmp"
+      ],
+      "citations_checked": 51,
+      "sources": 62,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "P1-r2-runtime-resumed1",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "candidate-nte",
+        "candidate-n-tep-g2"
+      ],
+      "citations_checked": 36,
+      "sources": 91,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "P2-r1-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "SA-1wt-Lu2025"
+      ],
+      "citations_checked": 66,
+      "sources": 67,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "P2-r1-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "C2-SA",
+        "C3-NaDFP-TMSB-NB"
+      ],
+      "citations_checked": 63,
+      "sources": 70,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "P2-r2-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "branch-SA-1wt",
+        "branch-NaDFP-TMSB"
+      ],
+      "citations_checked": 67,
+      "sources": 105,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "P2-r2-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "cand-SA-0045",
+        "cand-TMSBS-0031"
+      ],
+      "citations_checked": 71,
+      "sources": 82,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "U1-r1-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "c1-0.25FPM"
+      ],
+      "citations_checked": 48,
+      "sources": 82,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "U1-r1-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "cui-0.5M-G2-DOL"
+      ],
+      "citations_checked": 74,
+      "sources": 75,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "U1-r2-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "che-2021-0.8m-pc-emc",
+        "cai-2024-1wt-nadfp"
+      ],
+      "citations_checked": 67,
+      "sources": 86,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "U1-r2-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "che-1M-NaPF6-PC-EMC-pouch",
+        "fan-0.8M-NaPF6-EC-EMC-1wt%TDFP-pouch",
+        "cui-0.5M-NaPF6-G2-DOL-pouch"
+      ],
+      "citations_checked": 33,
+      "sources": 84,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "U2-r1-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "C1-NaFSI-NaPF6-dualsalt"
+      ],
+      "citations_checked": 52,
+      "sources": 88,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "U2-r1-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "candidate-1-fan-doublesalt-0.5M-NaFSI"
+      ],
+      "citations_checked": 68,
+      "sources": 55,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "U2-r2-native",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "fan2024-dual-0.5M-NaFSI"
+      ],
+      "citations_checked": 48,
+      "sources": 55,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    },
+    {
+      "run": "U2-r2-runtime",
+      "execution_ok": true,
+      "structural_pass": true,
+      "task_status": "recommended",
+      "approved_candidates": [
+        "c2-nafsi-napf6-0p5"
+      ],
+      "citations_checked": 52,
+      "sources": 64,
+      "predictions": {},
+      "freeze": {
+        "source_unchanged": true,
+        "input_unchanged": true
+      },
+      "scientific_quality_verified": false
+    }
+  ],
+  "semantic_correctness_not_automatically_verified": true
+}

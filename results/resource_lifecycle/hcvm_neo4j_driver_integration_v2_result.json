@@ -1,0 +1,42 @@
+{
+  "schema_version": "hcvm-neo4j-driver-integration-v2",
+  "status": "PASS_REAL_ELECTROLYTE_KG_DRIVER_REFAULT",
+  "success": true,
+  "capability_id": "sodium-electrolyte-kg-session",
+  "kg_uri": "bolt://localhost:7687",
+  "query_parameters": {
+    "material": "hard carbon",
+    "condition": "-20"
+  },
+  "read_only_query": "MATCH (a)-[r]->(b)\nWHERE toLower(coalesce(a.name, '')) CONTAINS $material\n  AND toLower(coalesce(b.name, '')) CONTAINS $condition\nRETURN a.name AS source,\n       type(r) AS relation,\n       b.name AS target,\n       coalesce(r.confidence, 0.0) AS confidence\nORDER BY confidence DESC, source, target\nLIMIT 10",
+  "row_count_before": 7,
+  "row_count_after": 7,
+  "rows_sha256_before": "e6d20217a802f2b619491df9d2d42545b2970e0a4c3f162ded5cf33c9d46c65f",
+  "rows_sha256_after": "e6d20217a802f2b619491df9d2d42545b2970e0a4c3f162ded5cf33c9d46c65f",
+  "rows_exactly_invariant": true,
+  "expected_tested_under_minus20_relation_before": true,
+  "expected_tested_under_minus20_relation_after": true,
+  "connection_lifecycle": {
+    "connected_during_first": true,
+    "measured_connection_slots_during_first": 1.0,
+    "connected_after_pageout": false,
+    "measured_connection_slots_after_pageout": 0.0,
+    "connected_during_refault": true,
+    "measured_connection_slots_during_refault": 1.0
+  },
+  "fault_protocol": {
+    "compulsory_faults": 1,
+    "refaults": 1,
+    "promotions": 2,
+    "demotions": 1
+  },
+  "adapter": {
+    "query_count": 2,
+    "driver_open_count": 2,
+    "session_creation_count": 2,
+    "last_startup_latency_ms": 2030.9999999990396,
+    "last_shutdown_latency_ms": 0.0
+  },
+  "interpretation_guard": "Read-only lifecycle check: the retained object is a Neo4j Driver/pool. Every query uses a newly created and closed Session; the connection slot is a configured quota rather than a physical connection count.",
+  "physical_resource": "Neo4j Driver and connection pool"
+}

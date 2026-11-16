@@ -1,0 +1,9 @@
+{
+  "changed_sections": [
+    "## 2.5 电解液任务",
+    "## 3.1 电解液配方筛选"
+  ],
+  "other_sections_identical": true,
+  "before_sha256": "017a4943ffe24b9415b9e75911348e7653189dbfddd7c1cd24783cef065d415c",
+  "after_sha256": "09713ce4df69618b01c5b64bc153c4f55ae89325bc5cb1cb8dcf9c2627005a27"
+}

@@ -1,0 +1,6 @@
+{
+  "checks": 20,
+  "refusals": [],
+  "same_batch_partition_rule": true,
+  "checker_reclaims_resources": false
+}

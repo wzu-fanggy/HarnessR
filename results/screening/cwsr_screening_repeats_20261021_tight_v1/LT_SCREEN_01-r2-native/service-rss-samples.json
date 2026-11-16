@@ -1,0 +1,409 @@
+[
+  {
+    "sampled_at_monotonic": 35310.468,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.18,
+      "host_ram_pressure": 0.645,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35311.0,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.18,
+      "host_ram_pressure": 0.649,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35311.531,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.18,
+      "host_ram_pressure": 0.655,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35312.046,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.18,
+      "host_ram_pressure": 0.651,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35312.578,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.18,
+      "host_ram_pressure": 0.659,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35313.109,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.18,
+      "host_ram_pressure": 0.657,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35313.625,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.18,
+      "host_ram_pressure": 0.67,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35314.14,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.18,
+      "host_ram_pressure": 0.684,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35314.656,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.191,
+      "host_ram_pressure": 0.688,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35315.171,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.191,
+      "host_ram_pressure": 0.692,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35315.703,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.195,
+      "host_ram_pressure": 0.69,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35316.234,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.203,
+      "host_ram_pressure": 0.691,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35316.765,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.203,
+      "host_ram_pressure": 0.694,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35317.265,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.207,
+      "host_ram_pressure": 0.695,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35317.781,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.207,
+      "host_ram_pressure": 0.694,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35318.312,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.207,
+      "host_ram_pressure": 0.693,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35318.843,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.211,
+      "host_ram_pressure": 0.694,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35319.359,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.215,
+      "host_ram_pressure": 0.693,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35319.89,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.215,
+      "host_ram_pressure": 0.694,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35320.406,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.223,
+      "host_ram_pressure": 0.696,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35320.937,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.23,
+      "host_ram_pressure": 0.698,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35321.468,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.23,
+      "host_ram_pressure": 0.697,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35322.0,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.254,
+      "host_ram_pressure": 0.696,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35322.515,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.254,
+      "host_ram_pressure": 0.696,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35323.046,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.254,
+      "host_ram_pressure": 0.696,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35323.562,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.254,
+      "host_ram_pressure": 0.697,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35324.093,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.258,
+      "host_ram_pressure": 0.7,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35324.625,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.262,
+      "host_ram_pressure": 0.697,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35325.125,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.266,
+      "host_ram_pressure": 0.699,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35325.64,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.332,
+      "host_ram_pressure": 0.703,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35326.171,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.469,
+      "host_ram_pressure": 0.697,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35326.687,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.531,
+      "host_ram_pressure": 0.699,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35327.218,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.531,
+      "host_ram_pressure": 0.704,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35327.75,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.531,
+      "host_ram_pressure": 0.708,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35328.281,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.531,
+      "host_ram_pressure": 0.7,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35328.796,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.531,
+      "host_ram_pressure": 0.706,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 35329.296,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 14488,
+      "process_rss_mib": 136.531,
+      "host_ram_pressure": 0.696,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  }
+]

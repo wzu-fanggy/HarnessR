@@ -1,0 +1,269 @@
+{
+  "priority_candidates": [
+    {
+      "additives": [],
+      "candidate_id": "B3-gen-0029",
+      "component_mmol": {
+        "EC": 2617.814903,
+        "EMC": 5231.903969,
+        "NaPF6": 886.897596,
+        "PC": 2150.281129
+      },
+      "salt": "NaPF6",
+      "solvents": [
+        "EC",
+        "EMC",
+        "PC"
+      ]
+    }
+  ],
+  "ranking_statistics": [
+    {
+      "bootstrap_inclusion_frequency": null,
+      "candidate_id": "B3-gen-0029",
+      "caveats": [],
+      "decision": "recommended",
+      "dominated_by": [],
+      "in_sample_group_memorization_gap_log10": null,
+      "joint_meets_constraint_probability": 0.9375,
+      "joint_meets_constraint_probability_unseen_members": null,
+      "pareto_layer": 1,
+      "per_temperature": [
+        {
+          "ensemble_log10_std": 0.05208119592935443,
+          "median_ms_cm": 2.4695407218431678,
+          "meets_constraint_probability": 0.9375,
+          "p05_ms_cm": 1.9349687093854226,
+          "p95_ms_cm": 2.7433929479764116,
+          "temperature_c": -20.0
+        },
+        {
+          "ensemble_log10_std": 0.036917159076510754,
+          "median_ms_cm": 3.5718573089088226,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 3.0070962546276307,
+          "p95_ms_cm": 3.9398804615778085,
+          "temperature_c": -10.0
+        },
+        {
+          "ensemble_log10_std": 0.029657781408723882,
+          "median_ms_cm": 4.647322774938788,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 4.255899789991456,
+          "p95_ms_cm": 5.186433612634203,
+          "temperature_c": 0.0
+        },
+        {
+          "ensemble_log10_std": 0.026363415926747964,
+          "median_ms_cm": 7.305334243970421,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 6.56590971756383,
+          "p95_ms_cm": 7.717236006138069,
+          "temperature_c": 20.0
+        }
+      ],
+      "rank": 1,
+      "rank_stability": {
+        "mean_rank": 1.84375,
+        "mean_spearman_vs_ensemble_median": -0.140625,
+        "member_count": 32,
+        "rank_std": 0.794881,
+        "top1_frequency": 0.40625
+      },
+      "rejection_reasons": [],
+      "status": "ranked",
+      "worst_temperature_c": -20.0,
+      "worst_temperature_median_ms_cm": 2.4695407218431678
+    },
+    {
+      "bootstrap_inclusion_frequency": null,
+      "candidate_id": "B3-gen-0031",
+      "caveats": [],
+      "decision": "rejected",
+      "dominated_by": [
+        "B3-gen-0029"
+      ],
+      "in_sample_group_memorization_gap_log10": null,
+      "joint_meets_constraint_probability": 0.9375,
+      "joint_meets_constraint_probability_unseen_members": null,
+      "pareto_layer": 2,
+      "per_temperature": [
+        {
+          "ensemble_log10_std": 0.052700042479099374,
+          "median_ms_cm": 2.462696206632473,
+          "meets_constraint_probability": 0.9375,
+          "p05_ms_cm": 1.9400119346077014,
+          "p95_ms_cm": 2.7433929479764116,
+          "temperature_c": -20.0
+        },
+        {
+          "ensemble_log10_std": 0.037627137602398324,
+          "median_ms_cm": 3.573513534557782,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 3.0058727204114377,
+          "p95_ms_cm": 3.930744598987956,
+          "temperature_c": -10.0
+        },
+        {
+          "ensemble_log10_std": 0.03074998348543988,
+          "median_ms_cm": 4.640239743761512,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 4.189731475961226,
+          "p95_ms_cm": 5.144441539745516,
+          "temperature_c": 0.0
+        },
+        {
+          "ensemble_log10_std": 0.026140937753884354,
+          "median_ms_cm": 7.302663655889717,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 6.572531055755331,
+          "p95_ms_cm": 7.717236006138069,
+          "temperature_c": 20.0
+        }
+      ],
+      "rank": 2,
+      "rank_stability": {
+        "mean_rank": 1.84375,
+        "mean_spearman_vs_ensemble_median": -0.140625,
+        "member_count": 32,
+        "rank_std": 0.711924,
+        "top1_frequency": 0.34375
+      },
+      "rejection_reasons": [
+        "Pareto-dominated by B3-gen-0029"
+      ],
+      "status": "ranked",
+      "worst_temperature_c": -20.0,
+      "worst_temperature_median_ms_cm": 2.462696206632473
+    },
+    {
+      "bootstrap_inclusion_frequency": null,
+      "candidate_id": "B3-gen-0016",
+      "caveats": [],
+      "decision": "rejected",
+      "dominated_by": [
+        "B3-gen-0029",
+        "B3-gen-0031"
+      ],
+      "in_sample_group_memorization_gap_log10": null,
+      "joint_meets_constraint_probability": 0.9375,
+      "joint_meets_constraint_probability_unseen_members": null,
+      "pareto_layer": 3,
+      "per_temperature": [
+        {
+          "ensemble_log10_std": 0.051085339238686446,
+          "median_ms_cm": 2.4407739159097863,
+          "meets_constraint_probability": 0.9375,
+          "p05_ms_cm": 1.9421142817370924,
+          "p95_ms_cm": 2.731093242145584,
+          "temperature_c": -20.0
+        },
+        {
+          "ensemble_log10_std": 0.03619452886277825,
+          "median_ms_cm": 3.5075977508885745,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 3.0199451696341653,
+          "p95_ms_cm": 3.9029410619176628,
+          "temperature_c": -10.0
+        },
+        {
+          "ensemble_log10_std": 0.030521228412117,
+          "median_ms_cm": 4.639734109049931,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 4.197701840226884,
+          "p95_ms_cm": 5.157991503096988,
+          "temperature_c": 0.0
+        },
+        {
+          "ensemble_log10_std": 0.021542482926527034,
+          "median_ms_cm": 7.366566509433484,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 6.803109769186054,
+          "p95_ms_cm": 7.812587153018007,
+          "temperature_c": 20.0
+        }
+      ],
+      "rank": 3,
+      "rank_stability": {
+        "mean_rank": 2.3125,
+        "mean_spearman_vs_ensemble_median": -0.140625,
+        "member_count": 32,
+        "rank_std": 0.845484,
+        "top1_frequency": 0.25
+      },
+      "rejection_reasons": [
+        "Pareto-dominated by B3-gen-0029, B3-gen-0031"
+      ],
+      "status": "ranked",
+      "worst_temperature_c": -20.0,
+      "worst_temperature_median_ms_cm": 2.4407739159097863
+    }
+  ],
+  "point_predictions_already_available": [
+    {
+      "candidate_id": "B3-gen-0029",
+      "composition_id": "4bf66317bdf5d1f631edb4ed3431254e7d188ae0578ac16255437f0b0edf65da",
+      "predictions": [
+        {
+          "temperature_c": -20.0,
+          "mS_cm": 2.5262117248512066,
+          "record_id": "86247a648762fda806197c4e8ff0787e91956934b645d23eb3f97de4e635bf3f"
+        },
+        {
+          "temperature_c": 0.0,
+          "mS_cm": 4.815292654210056,
+          "record_id": "e50666ef5a33265dc0f2ef8f40c509fba356821f42a8949eba581797fbde4b6e"
+        },
+        {
+          "temperature_c": 20.0,
+          "mS_cm": 7.377323169552955,
+          "record_id": "c6750288c0c43307d1309323bd32c8da41f45407b1f81a2c70dbd50c1087868e"
+        }
+      ]
+    },
+    {
+      "candidate_id": "B3-gen-0031",
+      "composition_id": "e44569442076ee24adf0e4527872fb43f236cfda22515ce4436a2aa2fad93abf",
+      "predictions": [
+        {
+          "temperature_c": -20.0,
+          "mS_cm": 2.5262117248512066,
+          "record_id": "e7bc969991ee8442fa171e1743105565428ba0bd3ebcdf78bc32db725eaf15b0"
+        },
+        {
+          "temperature_c": 0.0,
+          "mS_cm": 4.815292654210056,
+          "record_id": "64f6e406d4ec47932f998bed89960539c90aac99616df7ab48e62cf284484ade"
+        },
+        {
+          "temperature_c": 20.0,
+          "mS_cm": 7.377323169552955,
+          "record_id": "d52da84251fd0410b5b6dcb4b6d4b7ffe1e9de7bc2fc3a1ad5a8baddf7b046da"
+        }
+      ]
+    },
+    {
+      "candidate_id": "B3-gen-0016",
+      "composition_id": "94e7c8c72c8e4e6ccf26cdb1c15ddfad4894d0282da23d0d96355511853fd873",
+      "predictions": [
+        {
+          "temperature_c": -20.0,
+          "mS_cm": 2.5092254489565273,
+          "record_id": "a0d36a4ea0de57d782a73fd729e853edece2f7e8de5e3374d241cb3febe61a4d"
+        },
+        {
+          "temperature_c": 0.0,
+          "mS_cm": 4.826700014711963,
+          "record_id": "4c6d4d759ffc091696aa78d84401cd2a75ef2252d59c7ca4408764bfb32a3058"
+        },
+        {
+          "temperature_c": 20.0,
+          "mS_cm": 7.563336951446481,
+          "record_id": "e4d50899a8d20a8417620c53efb55c0b5cb760088548ed9e9d7f5ec948cbca0b"
+        }
+      ]
+    }
+  ],
+  "scientific_tie_rule": "equal joint member frequency and worst-temperature median; preserve all ties",
+  "source": "actual stage-A tool responses in this episode; no resource outcome used for selection"
+}

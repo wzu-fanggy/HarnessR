@@ -1,0 +1,258 @@
+[
+  {
+    "path": "versions/task_aware/orion/capvm/demand_coordinator.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\capvm\\demand_coordinator.py",
+    "source_sha256": "7b6d442b75eb554ee33f7b61675102386709b99e887c4b4be82bd42448ce5a62",
+    "packaged_sha256": "7b6d442b75eb554ee33f7b61675102386709b99e887c4b4be82bd42448ce5a62",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/capvm/governor.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\capvm\\governor.py",
+    "source_sha256": "9f69311f7e0e684f8ec69acf4241509ca5f57ba04dd140814d8f5d35400f388f",
+    "packaged_sha256": "9f69311f7e0e684f8ec69acf4241509ca5f57ba04dd140814d8f5d35400f388f",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/capvm/jev_task_intent.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\capvm\\jev_task_intent.py",
+    "source_sha256": "ac852a7863a1663c5eff4337b7adcb2fd67e282752844d97a790cb5ccaff4c28",
+    "packaged_sha256": "ac852a7863a1663c5eff4337b7adcb2fd67e282752844d97a790cb5ccaff4c28",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/capvm/semantic_plan.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\capvm\\semantic_plan.py",
+    "source_sha256": "789ca135b25bdd221d20088d719e5804ed81c87b0b5c461fa5ff6654ef38d37b",
+    "packaged_sha256": "789ca135b25bdd221d20088d719e5804ed81c87b0b5c461fa5ff6654ef38d37b",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/capvm/shared_runtime.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\capvm\\shared_runtime.py",
+    "source_sha256": "47744eead5928de880e3253945303fbb236bdbdd13edd001e6192df57656a039",
+    "packaged_sha256": "47744eead5928de880e3253945303fbb236bdbdd13edd001e6192df57656a039",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/capvm/task_intent.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\capvm\\task_intent.py",
+    "source_sha256": "b232bc42db464a6c17a3d65a3cc8fcbad513ba6f3212579593f7923dd392bbc8",
+    "packaged_sha256": "b232bc42db464a6c17a3d65a3cc8fcbad513ba6f3212579593f7923dd392bbc8",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/core/default_resource_runtime.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\core\\default_resource_runtime.py",
+    "source_sha256": "6e6966fea595c9c95e8fb6102331f9155aa38ac2dd1e42e5c79a57460055d86f",
+    "packaged_sha256": "6e6966fea595c9c95e8fb6102331f9155aa38ac2dd1e42e5c79a57460055d86f",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/core/langgraph_residency.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\core\\langgraph_residency.py",
+    "source_sha256": "b96afe18b7d59ff51ea528bcfd0a3cbfed5097a0de0e85da2009747134838f66",
+    "packaged_sha256": "b96afe18b7d59ff51ea528bcfd0a3cbfed5097a0de0e85da2009747134838f66",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/core/resource_task_graph.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\core\\resource_task_graph.py",
+    "source_sha256": "d6b1c2822b2d6a6a36e3ae56fa24fa39b334ffe68f94a8b07bb3525c23a39d60",
+    "packaged_sha256": "d6b1c2822b2d6a6a36e3ae56fa24fa39b334ffe68f94a8b07bb3525c23a39d60",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/core/resource_tool_node.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\core\\resource_tool_node.py",
+    "source_sha256": "c67e854d0bfa01f5cdd8aed6de2596b0dfd66915f7a11009c31ae62f0226f69b",
+    "packaged_sha256": "c67e854d0bfa01f5cdd8aed6de2596b0dfd66915f7a11009c31ae62f0226f69b",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/core/task_board_intent.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\core\\task_board_intent.py",
+    "source_sha256": "09658682ee4a6c64b4b6465b1712df7a45b5ae4475dab6d0960b38b13b8d3d81",
+    "packaged_sha256": "09658682ee4a6c64b4b6465b1712df7a45b5ae4475dab6d0960b38b13b8d3d81",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/core/tasks/board.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\core\\tasks\\board.py",
+    "source_sha256": "2b9126b16bac7eef985f9a7670acda178af8503335283b0be95abce28deebbb8",
+    "packaged_sha256": "2b9126b16bac7eef985f9a7670acda178af8503335283b0be95abce28deebbb8",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/core/tasks/tools.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\core\\tasks\\tools.py",
+    "source_sha256": "93a74b4cb813c0d45a644ab67eabbeda33f6796a82ebd837f7dad2e47d536057",
+    "packaged_sha256": "93a74b4cb813c0d45a644ab67eabbeda33f6796a82ebd837f7dad2e47d536057",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/llms.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\llms.py",
+    "source_sha256": "143967e879ab40be7e7d2a1bae507ea582ab97da3a3c5d9a76abe3621e85a7e2",
+    "packaged_sha256": "143967e879ab40be7e7d2a1bae507ea582ab97da3a3c5d9a76abe3621e85a7e2",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/main.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\main.py",
+    "source_sha256": "13232328de34c8ceab0cc5370d334ce212d5977282f3f5505e842e3b5b7333be",
+    "packaged_sha256": "13232328de34c8ceab0cc5370d334ce212d5977282f3f5505e842e3b5b7333be",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/model_config.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\model_config.py",
+    "source_sha256": "e696a9413b36d60c2b281b69958ae82d300f325cbe70d155a742e4f5ddb01787",
+    "packaged_sha256": "e696a9413b36d60c2b281b69958ae82d300f325cbe70d155a742e4f5ddb01787",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/tools/electrolyte_design/conductivity_tool.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\tools\\electrolyte_design\\conductivity_tool.py",
+    "source_sha256": "c34c207adf5e19d090850aee6be8b5c4fd00bd3d70a05ccdb6828cf1f1df12ff",
+    "packaged_sha256": "a96d93552d9ebea29d7eb53318f3abb59290ed7e372141d2618afb62cb36c270",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/tools/electrolyte_design/temperature_fit.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\tools\\electrolyte_design\\temperature_fit.py",
+    "source_sha256": "5a92eac7041cf6c4a0789682f39d560ead36f7a53f3ddde00f5eeaafde45a82b",
+    "packaged_sha256": "5a92eac7041cf6c4a0789682f39d560ead36f7a53f3ddde00f5eeaafde45a82b",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/tools/electrolyte_design/robust_ranking_tool.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\tools\\electrolyte_design\\robust_ranking_tool.py",
+    "source_sha256": "4ec9ef64349a7df742954ba1854c64ed3cc19ee47f2b4c0a43b724640d0b72ce",
+    "packaged_sha256": "4ec9ef64349a7df742954ba1854c64ed3cc19ee47f2b4c0a43b724640d0b72ce",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/tools/electrolyte_design/robust_ranking.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\tools\\electrolyte_design\\robust_ranking.py",
+    "source_sha256": "9c055061177faaa1f1c78f4599052941462b6a41c0e6ba5ffe8c2a5c96d0921c",
+    "packaged_sha256": "217a50d66e43a8968dc6569ea4211e3500c2ef88720fd97bd1f9ef383dba7b4c",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/tools/electrolyte_design/robust_ranking_process.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\tools\\electrolyte_design\\robust_ranking_process.py",
+    "source_sha256": "6499dba9e70eed9915cafa5f2ba1c4df23d26b0125d5b153f62b05604ae07f0d",
+    "packaged_sha256": "6499dba9e70eed9915cafa5f2ba1c4df23d26b0125d5b153f62b05604ae07f0d",
+    "path_redacted": false
+  },
+  {
+    "path": "versions/task_aware/orion/tools/electrolyte_design/conductivity_ml.py",
+    "role": "historical_implementation",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\frozen-sources\\tools\\electrolyte_design\\conductivity_ml.py",
+    "source_sha256": "f6eba047f8eb2d3e5603c852ac4c069c982abe4a046cdb4cf180b572dd07f43c",
+    "packaged_sha256": "f6eba047f8eb2d3e5603c852ac4c069c982abe4a046cdb4cf180b572dd07f43c",
+    "path_redacted": false
+  },
+  {
+    "path": "data/task_aware_calibration/network-attempt-1.json",
+    "role": "required_archived_calibration",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-1.json",
+    "source_sha256": "ad654fd7c98e3fe46cbd18510f0faa5845cb000a48cd87490416cc7f4526bf61",
+    "packaged_sha256": "ad654fd7c98e3fe46cbd18510f0faa5845cb000a48cd87490416cc7f4526bf61",
+    "path_redacted": false
+  },
+  {
+    "path": "data/task_aware_calibration/network-attempt-2.json",
+    "role": "required_archived_calibration",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-2.json",
+    "source_sha256": "1c464913d86a515cd399b3a60e6ec2e233b223d73467ed396494a8e8fa031650",
+    "packaged_sha256": "1c464913d86a515cd399b3a60e6ec2e233b223d73467ed396494a8e8fa031650",
+    "path_redacted": false
+  },
+  {
+    "path": "data/task_aware_calibration/network-attempt-3.json",
+    "role": "required_archived_calibration",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-3.json",
+    "source_sha256": "2c2260c7e5329caa017274f3ec673b0879768c08f1d1bf1a122ae01af3be2932",
+    "packaged_sha256": "2c2260c7e5329caa017274f3ec673b0879768c08f1d1bf1a122ae01af3be2932",
+    "path_redacted": false
+  },
+  {
+    "path": "data/task_aware_calibration/network-attempt-4.json",
+    "role": "required_archived_calibration",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-4.json",
+    "source_sha256": "4e94d6215b87665a57950cdffdb62fde29736f4d7a21aca2e1bba7e6eaf67019",
+    "packaged_sha256": "4e94d6215b87665a57950cdffdb62fde29736f4d7a21aca2e1bba7e6eaf67019",
+    "path_redacted": false
+  },
+  {
+    "path": "data/task_aware_calibration/network-attempt-5.json",
+    "role": "required_archived_calibration",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-5.json",
+    "source_sha256": "df5336afc351cac51f9da8cd4ab13a175800d07292724ae39e87e82036047140",
+    "packaged_sha256": "df5336afc351cac51f9da8cd4ab13a175800d07292724ae39e87e82036047140",
+    "path_redacted": false
+  },
+  {
+    "path": "data/task_aware_calibration/network-attempt-6.json",
+    "role": "required_archived_calibration",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-6.json",
+    "source_sha256": "8893e9e4e77bf5dee104a5807549697fcdadb06ff51360a5c6a2fd6f2c5f1340",
+    "packaged_sha256": "8893e9e4e77bf5dee104a5807549697fcdadb06ff51360a5c6a2fd6f2c5f1340",
+    "path_redacted": false
+  },
+  {
+    "path": "data/task_aware_calibration/network-attempt-7.json",
+    "role": "required_archived_calibration",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-7.json",
+    "source_sha256": "6f039c2584b8b9fbb474400a2c51642884aa649ce707802cc75c131d988537c0",
+    "packaged_sha256": "6f039c2584b8b9fbb474400a2c51642884aa649ce707802cc75c131d988537c0",
+    "path_redacted": false
+  },
+  {
+    "path": "data/task_aware_calibration/network-attempt-8.json",
+    "role": "required_archived_calibration",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-8.json",
+    "source_sha256": "61ecb7b54e732ac3a5b047851fdbc80d8f99d1dbc5f57095a2001a8b38081662",
+    "packaged_sha256": "61ecb7b54e732ac3a5b047851fdbc80d8f99d1dbc5f57095a2001a8b38081662",
+    "path_redacted": false
+  },
+  {
+    "path": "data/task_aware_calibration/network-attempt-9.json",
+    "role": "required_archived_calibration",
+    "source_label": "${TASK_INTENT_ARCHIVE}\\net-benefit-v1\\network-attempt-9.json",
+    "source_sha256": "65b201c82ac7bfad83708263b9b62c50c08bef9417a3f02b7d213e722c06a01e",
+    "packaged_sha256": "65b201c82ac7bfad83708263b9b62c50c08bef9417a3f02b7d213e722c06a01e",
+    "path_redacted": false
+  },
+  {
+    "path": "experiments/mcp_sessions/manifest.json",
+    "role": "execution_manifest",
+    "source_label": "${MCP_EXPERIMENT}\\manifest.json",
+    "source_sha256": "79957080ee583ecb0ce3924a9a72bacc494c59ecbdb5287f8036acb5497beec5",
+    "packaged_sha256": "553c25a338978e10f15d2e55e68aa30085eb019e43be74f4cce5fba79144eff7",
+    "path_redacted": true
+  }
+]

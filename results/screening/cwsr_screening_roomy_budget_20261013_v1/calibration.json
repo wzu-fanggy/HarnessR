@@ -1,0 +1,524 @@
+{
+  "schema": "cwsr_complete_case_calibration_v1",
+  "rows": [
+    {
+      "repeat": 1,
+      "before": {
+        "schema_version": "resource-residency-v1",
+        "pid": 9784,
+        "process_rss_mib": 51.887,
+        "host_ram_pressure": 0.754,
+        "resources": [],
+        "telemetry_write_errors": 0
+      },
+      "bge_resource": {
+        "resource_id": "bge-m3-model",
+        "resident": true,
+        "host_ram_mib": 344.9609999999999,
+        "gpu_allocated_mib": 2165.938,
+        "gpu_vram_pressure": 0.522422,
+        "device": "cuda",
+        "load_count": 1,
+        "release_count": 0,
+        "last_load_seconds": 4.8279999999999745
+      },
+      "loaded": {
+        "schema_version": "resource-residency-v1",
+        "pid": 9784,
+        "process_rss_mib": 1031.836,
+        "host_ram_pressure": 0.808,
+        "resources": [
+          {
+            "resource_key": "embedding:bge-m3:cuda",
+            "resident": true,
+            "active_count": 0,
+            "load_count": 1,
+            "use_count": 0,
+            "failure_count": 0,
+            "last_load_seconds": 4.828,
+            "last_use_seconds": null,
+            "last_idle_gap_seconds": null,
+            "rss_mib_at_last_load": 1031.828,
+            "rss_delta_mib_last_load": 344.988,
+            "gpu_allocated_mib_at_last_load": 2165.938,
+            "gpu_delta_mib_last_load": 2165.938,
+            "last_host_ram_pressure": 0.808,
+            "last_gpu_vram_pressure": 0.522422,
+            "idle_seconds": 0.0
+          }
+        ],
+        "telemetry_write_errors": 0
+      },
+      "rf_memory": {
+        "rss_mib": 169.8828125,
+        "private_commit_mib": 1099.4375
+      },
+      "simultaneous": {
+        "schema_version": "resource-residency-v1",
+        "pid": 9784,
+        "process_rss_mib": 1031.84,
+        "host_ram_pressure": 0.82,
+        "resources": [
+          {
+            "resource_key": "embedding:bge-m3:cuda",
+            "resident": true,
+            "active_count": 0,
+            "load_count": 1,
+            "use_count": 0,
+            "failure_count": 0,
+            "last_load_seconds": 4.828,
+            "last_use_seconds": null,
+            "last_idle_gap_seconds": null,
+            "rss_mib_at_last_load": 1031.828,
+            "rss_delta_mib_last_load": 344.988,
+            "gpu_allocated_mib_at_last_load": 2165.938,
+            "gpu_delta_mib_last_load": 2165.938,
+            "last_host_ram_pressure": 0.808,
+            "last_gpu_vram_pressure": 0.522422,
+            "idle_seconds": 1.625
+          }
+        ],
+        "telemetry_write_errors": 0
+      },
+      "released_resource": {
+        "resource_id": "bge-m3-model",
+        "resident": false,
+        "host_ram_mib": 0.0,
+        "gpu_allocated_mib": 0.0,
+        "gpu_vram_pressure": 0.166599,
+        "device": "cuda",
+        "load_count": 1,
+        "release_count": 1,
+        "last_load_seconds": 4.8279999999999745
+      },
+      "after_release": {
+        "schema_version": "resource-residency-v1",
+        "pid": 9784,
+        "process_rss_mib": 796.727,
+        "host_ram_pressure": 0.802,
+        "resources": [
+          {
+            "resource_key": "embedding:bge-m3:cuda",
+            "resident": true,
+            "active_count": 0,
+            "load_count": 1,
+            "use_count": 0,
+            "failure_count": 0,
+            "last_load_seconds": 4.828,
+            "last_use_seconds": null,
+            "last_idle_gap_seconds": null,
+            "rss_mib_at_last_load": 1031.828,
+            "rss_delta_mib_last_load": 344.988,
+            "gpu_allocated_mib_at_last_load": 2165.938,
+            "gpu_delta_mib_last_load": 2165.938,
+            "last_host_ram_pressure": 0.808,
+            "last_gpu_vram_pressure": 0.522422,
+            "idle_seconds": 2.016
+          }
+        ],
+        "telemetry_write_errors": 0
+      },
+      "predictions": [
+        {
+          "pid": 16068,
+          "prediction": {
+            "conductivity_ms_cm": 3.4487655311733025,
+            "conductivity_s_cm": 0.0034487655311733027,
+            "ensemble_std_log10": 0.11976765887899131,
+            "estimated_factor_1sigma": 1.3175516793241504,
+            "features": {
+              "inverse_temperature": 3.660992128866923,
+              "x_EC": 0.6545108436328688,
+              "x_NaSalt": 0.12438287472883666,
+              "x_PC": 0.5161749545925916
+            },
+            "in_domain": true,
+            "log10_conductivity_s_cm": -2.462336330706256
+          },
+          "status": "RESULT",
+          "worker_log_tail": []
+        },
+        {
+          "pid": 16068,
+          "prediction": {
+            "conductivity_ms_cm": 3.2607902679914744,
+            "conductivity_s_cm": 0.0032607902679914745,
+            "ensemble_std_log10": 0.0715898183648156,
+            "estimated_factor_1sigma": 1.1792063749187005,
+            "features": {
+              "inverse_temperature": 3.660992128866923,
+              "x_EC": 0.30941181536856194,
+              "x_NaSalt": 0.13659165981340052,
+              "x_PC": 0.6288982789514654
+            },
+            "in_domain": true,
+            "log10_conductivity_s_cm": -2.4866771338475844
+          },
+          "status": "RESULT",
+          "worker_log_tail": []
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "before": {
+        "schema_version": "resource-residency-v1",
+        "pid": 9784,
+        "process_rss_mib": 796.73,
+        "host_ram_pressure": 0.794,
+        "resources": [
+          {
+            "resource_key": "embedding:bge-m3:cuda",
+            "resident": true,
+            "active_count": 0,
+            "load_count": 1,
+            "use_count": 0,
+            "failure_count": 0,
+            "last_load_seconds": 4.828,
+            "last_use_seconds": null,
+            "last_idle_gap_seconds": null,
+            "rss_mib_at_last_load": 1031.828,
+            "rss_delta_mib_last_load": 344.988,
+            "gpu_allocated_mib_at_last_load": 2165.938,
+            "gpu_delta_mib_last_load": 2165.938,
+            "last_host_ram_pressure": 0.808,
+            "last_gpu_vram_pressure": 0.522422,
+            "idle_seconds": 2.219
+          }
+        ],
+        "telemetry_write_errors": 0
+      },
+      "bge_resource": {
+        "resource_id": "bge-m3-model",
+        "resident": true,
+        "host_ram_mib": 237.74700000000007,
+        "gpu_allocated_mib": 2165.938,
+        "gpu_vram_pressure": 0.522422,
+        "device": "cuda",
+        "load_count": 2,
+        "release_count": 1,
+        "last_load_seconds": 2.3589999999999236
+      },
+      "loaded": {
+        "schema_version": "resource-residency-v1",
+        "pid": 9784,
+        "process_rss_mib": 1034.477,
+        "host_ram_pressure": 0.809,
+        "resources": [
+          {
+            "resource_key": "embedding:bge-m3:cuda",
+            "resident": true,
+            "active_count": 0,
+            "load_count": 2,
+            "use_count": 0,
+            "failure_count": 0,
+            "last_load_seconds": 2.359,
+            "last_use_seconds": null,
+            "last_idle_gap_seconds": null,
+            "rss_mib_at_last_load": 1034.477,
+            "rss_delta_mib_last_load": 237.747,
+            "gpu_allocated_mib_at_last_load": 2165.938,
+            "gpu_delta_mib_last_load": 2165.938,
+            "last_host_ram_pressure": 0.809,
+            "last_gpu_vram_pressure": 0.522422,
+            "idle_seconds": 0.0
+          }
+        ],
+        "telemetry_write_errors": 0
+      },
+      "rf_memory": {
+        "rss_mib": 170.04296875,
+        "private_commit_mib": 1099.421875
+      },
+      "simultaneous": {
+        "schema_version": "resource-residency-v1",
+        "pid": 9784,
+        "process_rss_mib": 1034.477,
+        "host_ram_pressure": 0.818,
+        "resources": [
+          {
+            "resource_key": "embedding:bge-m3:cuda",
+            "resident": true,
+            "active_count": 0,
+            "load_count": 2,
+            "use_count": 0,
+            "failure_count": 0,
+            "last_load_seconds": 2.359,
+            "last_use_seconds": null,
+            "last_idle_gap_seconds": null,
+            "rss_mib_at_last_load": 1034.477,
+            "rss_delta_mib_last_load": 237.747,
+            "gpu_allocated_mib_at_last_load": 2165.938,
+            "gpu_delta_mib_last_load": 2165.938,
+            "last_host_ram_pressure": 0.809,
+            "last_gpu_vram_pressure": 0.522422,
+            "idle_seconds": 1.609
+          }
+        ],
+        "telemetry_write_errors": 0
+      },
+      "released_resource": {
+        "resource_id": "bge-m3-model",
+        "resident": false,
+        "host_ram_mib": 0.0,
+        "gpu_allocated_mib": 0.0,
+        "gpu_vram_pressure": 0.166599,
+        "device": "cuda",
+        "load_count": 2,
+        "release_count": 2,
+        "last_load_seconds": 2.3589999999999236
+      },
+      "after_release": {
+        "schema_version": "resource-residency-v1",
+        "pid": 9784,
+        "process_rss_mib": 801.336,
+        "host_ram_pressure": 0.806,
+        "resources": [
+          {
+            "resource_key": "embedding:bge-m3:cuda",
+            "resident": true,
+            "active_count": 0,
+            "load_count": 2,
+            "use_count": 0,
+            "failure_count": 0,
+            "last_load_seconds": 2.359,
+            "last_use_seconds": null,
+            "last_idle_gap_seconds": null,
+            "rss_mib_at_last_load": 1034.477,
+            "rss_delta_mib_last_load": 237.747,
+            "gpu_allocated_mib_at_last_load": 2165.938,
+            "gpu_delta_mib_last_load": 2165.938,
+            "last_host_ram_pressure": 0.809,
+            "last_gpu_vram_pressure": 0.522422,
+            "idle_seconds": 2.016
+          }
+        ],
+        "telemetry_write_errors": 0
+      },
+      "predictions": [
+        {
+          "pid": 15452,
+          "prediction": {
+            "conductivity_ms_cm": 3.4487655311733025,
+            "conductivity_s_cm": 0.0034487655311733027,
+            "ensemble_std_log10": 0.11976765887899131,
+            "estimated_factor_1sigma": 1.3175516793241504,
+            "features": {
+              "inverse_temperature": 3.660992128866923,
+              "x_EC": 0.6545108436328688,
+              "x_NaSalt": 0.12438287472883666,
+              "x_PC": 0.5161749545925916
+            },
+            "in_domain": true,
+            "log10_conductivity_s_cm": -2.462336330706256
+          },
+          "status": "RESULT",
+          "worker_log_tail": []
+        },
+        {
+          "pid": 15452,
+          "prediction": {
+            "conductivity_ms_cm": 3.2607902679914744,
+            "conductivity_s_cm": 0.0032607902679914745,
+            "ensemble_std_log10": 0.0715898183648156,
+            "estimated_factor_1sigma": 1.1792063749187005,
+            "features": {
+              "inverse_temperature": 3.660992128866923,
+              "x_EC": 0.30941181536856194,
+              "x_NaSalt": 0.13659165981340052,
+              "x_PC": 0.6288982789514654
+            },
+            "in_domain": true,
+            "log10_conductivity_s_cm": -2.4866771338475844
+          },
+          "status": "RESULT",
+          "worker_log_tail": []
+        }
+      ]
+    },
+    {
+      "repeat": 3,
+      "before": {
+        "schema_version": "resource-residency-v1",
+        "pid": 9784,
+        "process_rss_mib": 801.336,
+        "host_ram_pressure": 0.798,
+        "resources": [
+          {
+            "resource_key": "embedding:bge-m3:cuda",
+            "resident": true,
+            "active_count": 0,
+            "load_count": 2,
+            "use_count": 0,
+            "failure_count": 0,
+            "last_load_seconds": 2.359,
+            "last_use_seconds": null,
+            "last_idle_gap_seconds": null,
+            "rss_mib_at_last_load": 1034.477,
+            "rss_delta_mib_last_load": 237.747,
+            "gpu_allocated_mib_at_last_load": 2165.938,
+            "gpu_delta_mib_last_load": 2165.938,
+            "last_host_ram_pressure": 0.809,
+            "last_gpu_vram_pressure": 0.522422,
+            "idle_seconds": 2.188
+          }
+        ],
+        "telemetry_write_errors": 0
+      },
+      "bge_resource": {
+        "resource_id": "bge-m3-model",
+        "resident": true,
+        "host_ram_mib": 234.35899999999992,
+        "gpu_allocated_mib": 2165.938,
+        "gpu_vram_pressure": 0.522422,
+        "device": "cuda",
+        "load_count": 3,
+        "release_count": 2,
+        "last_load_seconds": 2.3279999999999745
+      },
+      "loaded": {
+        "schema_version": "resource-residency-v1",
+        "pid": 9784,
+        "process_rss_mib": 1035.695,
+        "host_ram_pressure": 0.812,
+        "resources": [
+          {
+            "resource_key": "embedding:bge-m3:cuda",
+            "resident": true,
+            "active_count": 0,
+            "load_count": 3,
+            "use_count": 0,
+            "failure_count": 0,
+            "last_load_seconds": 2.328,
+            "last_use_seconds": null,
+            "last_idle_gap_seconds": null,
+            "rss_mib_at_last_load": 1035.695,
+            "rss_delta_mib_last_load": 234.359,
+            "gpu_allocated_mib_at_last_load": 2165.938,
+            "gpu_delta_mib_last_load": 2165.938,
+            "last_host_ram_pressure": 0.812,
+            "last_gpu_vram_pressure": 0.522422,
+            "idle_seconds": 0.0
+          }
+        ],
+        "telemetry_write_errors": 0
+      },
+      "rf_memory": {
+        "rss_mib": 170.07421875,
+        "private_commit_mib": 1099.78515625
+      },
+      "simultaneous": {
+        "schema_version": "resource-residency-v1",
+        "pid": 9784,
+        "process_rss_mib": 1035.695,
+        "host_ram_pressure": 0.82,
+        "resources": [
+          {
+            "resource_key": "embedding:bge-m3:cuda",
+            "resident": true,
+            "active_count": 0,
+            "load_count": 3,
+            "use_count": 0,
+            "failure_count": 0,
+            "last_load_seconds": 2.328,
+            "last_use_seconds": null,
+            "last_idle_gap_seconds": null,
+            "rss_mib_at_last_load": 1035.695,
+            "rss_delta_mib_last_load": 234.359,
+            "gpu_allocated_mib_at_last_load": 2165.938,
+            "gpu_delta_mib_last_load": 2165.938,
+            "last_host_ram_pressure": 0.812,
+            "last_gpu_vram_pressure": 0.522422,
+            "idle_seconds": 1.593
+          }
+        ],
+        "telemetry_write_errors": 0
+      },
+      "released_resource": {
+        "resource_id": "bge-m3-model",
+        "resident": false,
+        "host_ram_mib": 0.0,
+        "gpu_allocated_mib": 0.0,
+        "gpu_vram_pressure": 0.166599,
+        "device": "cuda",
+        "load_count": 3,
+        "release_count": 3,
+        "last_load_seconds": 2.3279999999999745
+      },
+      "after_release": {
+        "schema_version": "resource-residency-v1",
+        "pid": 9784,
+        "process_rss_mib": 806.195,
+        "host_ram_pressure": 0.806,
+        "resources": [
+          {
+            "resource_key": "embedding:bge-m3:cuda",
+            "resident": true,
+            "active_count": 0,
+            "load_count": 3,
+            "use_count": 0,
+            "failure_count": 0,
+            "last_load_seconds": 2.328,
+            "last_use_seconds": null,
+            "last_idle_gap_seconds": null,
+            "rss_mib_at_last_load": 1035.695,
+            "rss_delta_mib_last_load": 234.359,
+            "gpu_allocated_mib_at_last_load": 2165.938,
+            "gpu_delta_mib_last_load": 2165.938,
+            "last_host_ram_pressure": 0.812,
+            "last_gpu_vram_pressure": 0.522422,
+            "idle_seconds": 2.0
+          }
+        ],
+        "telemetry_write_errors": 0
+      },
+      "predictions": [
+        {
+          "pid": 25380,
+          "prediction": {
+            "conductivity_ms_cm": 3.4487655311733025,
+            "conductivity_s_cm": 0.0034487655311733027,
+            "ensemble_std_log10": 0.11976765887899131,
+            "estimated_factor_1sigma": 1.3175516793241504,
+            "features": {
+              "inverse_temperature": 3.660992128866923,
+              "x_EC": 0.6545108436328688,
+              "x_NaSalt": 0.12438287472883666,
+              "x_PC": 0.5161749545925916
+            },
+            "in_domain": true,
+            "log10_conductivity_s_cm": -2.462336330706256
+          },
+          "status": "RESULT",
+          "worker_log_tail": []
+        },
+        {
+          "pid": 25380,
+          "prediction": {
+            "conductivity_ms_cm": 3.2607902679914744,
+            "conductivity_s_cm": 0.0032607902679914745,
+            "ensemble_std_log10": 0.0715898183648156,
+            "estimated_factor_1sigma": 1.1792063749187005,
+            "features": {
+              "inverse_temperature": 3.660992128866923,
+              "x_EC": 0.30941181536856194,
+              "x_NaSalt": 0.13659165981340052,
+              "x_PC": 0.6288982789514654
+            },
+            "in_domain": true,
+            "log10_conductivity_s_cm": -2.4866771338475844
+          },
+          "status": "RESULT",
+          "worker_log_tail": []
+        }
+      ]
+    }
+  ],
+  "bge_declared_mib": 413,
+  "rf_declared_mib": 212,
+  "managed_host_ram_mib": 477,
+  "rule": "ceil(max(declared) + 0.30*min(declared)); declared=ceil(1.15*independent_peak+16)",
+  "scope": "BGE load-attributed service RSS plus complete RF worker RSS; excludes service base, Agent and Neo4j",
+  "not_os_memory_limit": true,
+  "synthetic_buffers": false
+}

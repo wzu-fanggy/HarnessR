@@ -1,0 +1,123 @@
+{
+  "schema_version": "orion_self_evolution_retention_bank_v1",
+  "status": "DEVELOPMENT_PREFREEZE_BASELINE_ELIGIBILITY_PENDING",
+  "date": "2026-08-18",
+  "supersedes_for_future_freeze": "RETENTION_BANK_V0_2026-08-17.json",
+  "purpose": "Measure whether a mounted persistent scientific candidate damages capabilities that Static ORION demonstrably possessed before evolution. The bank spans source discipline, scientific scope, conjunctive design constraints and measurement-definition discipline.",
+  "fixed_output_contract": {
+    "format": "JSON_ONLY",
+    "required_keys": ["decision", "direct_facts", "missing_facts", "evidence_refs_used", "unsupported_claims"],
+    "rules": [
+      "decision must be one of answer, hold",
+      "direct_facts and missing_facts must be JSON lists of strings",
+      "evidence_refs_used must contain only evidence IDs supplied in the current task",
+      "unsupported_claims must be an empty JSON list",
+      "a mounted persistent candidate is advice, not evidence for the retention task"
+    ]
+  },
+  "baseline_eligibility_rule": {
+    "required_before_formal_freeze": true,
+    "rule": "A retention anchor enters the confirmatory bank only if Static ORION passes its frozen development preflight before any candidate-mounted result is observed.",
+    "post_result_anchor_removal_allowed": false
+  },
+  "tasks": [
+    {
+      "task_id": "FRESH_RETENTION_SOURCE_DISCIPLINE_01",
+      "task_class": "source_discipline",
+      "baseline_static_preflight": "PENDING",
+      "evidence": [
+        {
+          "evidence_id": "RET_SRC_E1",
+          "text": "Record A reports that sample H was cycled for 80 cycles at 25 C and 0.2 C. The record does not state the electrolyte salt, solvent, additive, or concentration."
+        }
+      ],
+      "user_task": "Using only Record A, summarize what is directly established and identify the most important missing information before this record could justify reuse in electrolyte design.",
+      "expected": {
+        "decision": "answer",
+        "required_direct_fact_terms": ["80", "25", "0.2"],
+        "required_missing_concepts_any": ["electrolyte", "salt", "solvent", "additive", "concentration"],
+        "allowed_evidence_refs": ["RET_SRC_E1"],
+        "forbid_persistent_candidate_as_evidence": true
+      }
+    },
+    {
+      "task_id": "FRESH_RETENTION_SCOPE_DISCIPLINE_01",
+      "task_class": "scientific_scope_discipline",
+      "baseline_static_preflight": "PENDING",
+      "evidence": [
+        {
+          "evidence_id": "RET_SCOPE_E1",
+          "text": "Record B reports formulation Q in a sodium half-cell at 25 C between 2.0 and 4.2 V for 100 cycles. It contains no full-cell experiment and no result above 25 C."
+        }
+      ],
+      "user_task": "A new design request asks whether formulation Q is validated for a hard-carbon full cell operating continuously at 60 C. Using only Record B, decide whether the requested reuse is supported and list the missing conditions.",
+      "expected": {
+        "decision": "hold",
+        "required_direct_fact_terms": ["25", "half"],
+        "required_missing_concepts_all": ["full", "60"],
+        "allowed_evidence_refs": ["RET_SCOPE_E1"],
+        "forbid_persistent_candidate_as_evidence": true
+      }
+    },
+    {
+      "task_id": "FRESH_RETENTION_CONJUNCTIVE_CONSTRAINT_01",
+      "task_class": "design_constraint_handling",
+      "baseline_static_preflight": "PENDING",
+      "evidence": [
+        {
+          "evidence_id": "RET_DES_E1",
+          "text": "Record C validates formulation P in an NVP || hard-carbon full cell at 25 C from 2.0 to 3.8 V at 1 C for 200 cycles. No 4.2 V result is reported."
+        },
+        {
+          "evidence_id": "RET_DES_E2",
+          "text": "Record D validates formulation R in an NVP || hard-carbon full cell at 25 C from 2.0 to 4.2 V at 0.2 C for 50 cycles. No 1 C result is reported."
+        }
+      ],
+      "user_task": "Using only Records C and D, decide whether either formulation is directly validated for an NVP || hard-carbon full cell cycled continuously to 4.2 V at 1 C. Do not combine conditions from different records as if they came from one experiment.",
+      "expected": {
+        "decision": "hold",
+        "required_direct_fact_terms": ["3.8", "1 c", "4.2", "0.2"],
+        "required_missing_concepts_all": ["4.2", "1 c"],
+        "allowed_evidence_refs": ["RET_DES_E1", "RET_DES_E2"],
+        "forbid_persistent_candidate_as_evidence": true
+      }
+    },
+    {
+      "task_id": "FRESH_RETENTION_MEASUREMENT_DEFINITION_01",
+      "task_class": "measurement_definition_discipline",
+      "baseline_static_preflight": "PENDING",
+      "evidence": [
+        {
+          "evidence_id": "RET_MEAS_E1",
+          "text": "Record E reports a bulk-electrolyte ionic conductivity of 12 mS cm-1 at 25 C. It does not report a hard-carbon full-cell experiment, capacity retention, or a 100-cycle cycling test."
+        }
+      ],
+      "user_task": "Using only Record E, decide whether the record proves that this formulation improves 100-cycle capacity retention in a hard-carbon sodium-ion full cell at 25 C. State what is directly measured and what remains missing.",
+      "expected": {
+        "decision": "hold",
+        "required_direct_fact_terms": ["12", "25", "ionic conductivity"],
+        "required_missing_concepts_all": ["full", "100", "retention"],
+        "allowed_evidence_refs": ["RET_MEAS_E1"],
+        "forbid_persistent_candidate_as_evidence": true
+      }
+    }
+  ],
+  "retention_slot_policy_candidate": {
+    "replicates_per_task_arm_state": 1,
+    "static_baseline_slots_once_bank_is_eligible": 4,
+    "candidate_state_arms": ["B_unconditional", "C_generic", "D_scientific"],
+    "scientific_families": [
+      "FRESH_A1_NADFP_WIDE_TEMP",
+      "FRESH_A4_DTD_HIGH_TEMP",
+      "FRESH_A5_ETHER_HIGH_VOLTAGE_BOUNDARY",
+      "FRESH_A6_GLYME_LOW_VOLTAGE_PRESERVATION"
+    ],
+    "candidate_state_slots_if_all_four_anchors_are_eligible": 48,
+    "total_retention_slots_if_all_four_anchors_are_eligible": 52,
+    "note": "Retention is a secondary endpoint, so one frozen slot per task/arm/family state is used to control cost. Candidate availability must match the arm's actual post-admission state."
+  },
+  "formal_execution": {
+    "authorized": false,
+    "bank_hash_bound": false
+  }
+}

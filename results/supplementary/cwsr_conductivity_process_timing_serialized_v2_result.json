@@ -1,0 +1,82 @@
+{
+  "schema_version": "cwsr-conductivity-process-timing-serialized-v2.0",
+  "status": "PASS",
+  "source": {
+    "data_doi": "10.5281/zenodo.18429013",
+    "location": "https://zenodo.org/records/18429013/files/data.zip?download=1",
+    "training_rows": 647,
+    "training_formulations": 72
+  },
+  "design": {
+    "cycle_count": 10,
+    "measured_process_startup_count": 20,
+    "model_pretrained_once_before_timing": true,
+    "serialized_model_bytes": 4959721,
+    "random_forest_trees": 192,
+    "random_seed": 20260906,
+    "budget": {
+      "host_ram_mb": 1024.0,
+      "process_slots": 1.0
+    }
+  },
+  "summary": {
+    "first_startup_and_load_s": {
+      "median": 5.242500000000291,
+      "q1": 5.23399999999765,
+      "q3": 5.25,
+      "min": 5.218000000000757,
+      "max": 5.328000000001339
+    },
+    "restart_startup_and_load_s": {
+      "median": 5.218499999997221,
+      "q1": 5.203000000001339,
+      "q3": 5.21900000000096,
+      "min": 5.188000000001921,
+      "max": 5.297000000002299
+    },
+    "first_model_load_s": {
+      "median": 0.028423300000213203,
+      "q1": 0.027857775001393748,
+      "q3": 0.029933674999483628,
+      "min": 0.02736160000131349,
+      "max": 0.03614879999804543
+    },
+    "restart_model_load_s": {
+      "median": 0.028403799999068724,
+      "q1": 0.027870575000633835,
+      "q3": 0.029553975002272637,
+      "min": 0.027611999998043757,
+      "max": 0.030298400000901893
+    },
+    "first_rss_mib": {
+      "median": 382.869140625,
+      "q1": 382.521484375,
+      "q3": 383.291015625,
+      "min": 382.36328125,
+      "max": 383.4609375
+    },
+    "restart_rss_mib": {
+      "median": 382.583984375,
+      "q1": 382.5048828125,
+      "q3": 382.7568359375,
+      "min": 382.421875,
+      "max": 383.1953125
+    },
+    "all_new_pid_after_eviction": true,
+    "all_evicted_after_pressure": true,
+    "all_predictions_identical_after_restart": true
+  },
+  "cycles": [
+    {"cycle": 1, "first_pid": 19116, "restart_pid": 15484, "evicted_after_pressure": true, "new_pid_after_eviction": true, "predictions_identical_after_restart": true, "first_startup_and_load_s": 5.28099999999904, "restart_startup_and_load_s": 5.2189999999973224, "first_model_load_s": 0.03614879999804543, "restart_model_load_s": 0.02956140000242158, "first_rss_mib": 382.5625, "restart_rss_mib": 383.1953125},
+    {"cycle": 2, "first_pid": 12384, "restart_pid": 2900, "evicted_after_pressure": true, "new_pid_after_eviction": true, "predictions_identical_after_restart": true, "first_startup_and_load_s": 5.234000000000378, "restart_startup_and_load_s": 5.203000000001339, "first_model_load_s": 0.028632900000957306, "restart_model_load_s": 0.027784800000517862, "first_rss_mib": 382.37890625, "restart_rss_mib": 382.765625},
+    {"cycle": 3, "first_pid": 12596, "restart_pid": 15944, "evicted_after_pressure": true, "new_pid_after_eviction": true, "predictions_identical_after_restart": true, "first_startup_and_load_s": 5.25, "restart_startup_and_load_s": 5.297000000002299, "first_model_load_s": 0.0282136999994691, "restart_model_load_s": 0.028127900000981754, "first_rss_mib": 382.36328125, "restart_rss_mib": 382.50390625},
+    {"cycle": 4, "first_pid": 15192, "restart_pid": 12680, "evicted_after_pressure": true, "new_pid_after_eviction": true, "predictions_identical_after_restart": true, "first_startup_and_load_s": 5.21900000000096, "restart_startup_and_load_s": 5.203000000001339, "first_model_load_s": 0.028009200002998114, "restart_model_load_s": 0.027611999998043757, "first_rss_mib": 383.1171875, "restart_rss_mib": 382.73046875},
+    {"cycle": 5, "first_pid": 4832, "restart_pid": 2984, "evicted_after_pressure": true, "new_pid_after_eviction": true, "predictions_identical_after_restart": true, "first_startup_and_load_s": 5.25, "restart_startup_and_load_s": 5.21900000000096, "first_model_load_s": 0.028993700001592515, "restart_model_load_s": 0.028374099998472957, "first_rss_mib": 383.19140625, "restart_rss_mib": 382.58203125},
+    {"cycle": 6, "first_pid": 16776, "restart_pid": 19052, "evicted_after_pressure": true, "new_pid_after_eviction": true, "predictions_identical_after_restart": true, "first_startup_and_load_s": 5.218000000000757, "restart_startup_and_load_s": 5.25, "first_model_load_s": 0.030246999998780666, "restart_model_load_s": 0.03026270000191289, "first_rss_mib": 383.4609375, "restart_rss_mib": 383.1484375},
+    {"cycle": 7, "first_pid": 13280, "restart_pid": 5468, "evicted_after_pressure": true, "new_pid_after_eviction": true, "predictions_identical_after_restart": true, "first_startup_and_load_s": 5.235000000000582, "restart_startup_and_load_s": 5.188000000001921, "first_model_load_s": 0.03051480000067386, "restart_model_load_s": 0.030298400000901893, "first_rss_mib": 382.5078125, "restart_rss_mib": 382.453125},
+    {"cycle": 8, "first_pid": 16688, "restart_pid": 3516, "evicted_after_pressure": true, "new_pid_after_eviction": true, "predictions_identical_after_restart": true, "first_startup_and_load_s": 5.23399999999674, "restart_startup_and_load_s": 5.202999999997701, "first_model_load_s": 0.02778319999924861, "restart_model_load_s": 0.02843349999966449, "first_rss_mib": 383.32421875, "restart_rss_mib": 382.5078125},
+    {"cycle": 9, "first_pid": 12464, "restart_pid": 19080, "evicted_after_pressure": true, "new_pid_after_eviction": true, "predictions_identical_after_restart": true, "first_startup_and_load_s": 5.328000000001339, "restart_startup_and_load_s": 5.217999999997119, "first_model_load_s": 0.02780730000085896, "restart_model_load_s": 0.027658700000756653, "first_rss_mib": 382.62109375, "restart_rss_mib": 382.421875},
+    {"cycle": 10, "first_pid": 15324, "restart_pid": 4032, "evicted_after_pressure": true, "new_pid_after_eviction": true, "predictions_identical_after_restart": true, "first_startup_and_load_s": 5.25, "restart_startup_and_load_s": 5.21900000000096, "first_model_load_s": 0.02736160000131349, "restart_model_load_s": 0.02953170000182581, "first_rss_mib": 383.375, "restart_rss_mib": 382.5859375}
+  ],
+  "interpretation": "Timing excludes model fitting. Each measured startup creates a new Python process, loads the same pretrained RandomForest artifact, and ends when the worker is ready to serve predictions. The serialized-model load itself is approximately 0.028 s; most of the approximately 5.2 s startup-to-ready interval is process and dependency initialization."
+}

@@ -1,0 +1,298 @@
+{
+  "schema": "cwsr-v17-warm-toolnode-ab-audit-v1",
+  "status": "PASS",
+  "predeclared_task_set": [
+    "U1",
+    "U2",
+    "P1",
+    "P2",
+    "C1",
+    "C2",
+    "C3",
+    "D1"
+  ],
+  "cohort": "r1-native traces, 2 AB/BA warm-cache pairs/task",
+  "compared_scope": "Production ToolNode stage, no LLM, shared resident BGE/Neo4j",
+  "independent_task_families": 8,
+  "total_pairs": 16,
+  "total_science_equal": true,
+  "same_frozen_calls_and_batch_boundaries": true,
+  "zero_reloads_or_reclaims": true,
+  "task_median_relative_percent": {
+    "U1": 17.745,
+    "U2": -6.102,
+    "P1": 1.565,
+    "P2": 0.152,
+    "C1": -0.589,
+    "C2": 1.112,
+    "C3": 2.202,
+    "D1": 4.237
+  },
+  "median_of_task_medians_relative_percent": 1.339,
+  "pair_median_relative_percent": 1.192,
+  "pair_median_delta_s": 0.164628,
+  "relative_percent_min_max": [
+    -14.696,
+    34.265
+  ],
+  "pairs_over_3_percent": 4,
+  "pairs_runtime_faster": 4,
+  "native_total_s": 201.795,
+  "runtime_total_s": 204.52,
+  "pooled_wall_relative_percent": 1.351,
+  "runtime_bridge_overhead_total_s": 2.493,
+  "runtime_bridge_overhead_median_s": 0.147,
+  "per_task_pairs": {
+    "U1": [
+      {
+        "pair": 0,
+        "native_s": 6.765359,
+        "runtime_s": 6.84826,
+        "runtime_minus_native_s": 0.08290099999999967,
+        "relative_percent": 1.225,
+        "runtime_bridge_overhead_s": 0.065861,
+        "runtime_tool_s": 6.779228,
+        "native_tool_s": 6.761932,
+        "tool_batch_count": 5
+      },
+      {
+        "pair": 1,
+        "native_s": 6.80074,
+        "runtime_s": 9.131021,
+        "runtime_minus_native_s": 2.3302810000000003,
+        "relative_percent": 34.265,
+        "runtime_bridge_overhead_s": 0.100213,
+        "runtime_tool_s": 9.02771,
+        "native_tool_s": 6.797681,
+        "tool_batch_count": 5
+      }
+    ],
+    "U2": [
+      {
+        "pair": 0,
+        "native_s": 13.545132,
+        "runtime_s": 11.554529,
+        "runtime_minus_native_s": -1.9906030000000001,
+        "relative_percent": -14.696,
+        "runtime_bridge_overhead_s": 0.142065,
+        "runtime_tool_s": 11.407935,
+        "native_tool_s": 13.540713,
+        "tool_batch_count": 7
+      },
+      {
+        "pair": 1,
+        "native_s": 11.476638,
+        "runtime_s": 11.762674,
+        "runtime_minus_native_s": 0.28603600000000107,
+        "relative_percent": 2.492,
+        "runtime_bridge_overhead_s": 0.129949,
+        "runtime_tool_s": 11.628462,
+        "native_tool_s": 11.472248,
+        "tool_batch_count": 7
+      }
+    ],
+    "P1": [
+      {
+        "pair": 0,
+        "native_s": 10.931785,
+        "runtime_s": 11.301724,
+        "runtime_minus_native_s": 0.36993900000000046,
+        "relative_percent": 3.384,
+        "runtime_bridge_overhead_s": 0.162035,
+        "runtime_tool_s": 11.135768,
+        "native_tool_s": 10.928037,
+        "tool_batch_count": 7
+      },
+      {
+        "pair": 1,
+        "native_s": 11.206228,
+        "runtime_s": 11.177915,
+        "runtime_minus_native_s": -0.028312999999998922,
+        "relative_percent": -0.253,
+        "runtime_bridge_overhead_s": 0.087681,
+        "runtime_tool_s": 11.086258,
+        "native_tool_s": 11.202541,
+        "tool_batch_count": 7
+      }
+    ],
+    "P2": [
+      {
+        "pair": 0,
+        "native_s": 10.620344,
+        "runtime_s": 10.74356,
+        "runtime_minus_native_s": 0.1232160000000011,
+        "relative_percent": 1.16,
+        "runtime_bridge_overhead_s": 0.14383,
+        "runtime_tool_s": 10.596131,
+        "native_tool_s": 10.616923,
+        "tool_batch_count": 6
+      },
+      {
+        "pair": 1,
+        "native_s": 10.829162,
+        "runtime_s": 10.736502,
+        "runtime_minus_native_s": -0.09266000000000041,
+        "relative_percent": -0.856,
+        "runtime_bridge_overhead_s": 0.14004,
+        "runtime_tool_s": 10.592977,
+        "native_tool_s": 10.825386,
+        "tool_batch_count": 6
+      }
+    ],
+    "C1": [
+      {
+        "pair": 0,
+        "native_s": 13.98084,
+        "runtime_s": 13.999876,
+        "runtime_minus_native_s": 0.01903599999999983,
+        "relative_percent": 0.136,
+        "runtime_bridge_overhead_s": 0.150879,
+        "runtime_tool_s": 13.844808,
+        "native_tool_s": 13.976311,
+        "tool_batch_count": 7
+      },
+      {
+        "pair": 1,
+        "native_s": 13.614022,
+        "runtime_s": 13.435011,
+        "runtime_minus_native_s": -0.17901100000000092,
+        "relative_percent": -1.315,
+        "runtime_bridge_overhead_s": 0.141529,
+        "runtime_tool_s": 13.289244,
+        "native_tool_s": 13.609515,
+        "tool_batch_count": 7
+      }
+    ],
+    "C2": [
+      {
+        "pair": 0,
+        "native_s": 22.657712,
+        "runtime_s": 22.814564,
+        "runtime_minus_native_s": 0.15685200000000066,
+        "relative_percent": 0.692,
+        "runtime_bridge_overhead_s": 0.196351,
+        "runtime_tool_s": 22.612189,
+        "native_tool_s": 22.652151,
+        "tool_batch_count": 9
+      },
+      {
+        "pair": 1,
+        "native_s": 22.405368,
+        "runtime_s": 22.748835,
+        "runtime_minus_native_s": 0.3434670000000004,
+        "relative_percent": 1.533,
+        "runtime_bridge_overhead_s": 0.191472,
+        "runtime_tool_s": 22.551269,
+        "native_tool_s": 22.399099,
+        "tool_batch_count": 9
+      }
+    ],
+    "C3": [
+      {
+        "pair": 0,
+        "native_s": 16.871664,
+        "runtime_s": 17.050362,
+        "runtime_minus_native_s": 0.1786980000000007,
+        "relative_percent": 1.059,
+        "runtime_bridge_overhead_s": 0.195538,
+        "runtime_tool_s": 16.850447,
+        "native_tool_s": 16.867325,
+        "tool_batch_count": 9
+      },
+      {
+        "pair": 1,
+        "native_s": 17.003505,
+        "runtime_s": 17.572286,
+        "runtime_minus_native_s": 0.5687809999999978,
+        "relative_percent": 3.345,
+        "runtime_bridge_overhead_s": 0.192919,
+        "runtime_tool_s": 17.37518,
+        "native_tool_s": 16.999479,
+        "tool_batch_count": 9
+      }
+    ],
+    "D1": [
+      {
+        "pair": 0,
+        "native_s": 6.612699,
+        "runtime_s": 6.996977,
+        "runtime_minus_native_s": 0.3842780000000001,
+        "relative_percent": 5.811,
+        "runtime_bridge_overhead_s": 0.237778,
+        "runtime_tool_s": 6.754236,
+        "native_tool_s": 6.607266,
+        "tool_batch_count": 11
+      },
+      {
+        "pair": 1,
+        "native_s": 6.473509,
+        "runtime_s": 6.645913,
+        "runtime_minus_native_s": 0.17240400000000022,
+        "relative_percent": 2.663,
+        "runtime_bridge_overhead_s": 0.214428,
+        "runtime_tool_s": 6.426333,
+        "native_tool_s": 6.468112,
+        "tool_batch_count": 11
+      }
+    ]
+  },
+  "source_evidence": [
+    {
+      "task": "U1",
+      "source": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U1-r1-native\\result.json",
+      "source_sha256": "f90eec853d04bd86c0f482320b55ec43ff6d041df3687257fbe525df3913869d",
+      "result_directory": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1",
+      "all_science_outputs_sha256": "5f05fa45979cb9742daf817c42894db1d0e355be633df79c49ffcbb002ef2032"
+    },
+    {
+      "task": "U2",
+      "source": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U2-r1-native\\result.json",
+      "source_sha256": "4f29b6a404160fb312fbe2a947d6fe3c6d4345c2f4b6d5d1d13f448aa2e61027",
+      "result_directory": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1",
+      "all_science_outputs_sha256": "19cc92b6588775dcc854fb7109b83c1b2efa956c097dbccbb846d51364379045"
+    },
+    {
+      "task": "P1",
+      "source": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P1-r1-native\\result.json",
+      "source_sha256": "4297cc64d0e7a455a7c4b1fcd179782e910d0df56577889cfbc0df7dc84d87de",
+      "result_directory": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1",
+      "all_science_outputs_sha256": "ccb1e6087f627ec75d50389c3af51b3bcff961e85c14a76da2d8f78047e4de88"
+    },
+    {
+      "task": "P2",
+      "source": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P2-r1-native\\result.json",
+      "source_sha256": "f4bd74bc286ddd07d2b140fdf77dea8e2ea396d8243c9c8d83ae55cea42cf0a4",
+      "result_directory": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_first4_v1",
+      "all_science_outputs_sha256": "565b0066888edcf427dd15a5b9fa0b1ffa6eafd73ecabe517dd05082023e83f4"
+    },
+    {
+      "task": "C1",
+      "source": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C1-r1-native\\result.json",
+      "source_sha256": "3f434fa9a875049e7a3847e18a21dc1c87989e2c7d696e4e21104f9939a4e694",
+      "result_directory": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c1_v1",
+      "all_science_outputs_sha256": "b0e2e1f2dfae0bd7d9f80da079e514cd0d4659480fce5111b4a53087390e1e07"
+    },
+    {
+      "task": "C2",
+      "source": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C2-r1-native\\result.json",
+      "source_sha256": "cb55db57ae6f4744dc69135bea06168916579c321178c47ffa18176c8f97b01c",
+      "result_directory": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c2_v1",
+      "all_science_outputs_sha256": "8ded5ba4f600c6be78a0ccbcfe776ebfee5cf0bd96c5f11ad585664b9b8ca358"
+    },
+    {
+      "task": "C3",
+      "source": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\C3-r1-native\\result.json",
+      "source_sha256": "022ac21c6854a19e867dd06fc7f16836c3901546f5a0da7a25705ca78adfa5da",
+      "result_directory": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_c3_v1",
+      "all_science_outputs_sha256": "6df9993ee99fcbb3f48e0d2c9018168a9a6a77db688d2e582fd4561744b5a62e"
+    },
+    {
+      "task": "D1",
+      "source": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\D1-r1-native\\result.json",
+      "source_sha256": "1ecb27d1844cb4deb0501031f866aa8349b5603fe6c90e86eac1cac303e0912b",
+      "result_directory": "${ORION_SOURCE}\\reports\\cwsr_v17_warm_toolnode_ab_20261013_d1_v1",
+      "all_science_outputs_sha256": "2e3dca5d9a91ca654d628fad26778ac64bc2007cc494d3a1ae3229f01548e52f"
+    }
+  ],
+  "scientific_scope_caveat": "This is an observational warm-cache fixed workload. It measures the tool stage, not LLM end-to-end non-inferiority or extra speedup. Two pairs per task cannot establish a statistical equivalence interval."
+}

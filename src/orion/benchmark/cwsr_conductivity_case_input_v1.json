@@ -1,0 +1,48 @@
+{
+  "schema_version": "cwsr_conductivity_assessment_input_v1",
+  "case_id": "CWSR_T1_CONDUCTIVITY_ASSESSMENT_0C",
+  "family_id": "conductivity-assessment",
+  "sample": {
+    "question": "Assess two supplied NaPF6–EC/EMC/PC electrolyte candidates for sodium-ion use at 0 °C. Obtain their ionic-conductivity estimates with the available prediction tool, and use literature retrieved in this task to interpret the predictions, model applicability and low-temperature transport considerations. Give a substantiated comparison and advice on whether either candidate merits priority for subsequent experimental evaluation or the available information does not distinguish them. Report the candidate compositions, prediction units and temperature, prediction uncertainty returned by the tool, relevant source evidence and the reasoning behind the advice. These are supplied candidates for assessment. Their molar proportions (not volume ratios) are: [{\"candidate_id\": \"candidate-a\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"molar_ratios\": {\"NaPF6\": 0.12438287472883666, \"EC\": 0.2772805705914771, \"EMC\": 0.14636492480234797, \"PC\": 0.45197162987733824}}, {\"candidate_id\": \"candidate-b\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"], \"additives\": [], \"molar_ratios\": {\"NaPF6\": 0.13659165981340052, \"EC\": 0.09913935791043874, \"EMC\": 0.22127296310046693, \"PC\": 0.5429960191756938}}].",
+    "task_type": "design"
+  },
+  "candidate_input_source": "Composition-equivalent representation of the two predefined candidates in cwsr_current_agent_runtime_pressure_e2e_v1.py; no prediction or expected decision supplied.",
+  "candidates": [
+    {
+      "candidate_id": "candidate-a",
+      "salt": "NaPF6",
+      "solvents": [
+        "EC",
+        "EMC",
+        "PC"
+      ],
+      "additives": [],
+      "molar_ratios": {
+        "NaPF6": 0.12438287472883666,
+        "EC": 0.2772805705914771,
+        "EMC": 0.14636492480234797,
+        "PC": 0.45197162987733824
+      }
+    },
+    {
+      "candidate_id": "candidate-b",
+      "salt": "NaPF6",
+      "solvents": [
+        "EC",
+        "EMC",
+        "PC"
+      ],
+      "additives": [],
+      "molar_ratios": {
+        "NaPF6": 0.13659165981340052,
+        "EC": 0.09913935791043874,
+        "EMC": 0.22127296310046693,
+        "PC": 0.5429960191756938
+      }
+    }
+  ],
+  "temperature_c": 0,
+  "supplied_candidates": true,
+  "task_role": "supporting application case; not one of the original eight",
+  "required_scientific_output": "composition, estimates, retrieved evidence and candidate assessment"
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "cwsr-conductivity-training-source-v1",
+  "upstream_url": "https://zenodo.org/records/18429013/files/data.zip?download=1",
+  "selection": "three Na/raw/hts_data_gen*.csv members used by the RF pipeline",
+  "normalization": "Each parsed upstream CSV is reserialized as UTF-8 CSV with stable column order, LF line endings and no pandas index. Numerical model inputs are then reconstructed through the production load_upstream_na_frames path.",
+  "members": [
+    {
+      "upstream_member": "data/Na/raw/hts_data_gen0.csv",
+      "canonical_csv_sha256": "5186bcb3f716869b0e8da0cea52b3a1bf83a8caba43dc337d66e94355eaccfa2",
+      "canonical_csv_bytes": 99968,
+      "rows": 720,
+      "columns": [
+        "conductivity",
+        "inverse temperature",
+        "EC_mmol",
+        "EC_g",
+        "EMC_mmol",
+        "EMC_g",
+        "PC_mmol",
+        "PC_g",
+        "NaPF6_mmol",
+        "NaPF6_g"
+      ]
+    },
+    {
+      "upstream_member": "data/Na/raw/hts_data_gen1.csv",
+      "canonical_csv_sha256": "f9e1fa11260d717a88dd3054b0600ed0942fbaef82fb4375d63f29b94bd48b73",
+      "canonical_csv_bytes": 99925,
+      "rows": 720,
+      "columns": [
+        "conductivity",
+        "inverse temperature",
+        "EC_mmol",
+        "EC_g",
+        "EMC_mmol",
+        "EMC_g",
+        "PC_mmol",
+        "PC_g",
+        "NaPF6_mmol",
+        "NaPF6_g"
+      ]
+    },
+    {
+      "upstream_member": "data/Na/raw/hts_data_gen2.csv",
+      "canonical_csv_sha256": "a8787b902a2c7aa9f27e4c13d7c105604c87e4a963f1331a11bff394110aee6f",
+      "canonical_csv_bytes": 99480,
+      "rows": 720,
+      "columns": [
+        "conductivity",
+        "inverse temperature",
+        "EC_mmol",
+        "EC_g",
+        "EMC_mmol",
+        "EMC_g",
+        "PC_mmol",
+        "PC_g",
+        "NaPF6_mmol",
+        "NaPF6_g"
+      ]
+    }
+  ],
+  "bundle": {
+    "path": "${PROJECT_SOURCE}\\reports\\cwsr_inputs\\na_conductivity_training_source_v1.zip",
+    "sha256": "1fbe50073d50a372e891217dcc757cbe8042cbdb2e85e42bb4c89ef05981cea5",
+    "bytes": 30416
+  },
+  "training_table": {
+    "rows": 647,
+    "formulations": 72,
+    "canonical_csv_sha256": "c37e645e1d70671b00eb23ba1fb09f654f88665e44193f6b4644875239305f06"
+  },
+  "metadata_content_sha256": "9009e3dd57440bcfbba547ba084af7136b97b0a03c80a888bade21100a607c1f"
+}

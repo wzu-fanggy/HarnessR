@@ -1,0 +1,11 @@
+{
+  "basis": "Union of actual tool names in all selected formal screening, held-out and recommendation run records, plus the shared scientific tools.",
+  "added": [
+    "orion/tools/electrolyte_design/formulate.py",
+    "orion/tools/electrolyte_design/formulation_evidence.py",
+    "orion/tools/electrolyte_design/enrichment.py",
+    "orion/tools/electrolyte_design/evaluator.py",
+    "orion/tools/electrolyte_design/synthesis.py",
+    "orion/tools/electrolyte_design/screen.py"
+  ]
+}

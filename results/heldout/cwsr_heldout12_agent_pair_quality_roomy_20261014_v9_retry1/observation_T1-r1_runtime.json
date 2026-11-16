@@ -1,0 +1,107 @@
+{
+  "arm": "runtime",
+  "ok": true,
+  "task_status": "model_assessed",
+  "timing": {
+    "task_wall_seconds": 145.25,
+    "model_request_union_seconds": 112.296,
+    "tool_function_union_seconds": 11.594000000000017,
+    "model_tool_overlap_seconds": 1.4210854715202004e-14,
+    "outside_model_and_tool_seconds": 21.359999999999985,
+    "incomplete_events": [],
+    "model_request_includes_network_and_provider_wait": true,
+    "outside_intervals_is_not_a_resource_preparation_measurement": true
+  },
+  "tool_counts": {
+    "load_skill": 1,
+    "write_todos": 2,
+    "predict_formulation_conductivity": 4,
+    "search_literature_multiview": 1,
+    "search_literature_chunks": 2,
+    "extract_numeric_properties": 2,
+    "synthesize_design_report": 1
+  },
+  "root_resources": {
+    "resources": {
+      "bge-m3-model": {
+        "resource_id": "bge-m3-model",
+        "resident": true,
+        "host_ram_mib": null,
+        "host_ram_measurement": "nonpositive_load_delta",
+        "load_rss_before_mib": 691.004,
+        "load_rss_after_mib": 509.418,
+        "load_rss_delta_mib": -181.586,
+        "release_rss_before_mib": null,
+        "release_rss_after_mib": null,
+        "gpu_allocated_mib": 2182.188,
+        "gpu_vram_pressure": 0.532188,
+        "device": "cuda",
+        "load_count": 1,
+        "release_count": 0,
+        "last_load_seconds": 4.938000000000102
+      },
+      "neo4j-session": {
+        "resource_id": "neo4j-session",
+        "resident": true,
+        "connection_slots": 1.0,
+        "open_count": 1,
+        "close_count": 0,
+        "last_open_seconds": 2.061999999999898
+      }
+    }
+  },
+  "root_service_sampled_peak_rss_mib": 2602.566,
+  "rss_scope": "root RAG service only; excludes Agent, Neo4j server and whole-machine RAM",
+  "quality_verified": false,
+  "result_path": "${ORION_SOURCE}\\reports\\cwsr_heldout12_agent_pair_quality_roomy_20261014_v9_retry1\\T1-r1-runtime\\result.json",
+  "scientific_audit": {
+    "scientific_complete": true,
+    "report_quality_pass": true,
+    "report_quality": {
+      "has_full_12x4_prediction_table": true,
+      "priority_top4_expected": [
+        "heldout-03",
+        "heldout-04",
+        "heldout-05",
+        "heldout-06"
+      ],
+      "explicit_top_four_in_result_section": true,
+      "has_followup_validation_plan": true,
+      "has_source_citations": true,
+      "literature_claim_count": 8,
+      "distinct_literature_source_count": 8,
+      "declared_priority_count": 4,
+      "structured_priority_ids": [
+        "heldout-03",
+        "heldout-04",
+        "heldout-05",
+        "heldout-06"
+      ],
+      "agent_submitted_validation_plan": true,
+      "validation_plan_source": "agent_submitted",
+      "issues": [],
+      "full_report_quality_pass": true,
+      "literature_semantic_verification": "科学文献引文已通过归属检查，尚未人工确认语义完整性"
+    },
+    "agent_ok": true,
+    "task_status": "model_assessed",
+    "valid_prediction_points": 48,
+    "expected_prediction_points": 48,
+    "issues": [],
+    "spearman_low_temperature": 0.9090909090909092,
+    "top4_overlap": 3,
+    "predicted_top4": [
+      "heldout-03",
+      "heldout-04",
+      "heldout-05",
+      "heldout-06"
+    ],
+    "measured_top4": [
+      "heldout-04",
+      "heldout-03",
+      "heldout-06",
+      "heldout-02"
+    ],
+    "prediction_reference_sha256": "d0ea5e50e56a36e57c98660640e3409ca80c56c4b7ee9f95e268b17afd0d9566"
+  }
+}

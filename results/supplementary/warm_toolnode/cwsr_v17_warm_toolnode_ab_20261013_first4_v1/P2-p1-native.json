@@ -1,0 +1,84 @@
+{
+  "arm": "native",
+  "elapsed_s": 10.829162,
+  "tool_s": 10.825386,
+  "overhead_s": 1.7e-05,
+  "outputs_sha256": "565b0066888edcf427dd15a5b9fa0b1ffa6eafd73ecabe517dd05082023e83f4",
+  "rows": [
+    {
+      "batch": 0,
+      "source_message_index": 7,
+      "tool_names": [
+        "search_literature_multiview",
+        "kg_query"
+      ],
+      "tool_s": 6.816998,
+      "total_s": 6.817,
+      "overhead_s": 3e-06,
+      "output_sha256": "74808806a01ce10f320ed27b384a6009c6e340de55ebdeb60b38e206d0444627"
+    },
+    {
+      "batch": 1,
+      "source_message_index": 10,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks",
+        "search_paper_chunks",
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.316899,
+      "total_s": 0.316902,
+      "overhead_s": 3e-06,
+      "output_sha256": "e52e619d3a8ed17a5d09c9e3629ad25fd436d81f2015bd48927f9a244ec15f99"
+    },
+    {
+      "batch": 2,
+      "source_message_index": 15,
+      "tool_names": [
+        "search_paper_chunks",
+        "search_paper_chunks",
+        "search_literature_chunks",
+        "kg_query"
+      ],
+      "tool_s": 2.195751,
+      "total_s": 2.195754,
+      "overhead_s": 3e-06,
+      "output_sha256": "1ee6c2278bacb0170c5d7bc83a97b555f6cf35b6106a8523dd462b2ad44cc824"
+    },
+    {
+      "batch": 3,
+      "source_message_index": 20,
+      "tool_names": [
+        "search_paper_chunks"
+      ],
+      "tool_s": 0.071591,
+      "total_s": 0.071594,
+      "overhead_s": 3e-06,
+      "output_sha256": "029048c8723df309990a7747fa1f0418e220bf09f7180b50662eefdc3584f5c0"
+    },
+    {
+      "batch": 4,
+      "source_message_index": 23,
+      "tool_names": [
+        "query_formulation_space"
+      ],
+      "tool_s": 1.39243,
+      "total_s": 1.392433,
+      "overhead_s": 3e-06,
+      "output_sha256": "876e99f4dc2fbfe6e203193616b8b1a61276e50348fbd95b5e2c0130ccf264ff"
+    },
+    {
+      "batch": 5,
+      "source_message_index": 26,
+      "tool_names": [
+        "enrich_formulation_evidence"
+      ],
+      "tool_s": 0.031717,
+      "total_s": 0.03172,
+      "overhead_s": 2e-06,
+      "output_sha256": "ae9182cfd1771014425d9d54261e8f0d8e0ce3156b8f96d5c004e94158905441"
+    }
+  ],
+  "task": "P2",
+  "pair": 1
+}

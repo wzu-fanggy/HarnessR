@@ -1,0 +1,11 @@
+record_id,salt_label,glyme_to_TEP_volume_ratio,conductivity_ms_cm_approx,conductivity_temperature_c_nominal,viscosity_mpa_s,viscosity_temperature_c
+ekeren2024-f3-01,NaPF6,9:1,5.8,25,3.121,20
+ekeren2024-f3-02,NaPF6,7:3,6.4,25,3.357,20
+ekeren2024-f3-03,NaPF6,1:1,6.6,25,3.756,20
+ekeren2024-f3-04,NaPF6,3:7,6.7,25,4.929,20
+ekeren2024-f3-05,NaPF6,1:9,6.7,25,5.341,20
+ekeren2024-f3-11,NaBF4,9:1,2.9,25,2.06,20
+ekeren2024-f3-12,NaBF4,7:3,3.1,25,2.36,20
+ekeren2024-f3-13,NaBF4,1:1,3.2,25,3.097,20
+ekeren2024-f3-14,NaBF4,3:7,3.5,25,3.935,20
+ekeren2024-f3-15,NaBF4,1:9,4.0,25,4.538,20

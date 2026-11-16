@@ -1,0 +1,169 @@
+{
+  "date": "2026-11-08",
+  "status": "方案与本地链路已核验；未执行新增科学调用或Jev请求",
+  "question": "同一真实历史驻留状态下，已提交的不同后续目标能否持续参与资源取舍，而非仅看访问历史？",
+  "shared_experiment": "直接使用已完成首轮，不重复双agent科学任务",
+  "previous_real_activity": {
+    "source": "${TASK_INTENT_ARCHIVE}\\feedback-workflow-v1\\feedback-native-pilot-3\\result-resumed.json",
+    "sha256": "29103d9f822e09ea66f06257b91108126f00a5e0e2d4c852006bd860761d8f58",
+    "restore_calls": [
+      {
+        "source_call_index": 13,
+        "call": {
+          "name": "rank_formulations_under_uncertainty",
+          "args": {
+            "request": {
+              "candidates": [
+                {
+                  "candidate_id": "B3-gen-0007",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "component_mmol": {
+                      "NaPF6": 644.260836,
+                      "EC": 2196.769523,
+                      "EMC": 6134.374423,
+                      "PC": 1668.856054
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "B3-gen-0016",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "component_mmol": {
+                      "NaPF6": 687.84333,
+                      "EC": 2383.748104,
+                      "EMC": 5805.454908,
+                      "PC": 1810.796988
+                    }
+                  }
+                },
+                {
+                  "candidate_id": "B3-gen-0008",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "component_mmol": {
+                      "NaPF6": 835.054291,
+                      "EC": 2689.682719,
+                      "EMC": 5215.754818,
+                      "PC": 2094.562463
+                    }
+                  }
+                }
+              ],
+              "min_conductivity_ms_cm": 2.0,
+              "temperature_c": [
+                -20,
+                0,
+                20
+              ]
+            }
+          },
+          "id": "call_00_JeWrqTDdaUX3ptoNpa3T9481",
+          "type": "tool_call"
+        }
+      },
+      {
+        "source_call_index": 14,
+        "call": {
+          "name": "predict_formulation_conductivity",
+          "args": {
+            "request": {
+              "candidates": [
+                {
+                  "candidate_id": "B3-gen-0007",
+                  "salt": "NaPF6",
+                  "solvents": [
+                    "EC",
+                    "EMC",
+                    "PC"
+                  ],
+                  "additives": [],
+                  "composition_inputs": {
+                    "component_mmol": {
+                      "NaPF6": 644.260836,
+                      "EC": 2196.769523,
+                      "EMC": 6134.374423,
+                      "PC": 1668.856054
+                    }
+                  }
+                }
+              ],
+              "temperature_c": 20
+            }
+          },
+          "id": "call_00_h6x0qsjP44rLzJrecbhq6919",
+          "type": "tool_call"
+        }
+      }
+    ],
+    "rule": "只复放原有真实科学调用以恢复已使用实例；不重跑全部96组成，不将复放说成新自主规划"
+  },
+  "incoming_requests": [
+    {
+      "id": "point",
+      "source": "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0\\B\\result.json",
+      "sha256": "a695009f62abfeb8d80f07204e0c849de67914681b4c0d41a61e0ffccf3df4d1",
+      "goal": "请分别分析下面两种电解液的温度测量。数据来自已归档Zenodo测量，保持全部10个温度点、组成及原值，不平均、不删点、不补值。不查文献，不调用子代理。明确区分测量值、拟合参数与模型估计。拟合比较Arrhenius与VTF的AICc和留一温度误差。0.1仅为本次工作条件，不是通用科学标准。这些配方可能出现在预测模型训练集中，不能称为独立留出验证。对每种配方，若AICc优选模型的loo_rmse_log10低于0.1，再用独立电导率模型对20℃作计算核对；先看到拟合结果再判断条件。没有最低电导率门槛，不需作达标排序。最后比较两种配方并说明证据边界。树间差异只描述模型分歧，不解释成已校准预测区间。\n[{\"label\": \"配方1\", \"measurements\": [{\"temperature_c\": -30.0, \"conductivity_ms_cm\": 1.851699327963}, {\"temperature_c\": -20.0, \"conductivity_ms_cm\": 1.840177574978}, {\"temperature_c\": -10.0, \"conductivity_ms_cm\": 2.759636752722}, {\"temperature_c\": 0.0, \"conductivity_ms_cm\": 3.8058648593}, {\"temperature_c\": 10.0, \"conductivity_ms_cm\": 4.992309253987}, {\"temperature_c\": 20.0, \"conductivity_ms_cm\": 6.156483956922}, {\"temperature_c\": 30.0, \"conductivity_ms_cm\": 7.437532198843}, {\"temperature_c\": 40.0, \"conductivity_ms_cm\": 8.829673135487}, {\"temperature_c\": 50.0, \"conductivity_ms_cm\": 10.220288169566}, {\"temperature_c\": 60.0, \"conductivity_ms_cm\": 11.603756421658}], \"prediction_request\": {\"temperature_c\": 20.0, \"candidates\": [{\"candidate_id\": \"配方1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"]}], \"composition_inputs\": {\"配方1\": {\"component_mmol\": {\"EC\": 0.8301158301158301, \"EMC\": 15.91085922866337, \"PC\": 6.127006827376113, \"NaPF6\": 3.8648407264066686}}}}}, {\"label\": \"配方2\", \"measurements\": [{\"temperature_c\": -30.0, \"conductivity_ms_cm\": 1.653227261534}, {\"temperature_c\": -20.0, \"conductivity_ms_cm\": 1.660382527732}, {\"temperature_c\": -10.0, \"conductivity_ms_cm\": 2.6046795002}, {\"temperature_c\": 0.0, \"conductivity_ms_cm\": 3.727320182887}, {\"temperature_c\": 10.0, \"conductivity_ms_cm\": 5.119281608486}, {\"temperature_c\": 20.0, \"conductivity_ms_cm\": 6.490036905405}, {\"temperature_c\": 30.0, \"conductivity_ms_cm\": 8.011972200772}, {\"temperature_c\": 40.0, \"conductivity_ms_cm\": 9.538101999457}, {\"temperature_c\": 50.0, \"conductivity_ms_cm\": 11.072841349535}, {\"temperature_c\": 60.0, \"conductivity_ms_cm\": 12.775211305443}], \"prediction_request\": {\"temperature_c\": 20.0, \"candidates\": [{\"candidate_id\": \"配方2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"]}], \"composition_inputs\": {\"配方2\": {\"component_mmol\": {\"EC\": 2.2768566886213946, \"EMC\": 0.0778060611882234, \"PC\": 24.644183016779472, \"NaPF6\": 1.7231318844894314}}}}}]",
+      "hypothesis_not_result": "拟合后可能需预测，不需达标排序；在信息足以区分时保留预测器",
+      "historical_sha256": "15a92234d3aa2286773e5757df3a204369a32d4a3d977b11632301431beefdee"
+    },
+    {
+      "id": "ranking",
+      "source": "${TASK_INTENT_ARCHIVE}\\async-comparison-v1\\ranking-r0-lru\\result.json",
+      "sha256": "3d2f1bbbf06bc9f42b92b31dcd087040a68e8356d655cae8bdf4ec83ba58b0ed",
+      "goal": "请评价下面两种电解液能否用于一个演示筛选条件：在0、20、40℃均达到3.0 mS/cm。数据来自已归档Zenodo测量，保持全部10个温度点、组成及原值，不平均、不删点、不补值。不查文献，不调用子代理。明确区分测量值、拟合参数与模型估计。拟合比较Arrhenius与VTF的AICc和留一温度误差。0.1仅为本次工作条件，不是通用科学标准。这些配方可能出现在预测模型训练集中，不能称为独立留出验证。先检查每种配方的温度测量；若两种配方的AICc优选模型loo_rmse_log10均低于0.1，再按演示条件对两者作多温度稳健排序，使用完整可用集成成员。若条件不满足则报告不能继续的原因，不补造或修改输入。3.0 mS/cm是本任务明确给定的演示阈值，不是领域通用标准。最后报告排序、逐温度估计与适用边界；集成达标频率不是已校准的物理概率。\n[{\"label\": \"配方1\", \"measurements\": [{\"temperature_c\": -30.0, \"conductivity_ms_cm\": 1.851699327963}, {\"temperature_c\": -20.0, \"conductivity_ms_cm\": 1.840177574978}, {\"temperature_c\": -10.0, \"conductivity_ms_cm\": 2.759636752722}, {\"temperature_c\": 0.0, \"conductivity_ms_cm\": 3.8058648593}, {\"temperature_c\": 10.0, \"conductivity_ms_cm\": 4.992309253987}, {\"temperature_c\": 20.0, \"conductivity_ms_cm\": 6.156483956922}, {\"temperature_c\": 30.0, \"conductivity_ms_cm\": 7.437532198843}, {\"temperature_c\": 40.0, \"conductivity_ms_cm\": 8.829673135487}, {\"temperature_c\": 50.0, \"conductivity_ms_cm\": 10.220288169566}, {\"temperature_c\": 60.0, \"conductivity_ms_cm\": 11.603756421658}], \"prediction_request\": {\"temperature_c\": 20.0, \"candidates\": [{\"candidate_id\": \"配方1\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"]}], \"composition_inputs\": {\"配方1\": {\"component_mmol\": {\"EC\": 0.8301158301158301, \"EMC\": 15.91085922866337, \"PC\": 6.127006827376113, \"NaPF6\": 3.8648407264066686}}}}}, {\"label\": \"配方2\", \"measurements\": [{\"temperature_c\": -30.0, \"conductivity_ms_cm\": 1.653227261534}, {\"temperature_c\": -20.0, \"conductivity_ms_cm\": 1.660382527732}, {\"temperature_c\": -10.0, \"conductivity_ms_cm\": 2.6046795002}, {\"temperature_c\": 0.0, \"conductivity_ms_cm\": 3.727320182887}, {\"temperature_c\": 10.0, \"conductivity_ms_cm\": 5.119281608486}, {\"temperature_c\": 20.0, \"conductivity_ms_cm\": 6.490036905405}, {\"temperature_c\": 30.0, \"conductivity_ms_cm\": 8.011972200772}, {\"temperature_c\": 40.0, \"conductivity_ms_cm\": 9.538101999457}, {\"temperature_c\": 50.0, \"conductivity_ms_cm\": 11.072841349535}, {\"temperature_c\": 60.0, \"conductivity_ms_cm\": 12.775211305443}], \"prediction_request\": {\"temperature_c\": 20.0, \"candidates\": [{\"candidate_id\": \"配方2\", \"salt\": \"NaPF6\", \"solvents\": [\"EC\", \"EMC\", \"PC\"]}], \"composition_inputs\": {\"配方2\": {\"component_mmol\": {\"EC\": 2.2768566886213946, \"EMC\": 0.0778060611882234, \"PC\": 24.644183016779472, \"NaPF6\": 1.7231318844894314}}}}}]",
+      "hypothesis_not_result": "拟合后可能需集成达标评价；在信息足以区分时保留排序后端",
+      "historical_sha256": "3d2f1bbbf06bc9f42b92b31dcd087040a68e8356d655cae8bdf4ec83ba58b0ed"
+    }
+  ],
+  "capacity": {
+    "process_slots": 2,
+    "basis": "历史有效实例为预测+排序，下一项拟合需要一个进程；存在两个合法闲置选择",
+    "host_guard": "保持原保护，执行前重新检查；不降低系统余量"
+  },
+  "lifecycle": [
+    "请求到达后登记真实身份/目标版本，未执行状态为pending",
+    "前任务结束只撤销前任务需求；后续原始目标在空档和dispatch后继续有效",
+    "旧合并建议作废，按新快照重新解释/绑定，不保留旧可执行回收指令",
+    "在下一实际容量取舍点获取/使用有效任务解释，不限定在前任务最后一批",
+    "目标修订、取消、完成及过期分别使对应信息失效；未提交任务不得加入"
+  ],
+  "scope": "归档真实科学调用的受控接续验证，不冒充自然在线任务流或端到端加速测试",
+  "interpretation_trigger": "本能力验证在两个真实目标对应的首个可行取舍点显式请求解释，记录成本；不让旧经济门控的未触发代替能力验证。不改生产默认门控。",
+  "maximum_new_model_requests_proposed": 2,
+  "local_shadow": "同一快照记录LRU与成本策略选择；不额外执行两套性能任务",
+  "positive_criterion": "解释来源真实，需求跨阶段有效，资源层实际采用有效信息；若选择随目标改变，能追溯其原因",
+  "unknown_handling": "条件性需求允许unknown；判断不分离、超时或失效就回退，不为获得目标选择调阈值、改数据或补未来调用",
+  "local_checks": {
+    "count": 9,
+    "status": "passed",
+    "model_responses": "本地夹具，不是Jev",
+    "science_processes": "本地无操作适配器，不是科学实测"
+  },
+  "files": {
+    "queue_adapter_sha256": "e6891df71107f6a7b5a7651f6d1e14a67cf94ef3276512d51bbdb95646148cb3",
+    "checks_sha256": "2f0dff42f227ff840c23b4fa9a99b22a014fd4ec0d03f61e539e7ac71502af9f"
+  },
+  "new_api_calls_this_step": 0,
+  "new_scientific_runs_this_step": 0,
+  "production_and_manuscript_modified": false
+}

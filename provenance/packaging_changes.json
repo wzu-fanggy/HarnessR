@@ -1,0 +1,101 @@
+[
+  {
+    "path": "src/orion/env_utils.py",
+    "change": "Only explicit ORION_ENV_FILE is loaded; no parent-project secret discovery."
+  },
+  {
+    "path": "src/kg_rag/config.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "src/orion/benchmark/cwsr_native_runtime_pair_v1.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "src/orion/core/memory/wiki_gateway.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "src/orion/core/memory/wiki_reflection.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "experiments/integrated/execute.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "experiments/integrated/prepare_inputs.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "experiments/mcp_sessions/audit_results.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "experiments/mcp_sessions/mcp_adapter.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "experiments/mcp_sessions/prepare.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "experiments/mcp_sessions/run_case.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "experiments/sharing/continuation.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "experiments/sharing/run.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "experiments/task_aware/audit.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "experiments/task_aware/prepare.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "experiments/task_aware/run.py",
+    "change": "Replace author-specific absolute paths with portable release path resolution."
+  },
+  {
+    "path": "experiments/integrated/execute.py",
+    "change": "Portable inputs/output location; original scientific conditions retained."
+  },
+  {
+    "path": "experiments/sharing/run.py",
+    "change": "Portable inputs/output location; original scientific conditions retained."
+  },
+  {
+    "path": "experiments/task_aware/run.py",
+    "change": "Portable inputs/output location; original scientific conditions retained."
+  },
+  {
+    "path": "experiments/mcp_sessions/mcp_adapter.py",
+    "change": "Portable inputs/output location; original scientific conditions retained."
+  },
+  {
+    "path": "src/orion/benchmark/cwsr_cross_kind_real_pressure_formal_v2.py",
+    "change": "Portable inputs/output location; original scientific conditions retained."
+  },
+  {
+    "path": "src/orion/benchmark/cwsr_cross_kind_real_pressure_probe_v1.py",
+    "change": "Portable inputs/output location; original scientific conditions retained."
+  },
+  {
+    "paths": [
+      "src/orion/benchmark/cwsr_native_runtime_pair_v1.py",
+      "src/orion/benchmark/cwsr_real_rag_kg_trace_replay_v1.py"
+    ],
+    "change": "Use the active documented Python interpreter for subprocesses instead of author-only virtual-environment locations."
+  },
+  {
+    "path": "src/kg_rag/config.py",
+    "change": "Remove author database password and model location. Load database settings and embedding model from environment; no password default."
+  }
+]

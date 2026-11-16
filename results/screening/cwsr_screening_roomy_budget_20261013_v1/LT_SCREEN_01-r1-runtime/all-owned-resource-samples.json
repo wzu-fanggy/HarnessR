@@ -1,0 +1,7146 @@
+[
+  {
+    "time": 7559.578,
+    "agent": {
+      "rss_mib": 781.28515625,
+      "private_commit_mib": 2102.80078125
+    },
+    "root_service": {
+      "rss_mib": 777.87890625,
+      "private_commit_mib": 2024.02734375
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7560.093,
+    "agent": {
+      "rss_mib": 783.4921875,
+      "private_commit_mib": 2105.03125
+    },
+    "root_service": {
+      "rss_mib": 777.87890625,
+      "private_commit_mib": 2024.02734375
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7560.625,
+    "agent": {
+      "rss_mib": 785.8515625,
+      "private_commit_mib": 2107.4453125
+    },
+    "root_service": {
+      "rss_mib": 777.87890625,
+      "private_commit_mib": 2024.02734375
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7561.14,
+    "agent": {
+      "rss_mib": 791.5,
+      "private_commit_mib": 2112.7109375
+    },
+    "root_service": {
+      "rss_mib": 777.87890625,
+      "private_commit_mib": 2024.02734375
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7561.671,
+    "agent": {
+      "rss_mib": 791.53515625,
+      "private_commit_mib": 2112.7109375
+    },
+    "root_service": {
+      "rss_mib": 777.87890625,
+      "private_commit_mib": 2024.02734375
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7562.203,
+    "agent": {
+      "rss_mib": 792.19921875,
+      "private_commit_mib": 2114.0625
+    },
+    "root_service": {
+      "rss_mib": 778.1015625,
+      "private_commit_mib": 2024.14453125
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7562.718,
+    "agent": {
+      "rss_mib": 792.20703125,
+      "private_commit_mib": 2114.0625
+    },
+    "root_service": {
+      "rss_mib": 778.2265625,
+      "private_commit_mib": 2024.27734375
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7563.234,
+    "agent": {
+      "rss_mib": 792.3359375,
+      "private_commit_mib": 2114.0625
+    },
+    "root_service": {
+      "rss_mib": 779.0703125,
+      "private_commit_mib": 2025.37109375
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7563.75,
+    "agent": {
+      "rss_mib": 792.59375,
+      "private_commit_mib": 2114.0625
+    },
+    "root_service": {
+      "rss_mib": 779.20703125,
+      "private_commit_mib": 2025.50390625
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7564.25,
+    "agent": {
+      "rss_mib": 792.93359375,
+      "private_commit_mib": 2115.0703125
+    },
+    "root_service": {
+      "rss_mib": 779.26953125,
+      "private_commit_mib": 2025.5703125
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7564.781,
+    "agent": {
+      "rss_mib": 793.3359375,
+      "private_commit_mib": 2115.0703125
+    },
+    "root_service": {
+      "rss_mib": 779.26953125,
+      "private_commit_mib": 2025.5703125
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7565.312,
+    "agent": {
+      "rss_mib": 793.625,
+      "private_commit_mib": 2115.94921875
+    },
+    "root_service": {
+      "rss_mib": 779.26953125,
+      "private_commit_mib": 2025.5703125
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7565.843,
+    "agent": {
+      "rss_mib": 793.66015625,
+      "private_commit_mib": 2115.94921875
+    },
+    "root_service": {
+      "rss_mib": 779.26953125,
+      "private_commit_mib": 2025.5703125
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7566.375,
+    "agent": {
+      "rss_mib": 793.7265625,
+      "private_commit_mib": 2115.94921875
+    },
+    "root_service": {
+      "rss_mib": 779.26953125,
+      "private_commit_mib": 2025.5703125
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7566.906,
+    "agent": {
+      "rss_mib": 793.99609375,
+      "private_commit_mib": 2115.94921875
+    },
+    "root_service": {
+      "rss_mib": 779.26953125,
+      "private_commit_mib": 2025.5703125
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7567.421,
+    "agent": {
+      "rss_mib": 794.4140625,
+      "private_commit_mib": 2116.94921875
+    },
+    "root_service": {
+      "rss_mib": 779.26953125,
+      "private_commit_mib": 2025.5703125
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7567.953,
+    "agent": {
+      "rss_mib": 794.97265625,
+      "private_commit_mib": 2116.94921875
+    },
+    "root_service": {
+      "rss_mib": 779.26953125,
+      "private_commit_mib": 2025.5703125
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7568.484,
+    "agent": {
+      "rss_mib": 795.4453125,
+      "private_commit_mib": 2117.953125
+    },
+    "root_service": {
+      "rss_mib": 779.26953125,
+      "private_commit_mib": 2025.5703125
+    },
+    "rf_worker": {
+      "rss_mib": 0.0,
+      "private_commit_mib": 0.0
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7569.0,
+    "agent": {
+      "rss_mib": 796.09375,
+      "private_commit_mib": 2117.953125
+    },
+    "root_service": {
+      "rss_mib": 779.26953125,
+      "private_commit_mib": 2025.5703125
+    },
+    "rf_worker": {
+      "rss_mib": 4.1953125,
+      "private_commit_mib": 0.8203125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7569.515,
+    "agent": {
+      "rss_mib": 796.15234375,
+      "private_commit_mib": 2117.953125
+    },
+    "root_service": {
+      "rss_mib": 779.27734375,
+      "private_commit_mib": 2025.5703125
+    },
+    "rf_worker": {
+      "rss_mib": 4.1953125,
+      "private_commit_mib": 0.8203125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7570.031,
+    "agent": {
+      "rss_mib": 796.15234375,
+      "private_commit_mib": 2117.953125
+    },
+    "root_service": {
+      "rss_mib": 779.41015625,
+      "private_commit_mib": 2025.703125
+    },
+    "rf_worker": {
+      "rss_mib": 4.1953125,
+      "private_commit_mib": 0.8203125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7570.546,
+    "agent": {
+      "rss_mib": 797.2734375,
+      "private_commit_mib": 2118.66015625
+    },
+    "root_service": {
+      "rss_mib": 779.41015625,
+      "private_commit_mib": 2025.703125
+    },
+    "rf_worker": {
+      "rss_mib": 170.1484375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7571.078,
+    "agent": {
+      "rss_mib": 797.3203125,
+      "private_commit_mib": 2119.765625
+    },
+    "root_service": {
+      "rss_mib": 779.41015625,
+      "private_commit_mib": 2025.703125
+    },
+    "rf_worker": {
+      "rss_mib": 170.1484375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7571.609,
+    "agent": {
+      "rss_mib": 797.37890625,
+      "private_commit_mib": 2119.765625
+    },
+    "root_service": {
+      "rss_mib": 779.41015625,
+      "private_commit_mib": 2025.703125
+    },
+    "rf_worker": {
+      "rss_mib": 170.1484375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7572.125,
+    "agent": {
+      "rss_mib": 797.4765625,
+      "private_commit_mib": 2119.765625
+    },
+    "root_service": {
+      "rss_mib": 779.3359375,
+      "private_commit_mib": 2025.44921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.1484375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7572.656,
+    "agent": {
+      "rss_mib": 797.55078125,
+      "private_commit_mib": 2119.765625
+    },
+    "root_service": {
+      "rss_mib": 779.3359375,
+      "private_commit_mib": 2025.44921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.1484375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7573.187,
+    "agent": {
+      "rss_mib": 797.5703125,
+      "private_commit_mib": 2119.765625
+    },
+    "root_service": {
+      "rss_mib": 779.3359375,
+      "private_commit_mib": 2025.44921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.1484375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7573.703,
+    "agent": {
+      "rss_mib": 797.640625,
+      "private_commit_mib": 2119.765625
+    },
+    "root_service": {
+      "rss_mib": 779.3359375,
+      "private_commit_mib": 2025.44921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.1484375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7574.234,
+    "agent": {
+      "rss_mib": 797.96484375,
+      "private_commit_mib": 2120.02734375
+    },
+    "root_service": {
+      "rss_mib": 779.3359375,
+      "private_commit_mib": 2025.44921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.1484375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7574.765,
+    "agent": {
+      "rss_mib": 798.81640625,
+      "private_commit_mib": 2120.4140625
+    },
+    "root_service": {
+      "rss_mib": 779.3359375,
+      "private_commit_mib": 2025.44921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7575.281,
+    "agent": {
+      "rss_mib": 798.95703125,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 779.3359375,
+      "private_commit_mib": 2025.44921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7575.812,
+    "agent": {
+      "rss_mib": 799.0234375,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 779.46484375,
+      "private_commit_mib": 2025.58203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7576.328,
+    "agent": {
+      "rss_mib": 799.05859375,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 779.59765625,
+      "private_commit_mib": 2025.71484375
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7576.859,
+    "agent": {
+      "rss_mib": 799.12890625,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 779.59765625,
+      "private_commit_mib": 2025.71484375
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7577.39,
+    "agent": {
+      "rss_mib": 799.12890625,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 779.59765625,
+      "private_commit_mib": 2025.71484375
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7577.906,
+    "agent": {
+      "rss_mib": 799.1328125,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 779.59765625,
+      "private_commit_mib": 2025.71484375
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7578.437,
+    "agent": {
+      "rss_mib": 799.1953125,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 779.59765625,
+      "private_commit_mib": 2025.71484375
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7578.968,
+    "agent": {
+      "rss_mib": 799.1953125,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 845.90234375,
+      "private_commit_mib": 5252.92578125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7580.296,
+    "agent": {
+      "rss_mib": 799.1953125,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 1479.98828125,
+      "private_commit_mib": 6434.76953125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.325791,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7580.812,
+    "agent": {
+      "rss_mib": 799.1953125,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 1997.85546875,
+      "private_commit_mib": 6434.76953125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.325791,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7581.343,
+    "agent": {
+      "rss_mib": 799.1953125,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 2289.9140625,
+      "private_commit_mib": 6716.3203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.374624,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7581.859,
+    "agent": {
+      "rss_mib": 799.1953125,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 2482.7109375,
+      "private_commit_mib": 6908.6953125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.405876,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7582.39,
+    "agent": {
+      "rss_mib": 799.1953125,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 2852.25,
+      "private_commit_mib": 7293.4453125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.465126,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7582.906,
+    "agent": {
+      "rss_mib": 799.1953125,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 3198.87109375,
+      "private_commit_mib": 7626.08984375
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.519167,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7583.421,
+    "agent": {
+      "rss_mib": 799.203125,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 1037.67578125,
+      "private_commit_mib": 5476.0390625
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2165.938,
+          "gpu_vram_pressure": 0.522422,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7583.953,
+    "agent": {
+      "rss_mib": 799.203125,
+      "private_commit_mib": 2121.55859375
+    },
+    "root_service": {
+      "rss_mib": 1037.8046875,
+      "private_commit_mib": 5476.0390625
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2165.938,
+          "gpu_vram_pressure": 0.522422,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7584.484,
+    "agent": {
+      "rss_mib": 799.44140625,
+      "private_commit_mib": 2121.8203125
+    },
+    "root_service": {
+      "rss_mib": 1037.8046875,
+      "private_commit_mib": 5476.0390625
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2165.938,
+          "gpu_vram_pressure": 0.522422,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7585.0,
+    "agent": {
+      "rss_mib": 799.44140625,
+      "private_commit_mib": 2121.8203125
+    },
+    "root_service": {
+      "rss_mib": 1037.8671875,
+      "private_commit_mib": 5476.0390625
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2165.938,
+          "gpu_vram_pressure": 0.522422,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": 7585.515,
+    "agent": {
+      "rss_mib": 800.38671875,
+      "private_commit_mib": 2122.71484375
+    },
+    "root_service": {
+      "rss_mib": 1037.8671875,
+      "private_commit_mib": 5476.0390625
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2165.938,
+          "gpu_vram_pressure": 0.522422,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7586.046,
+    "agent": {
+      "rss_mib": 802.73046875,
+      "private_commit_mib": 2125.0859375
+    },
+    "root_service": {
+      "rss_mib": 1037.8671875,
+      "private_commit_mib": 5476.0390625
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2165.938,
+          "gpu_vram_pressure": 0.522422,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7586.562,
+    "agent": {
+      "rss_mib": 804.328125,
+      "private_commit_mib": 2126.83984375
+    },
+    "root_service": {
+      "rss_mib": 1038.9921875,
+      "private_commit_mib": 5476.55078125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2165.938,
+          "gpu_vram_pressure": 0.522422,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7587.093,
+    "agent": {
+      "rss_mib": 804.328125,
+      "private_commit_mib": 2126.83984375
+    },
+    "root_service": {
+      "rss_mib": 1041.41015625,
+      "private_commit_mib": 5478.609375
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2165.938,
+          "gpu_vram_pressure": 0.522422,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7587.609,
+    "agent": {
+      "rss_mib": 804.328125,
+      "private_commit_mib": 2126.83984375
+    },
+    "root_service": {
+      "rss_mib": 1051.0234375,
+      "private_commit_mib": 5488.6171875
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2165.938,
+          "gpu_vram_pressure": 0.522422,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7588.765,
+    "agent": {
+      "rss_mib": 804.328125,
+      "private_commit_mib": 2126.83984375
+    },
+    "root_service": {
+      "rss_mib": 1286.83984375,
+      "private_commit_mib": 5849.1640625
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2184.597,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7589.296,
+    "agent": {
+      "rss_mib": 804.328125,
+      "private_commit_mib": 2126.83984375
+    },
+    "root_service": {
+      "rss_mib": 1336.26953125,
+      "private_commit_mib": 5910.578125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7589.828,
+    "agent": {
+      "rss_mib": 804.43359375,
+      "private_commit_mib": 2126.94140625
+    },
+    "root_service": {
+      "rss_mib": 1336.8984375,
+      "private_commit_mib": 5911.578125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7590.343,
+    "agent": {
+      "rss_mib": 804.43359375,
+      "private_commit_mib": 2126.94140625
+    },
+    "root_service": {
+      "rss_mib": 1337.06640625,
+      "private_commit_mib": 5911.64453125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7590.859,
+    "agent": {
+      "rss_mib": 804.43359375,
+      "private_commit_mib": 2126.94140625
+    },
+    "root_service": {
+      "rss_mib": 1337.140625,
+      "private_commit_mib": 5911.7109375
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7591.39,
+    "agent": {
+      "rss_mib": 804.4453125,
+      "private_commit_mib": 2126.94140625
+    },
+    "root_service": {
+      "rss_mib": 1337.703125,
+      "private_commit_mib": 5911.74609375
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7591.921,
+    "agent": {
+      "rss_mib": 804.49609375,
+      "private_commit_mib": 2126.94140625
+    },
+    "root_service": {
+      "rss_mib": 1339.8671875,
+      "private_commit_mib": 5908.0703125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7592.453,
+    "agent": {
+      "rss_mib": 804.49609375,
+      "private_commit_mib": 2126.94140625
+    },
+    "root_service": {
+      "rss_mib": 1339.9765625,
+      "private_commit_mib": 5908.203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7592.968,
+    "agent": {
+      "rss_mib": 804.49609375,
+      "private_commit_mib": 2126.94140625
+    },
+    "root_service": {
+      "rss_mib": 1340.0390625,
+      "private_commit_mib": 5908.26953125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7593.5,
+    "agent": {
+      "rss_mib": 805.98046875,
+      "private_commit_mib": 2128.3828125
+    },
+    "root_service": {
+      "rss_mib": 1340.24609375,
+      "private_commit_mib": 5908.39453125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7594.015,
+    "agent": {
+      "rss_mib": 805.9921875,
+      "private_commit_mib": 2129.26171875
+    },
+    "root_service": {
+      "rss_mib": 1340.24609375,
+      "private_commit_mib": 5908.39453125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7594.546,
+    "agent": {
+      "rss_mib": 805.9921875,
+      "private_commit_mib": 2129.26171875
+    },
+    "root_service": {
+      "rss_mib": 1340.35546875,
+      "private_commit_mib": 5908.52734375
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7595.062,
+    "agent": {
+      "rss_mib": 806.0078125,
+      "private_commit_mib": 2129.26171875
+    },
+    "root_service": {
+      "rss_mib": 1340.48046875,
+      "private_commit_mib": 5908.66015625
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7595.593,
+    "agent": {
+      "rss_mib": 806.02734375,
+      "private_commit_mib": 2129.26171875
+    },
+    "root_service": {
+      "rss_mib": 1340.54296875,
+      "private_commit_mib": 5908.7265625
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7596.125,
+    "agent": {
+      "rss_mib": 806.609375,
+      "private_commit_mib": 2129.76953125
+    },
+    "root_service": {
+      "rss_mib": 1340.6015625,
+      "private_commit_mib": 5908.7265625
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7596.64,
+    "agent": {
+      "rss_mib": 806.609375,
+      "private_commit_mib": 2129.76953125
+    },
+    "root_service": {
+      "rss_mib": 1342.21875,
+      "private_commit_mib": 5910.73046875
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7597.171,
+    "agent": {
+      "rss_mib": 806.609375,
+      "private_commit_mib": 2129.76953125
+    },
+    "root_service": {
+      "rss_mib": 1342.24609375,
+      "private_commit_mib": 5910.73046875
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7597.671,
+    "agent": {
+      "rss_mib": 806.609375,
+      "private_commit_mib": 2129.76953125
+    },
+    "root_service": {
+      "rss_mib": 1342.26171875,
+      "private_commit_mib": 5910.73046875
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7598.203,
+    "agent": {
+      "rss_mib": 806.609375,
+      "private_commit_mib": 2129.76953125
+    },
+    "root_service": {
+      "rss_mib": 1342.2734375,
+      "private_commit_mib": 5910.73046875
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7598.734,
+    "agent": {
+      "rss_mib": 806.609375,
+      "private_commit_mib": 2129.76953125
+    },
+    "root_service": {
+      "rss_mib": 1342.2734375,
+      "private_commit_mib": 5910.73046875
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7599.265,
+    "agent": {
+      "rss_mib": 806.60546875,
+      "private_commit_mib": 2129.76953125
+    },
+    "root_service": {
+      "rss_mib": 1342.27734375,
+      "private_commit_mib": 5910.73046875
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7599.781,
+    "agent": {
+      "rss_mib": 806.60546875,
+      "private_commit_mib": 2129.76953125
+    },
+    "root_service": {
+      "rss_mib": 1342.41796875,
+      "private_commit_mib": 5910.86328125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7600.296,
+    "agent": {
+      "rss_mib": 807.49609375,
+      "private_commit_mib": 2130.73828125
+    },
+    "root_service": {
+      "rss_mib": 1342.9375,
+      "private_commit_mib": 5911.3046875
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7600.828,
+    "agent": {
+      "rss_mib": 807.51953125,
+      "private_commit_mib": 2131.6171875
+    },
+    "root_service": {
+      "rss_mib": 1342.95703125,
+      "private_commit_mib": 5911.3046875
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7601.359,
+    "agent": {
+      "rss_mib": 807.54296875,
+      "private_commit_mib": 2131.6171875
+    },
+    "root_service": {
+      "rss_mib": 1343.03125,
+      "private_commit_mib": 5911.37109375
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7601.875,
+    "agent": {
+      "rss_mib": 807.578125,
+      "private_commit_mib": 2131.6171875
+    },
+    "root_service": {
+      "rss_mib": 1343.140625,
+      "private_commit_mib": 5911.453125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7602.406,
+    "agent": {
+      "rss_mib": 807.609375,
+      "private_commit_mib": 2131.6171875
+    },
+    "root_service": {
+      "rss_mib": 1343.203125,
+      "private_commit_mib": 5911.51953125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7602.921,
+    "agent": {
+      "rss_mib": 807.671875,
+      "private_commit_mib": 2131.6171875
+    },
+    "root_service": {
+      "rss_mib": 1343.203125,
+      "private_commit_mib": 5911.51953125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7603.453,
+    "agent": {
+      "rss_mib": 807.75,
+      "private_commit_mib": 2131.6171875
+    },
+    "root_service": {
+      "rss_mib": 1343.203125,
+      "private_commit_mib": 5911.51953125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7603.984,
+    "agent": {
+      "rss_mib": 807.76953125,
+      "private_commit_mib": 2131.6171875
+    },
+    "root_service": {
+      "rss_mib": 1343.203125,
+      "private_commit_mib": 5911.51953125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7604.5,
+    "agent": {
+      "rss_mib": 808.23828125,
+      "private_commit_mib": 2132.6171875
+    },
+    "root_service": {
+      "rss_mib": 1343.203125,
+      "private_commit_mib": 5911.51953125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7605.031,
+    "agent": {
+      "rss_mib": 808.69921875,
+      "private_commit_mib": 2132.6171875
+    },
+    "root_service": {
+      "rss_mib": 1343.203125,
+      "private_commit_mib": 5911.51953125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7605.562,
+    "agent": {
+      "rss_mib": 809.1953125,
+      "private_commit_mib": 2133.62109375
+    },
+    "root_service": {
+      "rss_mib": 1343.203125,
+      "private_commit_mib": 5911.51953125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7606.062,
+    "agent": {
+      "rss_mib": 809.59375,
+      "private_commit_mib": 2133.5078125
+    },
+    "root_service": {
+      "rss_mib": 1343.203125,
+      "private_commit_mib": 5911.51953125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7606.593,
+    "agent": {
+      "rss_mib": 810.078125,
+      "private_commit_mib": 2133.5078125
+    },
+    "root_service": {
+      "rss_mib": 1343.328125,
+      "private_commit_mib": 5911.65625
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7607.109,
+    "agent": {
+      "rss_mib": 810.546875,
+      "private_commit_mib": 2134.5078125
+    },
+    "root_service": {
+      "rss_mib": 1343.453125,
+      "private_commit_mib": 5911.796875
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7607.64,
+    "agent": {
+      "rss_mib": 810.89453125,
+      "private_commit_mib": 2134.5078125
+    },
+    "root_service": {
+      "rss_mib": 1343.5859375,
+      "private_commit_mib": 5911.93359375
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7608.156,
+    "agent": {
+      "rss_mib": 811.453125,
+      "private_commit_mib": 2135.51171875
+    },
+    "root_service": {
+      "rss_mib": 1343.7109375,
+      "private_commit_mib": 5912.06640625
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7608.687,
+    "agent": {
+      "rss_mib": 811.90625,
+      "private_commit_mib": 2135.51171875
+    },
+    "root_service": {
+      "rss_mib": 1343.7734375,
+      "private_commit_mib": 5912.1328125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7609.203,
+    "agent": {
+      "rss_mib": 813.2421875,
+      "private_commit_mib": 2136.15625
+    },
+    "root_service": {
+      "rss_mib": 1343.7734375,
+      "private_commit_mib": 5912.1328125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7609.734,
+    "agent": {
+      "rss_mib": 813.2578125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7734375,
+      "private_commit_mib": 5912.1328125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7610.25,
+    "agent": {
+      "rss_mib": 813.2734375,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7610.781,
+    "agent": {
+      "rss_mib": 813.30859375,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7611.296,
+    "agent": {
+      "rss_mib": 813.3828125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7611.812,
+    "agent": {
+      "rss_mib": 813.3828125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7612.343,
+    "agent": {
+      "rss_mib": 813.4453125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7612.875,
+    "agent": {
+      "rss_mib": 813.4453125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7613.406,
+    "agent": {
+      "rss_mib": 813.4453125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7613.921,
+    "agent": {
+      "rss_mib": 813.5078125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7614.437,
+    "agent": {
+      "rss_mib": 813.5078125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7614.953,
+    "agent": {
+      "rss_mib": 813.5703125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7615.468,
+    "agent": {
+      "rss_mib": 813.5703125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7615.984,
+    "agent": {
+      "rss_mib": 813.5703125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7616.5,
+    "agent": {
+      "rss_mib": 813.6328125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7617.031,
+    "agent": {
+      "rss_mib": 813.6328125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7617.546,
+    "agent": {
+      "rss_mib": 813.6953125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7618.078,
+    "agent": {
+      "rss_mib": 813.703125,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7618.609,
+    "agent": {
+      "rss_mib": 813.7734375,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7619.125,
+    "agent": {
+      "rss_mib": 813.7734375,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7619.64,
+    "agent": {
+      "rss_mib": 813.8359375,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.7578125,
+      "private_commit_mib": 5912.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7620.171,
+    "agent": {
+      "rss_mib": 813.91015625,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.63671875,
+      "private_commit_mib": 4926.03125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7620.687,
+    "agent": {
+      "rss_mib": 813.94921875,
+      "private_commit_mib": 2137.0390625
+    },
+    "root_service": {
+      "rss_mib": 1343.63671875,
+      "private_commit_mib": 4926.03125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7621.218,
+    "agent": {
+      "rss_mib": 814.25390625,
+      "private_commit_mib": 2138.04296875
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7621.75,
+    "agent": {
+      "rss_mib": 814.5703125,
+      "private_commit_mib": 2138.04296875
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7622.265,
+    "agent": {
+      "rss_mib": 814.8671875,
+      "private_commit_mib": 2138.04296875
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7622.781,
+    "agent": {
+      "rss_mib": 815.1875,
+      "private_commit_mib": 2138.04296875
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7623.296,
+    "agent": {
+      "rss_mib": 815.515625,
+      "private_commit_mib": 2139.046875
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7623.828,
+    "agent": {
+      "rss_mib": 815.76953125,
+      "private_commit_mib": 2139.046875
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7624.359,
+    "agent": {
+      "rss_mib": 816.01171875,
+      "private_commit_mib": 2139.046875
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7624.89,
+    "agent": {
+      "rss_mib": 816.19921875,
+      "private_commit_mib": 2140.046875
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7625.406,
+    "agent": {
+      "rss_mib": 816.4296875,
+      "private_commit_mib": 2140.046875
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7625.937,
+    "agent": {
+      "rss_mib": 816.64453125,
+      "private_commit_mib": 2140.046875
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7626.468,
+    "agent": {
+      "rss_mib": 816.82421875,
+      "private_commit_mib": 2140.046875
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7626.984,
+    "agent": {
+      "rss_mib": 817.0390625,
+      "private_commit_mib": 2140.046875
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7627.5,
+    "agent": {
+      "rss_mib": 817.37109375,
+      "private_commit_mib": 2141.05078125
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7628.015,
+    "agent": {
+      "rss_mib": 817.66796875,
+      "private_commit_mib": 2141.05078125
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7628.546,
+    "agent": {
+      "rss_mib": 817.9453125,
+      "private_commit_mib": 2141.05078125
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.27734375,
+      "private_commit_mib": 1099.4453125
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7629.062,
+    "agent": {
+      "rss_mib": 818.23046875,
+      "private_commit_mib": 2142.05078125
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7629.593,
+    "agent": {
+      "rss_mib": 818.96875,
+      "private_commit_mib": 2142.3125
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7630.109,
+    "agent": {
+      "rss_mib": 819.2109375,
+      "private_commit_mib": 2142.3125
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7630.64,
+    "agent": {
+      "rss_mib": 819.49609375,
+      "private_commit_mib": 2142.3125
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7631.156,
+    "agent": {
+      "rss_mib": 819.7421875,
+      "private_commit_mib": 2143.31640625
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7631.671,
+    "agent": {
+      "rss_mib": 819.95703125,
+      "private_commit_mib": 2143.31640625
+    },
+    "root_service": {
+      "rss_mib": 1343.75390625,
+      "private_commit_mib": 4926.08203125
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7632.187,
+    "agent": {
+      "rss_mib": 820.3515625,
+      "private_commit_mib": 2143.31640625
+    },
+    "root_service": {
+      "rss_mib": 1343.4765625,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7632.718,
+    "agent": {
+      "rss_mib": 820.578125,
+      "private_commit_mib": 2143.31640625
+    },
+    "root_service": {
+      "rss_mib": 1343.4765625,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7633.234,
+    "agent": {
+      "rss_mib": 821.1171875,
+      "private_commit_mib": 2144.31640625
+    },
+    "root_service": {
+      "rss_mib": 1343.4765625,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7633.765,
+    "agent": {
+      "rss_mib": 821.48046875,
+      "private_commit_mib": 2144.31640625
+    },
+    "root_service": {
+      "rss_mib": 1343.4765625,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7634.296,
+    "agent": {
+      "rss_mib": 822.875,
+      "private_commit_mib": 2146.79296875
+    },
+    "root_service": {
+      "rss_mib": 1343.4765625,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7634.828,
+    "agent": {
+      "rss_mib": 822.89453125,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.4765625,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7635.343,
+    "agent": {
+      "rss_mib": 822.9140625,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.4765625,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7635.875,
+    "agent": {
+      "rss_mib": 822.953125,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.4765625,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7636.406,
+    "agent": {
+      "rss_mib": 822.99609375,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.4765625,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7636.921,
+    "agent": {
+      "rss_mib": 823.06640625,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.4765625,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7637.421,
+    "agent": {
+      "rss_mib": 823.1328125,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.4765625,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7637.953,
+    "agent": {
+      "rss_mib": 823.13671875,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7638.453,
+    "agent": {
+      "rss_mib": 823.203125,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7638.984,
+    "agent": {
+      "rss_mib": 823.21484375,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7639.515,
+    "agent": {
+      "rss_mib": 823.26953125,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7640.046,
+    "agent": {
+      "rss_mib": 823.30859375,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7640.562,
+    "agent": {
+      "rss_mib": 823.38671875,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7641.093,
+    "agent": {
+      "rss_mib": 823.44921875,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7641.625,
+    "agent": {
+      "rss_mib": 823.51171875,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7642.156,
+    "agent": {
+      "rss_mib": 823.57421875,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7642.687,
+    "agent": {
+      "rss_mib": 823.57421875,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7643.203,
+    "agent": {
+      "rss_mib": 823.57421875,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7643.718,
+    "agent": {
+      "rss_mib": 823.57421875,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7644.25,
+    "agent": {
+      "rss_mib": 823.6328125,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7644.781,
+    "agent": {
+      "rss_mib": 823.6328125,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7645.312,
+    "agent": {
+      "rss_mib": 823.640625,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7645.828,
+    "agent": {
+      "rss_mib": 823.640625,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7646.359,
+    "agent": {
+      "rss_mib": 823.640625,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7646.875,
+    "agent": {
+      "rss_mib": 823.640625,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7647.39,
+    "agent": {
+      "rss_mib": 823.640625,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7647.921,
+    "agent": {
+      "rss_mib": 823.640625,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7648.453,
+    "agent": {
+      "rss_mib": 823.65625,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7648.968,
+    "agent": {
+      "rss_mib": 823.6640625,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7649.5,
+    "agent": {
+      "rss_mib": 823.671875,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7650.031,
+    "agent": {
+      "rss_mib": 823.671875,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.59375,
+      "private_commit_mib": 4917.9921875
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7650.546,
+    "agent": {
+      "rss_mib": 824.03125,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7651.078,
+    "agent": {
+      "rss_mib": 824.42578125,
+      "private_commit_mib": 2147.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7651.593,
+    "agent": {
+      "rss_mib": 824.94921875,
+      "private_commit_mib": 2148.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7652.125,
+    "agent": {
+      "rss_mib": 825.28515625,
+      "private_commit_mib": 2148.671875
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7652.64,
+    "agent": {
+      "rss_mib": 825.546875,
+      "private_commit_mib": 2149.67578125
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7653.171,
+    "agent": {
+      "rss_mib": 825.671875,
+      "private_commit_mib": 2149.67578125
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7653.703,
+    "agent": {
+      "rss_mib": 826.08203125,
+      "private_commit_mib": 2149.67578125
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7654.203,
+    "agent": {
+      "rss_mib": 826.36328125,
+      "private_commit_mib": 2149.67578125
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7654.734,
+    "agent": {
+      "rss_mib": 826.6015625,
+      "private_commit_mib": 2150.67578125
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7655.234,
+    "agent": {
+      "rss_mib": 826.91796875,
+      "private_commit_mib": 2150.67578125
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7655.765,
+    "agent": {
+      "rss_mib": 827.109375,
+      "private_commit_mib": 2150.67578125
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7656.296,
+    "agent": {
+      "rss_mib": 827.34375,
+      "private_commit_mib": 2150.67578125
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7656.828,
+    "agent": {
+      "rss_mib": 827.53515625,
+      "private_commit_mib": 2151.6796875
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7657.359,
+    "agent": {
+      "rss_mib": 827.7578125,
+      "private_commit_mib": 2151.6796875
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7657.89,
+    "agent": {
+      "rss_mib": 827.96484375,
+      "private_commit_mib": 2151.6796875
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7658.39,
+    "agent": {
+      "rss_mib": 828.171875,
+      "private_commit_mib": 2151.6796875
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  },
+  {
+    "time": 7658.921,
+    "agent": {
+      "rss_mib": 828.57421875,
+      "private_commit_mib": 2151.6796875
+    },
+    "root_service": {
+      "rss_mib": 1343.57421875,
+      "private_commit_mib": 4917.94140625
+    },
+    "rf_worker": {
+      "rss_mib": 170.21875,
+      "private_commit_mib": 1099.33984375
+    },
+    "root_resources": {
+      "resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 258.078,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.530999999999949
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.030999999999949
+        }
+      }
+    }
+  }
+]

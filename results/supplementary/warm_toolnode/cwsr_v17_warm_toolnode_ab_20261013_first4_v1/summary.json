@@ -1,0 +1,87 @@
+{
+  "schema": "cwsr-v17-warm-toolnode-ab-v1",
+  "status": "PASS",
+  "scientific_outputs_identical": true,
+  "source_files_unchanged": true,
+  "metadata_snapshot_fingerprint_unchanged": true,
+  "no_evictions": true,
+  "root_resource_counter_deltas": {
+    "bge-m3-model": {
+      "load_count": 0,
+      "release_count": 0
+    },
+    "neo4j-session": {
+      "open_count": 0,
+      "close_count": 0
+    }
+  },
+  "paired": [
+    {
+      "task": "U1",
+      "pair": 0,
+      "native_s": 6.765359,
+      "runtime_s": 6.84826,
+      "runtime_minus_native_s": 0.082901,
+      "percent": 1.225
+    },
+    {
+      "task": "U1",
+      "pair": 1,
+      "native_s": 6.80074,
+      "runtime_s": 9.131021,
+      "runtime_minus_native_s": 2.330281,
+      "percent": 34.265
+    },
+    {
+      "task": "U2",
+      "pair": 0,
+      "native_s": 13.545132,
+      "runtime_s": 11.554529,
+      "runtime_minus_native_s": -1.990603,
+      "percent": -14.696
+    },
+    {
+      "task": "U2",
+      "pair": 1,
+      "native_s": 11.476638,
+      "runtime_s": 11.762674,
+      "runtime_minus_native_s": 0.286036,
+      "percent": 2.492
+    },
+    {
+      "task": "P1",
+      "pair": 0,
+      "native_s": 10.931785,
+      "runtime_s": 11.301724,
+      "runtime_minus_native_s": 0.369939,
+      "percent": 3.384
+    },
+    {
+      "task": "P1",
+      "pair": 1,
+      "native_s": 11.206228,
+      "runtime_s": 11.177915,
+      "runtime_minus_native_s": -0.028313,
+      "percent": -0.253
+    },
+    {
+      "task": "P2",
+      "pair": 0,
+      "native_s": 10.620344,
+      "runtime_s": 10.74356,
+      "runtime_minus_native_s": 0.123216,
+      "percent": 1.16
+    },
+    {
+      "task": "P2",
+      "pair": 1,
+      "native_s": 10.829162,
+      "runtime_s": 10.736502,
+      "runtime_minus_native_s": -0.09266,
+      "percent": -0.856
+    }
+  ],
+  "paired_delta_median_s": 0.1030585,
+  "paired_percent_median": 1.1925,
+  "over_3_percent_pairs": 2
+}

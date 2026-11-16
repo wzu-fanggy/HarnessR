@@ -1,0 +1,7 @@
+﻿quota,strategy,repeats,completed_batches,completed_calls,creations,repeated_creations,closures_during_sequence,closures_including_cleanup
+1,release_after_batch,6,6,8,6,4,6,6
+1,retain_all,6,2,3,1,0,0,1
+1,runtime,6,6,8,3,1,2,3
+2,release_after_batch,6,6,8,6,4,6,6
+2,retain_all,6,6,8,2,0,0,2
+2,runtime,6,6,8,2,0,0,2

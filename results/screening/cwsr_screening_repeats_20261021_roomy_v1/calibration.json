@@ -1,0 +1,233 @@
+{
+  "schema": "cwsr_complete_case_calibration_v1",
+  "rows": [
+    {
+      "repeat": 1,
+      "bge_resource": {
+        "resource_id": "bge-m3-model",
+        "resident": true,
+        "host_ram_mib": 470.32100000000014,
+        "host_ram_measurement": "load_rss_increment",
+        "load_rss_before_mib": 686.117,
+        "load_rss_after_mib": 1156.438,
+        "load_rss_delta_mib": 470.32100000000014,
+        "release_rss_before_mib": null,
+        "release_rss_after_mib": null,
+        "gpu_allocated_mib": 2165.938,
+        "gpu_vram_pressure": 0.522422,
+        "device": "cuda",
+        "load_count": 1,
+        "release_count": 0,
+        "last_load_seconds": 28.5
+      },
+      "rf_memory": {
+        "rss_mib": 169.91796875,
+        "private_commit_mib": 1099.35546875
+      },
+      "predictions": [
+        {
+          "pid": 12648,
+          "prediction": {
+            "conductivity_ms_cm": 3.4487655311733025,
+            "conductivity_s_cm": 0.0034487655311733027,
+            "ensemble_std_log10": 0.11976765887899131,
+            "estimated_factor_1sigma": 1.3175516793241504,
+            "features": {
+              "inverse_temperature": 3.660992128866923,
+              "x_EC": 0.6545108436328688,
+              "x_NaSalt": 0.12438287472883666,
+              "x_PC": 0.5161749545925916
+            },
+            "in_domain": true,
+            "log10_conductivity_s_cm": -2.462336330706256
+          },
+          "status": "RESULT",
+          "worker_log_tail": []
+        },
+        {
+          "pid": 12648,
+          "prediction": {
+            "conductivity_ms_cm": 3.2607902679914744,
+            "conductivity_s_cm": 0.0032607902679914745,
+            "ensemble_std_log10": 0.0715898183648156,
+            "estimated_factor_1sigma": 1.1792063749187005,
+            "features": {
+              "inverse_temperature": 3.660992128866923,
+              "x_EC": 0.30941181536856194,
+              "x_NaSalt": 0.13659165981340052,
+              "x_PC": 0.6288982789514654
+            },
+            "in_domain": true,
+            "log10_conductivity_s_cm": -2.4866771338475844
+          },
+          "status": "RESULT",
+          "worker_log_tail": []
+        }
+      ],
+      "bge_stage_source": "${PROJECT_SOURCE}\\reports\\cwsr_resource_validation_20261021_v1\\bge_retry1\\result.json",
+      "full_rf_memory": {
+        "working_set_mib": 169.91796875,
+        "private_working_set_uss_mib": 128.3046875,
+        "private_commit_mib": 1099.35546875,
+        "working_set_pages": 43491,
+        "private_pages": 32846,
+        "timestamp_monotonic": 34310.687
+      }
+    },
+    {
+      "repeat": 2,
+      "bge_resource": {
+        "resource_id": "bge-m3-model",
+        "resident": true,
+        "host_ram_mib": 634.4449999999999,
+        "host_ram_measurement": "load_rss_increment",
+        "load_rss_before_mib": 687.547,
+        "load_rss_after_mib": 1321.992,
+        "load_rss_delta_mib": 634.4449999999999,
+        "release_rss_before_mib": null,
+        "release_rss_after_mib": null,
+        "gpu_allocated_mib": 2165.938,
+        "gpu_vram_pressure": 0.522422,
+        "device": "cuda",
+        "load_count": 1,
+        "release_count": 0,
+        "last_load_seconds": 23.39100000000326
+      },
+      "rf_memory": {
+        "rss_mib": 170.453125,
+        "private_commit_mib": 1099.7109375
+      },
+      "predictions": [
+        {
+          "pid": 9232,
+          "prediction": {
+            "conductivity_ms_cm": 3.4487655311733025,
+            "conductivity_s_cm": 0.0034487655311733027,
+            "ensemble_std_log10": 0.11976765887899131,
+            "estimated_factor_1sigma": 1.3175516793241504,
+            "features": {
+              "inverse_temperature": 3.660992128866923,
+              "x_EC": 0.6545108436328688,
+              "x_NaSalt": 0.12438287472883666,
+              "x_PC": 0.5161749545925916
+            },
+            "in_domain": true,
+            "log10_conductivity_s_cm": -2.462336330706256
+          },
+          "status": "RESULT",
+          "worker_log_tail": []
+        },
+        {
+          "pid": 9232,
+          "prediction": {
+            "conductivity_ms_cm": 3.2607902679914744,
+            "conductivity_s_cm": 0.0032607902679914745,
+            "ensemble_std_log10": 0.0715898183648156,
+            "estimated_factor_1sigma": 1.1792063749187005,
+            "features": {
+              "inverse_temperature": 3.660992128866923,
+              "x_EC": 0.30941181536856194,
+              "x_NaSalt": 0.13659165981340052,
+              "x_PC": 0.6288982789514654
+            },
+            "in_domain": true,
+            "log10_conductivity_s_cm": -2.4866771338475844
+          },
+          "status": "RESULT",
+          "worker_log_tail": []
+        }
+      ],
+      "bge_stage_source": "${PROJECT_SOURCE}\\reports\\cwsr_resource_validation_20261021_v1\\bge_retry1\\result.json",
+      "full_rf_memory": {
+        "working_set_mib": 170.453125,
+        "private_working_set_uss_mib": 128.8359375,
+        "private_commit_mib": 1099.7109375,
+        "working_set_pages": 43628,
+        "private_pages": 32982,
+        "timestamp_monotonic": 34312.484
+      }
+    },
+    {
+      "repeat": 3,
+      "bge_resource": {
+        "resource_id": "bge-m3-model",
+        "resident": true,
+        "host_ram_mib": 693.3009999999999,
+        "host_ram_measurement": "load_rss_increment",
+        "load_rss_before_mib": 686.566,
+        "load_rss_after_mib": 1379.867,
+        "load_rss_delta_mib": 693.3009999999999,
+        "release_rss_before_mib": null,
+        "release_rss_after_mib": null,
+        "gpu_allocated_mib": 2165.938,
+        "gpu_vram_pressure": 0.522422,
+        "device": "cuda",
+        "load_count": 1,
+        "release_count": 0,
+        "last_load_seconds": 11.235000000000582
+      },
+      "rf_memory": {
+        "rss_mib": 170.01953125,
+        "private_commit_mib": 1099.23828125
+      },
+      "predictions": [
+        {
+          "pid": 6928,
+          "prediction": {
+            "conductivity_ms_cm": 3.4487655311733025,
+            "conductivity_s_cm": 0.0034487655311733027,
+            "ensemble_std_log10": 0.11976765887899131,
+            "estimated_factor_1sigma": 1.3175516793241504,
+            "features": {
+              "inverse_temperature": 3.660992128866923,
+              "x_EC": 0.6545108436328688,
+              "x_NaSalt": 0.12438287472883666,
+              "x_PC": 0.5161749545925916
+            },
+            "in_domain": true,
+            "log10_conductivity_s_cm": -2.462336330706256
+          },
+          "status": "RESULT",
+          "worker_log_tail": []
+        },
+        {
+          "pid": 6928,
+          "prediction": {
+            "conductivity_ms_cm": 3.2607902679914744,
+            "conductivity_s_cm": 0.0032607902679914745,
+            "ensemble_std_log10": 0.0715898183648156,
+            "estimated_factor_1sigma": 1.1792063749187005,
+            "features": {
+              "inverse_temperature": 3.660992128866923,
+              "x_EC": 0.30941181536856194,
+              "x_NaSalt": 0.13659165981340052,
+              "x_PC": 0.6288982789514654
+            },
+            "in_domain": true,
+            "log10_conductivity_s_cm": -2.4866771338475844
+          },
+          "status": "RESULT",
+          "worker_log_tail": []
+        }
+      ],
+      "bge_stage_source": "${PROJECT_SOURCE}\\reports\\cwsr_resource_validation_20261021_v1\\bge_retry1\\result.json",
+      "full_rf_memory": {
+        "working_set_mib": 170.01953125,
+        "private_working_set_uss_mib": 128.40234375,
+        "private_commit_mib": 1099.23828125,
+        "working_set_pages": 43517,
+        "private_pages": 32871,
+        "timestamp_monotonic": 34314.312
+      }
+    }
+  ],
+  "bge_declared_mib": 814,
+  "rf_declared_mib": 213,
+  "managed_host_ram_mib": 878,
+  "rule": "ceil(max(declared)+.30*min(declared)); declared=ceil(1.15*peak+16)",
+  "scope": "BGE load-attributed service RSS and full independent RF worker WorkingSet; service base, Agent and Neo4j excluded",
+  "not_os_memory_limit": true,
+  "synthetic_buffers": false,
+  "measurements_not_agent_outcome_selected": true,
+  "resources_measured_independently": true
+}

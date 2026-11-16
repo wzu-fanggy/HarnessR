@@ -1,0 +1,13 @@
+{
+  "checked_on": "2026-11-16",
+  "changes": [
+    "README rewritten around HarnessR resource layer",
+    "Added source/core/reference-integration/experiment navigation guides",
+    "Added component inventory and verified legacy helper imports"
+  ],
+  "runtime_code_changes": false,
+  "removed_files": [],
+  "preserved_python_files": 564,
+  "requirements_models_data_results_versions_unchanged": true,
+  "uploaded": false
+}

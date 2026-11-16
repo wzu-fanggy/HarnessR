@@ -1,0 +1,35 @@
+{
+  "schema": "cwsr-v17-warm-toolnode-ab-v1",
+  "task_order": [
+    "U1",
+    "U2",
+    "P1",
+    "P2"
+  ],
+  "pairs": 2,
+  "arms": [
+    [
+      "native",
+      "runtime"
+    ],
+    [
+      "runtime",
+      "native"
+    ]
+  ],
+  "source_files": {
+    "U1": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U1-r1-native\\result.json",
+    "U2": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\U2-r1-native\\result.json",
+    "P1": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P1-r1-native\\result.json",
+    "P2": "${ORION_SOURCE}\\reports\\cwsr_original_eight_native_runtime_20261006_v11\\P2-r1-native\\result.json"
+  },
+  "source_sha256": {
+    "U1": "f90eec853d04bd86c0f482320b55ec43ff6d041df3687257fbe525df3913869d",
+    "U2": "4f29b6a404160fb312fbe2a947d6fe3c6d4345c2f4b6d5d1d13f448aa2e61027",
+    "P1": "4297cc64d0e7a455a7c4b1fcd179782e910d0df56577889cfbc0df7dc84d87de",
+    "P2": "f4bd74bc286ddd07d2b140fdf77dea8e2ea396d8243c9c8d83ae55cea42cf0a4"
+  },
+  "scope": "Warm resident BGE-M3+Neo4j; real production ToolNode and same trace; no LLM",
+  "selection": "Entire frozen r1-native trace of every preselected task, preserving original parallel batches",
+  "reclamation": "Disabled by sufficient declared budget; report if any demotion occurs"
+}

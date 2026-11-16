@@ -1,0 +1,32 @@
+{
+  "schema_version": "cwsr-conductivity-model-artifact-v1",
+  "created_at_utc": "2026-09-23T04:41:51.767335+00:00",
+  "model_artifact": {
+    "path": "${PROJECT_SOURCE}\\reports\\cwsr_inputs\\cwsr_conductivity_rf_formal_v1.joblib",
+    "sha256": "cb60829a64e6ac4f1590b49a496b650f06a73563c0b002d3b1579e1de642e182",
+    "bytes": 4959721
+  },
+  "training_source": {
+    "kind": "local_zip",
+    "path": "${PROJECT_SOURCE}\\reports\\cwsr_inputs\\na_conductivity_training_source_v1.zip",
+    "sha256": "1fbe50073d50a372e891217dcc757cbe8042cbdb2e85e42bb4c89ef05981cea5",
+    "bytes": 30416,
+    "upstream_url": "https://zenodo.org/records/18429013/files/data.zip?download=1"
+  },
+  "training_table": {
+    "rows": 647,
+    "formulations": 72
+  },
+  "model_hyperparameters": {
+    "n_estimators": 192,
+    "random_state": 20260906
+  },
+  "software": {
+    "python": "3.11.9",
+    "pandas": "3.0.3",
+    "scikit_learn": "1.9.0",
+    "joblib": "1.5.3"
+  },
+  "use_contract": "Use this exact model artifact SHA for all timed collection episodes and resume only when the collector checkpoint records the same SHA.",
+  "metadata_content_sha256": "98ecf643eaab39cbb5144107f8bb76885c37e98a77f4aaf736dbe0e415be5c7f"
+}

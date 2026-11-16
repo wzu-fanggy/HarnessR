@@ -1,0 +1,286 @@
+{
+  "four_attempts": true,
+  "source_paths_verified": 337,
+  "plan_sha256": "f03fd1db470c2322df1d1a06fdaf5b74c1d477fe44c449b68764e9cbad6bd179",
+  "model_sha256": "cb60829a64e6ac4f1590b49a496b650f06a73563c0b002d3b1579e1de642e182",
+  "historical_source_changes": {
+    "orion/tools/electrolyte_design/synthesis.py": {
+      "historical": "63675d55148f7b3766a1231dcd27e6fac73b266b0704ab2e549546f7b0ad68d9",
+      "current": "6e3f13ff5a9ed658caa1698f8ab5218bd8c2e5c80ac1984dd50b5e254c82b743"
+    }
+  },
+  "raw_quote_check_is_identity_not_semantic_validation": true,
+  "observations": [
+    {
+      "pair": "LT_SCREEN_01-r1",
+      "arm": "native",
+      "scientific_complete": true,
+      "prediction_points_matching": 20,
+      "refusals": 0,
+      "wall_seconds": 93.843,
+      "model_request_seconds": 70.97,
+      "tool_counts": {
+        "load_skill": 1,
+        "write_todos": 2,
+        "predict_formulation_conductivity": 4,
+        "search_literature_multiview": 2,
+        "search_literature_chunks": 1,
+        "extract_numeric_properties": 2,
+        "synthesize_design_report": 1
+      },
+      "bge_loads": 1,
+      "bge_releases": 0,
+      "driver_creations": 1,
+      "driver_closures": 0,
+      "runtime_resource_counts": {},
+      "both_resident_sample_count": 145,
+      "quote_identity_checks": [
+        {
+          "claim_id": "L1",
+          "chunk_id": "0184_jijhydene201512090pdf::sec5::child0",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L2",
+          "chunk_id": "0038_Liu 等 - 2024 - Ester-based anti-freezing electrolyte achieving ultra-low temperature cycling for sodium-ion batteri::sec10::child4",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L4",
+          "chunk_id": "0038_Liu 等 - 2024 - Ester-based anti-freezing electrolyte achieving ultra-low temperature cycling for sodium-ion batteri::sec10::child4",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L5",
+          "chunk_id": "0009_Cui 等 - 2025 - A Temperature-Adapted Ultraweakly Solvating Electrolyte for Cold-Resistant Sodium-Ion Batteries::sec0::child1",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L6",
+          "chunk_id": "0033_Li 等 - 2026 - Enhanced sodium storage in hard carbon via solvent co-intercalation electrolyte enabling Ah-level po::sec1::child0",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L7",
+          "chunk_id": "0028_Li 等 - 2024 - Hierarchical doping electrolyte solvation engineering to achieve high-performance sodium-ion batteri::sec9::child0",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L11",
+          "chunk_id": "0150_aenm202000093pdf::sec4::child9",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L13",
+          "chunk_id": "0005_Che 等 - 2021 - Engineering optimization approach of nonaqueous electrolyte for sodium ion battery with long cycle l::sec8::child4",
+          "quote_in_retrieval_result": true
+        }
+      ],
+      "result_sha256": "214c1bead2e31e0be9e5f150d516498b83bed54d181dac92d1f29442b87e784b"
+    },
+    {
+      "pair": "LT_SCREEN_01-r1",
+      "arm": "runtime",
+      "scientific_complete": true,
+      "prediction_points_matching": 20,
+      "refusals": 0,
+      "wall_seconds": 99.515,
+      "model_request_seconds": 76.78299999999999,
+      "tool_counts": {
+        "load_skill": 1,
+        "write_todos": 2,
+        "predict_formulation_conductivity": 4,
+        "search_literature_multiview": 1,
+        "search_literature_chunks": 2,
+        "extract_numeric_properties": 1,
+        "synthesize_design_report": 1
+      },
+      "bge_loads": 1,
+      "bge_releases": 0,
+      "driver_creations": 1,
+      "driver_closures": 0,
+      "runtime_resource_counts": {
+        "process:na-conductivity-rf": {
+          "promotions": 1,
+          "demotions": 0,
+          "reuse_after_idle_count": 1,
+          "resident": true
+        },
+        "root-rag:bge-m3-model": {
+          "promotions": 1,
+          "demotions": 0,
+          "reuse_after_idle_count": 1,
+          "resident": true
+        },
+        "root-rag:neo4j-session": {
+          "promotions": 1,
+          "demotions": 0,
+          "reuse_after_idle_count": 1,
+          "resident": true
+        }
+      },
+      "both_resident_sample_count": 144,
+      "quote_identity_checks": [
+        {
+          "claim_id": "L1",
+          "chunk_id": "0028_Li 等 - 2024 - Hierarchical doping electrolyte solvation engineering to achieve high-performance sodium-ion batteri::sec3::child0",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L2",
+          "chunk_id": "0073_Yang 等 - 2023 - Entropy-Driven Solvation toward Low-Temperature Sodium-Ion Batteries with Temperature-Adaptive Featu::sec0::child1",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L4",
+          "chunk_id": "0073_Yang 等 - 2023 - Entropy-Driven Solvation toward Low-Temperature Sodium-Ion Batteries with Temperature-Adaptive Featu::sec0::child1",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L6",
+          "chunk_id": "0033_Li 等 - 2026 - Enhanced sodium storage in hard carbon via solvent co-intercalation electrolyte enabling Ah-level po::sec2::child6",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L7",
+          "chunk_id": "0020_Feng 等 - 2024 - Monolithic Interphase Enables Fast Kinetics for High-Performance Sodium-Ion Batteries at Subzero Tem::sec2::child2",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L12",
+          "chunk_id": "0008_Cui 等 - 2025 - A review of ways to improve the performance of hard carbon anodes in low-temperature sodium-ion batt::sec16::child4",
+          "quote_in_retrieval_result": true
+        }
+      ],
+      "result_sha256": "8b2e39c559eb54d7b9d5cdc0a214eb56aa191b9725ec128667b3472cc0264cf7"
+    },
+    {
+      "pair": "LT_SCREEN_01-r2",
+      "arm": "runtime",
+      "scientific_complete": true,
+      "prediction_points_matching": 20,
+      "refusals": 0,
+      "wall_seconds": 79.219,
+      "model_request_seconds": 61.156000000000006,
+      "tool_counts": {
+        "load_skill": 1,
+        "predict_formulation_conductivity": 4,
+        "search_literature_multiview": 1,
+        "search_literature_chunks": 2,
+        "extract_numeric_properties": 2,
+        "synthesize_design_report": 1
+      },
+      "bge_loads": 1,
+      "bge_releases": 0,
+      "driver_creations": 1,
+      "driver_closures": 0,
+      "runtime_resource_counts": {
+        "process:na-conductivity-rf": {
+          "promotions": 1,
+          "demotions": 0,
+          "reuse_after_idle_count": 0,
+          "resident": true
+        },
+        "root-rag:bge-m3-model": {
+          "promotions": 1,
+          "demotions": 0,
+          "reuse_after_idle_count": 1,
+          "resident": true
+        },
+        "root-rag:neo4j-session": {
+          "promotions": 1,
+          "demotions": 0,
+          "reuse_after_idle_count": 1,
+          "resident": true
+        }
+      },
+      "both_resident_sample_count": 118,
+      "quote_identity_checks": [
+        {
+          "claim_id": "bg-1",
+          "chunk_id": "0033_Li 等 - 2026 - Enhanced sodium storage in hard carbon via solvent co-intercalation electrolyte enabling Ah-level po::sec1::child0",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "bg-2",
+          "chunk_id": "0086_Zhou 等 - 2025 - A Nonfluorinated Diluent in Ether-Based Electrolyte for Low-Temperature Sodium-Ion Batteries::sec1::child2",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "bg-4",
+          "chunk_id": "0005_Che 等 - 2021 - Engineering optimization approach of nonaqueous electrolyte for sodium ion battery with long cycle l::sec8::child0",
+          "quote_in_retrieval_result": true
+        }
+      ],
+      "result_sha256": "c35203543bcbcea2b05486cf5427e2573697d50004f0b54b655d627162e9dec6"
+    },
+    {
+      "pair": "LT_SCREEN_01-r2",
+      "arm": "native",
+      "scientific_complete": true,
+      "prediction_points_matching": 20,
+      "refusals": 0,
+      "wall_seconds": 119.469,
+      "model_request_seconds": 103.45300000000002,
+      "tool_counts": {
+        "load_skill": 1,
+        "read_todos": 1,
+        "write_todos": 1,
+        "predict_formulation_conductivity": 4,
+        "search_literature_multiview": 1,
+        "search_literature_chunks": 2,
+        "extract_numeric_properties": 2,
+        "synthesize_design_report": 2
+      },
+      "bge_loads": 1,
+      "bge_releases": 0,
+      "driver_creations": 1,
+      "driver_closures": 0,
+      "runtime_resource_counts": {},
+      "both_resident_sample_count": 200,
+      "quote_identity_checks": [
+        {
+          "claim_id": "L2",
+          "chunk_id": "0038_Liu 等 - 2024 - Ester-based anti-freezing electrolyte achieving ultra-low temperature cycling for sodium-ion batteri::sec10::child4",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L3",
+          "chunk_id": "0038_Liu 等 - 2024 - Ester-based anti-freezing electrolyte achieving ultra-low temperature cycling for sodium-ion batteri::sec10::child4",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L4",
+          "chunk_id": "0005_Che 等 - 2021 - Engineering optimization approach of nonaqueous electrolyte for sodium ion battery with long cycle l::sec8::child0",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L5",
+          "chunk_id": "0100_0046_Properties_of_NaPFsub6sub_electroly::sec1::child3",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L8",
+          "chunk_id": "0009_Cui 等 - 2025 - A Temperature-Adapted Ultraweakly Solvating Electrolyte for Cold-Resistant Sodium-Ion Batteries::sec0::child1",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L9",
+          "chunk_id": "0055_Qiu 等 - 2024 - Research on low-temperature sodium-ion batteries Challenges strategies and prospect::sec9::child5",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L11",
+          "chunk_id": "0063_Tang 等 - 2025 - Quantitative decoupling of electrode expansion electrolyte depletion and dead sodium in low-temper::sec2::child0",
+          "quote_in_retrieval_result": true
+        },
+        {
+          "claim_id": "L12",
+          "chunk_id": "0005_Che 等 - 2021 - Engineering optimization approach of nonaqueous electrolyte for sodium ion battery with long cycle l::sec8::child2",
+          "quote_in_retrieval_result": true
+        }
+      ],
+      "result_sha256": "d693b5d9fecc0ad5cb57f7164364c88665773b42e01f40579c294ddb38e5fabf"
+    }
+  ]
+}

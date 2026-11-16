@@ -1,0 +1,21 @@
+{
+  "scope": "Agent + dedicated RAG service + RF worker; excludes Neo4j and whole-machine RAM",
+  "rss_is_sum_of_working_sets_not_unique_physical_memory": true,
+  "private_commit_is_not_resident_ram": true,
+  "samples": 161,
+  "rss_mib": {
+    "valid_samples": 161,
+    "peak": 4323.50390625,
+    "median": 2353.70703125
+  },
+  "private_commit_mib": {
+    "valid_samples": 161,
+    "peak": 10947.33203125,
+    "median": 8153.69140625
+  },
+  "observed_residency_phase_samples": {
+    "neither": 13,
+    "rf_only": 42,
+    "both": 102
+  }
+}

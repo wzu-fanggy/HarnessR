@@ -1,0 +1,15 @@
+{
+  "model": "deepseek-v4-flash",
+  "temperature": 0.0,
+  "host_after_import": {
+    "physical_available_mb": 5804.30859375,
+    "commit_available_mb": 13169.3203125
+  },
+  "tool_subset": [
+    "predict_formulation_conductivity",
+    "fit_conductivity_temperature_law",
+    "rank_formulations_under_uncertainty"
+  ],
+  "source_fingerprints_match": true,
+  "python": "${ORION_SOURCE}\\workbench\\api\\.venv\\Scripts\\python.exe"
+}

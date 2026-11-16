@@ -1,0 +1,24 @@
+{
+  "scope": "最终报告的人工内容复核；不把流程完成等同于全文化学判断无误",
+  "T1-r1-runtime": {
+    "candidate_compositions_predictions_uncertainties_verified": true,
+    "advice": "两候选模型不确定度重叠，报告建议暂缓确定优先级；评估任务完成",
+    "suggested_primary_case": true
+  },
+  "T1-r2-runtime": {
+    "candidate_compositions_predictions_uncertainties_verified": true,
+    "advice": "两候选模型不确定度重叠，建议后续实验比较，暂缓确定优先级",
+    "content_error": {
+      "file": "T1-r2-runtime/report.md",
+      "quote": "candidate-a's higher PC fraction than candidate-b",
+      "issue": "候选 PC 含量高低写反",
+      "actual_all_component_molar_fraction": {"candidate-a": 0.45197162987733824, "candidate-b": 0.5429960191756938},
+      "actual_solvent_normalized_x_PC": {"candidate-a": 0.5161749545925916, "candidate-b": 0.6288982789514654},
+      "correct_relation": "两种组成口径中均为 candidate-b 的 PC 含量较高",
+      "raw_report_changed": false,
+      "runtime_lifecycle_or_prediction_output_error": false
+    },
+    "not_a_fully_error_free_chemical_report": true
+  },
+  "native_failed_batch_note": "某些拆分工具已执行，但后续检查拒绝导致整个 ToolNode 未提交 checkpoint。请求记录中 result=null 不证明成功数值已保存，不依据事件结束数补造预测值。"
+}

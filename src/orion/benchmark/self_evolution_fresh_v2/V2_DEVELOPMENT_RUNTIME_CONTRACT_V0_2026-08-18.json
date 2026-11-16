@@ -1,0 +1,49 @@
+{
+  "schema_version": "orion_self_evolution_fresh_v2_development_runtime_contract_v0",
+  "date": "2026-08-18",
+  "status": "DEVELOPMENT_ONLY_NO_SEMANTIC_EXECUTION_AUTHORIZED",
+  "provider": "deepseek",
+  "model": "deepseek-v4-pro",
+  "sampling": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_output_tokens": 16384,
+    "hidden_sdk_retries": 0
+  },
+  "explicit_runtime_override": {
+    "ORION_AGENT_PROVIDER": "deepseek",
+    "ORION_AGENT_MODEL": "deepseek-v4-pro",
+    "ORION_AGENT_TEMPERATURE": "0.0",
+    "ORION_AGENT_TOP_P": "1.0"
+  },
+  "health_check": {
+    "expected_token": "ORION_RUNTIME_HEALTH_OK",
+    "max_tokens": 32,
+    "request_timeout_seconds": 30,
+    "provider_retry_count": 0,
+    "must_pass_before_semantic_lock": true,
+    "scientific_payload_forbidden": true
+  },
+  "proposer_call": {
+    "native_json_mode": true,
+    "max_tokens": 1800,
+    "request_timeout_seconds": 90,
+    "max_transport_retries_before_response_object": 1,
+    "semantic_repair_allowed": false
+  },
+  "first_action_episode": {
+    "max_llm_turns": 3,
+    "agent_timeout_seconds": 120,
+    "llm_step_timeout_seconds": 60,
+    "llm_request_max_retries": 1,
+    "automatic_rag_injection": false,
+    "automatic_memory_injection": false,
+    "reflection_injection": false,
+    "global_kg_enabled": false,
+    "current_task_evidence_released_before_scored_action": false,
+    "production_persistence_authorized": false
+  },
+  "provider_substitution_allowed": false,
+  "model_substitution_allowed": false,
+  "production_persistence_authorized": false
+}

@@ -1,0 +1,23 @@
+{
+  "pid": 22504,
+  "start_utc": "2026-10-14T02:30:11.463409+00:00",
+  "arm": "native",
+  "pair": "T1-r1",
+  "output": "${ORION_SOURCE}\\reports\\cwsr_heldout12_agent_pair_quality_20261014_v9",
+  "command": [
+    "${ORION_SOURCE}\\workbench\\api\\.venv\\Scripts\\python.exe",
+    "${ORION_SOURCE}\\benchmark\\cwsr_heldout12_agent_pair_v1.py",
+    "--stage",
+    "run-arm",
+    "--output",
+    "${ORION_SOURCE}\\reports\\cwsr_heldout12_agent_pair_quality_20261014_v9",
+    "--service-port",
+    "8817",
+    "--arm",
+    "native",
+    "--pair",
+    "1"
+  ],
+  "launcher_only": true,
+  "no_unrelated_services_terminated": true
+}

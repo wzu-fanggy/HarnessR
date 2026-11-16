@@ -1,0 +1,227 @@
+{
+  "status": "verified_from_existing_records_only",
+  "new_experiments": 0,
+  "new_science_calls": 0,
+  "new_API_calls": 0,
+  "main_case": "2026-11-09 corrected integrated chemical episode",
+  "corroborating_case": "2026-11-08 autonomous screening and temperature analysis; pause/resume retained separately",
+  "core_shared_use": {
+    "active_count_path": [
+      1,
+      2,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    "partial_return_with_another_owner_active": [
+      {
+        "sequence": 15,
+        "time_s": 19.56841130000248,
+        "returned_phase": "B1",
+        "resource": "process:na-conductivity-rf",
+        "remaining_lease_owners": 1
+      }
+    ],
+    "all_batch_leases_reconstructed": true
+  },
+  "cross_tool_dependency": {
+    "case": "November 8 first segment",
+    "interfaces": [
+      "evaluate_candidate_batch",
+      "predict_formulation_conductivity"
+    ],
+    "overlapping_intervals": [
+      {
+        "A": {
+          "agent": "A",
+          "tool": "evaluate_candidate_batch",
+          "start_s": 18.602466600000298,
+          "end_s": 19.48043289999987,
+          "resource_id": "process:na-conductivity-rf",
+          "pid": 14420,
+          "active_count": 1,
+          "source_sequences": [
+            31,
+            40
+          ]
+        },
+        "B": {
+          "agent": "B",
+          "tool": "predict_formulation_conductivity",
+          "start_s": 18.61475000000064,
+          "end_s": 18.66681890000018,
+          "resource_id": "process:na-conductivity-rf",
+          "pid": 14420,
+          "active_count": 2,
+          "source_sequences": [
+            34,
+            36
+          ]
+        },
+        "overlap_s": 0.05206889999954001
+      },
+      {
+        "A": {
+          "agent": "A",
+          "tool": "evaluate_candidate_batch",
+          "start_s": 18.602466600000298,
+          "end_s": 19.48043289999987,
+          "resource_id": "process:na-conductivity-rf",
+          "pid": 14420,
+          "active_count": 1,
+          "source_sequences": [
+            31,
+            40
+          ]
+        },
+        "B": {
+          "agent": "B",
+          "tool": "predict_formulation_conductivity",
+          "start_s": 18.61540479999985,
+          "end_s": 18.69154200000048,
+          "resource_id": "process:na-conductivity-rf",
+          "pid": 14420,
+          "active_count": 2,
+          "source_sequences": [
+            35,
+            37
+          ]
+        },
+        "overlap_s": 0.0761372000006304
+      }
+    ]
+  },
+  "scientific_work": {
+    "early_search_unique_compositions": 96,
+    "early_prediction_records_by_agent": {
+      "A": 102,
+      "B": 2
+    },
+    "core_candidates": 3,
+    "core_new_point_predictions": 12,
+    "core_saved_point_predictions_reused": 9,
+    "core_reference_formulations": 2,
+    "core_fitted_curves": 6,
+    "core_measurements": 60,
+    "priority_candidate": [
+      "B3-gen-0029"
+    ],
+    "followup_25C_prediction_ms_cm": 8.677222986518075
+  },
+  "lifecycle_across_agent_completion": {
+    "agent_A_completed_sequence": 25,
+    "agent_B_later_prediction_sequence": 46,
+    "resource_retained_throughout": true
+  },
+  "resource_adjustment": {
+    "decision_sequence": 32,
+    "two_legal_idle_victims": [
+      "process:na-conductivity-rf",
+      "process:robust-ranking-worker"
+    ],
+    "both_idle_when_decision_made": true,
+    "released": "process:robust-ranking-worker",
+    "prepared": "process:transport-fit-kernel",
+    "retained": "process:na-conductivity-rf",
+    "task_hint_changed_measured_cost_fallback": true,
+    "this_choice_equal_to_LRU_reference": true,
+    "counterfactual_full_runs_executed": false
+  },
+  "correctness": {
+    "core_prediction_records_owned": [
+      {
+        "agent": "A",
+        "record_id": "3283cef094757c1e603e4b4f89dc2e271fb9a27e871cbe2671244b226a0362dc",
+        "candidate_id": "B3-gen-0016"
+      },
+      {
+        "agent": "A",
+        "record_id": "523935146a51dcce0152d3461c4f4cfc4d37c0879e78b3e84d38dfc76a3d7053",
+        "candidate_id": "B3-gen-0029"
+      },
+      {
+        "agent": "A",
+        "record_id": "5dfb214a8ae134330aaf13bf98f5e2188797cc6f7a976efc7f6818ae7f6972f6",
+        "candidate_id": "B3-gen-0031"
+      },
+      {
+        "agent": "B",
+        "record_id": "12f68b90c886a6170e5123e6d03eff23301e8aa325fcec8885ff3274b6c049e2",
+        "candidate_id": "Ref-1"
+      },
+      {
+        "agent": "B",
+        "record_id": "31097e1745f0fc2844493065c238a6379dac51bf4e30af494cae442996ed8dbd",
+        "candidate_id": "Ref-2"
+      },
+      {
+        "agent": "B",
+        "record_id": "3863367e3bc353b64a0cfa229d0638bbdd78cc1c27824aa3da00cb8d660d7081",
+        "candidate_id": "Ref-2"
+      },
+      {
+        "agent": "B",
+        "record_id": "62f7839a73bd34bee718cb2c044e0823f4877742289c180eafbb6e1bb0ce5cce",
+        "candidate_id": "B3-gen-0029"
+      },
+      {
+        "agent": "B",
+        "record_id": "83bb29adea0b0312c4f318e67708fbe5bac157db4cc3746f7e11edd47441b320",
+        "candidate_id": "Ref-1"
+      },
+      {
+        "agent": "B",
+        "record_id": "ba1a6f79edd27354cc6372573019928d04db5ce31d8a7934f4d593e197b4cd58",
+        "candidate_id": "Ref-2"
+      },
+      {
+        "agent": "B",
+        "record_id": "bdae0f296c55f2fd9675be708a12e7ee1301c518106778a2ac8e12998be98c77",
+        "candidate_id": "Ref-2"
+      },
+      {
+        "agent": "B",
+        "record_id": "cae648f0f05f032d23287145be23eeb8e363ca317fc518f57678ac9dec0d11f5",
+        "candidate_id": "Ref-1"
+      },
+      {
+        "agent": "B",
+        "record_id": "e9258562b84a52c23c5355f12fb9b70c1fa887d3748149b2ac505492eb197169",
+        "candidate_id": "Ref-1"
+      }
+    ],
+    "early_first_segment_records_copied_without_change": 64,
+    "remaining_leases": 0,
+    "all_workers_closed": true
+  },
+  "not_triggered_in_these_joint_cases": {
+    "reclaim_or_close_request_against_foreign_active_lease": false,
+    "capacity_waiting_caused_by_foreign_active_resource": false,
+    "agent_cancellation_or_failure_during_foreign_shared_use": false,
+    "cross_agent_sharing_of_non_process_resources": false
+  },
+  "attribution": {
+    "resource_layer": "共同依赖、分任务租约、共享驻留状态、跨阶段资源取舍及清理",
+    "adapter": "进程通信互斥与实际模型计算",
+    "agent_and_experiment_orchestration": "科学工具选择、阶段交接、候选优先规则及分析解释",
+    "task_context_and_tool_framework": "调用结果路由、预测记录标识与归属"
+  },
+  "scientific_causality": "测量与预测来自既有数据和模型；层提供共同资源的协调，不声称提升化学准确率或自主生成研究路径",
+  "sources_sha256": {
+    "${AUTHOR_WORKSPACE}\\integrated_chemical_validation_plan_20261109\\execution_corrected\\events.jsonl": "41be9b10028b1e3e9cd1b6e952f2744a72b2c69cf241c768e8786046e24cf735",
+    "${AUTHOR_WORKSPACE}\\integrated_chemical_validation_plan_20261109\\execution_corrected\\result.json": "1093047c7b4a20d834ac0e489497791846e17ad12f516adee3fb7e99d13b13a8",
+    "${AUTHOR_WORKSPACE}\\integrated_chemical_validation_plan_20261109\\execution_corrected\\science_results.json": "09f80aa8b1fd8e1363be3145c543a0c94a6bd4d38f5c582ed92a14ae262a42d9",
+    "${AUTHOR_WORKSPACE}\\integrated_chemical_validation_plan_20261109\\execution_corrected\\handoff.json": "5bdf6fd3817a757decf73ed403fd37da1fce7c92cb2ec69c842ccf75acd720f9",
+    "${AUTHOR_WORKSPACE}\\integrated_chemical_validation_plan_20261109\\execution_corrected\\protocol.json": "6bbf9403457e4dcbe1172e818f2e983ef382d73d3e4046327bca09d374be42b6",
+    "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0\\events.jsonl": "5ec3def732a6aa89abb69671a7cdc7a689e82fb4f396ce1b94a35bd83970879e",
+    "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0\\result.json": "57a75d9ebb9e26983541f41d22c840b550867393ac0cdbd93c57b9a9ead4e2e4",
+    "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0\\protocol.json": "c97a8157a8d7b881ed4c43ca8b2a765215a8f25585570c9f853911b36e4eac01",
+    "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0\\frozen_run.py": "9d6a040c60b3b69ba048f63807c4fe2522b070e18f66634dc840a601b3ccef91",
+    "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0_resume\\events.jsonl": "057ac0665b5d009315d98365864e11c4188f974a3b81c28cb590361c6eb65a4a",
+    "${AUTHOR_WORKSPACE}\\harnessr_core_20261108\\r0_resume\\result.json": "135fb47e10d1abc3c4a3a828a8265d35a1e80d174715402c544aa8cd6e0918f5"
+  },
+  "documents_unchanged": true
+}

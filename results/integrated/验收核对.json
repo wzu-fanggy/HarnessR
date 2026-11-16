@@ -1,0 +1,25 @@
+{
+  "status": "verified",
+  "raw_measurements_checked": 60,
+  "completed_curves": 6,
+  "new_unique_point_predictions": 12,
+  "authorized_recomputed_points": 11,
+  "maximum_recomputed_prediction_change": 0.0,
+  "reused_archived_point_predictions": 9,
+  "ensemble_members": 32,
+  "same_prediction_generation_across_agents": true,
+  "maximum_active_prediction_owners": 2,
+  "task_signal_changed_cost_fallback": true,
+  "jev_choice_equals_this_state_LRU": true,
+  "retained_predictor_reused_without_recreation": true,
+  "primary_calls_including_failed_start": 19,
+  "jev_calls": 1,
+  "manuscripts_and_frozen_inputs_unchanged": true,
+  "net_speedup_measured": false,
+  "models_called_for_verification": 0,
+  "natural_language_report_corrections": [
+    "Ref-2 is not below Ref-1 at every temperature: at -20 C, Ref-2 sweep 1 exceeds Ref-1 sweep 1.",
+    "Differences among scans are temperature-dependent; do not describe the entire low-temperature interval as having the largest spread.",
+    "No candidate prediction at 30 C was made; do not cite an observed 20-to-30 C interpolation check."
+  ]
+}

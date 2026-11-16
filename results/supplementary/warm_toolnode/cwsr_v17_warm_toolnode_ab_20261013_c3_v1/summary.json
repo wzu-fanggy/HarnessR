@@ -1,0 +1,39 @@
+{
+  "schema": "cwsr-v17-warm-toolnode-ab-v1",
+  "status": "PASS",
+  "scientific_outputs_identical": true,
+  "source_files_unchanged": true,
+  "metadata_snapshot_fingerprint_unchanged": true,
+  "no_evictions": true,
+  "root_resource_counter_deltas": {
+    "bge-m3-model": {
+      "load_count": 0,
+      "release_count": 0
+    },
+    "neo4j-session": {
+      "open_count": 0,
+      "close_count": 0
+    }
+  },
+  "paired": [
+    {
+      "task": "C3",
+      "pair": 0,
+      "native_s": 16.871664,
+      "runtime_s": 17.050362,
+      "runtime_minus_native_s": 0.178698,
+      "percent": 1.059
+    },
+    {
+      "task": "C3",
+      "pair": 1,
+      "native_s": 17.003505,
+      "runtime_s": 17.572286,
+      "runtime_minus_native_s": 0.568781,
+      "percent": 3.345
+    }
+  ],
+  "paired_delta_median_s": 0.3737395,
+  "paired_percent_median": 2.202,
+  "over_3_percent_pairs": 1
+}

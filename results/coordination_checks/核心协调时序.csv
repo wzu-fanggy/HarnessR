@@ -1,0 +1,9 @@
+﻿sequence,time_s,event,phase,process:na-conductivity-rf,process:robust-ranking-worker,process:transport-fit-kernel
+9,19.33203830000275,lease_enter,A,1,1,0
+13,19.34171459999925,lease_enter,B1,2,1,0
+15,19.56841130000248,lease_returned,B1,1,1,0
+19,19.621231800003443,lease_returned,A,0,0,0
+38,48.75197450000269,lease_enter,B2,0,0,1
+40,49.121554500001366,lease_returned,B2,0,0,0
+46,50.42701169999782,lease_enter,B2,1,0,0
+48,50.45360300000175,lease_returned,B2,0,0,0

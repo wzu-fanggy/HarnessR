@@ -1,0 +1,797 @@
+{
+  "manifest_sha256": "6cf3a1cd0092f1885f33f1d28b073e4e0a44ce4573d9243e01a7e39bfaa7858e",
+  "calibration_sha256": "498ef0847c6e4c33e5fc6dd9120589ce71cf14505bebf6a2718da3bd58971760",
+  "budget_mib": 477,
+  "expected_predictions": {
+    "candidate-a": 3.4487655311733025,
+    "candidate-b": 3.2607902679914744
+  },
+  "source_files_verified": 332,
+  "source_changes": [],
+  "observations": [
+    {
+      "pair": "T1-r1",
+      "arm": "native",
+      "complete_by_frozen_criterion": false,
+      "criterion": {
+        "both_correct_predictions_saved": false,
+        "literature_contexts_saved": true,
+        "final_report_tool_result_saved": false,
+        "agent_finished_without_exception": false
+      },
+      "predictions": [
+        {
+          "tool_call_index": 3,
+          "candidate_id": "candidate-a",
+          "property_name": "ionic_conductivity",
+          "status": "insufficient_composition",
+          "numeric_value": null,
+          "unit": "mS/cm",
+          "temperature_c": 0.0,
+          "model_id": "na-conductivity-rf-v1",
+          "source_data_doi": "10.5281/zenodo.18429013",
+          "ensemble_std_log10": null,
+          "estimated_factor_1sigma": null,
+          "features": {},
+          "reason": "conflicting composition representations for x_EC, x_PC; supply the molar composition without inconsistent model features. x_EC=EC/(EC+EMC); x_PC=PC/(EC+EMC+PC); x_NaSalt=NaPF6/(NaPF6+EC+EMC+PC)"
+        },
+        {
+          "tool_call_index": 3,
+          "candidate_id": "candidate-b",
+          "property_name": "ionic_conductivity",
+          "status": "insufficient_composition",
+          "numeric_value": null,
+          "unit": "mS/cm",
+          "temperature_c": 0.0,
+          "model_id": "na-conductivity-rf-v1",
+          "source_data_doi": "10.5281/zenodo.18429013",
+          "ensemble_std_log10": null,
+          "estimated_factor_1sigma": null,
+          "features": {},
+          "reason": "conflicting composition representations for x_EC, x_PC; supply the molar composition without inconsistent model features. x_EC=EC/(EC+EMC); x_PC=PC/(EC+EMC+PC); x_NaSalt=NaPF6/(NaPF6+EC+EMC+PC)"
+        }
+      ],
+      "numeric_match_to_independent_calibration": {
+        "candidate-a": false,
+        "candidate-b": false
+      },
+      "task_status": null,
+      "error_type": "CommonBudgetExceeded",
+      "error_message": "Common before budget check refused ['predict_formulation_conductivity']: ['host_ram_mb']; resident=['root-rag:bge-m3-model', 'root-rag:neo4j-session']; required=['process:na-conductivity-rf']",
+      "run_duration_seconds": 31.782,
+      "report_characters": 139,
+      "contexts": 12,
+      "successful_prediction_tool_events": 1,
+      "partial_batch_outputs_not_assumed_saved": true,
+      "checks": 9,
+      "refusals": [
+        {
+          "time_monotonic": 3983.109,
+          "request_id": "main-agent-toolnode/common-part-0",
+          "phase": "before",
+          "tool_names": [
+            "predict_formulation_conductivity"
+          ],
+          "required": [
+            "process:na-conductivity-rf"
+          ],
+          "resident": [
+            "root-rag:bge-m3-model",
+            "root-rag:neo4j-session"
+          ],
+          "projected_declared": {
+            "prompt_tokens": 0.0,
+            "host_ram_mb": 625.0,
+            "gpu_vram_mb": 2300.0,
+            "process_slots": 1.0,
+            "connection_slots": 1.0
+          },
+          "measured": {
+            "prompt_tokens": 0.0,
+            "host_ram_mb": 255.13699999999994,
+            "gpu_vram_mb": 2174.063,
+            "process_slots": 0.0,
+            "connection_slots": 1.0
+          },
+          "budget": {
+            "prompt_tokens": Infinity,
+            "host_ram_mb": 477,
+            "gpu_vram_mb": 6144,
+            "process_slots": 4,
+            "connection_slots": 8
+          },
+          "accepted": false,
+          "violated_dimensions": [
+            "host_ram_mb"
+          ]
+        }
+      ],
+      "managed_measured_peak_mib": 255.13699999999994,
+      "managed_measured_valid_samples": 59,
+      "missing_samples": 0,
+      "managed_measured_over_budget_samples": 0,
+      "bge_and_rf_simultaneously_resident_samples": 0,
+      "root_resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 255.13699999999994,
+          "gpu_allocated_mib": 2174.063,
+          "gpu_vram_pressure": 0.527305,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.5
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.061999999999898
+        }
+      },
+      "runtime_before_close": [],
+      "artifact_sha256": {
+        "result.json": "6d2c3256e2f6963254387bd88c0184599ed77f06e773f04a5e60b394d1b7673d",
+        "budget-checks.jsonl": "96d6fc2cb10966df472e0536f27b6c43847f4eeaf2ceb345cfc06bd2283d599b",
+        "events.jsonl": "885b1c03bb5a10ed615491cadaccae75c98276c83ad33eab3bdc120d25525357",
+        "report.md": "e6d2c8eaf059de05443af2f4d638d0f1fd40187d2bc6372c6c51f643b14ba712",
+        "all-owned-resource-samples.json": "a0caca33e7ccd6bfc082a8bbfe9574d248fef4f6c38a9d88e51fc5aafb5c4e23"
+      }
+    },
+    {
+      "pair": "T1-r1",
+      "arm": "runtime",
+      "complete_by_frozen_criterion": true,
+      "criterion": {
+        "both_correct_predictions_saved": true,
+        "literature_contexts_saved": true,
+        "final_report_tool_result_saved": true,
+        "agent_finished_without_exception": true
+      },
+      "predictions": [
+        {
+          "tool_call_index": 2,
+          "candidate_id": "candidate-a",
+          "property_name": "ionic_conductivity",
+          "status": "predicted",
+          "numeric_value": 3.4487655311733025,
+          "unit": "mS/cm",
+          "temperature_c": 0.0,
+          "model_id": "na-conductivity-rf-v1",
+          "source_data_doi": "10.5281/zenodo.18429013",
+          "ensemble_std_log10": 0.11976765887899131,
+          "estimated_factor_1sigma": 1.3175516793241504,
+          "features": {
+            "inverse_temperature": 3.660992128866923,
+            "x_NaSalt": 0.12438287472883666,
+            "x_EC": 0.6545108436328688,
+            "x_PC": 0.5161749545925916
+          },
+          "reason": ""
+        },
+        {
+          "tool_call_index": 2,
+          "candidate_id": "candidate-b",
+          "property_name": "ionic_conductivity",
+          "status": "predicted",
+          "numeric_value": 3.2607902679914744,
+          "unit": "mS/cm",
+          "temperature_c": 0.0,
+          "model_id": "na-conductivity-rf-v1",
+          "source_data_doi": "10.5281/zenodo.18429013",
+          "ensemble_std_log10": 0.0715898183648156,
+          "estimated_factor_1sigma": 1.1792063749187005,
+          "features": {
+            "inverse_temperature": 3.660992128866923,
+            "x_NaSalt": 0.13659165981340052,
+            "x_EC": 0.30941181536856194,
+            "x_PC": 0.6288982789514654
+          },
+          "reason": ""
+        }
+      ],
+      "numeric_match_to_independent_calibration": {
+        "candidate-a": true,
+        "candidate-b": true
+      },
+      "task_status": "held",
+      "error_type": null,
+      "error_message": null,
+      "run_duration_seconds": 102.734,
+      "report_characters": 11652,
+      "contexts": 25,
+      "successful_prediction_tool_events": 1,
+      "partial_batch_outputs_not_assumed_saved": true,
+      "checks": 18,
+      "refusals": [],
+      "managed_measured_peak_mib": 259.76199999999994,
+      "managed_measured_valid_samples": 194,
+      "missing_samples": 0,
+      "managed_measured_over_budget_samples": 0,
+      "bge_and_rf_simultaneously_resident_samples": 0,
+      "root_resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 259.76199999999994,
+          "gpu_allocated_mib": 2182.188,
+          "gpu_vram_pressure": 0.532188,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 3.5160000000000764
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.061999999999898
+        }
+      },
+      "runtime_before_close": [
+        {
+          "resource_id": "local-capability:plugin-runtime-state",
+          "resource_type": "plugin",
+          "current_level": "CATALOG",
+          "resident": false,
+          "active_count": 0,
+          "idle_since_monotonic_s": null,
+          "idle_seconds": null,
+          "last_idle_gap_seconds": null,
+          "reuse_after_idle_count": 0,
+          "last_acquire_requested_monotonic_s": null,
+          "last_active_started_monotonic_s": null,
+          "last_active_ended_monotonic_s": null,
+          "promotions": 0,
+          "demotions": 0,
+          "declared_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measured_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measurement_error": null,
+          "instance_pid": null,
+          "last_prepare_seconds": null
+        },
+        {
+          "resource_id": "process:na-conductivity-rf",
+          "resource_type": "process",
+          "current_level": "CATALOG",
+          "resident": false,
+          "active_count": 0,
+          "idle_since_monotonic_s": null,
+          "idle_seconds": null,
+          "last_idle_gap_seconds": null,
+          "reuse_after_idle_count": 0,
+          "last_acquire_requested_monotonic_s": 4018.968,
+          "last_active_started_monotonic_s": 4020.39,
+          "last_active_ended_monotonic_s": 4020.5,
+          "promotions": 1,
+          "demotions": 1,
+          "declared_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measured_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measurement_error": null,
+          "instance_pid": null,
+          "last_prepare_seconds": 1.4220000000000255
+        },
+        {
+          "resource_id": "process:transport-fit-kernel",
+          "resource_type": "process",
+          "current_level": "CATALOG",
+          "resident": false,
+          "active_count": 0,
+          "idle_since_monotonic_s": null,
+          "idle_seconds": null,
+          "last_idle_gap_seconds": null,
+          "reuse_after_idle_count": 0,
+          "last_acquire_requested_monotonic_s": null,
+          "last_active_started_monotonic_s": null,
+          "last_active_ended_monotonic_s": null,
+          "promotions": 0,
+          "demotions": 0,
+          "declared_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measured_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measurement_error": null,
+          "instance_pid": null,
+          "last_prepare_seconds": 0.0
+        },
+        {
+          "resource_id": "root-rag:bge-m3-model",
+          "resource_type": "model",
+          "current_level": "BOUND",
+          "resident": true,
+          "active_count": 0,
+          "idle_since_monotonic_s": 4055.078,
+          "idle_seconds": 59.14,
+          "last_idle_gap_seconds": 3.109,
+          "reuse_after_idle_count": 2,
+          "last_acquire_requested_monotonic_s": 4052.468,
+          "last_active_started_monotonic_s": 4052.484,
+          "last_active_ended_monotonic_s": 4055.078,
+          "promotions": 1,
+          "demotions": 0,
+          "declared_cost": {
+            "host_ram_mb": 413.0,
+            "gpu_vram_mb": 2300.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measured_cost": {
+            "host_ram_mb": 259.76199999999994,
+            "gpu_vram_mb": 2182.188,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measurement_error": null,
+          "instance_pid": null,
+          "last_prepare_seconds": 3.5160000000000764
+        },
+        {
+          "resource_id": "root-rag:neo4j-session",
+          "resource_type": "session",
+          "current_level": "BOUND",
+          "resident": true,
+          "active_count": 0,
+          "idle_since_monotonic_s": 4055.078,
+          "idle_seconds": 59.156,
+          "last_idle_gap_seconds": 3.109,
+          "reuse_after_idle_count": 2,
+          "last_acquire_requested_monotonic_s": 4052.468,
+          "last_active_started_monotonic_s": 4052.484,
+          "last_active_ended_monotonic_s": 4055.078,
+          "promotions": 1,
+          "demotions": 0,
+          "declared_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 1.0
+          },
+          "measured_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 1.0
+          },
+          "measurement_error": null,
+          "instance_pid": null,
+          "last_prepare_seconds": 2.061999999999898
+        }
+      ],
+      "artifact_sha256": {
+        "result.json": "28cf69a23d93460daebd2c90bd2eaf2d91eb8ef3ab6c5e3ba13b0afd53fb25e5",
+        "budget-checks.jsonl": "24f8fd3b75905e9c163355c10df96a8f8e957132314d8211613e56b8cb9b3647",
+        "events.jsonl": "2fcc61872a56f3bf42e0c634141917a83dddd0bc571b9987f2670187d247ca9b",
+        "report.md": "9e61af98baeae38569bd040151d29583a68aa493c6f3ce1441ea4f690e112f99",
+        "all-owned-resource-samples.json": "bd97d675ad4558736616ac5593cbbc048dc1b8ee9d08de75ecdf3a85a22c9a38"
+      }
+    },
+    {
+      "pair": "T1-r2",
+      "arm": "runtime",
+      "complete_by_frozen_criterion": true,
+      "criterion": {
+        "both_correct_predictions_saved": true,
+        "literature_contexts_saved": true,
+        "final_report_tool_result_saved": true,
+        "agent_finished_without_exception": true
+      },
+      "predictions": [
+        {
+          "tool_call_index": 2,
+          "candidate_id": "candidate-a",
+          "property_name": "ionic_conductivity",
+          "status": "predicted",
+          "numeric_value": 3.4487655311733025,
+          "unit": "mS/cm",
+          "temperature_c": 0.0,
+          "model_id": "na-conductivity-rf-v1",
+          "source_data_doi": "10.5281/zenodo.18429013",
+          "ensemble_std_log10": 0.11976765887899131,
+          "estimated_factor_1sigma": 1.3175516793241504,
+          "features": {
+            "inverse_temperature": 3.660992128866923,
+            "x_NaSalt": 0.12438287472883666,
+            "x_EC": 0.6545108436328688,
+            "x_PC": 0.5161749545925916
+          },
+          "reason": ""
+        },
+        {
+          "tool_call_index": 2,
+          "candidate_id": "candidate-b",
+          "property_name": "ionic_conductivity",
+          "status": "predicted",
+          "numeric_value": 3.2607902679914744,
+          "unit": "mS/cm",
+          "temperature_c": 0.0,
+          "model_id": "na-conductivity-rf-v1",
+          "source_data_doi": "10.5281/zenodo.18429013",
+          "ensemble_std_log10": 0.0715898183648156,
+          "estimated_factor_1sigma": 1.1792063749187005,
+          "features": {
+            "inverse_temperature": 3.660992128866923,
+            "x_NaSalt": 0.13659165981340052,
+            "x_EC": 0.30941181536856194,
+            "x_PC": 0.6288982789514654
+          },
+          "reason": ""
+        }
+      ],
+      "numeric_match_to_independent_calibration": {
+        "candidate-a": true,
+        "candidate-b": true
+      },
+      "task_status": "held",
+      "error_type": null,
+      "error_message": null,
+      "run_duration_seconds": 116.421,
+      "report_characters": 15682,
+      "contexts": 25,
+      "successful_prediction_tool_events": 1,
+      "partial_batch_outputs_not_assumed_saved": true,
+      "checks": 22,
+      "refusals": [],
+      "managed_measured_peak_mib": 260.977,
+      "managed_measured_valid_samples": 221,
+      "missing_samples": 0,
+      "managed_measured_over_budget_samples": 0,
+      "bge_and_rf_simultaneously_resident_samples": 0,
+      "root_resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": true,
+          "host_ram_mib": 260.977,
+          "gpu_allocated_mib": 2198.438,
+          "gpu_vram_pressure": 0.538374,
+          "device": "cuda",
+          "load_count": 1,
+          "release_count": 0,
+          "last_load_seconds": 4.625
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": true,
+          "connection_slots": 1.0,
+          "open_count": 1,
+          "close_count": 0,
+          "last_open_seconds": 2.04700000000048
+        }
+      },
+      "runtime_before_close": [
+        {
+          "resource_id": "local-capability:plugin-runtime-state",
+          "resource_type": "plugin",
+          "current_level": "CATALOG",
+          "resident": false,
+          "active_count": 0,
+          "idle_since_monotonic_s": null,
+          "idle_seconds": null,
+          "last_idle_gap_seconds": null,
+          "reuse_after_idle_count": 0,
+          "last_acquire_requested_monotonic_s": null,
+          "last_active_started_monotonic_s": null,
+          "last_active_ended_monotonic_s": null,
+          "promotions": 0,
+          "demotions": 0,
+          "declared_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measured_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measurement_error": null,
+          "instance_pid": null,
+          "last_prepare_seconds": null
+        },
+        {
+          "resource_id": "process:na-conductivity-rf",
+          "resource_type": "process",
+          "current_level": "CATALOG",
+          "resident": false,
+          "active_count": 0,
+          "idle_since_monotonic_s": null,
+          "idle_seconds": null,
+          "last_idle_gap_seconds": null,
+          "reuse_after_idle_count": 0,
+          "last_acquire_requested_monotonic_s": 4154.656,
+          "last_active_started_monotonic_s": 4156.156,
+          "last_active_ended_monotonic_s": 4156.25,
+          "promotions": 1,
+          "demotions": 1,
+          "declared_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measured_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measurement_error": null,
+          "instance_pid": null,
+          "last_prepare_seconds": 1.5
+        },
+        {
+          "resource_id": "process:transport-fit-kernel",
+          "resource_type": "process",
+          "current_level": "CATALOG",
+          "resident": false,
+          "active_count": 0,
+          "idle_since_monotonic_s": null,
+          "idle_seconds": null,
+          "last_idle_gap_seconds": null,
+          "reuse_after_idle_count": 0,
+          "last_acquire_requested_monotonic_s": null,
+          "last_active_started_monotonic_s": null,
+          "last_active_ended_monotonic_s": null,
+          "promotions": 0,
+          "demotions": 0,
+          "declared_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measured_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measurement_error": null,
+          "instance_pid": null,
+          "last_prepare_seconds": 0.0
+        },
+        {
+          "resource_id": "root-rag:bge-m3-model",
+          "resource_type": "model",
+          "current_level": "BOUND",
+          "resident": true,
+          "active_count": 0,
+          "idle_since_monotonic_s": 4193.109,
+          "idle_seconds": 68.187,
+          "last_idle_gap_seconds": 11.938,
+          "reuse_after_idle_count": 2,
+          "last_acquire_requested_monotonic_s": 4190.609,
+          "last_active_started_monotonic_s": 4190.64,
+          "last_active_ended_monotonic_s": 4193.109,
+          "promotions": 1,
+          "demotions": 0,
+          "declared_cost": {
+            "host_ram_mb": 413.0,
+            "gpu_vram_mb": 2300.0,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measured_cost": {
+            "host_ram_mb": 260.977,
+            "gpu_vram_mb": 2198.438,
+            "process_slots": 0.0,
+            "connection_slots": 0.0
+          },
+          "measurement_error": null,
+          "instance_pid": null,
+          "last_prepare_seconds": 4.625
+        },
+        {
+          "resource_id": "root-rag:neo4j-session",
+          "resource_type": "session",
+          "current_level": "BOUND",
+          "resident": true,
+          "active_count": 0,
+          "idle_since_monotonic_s": 4193.109,
+          "idle_seconds": 68.203,
+          "last_idle_gap_seconds": 11.938,
+          "reuse_after_idle_count": 3,
+          "last_acquire_requested_monotonic_s": 4190.609,
+          "last_active_started_monotonic_s": 4190.64,
+          "last_active_ended_monotonic_s": 4193.109,
+          "promotions": 1,
+          "demotions": 0,
+          "declared_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 1.0
+          },
+          "measured_cost": {
+            "host_ram_mb": 0.0,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 0.0,
+            "connection_slots": 1.0
+          },
+          "measurement_error": null,
+          "instance_pid": null,
+          "last_prepare_seconds": 2.04700000000048
+        }
+      ],
+      "artifact_sha256": {
+        "result.json": "248a965a917b23adfcaabbdb31fe98859179716e6606b3bb174630e9b8d3008e",
+        "budget-checks.jsonl": "e4a9befee666c20dc476b5863c0d7637754b6468ab8e015d65ffceca4ee61a28",
+        "events.jsonl": "31db9bfbff9d7b0654ff6cfa424b8b541edf9dd7c9f62fb7392d7977681cd47c",
+        "report.md": "f3bd6a7bfad0b59b7fd5ede56d1f62b62836170b862b08ba536e08fdae828f95",
+        "all-owned-resource-samples.json": "58309bb602c36815e599a86fe2ab7f5e11f6affcfabac164524c9c83bbd0ee14"
+      }
+    },
+    {
+      "pair": "T1-r2",
+      "arm": "native",
+      "complete_by_frozen_criterion": false,
+      "criterion": {
+        "both_correct_predictions_saved": false,
+        "literature_contexts_saved": false,
+        "final_report_tool_result_saved": false,
+        "agent_finished_without_exception": false
+      },
+      "predictions": [],
+      "numeric_match_to_independent_calibration": {
+        "candidate-a": false,
+        "candidate-b": false
+      },
+      "task_status": null,
+      "error_type": "CommonBudgetExceeded",
+      "error_message": "Common before budget check refused ['search_literature_multiview']: ['host_ram_mb']; resident=['process:na-conductivity-rf']; required=['root-rag:bge-m3-model', 'root-rag:neo4j-session']",
+      "run_duration_seconds": 14.719,
+      "report_characters": 41,
+      "contexts": 0,
+      "successful_prediction_tool_events": 1,
+      "partial_batch_outputs_not_assumed_saved": true,
+      "checks": 7,
+      "refusals": [
+        {
+          "time_monotonic": 4305.609,
+          "request_id": "main-agent-toolnode/common-part-1",
+          "phase": "before",
+          "tool_names": [
+            "search_literature_multiview"
+          ],
+          "required": [
+            "root-rag:bge-m3-model",
+            "root-rag:neo4j-session"
+          ],
+          "resident": [
+            "process:na-conductivity-rf"
+          ],
+          "projected_declared": {
+            "prompt_tokens": 0.0,
+            "host_ram_mb": 625.0,
+            "gpu_vram_mb": 2300.0,
+            "process_slots": 1.0,
+            "connection_slots": 1.0
+          },
+          "measured": {
+            "prompt_tokens": 0.0,
+            "host_ram_mb": 170.171875,
+            "gpu_vram_mb": 0.0,
+            "process_slots": 1.0,
+            "connection_slots": 0.0
+          },
+          "budget": {
+            "prompt_tokens": Infinity,
+            "host_ram_mb": 477,
+            "gpu_vram_mb": 6144,
+            "process_slots": 4,
+            "connection_slots": 8
+          },
+          "accepted": false,
+          "violated_dimensions": [
+            "host_ram_mb"
+          ]
+        }
+      ],
+      "managed_measured_peak_mib": 170.16796875,
+      "managed_measured_valid_samples": 29,
+      "missing_samples": 0,
+      "managed_measured_over_budget_samples": 0,
+      "bge_and_rf_simultaneously_resident_samples": 0,
+      "root_resources": {
+        "bge-m3-model": {
+          "resource_id": "bge-m3-model",
+          "resident": false,
+          "host_ram_mib": 0.0,
+          "gpu_allocated_mib": 0.0,
+          "gpu_vram_pressure": 0.166599,
+          "device": "cuda",
+          "load_count": 0,
+          "release_count": 0,
+          "last_load_seconds": 0.0
+        },
+        "neo4j-session": {
+          "resource_id": "neo4j-session",
+          "resident": false,
+          "connection_slots": 0.0,
+          "open_count": 0,
+          "close_count": 0,
+          "last_open_seconds": 0.0
+        }
+      },
+      "runtime_before_close": [],
+      "artifact_sha256": {
+        "result.json": "63b6aac8c217768cce963693209ef8ae550b04484c721d9ea241b8d5de93f2ca",
+        "budget-checks.jsonl": "673ce5ab1ff66568981c81feb6d280d77e1d2340a20eb89ada11fa91192146c4",
+        "events.jsonl": "2819280ac02acac817706ebed386f6eff883b2ab3d2ffdeb51ff2ee0cb592fe8",
+        "report.md": "0cf33563a6cb865ce7b13f8a0a70c3047b59a67bf6c760d2fbf4390a7ea37060",
+        "all-owned-resource-samples.json": "45fd9725a5bdf12631b1d517994665ff75d5109afd47a3b72f019d422727ad43"
+      }
+    }
+  ],
+  "limitations": [
+    "声明占用准入拒绝不是实测 OOM，也不是原有代码没有修改的失败",
+    "拒绝批次内工具已执行的结果可能未写入 checkpoint，不能把请求记录当作成功数值",
+    "独立 LLM 轨迹不同，不据此归因端到端加速；暂缓推荐不等于科研任务未完成"
+  ],
+  "manual_report_qa": {
+    "scope": "最终报告的人工内容复核；不把流程完成等同于全文化学判断无误",
+    "T1-r1-runtime": {
+      "candidate_compositions_predictions_uncertainties_verified": true,
+      "advice": "两候选模型不确定度重叠，报告建议暂缓确定优先级；评估任务完成",
+      "suggested_primary_case": true
+    },
+    "T1-r2-runtime": {
+      "candidate_compositions_predictions_uncertainties_verified": true,
+      "advice": "两候选模型不确定度重叠，建议后续实验比较，暂缓确定优先级",
+      "content_error": {
+        "file": "T1-r2-runtime/report.md",
+        "quote": "candidate-a's higher PC fraction than candidate-b",
+        "issue": "候选 PC 含量高低写反",
+        "actual_all_component_molar_fraction": {
+          "candidate-a": 0.45197162987733824,
+          "candidate-b": 0.5429960191756938
+        },
+        "actual_solvent_normalized_x_PC": {
+          "candidate-a": 0.5161749545925916,
+          "candidate-b": 0.6288982789514654
+        },
+        "correct_relation": "两种组成口径中均为 candidate-b 的 PC 含量较高",
+        "raw_report_changed": false,
+        "runtime_lifecycle_or_prediction_output_error": false
+      },
+      "not_a_fully_error_free_chemical_report": true
+    },
+    "native_failed_batch_note": "某些拆分工具已执行，但后续检查拒绝导致整个 ToolNode 未提交 checkpoint。请求记录中 result=null 不证明成功数值已保存，不依据事件结束数补造预测值。"
+  },
+  "manual_report_qa_sha256": "65c1d3838ed3248b84899dd99ec9e7c63ac7ed1a206fbac936bb19d0b1b183c2",
+  "audit_script_sha256": "a69d50098d3eb907e983dabd93cc909605e07de8c4ae853e11f5c9430c285a55"
+}

@@ -1,0 +1,11 @@
+{
+  "phase": "formal",
+  "blocks": 6,
+  "argv": [
+    "${MCP_EXPERIMENT}\\run_case.py",
+    "formal",
+    "--blocks",
+    "6"
+  ],
+  "manifest_sha256": "79957080ee583ecb0ce3924a9a72bacc494c59ecbdb5287f8036acb5497beec5"
+}

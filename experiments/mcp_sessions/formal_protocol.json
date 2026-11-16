@@ -1,0 +1,50 @@
+{
+  "frozen_at_local": "2026-10-30T22:13:57.596392",
+  "scope": "Functional resource-lifecycle validation with controlled task authorization",
+  "blocks": 6,
+  "block_rationale": "Balance all three strategy positions twice and both quota orders three times; no timing inference.",
+  "unit": "One full fresh six-batch sequence; eight tool calls are not independent replicates.",
+  "groups_per_block": 6,
+  "strategy_order": "Rotate retain_all, release_after_batch, runtime by block modulo three.",
+  "quota_order": "Alternate [1,2] and [2,1] by block.",
+  "scope_selection": "A=P2 and B=U2 are task-isolated authorized workspaces by prospective experimental contract, not unavoidable MCP semantics.",
+  "preflight_summary": "${MCP_EXPERIMENT}\\runs\\20261030_221250_204118_preflight\\summary.json",
+  "pilot_summary": "${MCP_EXPERIMENT}\\runs\\20261030_221315_541331_pilot\\summary.json",
+  "manifest_sha256": "553c25a338978e10f15d2e55e68aa30085eb019e43be74f4cce5fba79144eff7",
+  "implementation_sha256": {
+    "run_case.py": "8e637642d6e6d0ac0f556cfef3103b0c5827920d4a1650ba64b85515862fcbfd",
+    "mcp_adapter.py": "174596db2052e21d7a5c6cc7a896c3efa3d239cd7d7a70d842bb4bb2480f0fdf",
+    "pid_probe.cjs": "a621ac3a3a110808f676724ccb3ff689e1894f470e82a46ced177cb0557e4b8d",
+    "prepare.py": "76222ff31e38345bac20765af3b2b5cc6f3002f01b08849763caff5dc926e62c"
+  },
+  "primary": [
+    "completion",
+    "output consistency",
+    "creation counts",
+    "confirmed process exits",
+    "session quota compliance"
+  ],
+  "success_requirements": [
+    "All non-error results match frozen files.",
+    "Runtime and release-after-batch complete each sequence.",
+    "Every opened server process has a confirmed close, including cleanup.",
+    "No ready boundary exceeds the managed-session quota.",
+    "Preflight verifies active-lease protection, scope denial and impossible-batch rejection."
+  ],
+  "no_claims": [
+    "timing superiority",
+    "all resource families covered",
+    "new LRU policy",
+    "restoration of arbitrary application session state",
+    "MCP use in historical recommendation runs"
+  ],
+  "preflight_repair": "First check compared Python universal-newline text with unchanged CRLF server output. Oracle now decodes original bytes; failed attempt retained.",
+  "historical_manifest_sha256": "79957080ee583ecb0ce3924a9a72bacc494c59ecbdb5287f8036acb5497beec5",
+  "historical_implementation_sha256": {
+    "run_case.py": "a907bb79535c6d3471374feb99c9abee02c302a4e8f588acbf390cc820f491f2",
+    "mcp_adapter.py": "480091d7082d5dcaae662480723d11c5ee8f656fc31406179025426fa8a4a909",
+    "pid_probe.cjs": "e67ea7e27bd904c60b5eabee189cae35a9fa00e3ad500bb835b9f442c9cb018a",
+    "prepare.py": "e8d4b80f7b63e9d9de559d25e2eaca5e4bb08e6ad4f837e4b8a7e2163ee4430b"
+  },
+  "packaging_note": "Portable path adaptation. Historical protocol and results remain under results/mcp_sessions."
+}

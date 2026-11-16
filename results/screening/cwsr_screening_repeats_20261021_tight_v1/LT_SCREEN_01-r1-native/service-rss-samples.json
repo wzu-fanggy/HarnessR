@@ -1,0 +1,651 @@
+[
+  {
+    "sampled_at_monotonic": 34602.453,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.676,
+      "host_ram_pressure": 0.748,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34602.984,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.68,
+      "host_ram_pressure": 0.751,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34603.5,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.68,
+      "host_ram_pressure": 0.756,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34604.031,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.68,
+      "host_ram_pressure": 0.752,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34604.531,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.68,
+      "host_ram_pressure": 0.758,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34605.062,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.68,
+      "host_ram_pressure": 0.764,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34605.578,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.68,
+      "host_ram_pressure": 0.757,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34606.078,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.68,
+      "host_ram_pressure": 0.763,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34606.609,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.688,
+      "host_ram_pressure": 0.78,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34607.125,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.688,
+      "host_ram_pressure": 0.787,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34607.64,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.691,
+      "host_ram_pressure": 0.794,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34608.156,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.695,
+      "host_ram_pressure": 0.79,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34608.687,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.699,
+      "host_ram_pressure": 0.787,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34609.187,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.703,
+      "host_ram_pressure": 0.796,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34609.703,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.703,
+      "host_ram_pressure": 0.799,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34610.218,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.703,
+      "host_ram_pressure": 0.796,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34610.734,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.707,
+      "host_ram_pressure": 0.798,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34611.25,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.711,
+      "host_ram_pressure": 0.797,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34611.781,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.711,
+      "host_ram_pressure": 0.797,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34612.296,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.719,
+      "host_ram_pressure": 0.798,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34612.828,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.723,
+      "host_ram_pressure": 0.798,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34613.359,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.723,
+      "host_ram_pressure": 0.797,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34613.859,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.723,
+      "host_ram_pressure": 0.797,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34614.39,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.723,
+      "host_ram_pressure": 0.799,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34614.921,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.723,
+      "host_ram_pressure": 0.801,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34615.437,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.723,
+      "host_ram_pressure": 0.8,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34615.953,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.723,
+      "host_ram_pressure": 0.8,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34616.484,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.723,
+      "host_ram_pressure": 0.799,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34617.0,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.723,
+      "host_ram_pressure": 0.799,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34617.531,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.723,
+      "host_ram_pressure": 0.8,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34618.046,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.73,
+      "host_ram_pressure": 0.8,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34618.562,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.734,
+      "host_ram_pressure": 0.802,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34619.093,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.754,
+      "host_ram_pressure": 0.806,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34619.625,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.754,
+      "host_ram_pressure": 0.799,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34620.125,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.754,
+      "host_ram_pressure": 0.8,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34620.656,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.754,
+      "host_ram_pressure": 0.799,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34621.171,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.754,
+      "host_ram_pressure": 0.804,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34621.703,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.754,
+      "host_ram_pressure": 0.805,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34622.203,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.754,
+      "host_ram_pressure": 0.8,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34622.734,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.758,
+      "host_ram_pressure": 0.8,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34623.265,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.762,
+      "host_ram_pressure": 0.8,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34623.796,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.762,
+      "host_ram_pressure": 0.8,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34624.328,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.766,
+      "host_ram_pressure": 0.8,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34624.843,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.766,
+      "host_ram_pressure": 0.8,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34625.375,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.77,
+      "host_ram_pressure": 0.8,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34625.875,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.836,
+      "host_ram_pressure": 0.803,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34626.421,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.836,
+      "host_ram_pressure": 0.785,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34626.937,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.836,
+      "host_ram_pressure": 0.688,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34627.437,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.836,
+      "host_ram_pressure": 0.695,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34627.953,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.836,
+      "host_ram_pressure": 0.697,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34628.468,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.836,
+      "host_ram_pressure": 0.691,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34628.984,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.836,
+      "host_ram_pressure": 0.691,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34629.5,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.836,
+      "host_ram_pressure": 0.696,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34630.015,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.883,
+      "host_ram_pressure": 0.691,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34630.546,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.883,
+      "host_ram_pressure": 0.694,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34631.046,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.883,
+      "host_ram_pressure": 0.694,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34631.578,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.992,
+      "host_ram_pressure": 0.691,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34632.109,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.992,
+      "host_ram_pressure": 0.692,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  },
+  {
+    "sampled_at_monotonic": 34632.64,
+    "telemetry": {
+      "schema_version": "resource-residency-v1",
+      "pid": 8076,
+      "process_rss_mib": 136.992,
+      "host_ram_pressure": 0.682,
+      "resources": [],
+      "telemetry_write_errors": 0
+    }
+  }
+]

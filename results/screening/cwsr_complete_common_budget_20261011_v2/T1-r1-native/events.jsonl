@@ -1,0 +1,40 @@
+{"event": "on_chain_start", "name": "LangGraph", "run_id": "01a12882-88b1-7893-b4de-389e36c9c357", "parent_ids": [], "elapsed_seconds": 1.407}
+{"event": "on_chain_start", "name": "__start__", "run_id": "01a12882-88c6-7303-b2d3-f1679199837c", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 1.422}
+{"event": "on_chain_start", "name": "whether_compact", "run_id": "01a12882-88c7-74a0-9b90-2212c8abb5fc", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-88c6-7303-b2d3-f1679199837c"], "elapsed_seconds": 1.422}
+{"event": "on_chain_end", "name": "whether_compact", "run_id": "01a12882-88c7-74a0-9b90-2212c8abb5fc", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-88c6-7303-b2d3-f1679199837c"], "elapsed_seconds": 1.422}
+{"event": "on_chain_end", "name": "__start__", "run_id": "01a12882-88c6-7303-b2d3-f1679199837c", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 1.422}
+{"event": "on_chain_start", "name": "context_prepare", "run_id": "01a12882-88ca-7400-a2ea-e04b2d6dbe6d", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 1.422}
+{"event": "on_chain_end", "name": "context_prepare", "run_id": "01a12882-88ca-7400-a2ea-e04b2d6dbe6d", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 1.422}
+{"event": "on_chain_start", "name": "llm", "run_id": "01a12882-88cc-7ec0-9ef4-f93c042e6f29", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 1.438}
+{"event": "on_chat_model_start", "name": "ReasoningPreservingChatDeepSeek", "run_id": "01a12882-88cd-79d0-91e8-02aceefa7109", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-88cc-7ec0-9ef4-f93c042e6f29"], "elapsed_seconds": 1.438}
+{"event": "on_chat_model_end", "name": "ReasoningPreservingChatDeepSeek", "run_id": "01a12882-88cd-79d0-91e8-02aceefa7109", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-88cc-7ec0-9ef4-f93c042e6f29"], "elapsed_seconds": 2.078}
+{"event": "on_chain_end", "name": "llm", "run_id": "01a12882-88cc-7ec0-9ef4-f93c042e6f29", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 2.078}
+{"event": "on_chain_start", "name": "review", "run_id": "01a12882-8b56-77d1-b96c-50dbac75d7ad", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 2.078}
+{"event": "on_chain_end", "name": "review", "run_id": "01a12882-8b56-77d1-b96c-50dbac75d7ad", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 2.078}
+{"event": "on_chain_start", "name": "tools", "run_id": "01a12882-8b58-7ca1-95b3-c2f3bd427b1d", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 2.078}
+{"event": "on_tool_start", "name": "load_skill", "run_id": "01a12882-8b6e-76f2-a790-acd018ad8216", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-8b58-7ca1-95b3-c2f3bd427b1d"], "elapsed_seconds": 2.11}
+{"event": "on_tool_start", "name": "read_todos", "run_id": "01a12882-8b6f-7a51-8248-5fe80b1e7395", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-8b58-7ca1-95b3-c2f3bd427b1d"], "elapsed_seconds": 2.11}
+{"event": "on_tool_end", "name": "read_todos", "run_id": "01a12882-8b6f-7a51-8248-5fe80b1e7395", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-8b58-7ca1-95b3-c2f3bd427b1d"], "elapsed_seconds": 2.11}
+{"event": "on_tool_end", "name": "load_skill", "run_id": "01a12882-8b6e-76f2-a790-acd018ad8216", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-8b58-7ca1-95b3-c2f3bd427b1d"], "elapsed_seconds": 2.11}
+{"event": "on_chain_end", "name": "tools", "run_id": "01a12882-8b58-7ca1-95b3-c2f3bd427b1d", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 2.141}
+{"event": "on_chain_start", "name": "llm", "run_id": "01a12882-8b91-7b12-a0e9-0da70fe62675", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 2.141}
+{"event": "on_chat_model_start", "name": "ReasoningPreservingChatDeepSeek", "run_id": "01a12882-8b93-7e32-9a41-3fda61728346", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-8b91-7b12-a0e9-0da70fe62675"], "elapsed_seconds": 2.141}
+{"event": "on_chat_model_end", "name": "ReasoningPreservingChatDeepSeek", "run_id": "01a12882-8b93-7e32-9a41-3fda61728346", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-8b91-7b12-a0e9-0da70fe62675"], "elapsed_seconds": 9.938}
+{"event": "on_chain_end", "name": "llm", "run_id": "01a12882-8b91-7b12-a0e9-0da70fe62675", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 9.953}
+{"event": "on_chain_start", "name": "review", "run_id": "01a12882-aa12-7012-bf15-91da7cfd8774", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 9.953}
+{"event": "on_chain_end", "name": "review", "run_id": "01a12882-aa12-7012-bf15-91da7cfd8774", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 9.953}
+{"event": "on_chain_start", "name": "tools", "run_id": "01a12882-aa15-7493-9ae6-96e38822f8fe", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 9.953}
+{"event": "on_tool_start", "name": "write_todos", "run_id": "01a12882-aa28-7352-899a-ef00c5455b8e", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-aa15-7493-9ae6-96e38822f8fe"], "elapsed_seconds": 9.969}
+{"event": "on_tool_end", "name": "write_todos", "run_id": "01a12882-aa28-7352-899a-ef00c5455b8e", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-aa15-7493-9ae6-96e38822f8fe"], "elapsed_seconds": 9.969}
+{"event": "on_tool_start", "name": "predict_formulation_conductivity", "run_id": "01a12882-aa47-7af1-a8af-ebc027ad2e6c", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-aa15-7493-9ae6-96e38822f8fe"], "elapsed_seconds": 10.0}
+{"event": "on_tool_end", "name": "predict_formulation_conductivity", "run_id": "01a12882-aa47-7af1-a8af-ebc027ad2e6c", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-aa15-7493-9ae6-96e38822f8fe"], "elapsed_seconds": 10.0}
+{"event": "on_tool_start", "name": "search_literature_multiview", "run_id": "01a12882-aa5d-7591-98d9-7c1aa39daeab", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-aa15-7493-9ae6-96e38822f8fe"], "elapsed_seconds": 10.016}
+{"event": "on_tool_end", "name": "search_literature_multiview", "run_id": "01a12882-aa5d-7591-98d9-7c1aa39daeab", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-aa15-7493-9ae6-96e38822f8fe"], "elapsed_seconds": 26.0}
+{"event": "on_chain_end", "name": "tools", "run_id": "01a12882-aa15-7493-9ae6-96e38822f8fe", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 26.0}
+{"event": "on_chain_start", "name": "llm", "run_id": "01a12882-e8cc-7151-a9b0-134e39637e40", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 26.0}
+{"event": "on_chat_model_start", "name": "ReasoningPreservingChatDeepSeek", "run_id": "01a12882-e8cd-7d83-8911-6c70986a281c", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-e8cc-7151-a9b0-134e39637e40"], "elapsed_seconds": 26.0}
+{"event": "on_chat_model_end", "name": "ReasoningPreservingChatDeepSeek", "run_id": "01a12882-e8cd-7d83-8911-6c70986a281c", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357", "01a12882-e8cc-7151-a9b0-134e39637e40"], "elapsed_seconds": 31.735}
+{"event": "on_chain_end", "name": "llm", "run_id": "01a12882-e8cc-7151-a9b0-134e39637e40", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 31.735}
+{"event": "on_chain_start", "name": "review", "run_id": "01a12882-ff33-7342-b2b2-d81d532915a0", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 31.735}
+{"event": "on_chain_end", "name": "review", "run_id": "01a12882-ff33-7342-b2b2-d81d532915a0", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 31.75}
+{"event": "on_chain_start", "name": "tools", "run_id": "01a12882-ff37-7fa3-bc9f-bb6d1be3d6f2", "parent_ids": ["01a12882-88b1-7893-b4de-389e36c9c357"], "elapsed_seconds": 31.75}

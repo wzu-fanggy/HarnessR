@@ -1,0 +1,50 @@
+{
+  "schema_version": "e3-current-snapshot-tool-profile-v1",
+  "profile_name": "orion_e3_read_reason_scientific",
+  "purpose": "Fresh current-snapshot full-agent architecture audit using the normal skill-conditioned evidence-governed path while excluding persistent side effects.",
+  "allowed_tool_names": [
+    "read_todos",
+    "write_todos",
+    "search_literature_chunks",
+    "resolve_literature_papers",
+    "search_paper_chunks",
+    "search_literature_multiview",
+    "explore_entity_neighborhood",
+    "aggregate_evidence_by_entities",
+    "verify_parameter_claim",
+    "load_skill",
+    "kg_query",
+    "query_formulation_space",
+    "enrich_formulation_evidence",
+    "screen_formulations",
+    "synthesize_design_report",
+    "optimize_formulations",
+    "extract_numeric_properties",
+    "verify_claims"
+  ],
+  "blocked_side_effect_or_out_of_scope_tool_names": [
+    "weather_query",
+    "write_file",
+    "read_file",
+    "task_dispatch",
+    "task_collect",
+    "task_status",
+    "task_cancel",
+    "run_script",
+    "memory_search",
+    "memory_write",
+    "flag_suspicious_kg_item",
+    "review_kg_flags",
+    "apply_kg_correction",
+    "request_evolve",
+    "semantic_scholar_search",
+    "invoke_vasp_calculation"
+  ],
+  "approval_policy": "All and only allowed_tool_names are auto-approved during formal E3 episodes.",
+  "grounding_policy": "ORION_GROUNDING_CHECK=0; E3 audits runtime authority structures and deterministic TaskArtifact validation, not an external semantic judge.",
+  "notes": [
+    "Prompt population is reused from C1 r3 for longitudinal integration comparability; executions are fresh current-snapshot runs, not unseen-prompt accuracy trials.",
+    "KG/RAG access is read-only and persistent mutation tools are excluded.",
+    "No model, RAG or KG writes are part of E3 scoring."
+  ]
+}

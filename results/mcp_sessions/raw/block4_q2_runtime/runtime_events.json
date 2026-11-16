@@ -1,0 +1,130 @@
+[
+  {
+    "tick": 1,
+    "event_type": "compulsory_fault",
+    "capability_id": "A",
+    "from_level": 0,
+    "to_level": 3,
+    "detail": "batch-1"
+  },
+  {
+    "tick": 2,
+    "event_type": "promote",
+    "capability_id": "A",
+    "from_level": 0,
+    "to_level": 3,
+    "detail": ""
+  },
+  {
+    "tick": 4,
+    "event_type": "active_enter",
+    "capability_id": "A",
+    "from_level": 3,
+    "to_level": 5,
+    "detail": "batch-1"
+  },
+  {
+    "tick": 5,
+    "event_type": "active_exit",
+    "capability_id": "A",
+    "from_level": 5,
+    "to_level": 3,
+    "detail": "batch-1"
+  },
+  {
+    "tick": 7,
+    "event_type": "active_enter",
+    "capability_id": "A",
+    "from_level": 3,
+    "to_level": 5,
+    "detail": "batch-2"
+  },
+  {
+    "tick": 8,
+    "event_type": "active_exit",
+    "capability_id": "A",
+    "from_level": 5,
+    "to_level": 3,
+    "detail": "batch-2"
+  },
+  {
+    "tick": 9,
+    "event_type": "compulsory_fault",
+    "capability_id": "B",
+    "from_level": 0,
+    "to_level": 3,
+    "detail": "batch-3"
+  },
+  {
+    "tick": 10,
+    "event_type": "promote",
+    "capability_id": "B",
+    "from_level": 0,
+    "to_level": 3,
+    "detail": ""
+  },
+  {
+    "tick": 12,
+    "event_type": "active_enter",
+    "capability_id": "B",
+    "from_level": 3,
+    "to_level": 5,
+    "detail": "batch-3"
+  },
+  {
+    "tick": 13,
+    "event_type": "active_exit",
+    "capability_id": "B",
+    "from_level": 5,
+    "to_level": 3,
+    "detail": "batch-3"
+  },
+  {
+    "tick": 15,
+    "event_type": "active_enter",
+    "capability_id": "B",
+    "from_level": 3,
+    "to_level": 5,
+    "detail": "batch-4"
+  },
+  {
+    "tick": 16,
+    "event_type": "active_exit",
+    "capability_id": "B",
+    "from_level": 5,
+    "to_level": 3,
+    "detail": "batch-4"
+  },
+  {
+    "tick": 18,
+    "event_type": "active_enter",
+    "capability_id": "A",
+    "from_level": 3,
+    "to_level": 5,
+    "detail": "batch-5"
+  },
+  {
+    "tick": 19,
+    "event_type": "active_exit",
+    "capability_id": "A",
+    "from_level": 5,
+    "to_level": 3,
+    "detail": "batch-5"
+  },
+  {
+    "tick": 21,
+    "event_type": "active_enter",
+    "capability_id": "A",
+    "from_level": 3,
+    "to_level": 5,
+    "detail": "batch-6"
+  },
+  {
+    "tick": 22,
+    "event_type": "active_exit",
+    "capability_id": "A",
+    "from_level": 5,
+    "to_level": 3,
+    "detail": "batch-6"
+  }
+]

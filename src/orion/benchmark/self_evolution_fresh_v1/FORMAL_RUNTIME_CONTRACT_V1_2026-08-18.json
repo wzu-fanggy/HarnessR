@@ -1,0 +1,83 @@
+{
+  "schema_version": "orion_self_evolution_fresh_formal_runtime_contract_v1",
+  "status": "PREFREEZE_NO_FORMAL_EXECUTION_AUTHORIZED",
+  "date": "2026-08-18",
+  "provider": "deepseek",
+  "model": "deepseek-v4-pro",
+  "sampling": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_output_tokens": 16384,
+    "hidden_sdk_retries": 0
+  },
+  "explicit_runtime_override": {
+    "ORION_AGENT_PROVIDER": "deepseek",
+    "ORION_AGENT_MODEL": "deepseek-v4-pro",
+    "ORION_AGENT_TEMPERATURE": "0.0",
+    "ORION_AGENT_TOP_P": "1.0",
+    "must_be_applied_before_importing_orion_llms": true
+  },
+  "direct_json_calls": {
+    "stages": [
+      "common_proposer",
+      "C_baseline_proxy",
+      "C_candidate_proxy",
+      "C_generic_judge",
+      "generic_holdout",
+      "retention_answer_only"
+    ],
+    "response_format": {"type": "json_object"},
+    "prompt_must_explicitly_request_json": true,
+    "json_or_schema_repair": false,
+    "semantic_retry_after_nonempty_response": false,
+    "request_timeout_seconds": 120
+  },
+  "agent_calls": {
+    "stages": ["future_evaluator"],
+    "native_json_response_format": false,
+    "tool_calling_enabled": true,
+    "agent_timeout_seconds": 900,
+    "llm_step_timeout_seconds": 90,
+    "semantic_retry_after_nonempty_response": false
+  },
+  "transport_policy": {
+    "max_transport_retries_before_response_object": 1,
+    "max_transport_attempts_before_response_object": 2,
+    "retryable_only": [
+      "connection_error",
+      "timeout",
+      "incomplete_transport"
+    ],
+    "provider_or_model_substitution": false,
+    "completed_stage_replay": false
+  },
+  "evaluation_isolation": {
+    "ORION_GROUNDING_CHECK": "0",
+    "ORION_LLM_CACHE": "0",
+    "ORION_LLM_STREAM": "0",
+    "ORION_REFLECTION_INJECT": "0",
+    "candidate_mount": "temporary evolution-store sandbox only",
+    "production_evolution_store_write": false,
+    "automatic_context_recall_for_future_probe": "controlled by the frozen future-probe harness",
+    "future_evaluator_paper_allowlist": "family/task specific and hidden until post-admission evaluator release"
+  },
+  "retention_evaluator": {
+    "tools_enabled": false,
+    "automatic_retrieval_enabled": false,
+    "same_answer_only_contract_as_static_development_baseline": true,
+    "candidate_is_advice_not_evidence": true
+  },
+  "interpreter_policy": {
+    "required_project_interpreter_suffix": "orion/workbench/api/.venv/Scripts/python.exe",
+    "python_major_minor": "3.11"
+  },
+  "endpoint_policy": {
+    "source_env": "DEEPSEEK_BASE_URL",
+    "persist_raw_endpoint": false,
+    "snapshot_field": "endpoint_sha256",
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "snapshot_records_only_api_key_present_boolean": true
+  },
+  "formal_execution_authorized": false,
+  "production_persistence_authorized": false
+}

@@ -1,0 +1,698 @@
+{
+  "execution_status": "completed",
+  "scientific_coverage": {
+    "point_predictions": 12,
+    "required_point_predictions": 12,
+    "missing_points": [],
+    "fitted_sweeps": [
+      "Ref-1-sweep-1",
+      "Ref-1-sweep-2",
+      "Ref-1-sweep-3",
+      "Ref-2-sweep-1",
+      "Ref-2-sweep-2",
+      "Ref-2-sweep-3"
+    ],
+    "missing_sweeps": [],
+    "raw_measurements": 60,
+    "old_points_reused": 9
+  },
+  "primary_requests": {
+    "A": 2,
+    "B": 5
+  },
+  "primary_requests_including_startup_attempt": 19,
+  "jev_calls": 1,
+  "shared_prediction": {
+    "agents": [
+      "A",
+      "B"
+    ],
+    "same_instance_in_stage_one": true,
+    "maximum_observed_active_count": 2,
+    "lease_records": [
+      {
+        "agent": "A",
+        "phase": "A",
+        "pid": 22532,
+        "generation": 1,
+        "active_count": 1,
+        "model_sha256": "cb60829a64e6ac4f1590b49a496b650f06a73563c0b002d3b1579e1de642e182",
+        "elapsed_s": 19.33203830000275
+      },
+      {
+        "agent": "B",
+        "phase": "B1",
+        "pid": 22532,
+        "generation": 1,
+        "active_count": 2,
+        "model_sha256": "cb60829a64e6ac4f1590b49a496b650f06a73563c0b002d3b1579e1de642e182",
+        "elapsed_s": 19.34171459999925
+      },
+      {
+        "agent": "B",
+        "phase": "B2",
+        "pid": 22532,
+        "generation": 1,
+        "active_count": 1,
+        "model_sha256": "cb60829a64e6ac4f1590b49a496b650f06a73563c0b002d3b1579e1de642e182",
+        "elapsed_s": 50.42701169999782
+      }
+    ]
+  },
+  "resource_decisions": [
+    {
+      "legal_options": {
+        "plan_0": [
+          "process:na-conductivity-rf"
+        ],
+        "plan_1": [
+          "process:robust-ranking-worker"
+        ]
+      },
+      "chosen": "plan_1",
+      "released": [
+        "process:robust-ranking-worker"
+      ],
+      "retained": [
+        "process:na-conductivity-rf"
+      ],
+      "no_task_reference": "plan_0",
+      "cost_reference": "plan_0",
+      "lru_reference": "plan_1",
+      "task_version": "8801b97f6f9a8fac8106bbb8627394df5fa35b870e958990f0df138443d8dfea",
+      "measured_costs": {
+        "process:na-conductivity-rf": 1.3055810000005295,
+        "process:robust-ranking-worker": 5.110780399998475
+      },
+      "changed_from_no_task_reference": true,
+      "subsequent_actual_reuse": [
+        {
+          "resource": "process:na-conductivity-rf",
+          "same_pid": true,
+          "same_generation": true,
+          "phase": "B2"
+        }
+      ],
+      "source": {
+        "event": "intent_plan_selected",
+        "version": "8801b97f6f9a8fac8106bbb8627394df5fa35b870e958990f0df138443d8dfea",
+        "source": "semantic_intent",
+        "choice": "plan_1",
+        "cost_baseline": "plan_0",
+        "changed": true,
+        "scores": {
+          "plan_0": [
+            1.240301950000503,
+            1.2664135700005135
+          ],
+          "plan_1": [
+            0.6644014519998018,
+            1.07326388399968
+          ]
+        },
+        "selection_rule": "minimax_regret",
+        "regrets": {}
+      }
+    }
+  ],
+  "task_information_changed_choice": true,
+  "retained_resource_actually_reused": true,
+  "ranking": [
+    {
+      "bootstrap_inclusion_frequency": null,
+      "candidate_id": "B3-gen-0029",
+      "caveats": [],
+      "decision": "recommended",
+      "dominated_by": [],
+      "in_sample_group_memorization_gap_log10": null,
+      "joint_meets_constraint_probability": 0.9375,
+      "joint_meets_constraint_probability_unseen_members": null,
+      "pareto_layer": 1,
+      "per_temperature": [
+        {
+          "ensemble_log10_std": 0.05208119592935443,
+          "median_ms_cm": 2.4695407218431678,
+          "meets_constraint_probability": 0.9375,
+          "p05_ms_cm": 1.9349687093854226,
+          "p95_ms_cm": 2.7433929479764116,
+          "temperature_c": -20.0
+        },
+        {
+          "ensemble_log10_std": 0.036917159076510754,
+          "median_ms_cm": 3.5718573089088226,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 3.0070962546276307,
+          "p95_ms_cm": 3.9398804615778085,
+          "temperature_c": -10.0
+        },
+        {
+          "ensemble_log10_std": 0.029657781408723882,
+          "median_ms_cm": 4.647322774938788,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 4.255899789991456,
+          "p95_ms_cm": 5.186433612634203,
+          "temperature_c": 0.0
+        },
+        {
+          "ensemble_log10_std": 0.026363415926747964,
+          "median_ms_cm": 7.305334243970421,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 6.56590971756383,
+          "p95_ms_cm": 7.717236006138069,
+          "temperature_c": 20.0
+        }
+      ],
+      "rank": 1,
+      "rank_stability": {
+        "mean_rank": 1.84375,
+        "mean_spearman_vs_ensemble_median": -0.140625,
+        "member_count": 32,
+        "rank_std": 0.794881,
+        "top1_frequency": 0.40625
+      },
+      "rejection_reasons": [],
+      "status": "ranked",
+      "worst_temperature_c": -20.0,
+      "worst_temperature_median_ms_cm": 2.4695407218431678
+    },
+    {
+      "bootstrap_inclusion_frequency": null,
+      "candidate_id": "B3-gen-0031",
+      "caveats": [],
+      "decision": "rejected",
+      "dominated_by": [
+        "B3-gen-0029"
+      ],
+      "in_sample_group_memorization_gap_log10": null,
+      "joint_meets_constraint_probability": 0.9375,
+      "joint_meets_constraint_probability_unseen_members": null,
+      "pareto_layer": 2,
+      "per_temperature": [
+        {
+          "ensemble_log10_std": 0.052700042479099374,
+          "median_ms_cm": 2.462696206632473,
+          "meets_constraint_probability": 0.9375,
+          "p05_ms_cm": 1.9400119346077014,
+          "p95_ms_cm": 2.7433929479764116,
+          "temperature_c": -20.0
+        },
+        {
+          "ensemble_log10_std": 0.037627137602398324,
+          "median_ms_cm": 3.573513534557782,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 3.0058727204114377,
+          "p95_ms_cm": 3.930744598987956,
+          "temperature_c": -10.0
+        },
+        {
+          "ensemble_log10_std": 0.03074998348543988,
+          "median_ms_cm": 4.640239743761512,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 4.189731475961226,
+          "p95_ms_cm": 5.144441539745516,
+          "temperature_c": 0.0
+        },
+        {
+          "ensemble_log10_std": 0.026140937753884354,
+          "median_ms_cm": 7.302663655889717,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 6.572531055755331,
+          "p95_ms_cm": 7.717236006138069,
+          "temperature_c": 20.0
+        }
+      ],
+      "rank": 2,
+      "rank_stability": {
+        "mean_rank": 1.84375,
+        "mean_spearman_vs_ensemble_median": -0.140625,
+        "member_count": 32,
+        "rank_std": 0.711924,
+        "top1_frequency": 0.34375
+      },
+      "rejection_reasons": [
+        "Pareto-dominated by B3-gen-0029"
+      ],
+      "status": "ranked",
+      "worst_temperature_c": -20.0,
+      "worst_temperature_median_ms_cm": 2.462696206632473
+    },
+    {
+      "bootstrap_inclusion_frequency": null,
+      "candidate_id": "B3-gen-0016",
+      "caveats": [],
+      "decision": "rejected",
+      "dominated_by": [
+        "B3-gen-0029",
+        "B3-gen-0031"
+      ],
+      "in_sample_group_memorization_gap_log10": null,
+      "joint_meets_constraint_probability": 0.9375,
+      "joint_meets_constraint_probability_unseen_members": null,
+      "pareto_layer": 3,
+      "per_temperature": [
+        {
+          "ensemble_log10_std": 0.051085339238686446,
+          "median_ms_cm": 2.4407739159097863,
+          "meets_constraint_probability": 0.9375,
+          "p05_ms_cm": 1.9421142817370924,
+          "p95_ms_cm": 2.731093242145584,
+          "temperature_c": -20.0
+        },
+        {
+          "ensemble_log10_std": 0.03619452886277825,
+          "median_ms_cm": 3.5075977508885745,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 3.0199451696341653,
+          "p95_ms_cm": 3.9029410619176628,
+          "temperature_c": -10.0
+        },
+        {
+          "ensemble_log10_std": 0.030521228412117,
+          "median_ms_cm": 4.639734109049931,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 4.197701840226884,
+          "p95_ms_cm": 5.157991503096988,
+          "temperature_c": 0.0
+        },
+        {
+          "ensemble_log10_std": 0.021542482926527034,
+          "median_ms_cm": 7.366566509433484,
+          "meets_constraint_probability": 1.0,
+          "p05_ms_cm": 6.803109769186054,
+          "p95_ms_cm": 7.812587153018007,
+          "temperature_c": 20.0
+        }
+      ],
+      "rank": 3,
+      "rank_stability": {
+        "mean_rank": 2.3125,
+        "mean_spearman_vs_ensemble_median": -0.140625,
+        "member_count": 32,
+        "rank_std": 0.845484,
+        "top1_frequency": 0.25
+      },
+      "rejection_reasons": [
+        "Pareto-dominated by B3-gen-0029, B3-gen-0031"
+      ],
+      "status": "ranked",
+      "worst_temperature_c": -20.0,
+      "worst_temperature_median_ms_cm": 2.4407739159097863
+    }
+  ],
+  "points": [
+    {
+      "candidate_id": "B3-gen-0029",
+      "temperature_c": -20.0,
+      "mS_cm": 2.5262117248512066,
+      "source": "archived_reused",
+      "record_id": "86247a648762fda806197c4e8ff0787e91956934b645d23eb3f97de4e635bf3f"
+    },
+    {
+      "candidate_id": "B3-gen-0029",
+      "temperature_c": 0.0,
+      "mS_cm": 4.815292654210056,
+      "source": "archived_reused",
+      "record_id": "e50666ef5a33265dc0f2ef8f40c509fba356821f42a8949eba581797fbde4b6e"
+    },
+    {
+      "candidate_id": "B3-gen-0029",
+      "temperature_c": 20.0,
+      "mS_cm": 7.377323169552955,
+      "source": "archived_reused",
+      "record_id": "c6750288c0c43307d1309323bd32c8da41f45407b1f81a2c70dbd50c1087868e"
+    },
+    {
+      "candidate_id": "B3-gen-0031",
+      "temperature_c": -20.0,
+      "mS_cm": 2.5262117248512066,
+      "source": "archived_reused",
+      "record_id": "e7bc969991ee8442fa171e1743105565428ba0bd3ebcdf78bc32db725eaf15b0"
+    },
+    {
+      "candidate_id": "B3-gen-0031",
+      "temperature_c": 0.0,
+      "mS_cm": 4.815292654210056,
+      "source": "archived_reused",
+      "record_id": "64f6e406d4ec47932f998bed89960539c90aac99616df7ab48e62cf284484ade"
+    },
+    {
+      "candidate_id": "B3-gen-0031",
+      "temperature_c": 20.0,
+      "mS_cm": 7.377323169552955,
+      "source": "archived_reused",
+      "record_id": "d52da84251fd0410b5b6dcb4b6d4b7ffe1e9de7bc2fc3a1ad5a8baddf7b046da"
+    },
+    {
+      "candidate_id": "B3-gen-0016",
+      "temperature_c": -20.0,
+      "mS_cm": 2.5092254489565273,
+      "source": "archived_reused",
+      "record_id": "a0d36a4ea0de57d782a73fd729e853edece2f7e8de5e3374d241cb3febe61a4d"
+    },
+    {
+      "candidate_id": "B3-gen-0016",
+      "temperature_c": 0.0,
+      "mS_cm": 4.826700014711963,
+      "source": "archived_reused",
+      "record_id": "4c6d4d759ffc091696aa78d84401cd2a75ef2252d59c7ca4408764bfb32a3058"
+    },
+    {
+      "candidate_id": "B3-gen-0016",
+      "temperature_c": 20.0,
+      "mS_cm": 7.563336951446481,
+      "source": "archived_reused",
+      "record_id": "e4d50899a8d20a8417620c53efb55c0b5cb760088548ed9e9d7f5ec948cbca0b"
+    },
+    {
+      "candidate_id": "Ref-1",
+      "temperature_c": -20.0,
+      "mS_cm": 2.4754627402403777,
+      "source": "this_episode",
+      "record_id": "e9258562b84a52c23c5355f12fb9b70c1fa887d3748149b2ac505492eb197169"
+    },
+    {
+      "candidate_id": "Ref-2",
+      "temperature_c": -20.0,
+      "mS_cm": 2.615411399097332,
+      "source": "this_episode",
+      "record_id": "31097e1745f0fc2844493065c238a6379dac51bf4e30af494cae442996ed8dbd"
+    },
+    {
+      "candidate_id": "Ref-1",
+      "temperature_c": -10.0,
+      "mS_cm": 3.590371311844992,
+      "source": "this_episode",
+      "record_id": "cae648f0f05f032d23287145be23eeb8e363ca317fc518f57678ac9dec0d11f5"
+    },
+    {
+      "candidate_id": "Ref-2",
+      "temperature_c": -10.0,
+      "mS_cm": 3.6457268074787934,
+      "source": "this_episode",
+      "record_id": "3863367e3bc353b64a0cfa229d0638bbdd78cc1c27824aa3da00cb8d660d7081"
+    },
+    {
+      "candidate_id": "Ref-1",
+      "temperature_c": 0.0,
+      "mS_cm": 4.858654326666246,
+      "source": "this_episode",
+      "record_id": "83bb29adea0b0312c4f318e67708fbe5bac157db4cc3746f7e11edd47441b320"
+    },
+    {
+      "candidate_id": "Ref-2",
+      "temperature_c": 0.0,
+      "mS_cm": 4.614293167962779,
+      "source": "this_episode",
+      "record_id": "bdae0f296c55f2fd9675be708a12e7ee1301c518106778a2ac8e12998be98c77"
+    },
+    {
+      "candidate_id": "Ref-1",
+      "temperature_c": 20.0,
+      "mS_cm": 7.468226554457586,
+      "source": "this_episode",
+      "record_id": "12f68b90c886a6170e5123e6d03eff23301e8aa325fcec8885ff3274b6c049e2"
+    },
+    {
+      "candidate_id": "Ref-2",
+      "temperature_c": 20.0,
+      "mS_cm": 6.505578229127864,
+      "source": "this_episode",
+      "record_id": "ba1a6f79edd27354cc6372573019928d04db5ce31d8a7934f4d593e197b4cd58"
+    },
+    {
+      "candidate_id": "B3-gen-0029",
+      "temperature_c": -10.0,
+      "mS_cm": 3.606395460480236,
+      "source": "this_episode",
+      "record_id": "523935146a51dcce0152d3461c4f4cfc4d37c0879e78b3e84d38dfc76a3d7053"
+    },
+    {
+      "candidate_id": "B3-gen-0031",
+      "temperature_c": -10.0,
+      "mS_cm": 3.606395460480236,
+      "source": "this_episode",
+      "record_id": "5dfb214a8ae134330aaf13bf98f5e2188797cc6f7a976efc7f6818ae7f6972f6"
+    },
+    {
+      "candidate_id": "B3-gen-0016",
+      "temperature_c": -10.0,
+      "mS_cm": 3.58897099160349,
+      "source": "this_episode",
+      "record_id": "3283cef094757c1e603e4b4f89dc2e271fb9a27e871cbe2671244b226a0362dc"
+    },
+    {
+      "candidate_id": "B3-gen-0029",
+      "temperature_c": 25.0,
+      "mS_cm": 8.677222986518075,
+      "source": "this_episode",
+      "record_id": "62f7839a73bd34bee718cb2c044e0823f4877742289c180eafbb6e1bb0ce5cce"
+    }
+  ],
+  "temperature_fits": [
+    {
+      "formulation_id": "Ref-1-sweep-1",
+      "n": 10,
+      "preferred_by_aicc": "arrhenius",
+      "models": [
+        {
+          "aicc": -68.87868051459193,
+          "loo_rmse_log10": 0.034670927665157295,
+          "model": "arrhenius",
+          "parameters": {
+            "activation_energy_j_mol": 13265.621052931618,
+            "activation_energy_kj_mol": 13.265621052931618,
+            "intercept_log10_ms_cm": 3.248672163965223,
+            "slope_per_1000_over_k": -0.6929114107421951
+          },
+          "residual_summary_log10": {
+            "max_absolute": 0.05868865594728245,
+            "mean": 1.126876369994534e-15,
+            "mean_absolute": 0.015448038861094332
+          },
+          "rmse_log10": 0.024001275326450758
+        },
+        {
+          "aicc": -64.58766036036201,
+          "loo_rmse_log10": 0.05300030778306429,
+          "model": "vtf",
+          "parameters": {
+            "b_kelvin": 688.0026802187218,
+            "intercept_log10_ms_cm": 3.2400358080587197,
+            "t0_kelvin": 1.000000099322395
+          },
+          "residual_summary_log10": {
+            "max_absolute": 0.058664526070849043,
+            "mean": -1.5825674104519294e-13,
+            "mean_absolute": 0.01541712834373507
+          },
+          "rmse_log10": 0.02400764355169204
+        }
+      ]
+    },
+    {
+      "formulation_id": "Ref-1-sweep-2",
+      "n": 10,
+      "preferred_by_aicc": "arrhenius",
+      "models": [
+        {
+          "aicc": -65.60823411452436,
+          "loo_rmse_log10": 0.03943756266347516,
+          "model": "arrhenius",
+          "parameters": {
+            "activation_energy_j_mol": 13358.782332344645,
+            "activation_energy_kj_mol": 13.358782332344644,
+            "intercept_log10_ms_cm": 3.2759725857698325,
+            "slope_per_1000_over_k": -0.6977775616210009
+          },
+          "residual_summary_log10": {
+            "max_absolute": 0.07057178341877118,
+            "mean": 1.2490009027033011e-15,
+            "mean_absolute": 0.0193184127369641
+          },
+          "rmse_log10": 0.02826514125227038
+        },
+        {
+          "aicc": -61.371790317133105,
+          "loo_rmse_log10": 0.064912028981465,
+          "model": "vtf",
+          "parameters": {
+            "b_kelvin": 591.6451693273465,
+            "intercept_log10_ms_cm": 3.08198452877838,
+            "t0_kelvin": 22.307979377199683
+          },
+          "residual_summary_log10": {
+            "max_absolute": 0.06997627729451922,
+            "mean": -2.882873711973488e-09,
+            "mean_absolute": 0.01857748084364123
+          },
+          "rmse_log10": 0.02819559508618124
+        }
+      ]
+    },
+    {
+      "formulation_id": "Ref-1-sweep-3",
+      "n": 10,
+      "preferred_by_aicc": "arrhenius",
+      "models": [
+        {
+          "aicc": -62.39780840102545,
+          "loo_rmse_log10": 0.04347442289406869,
+          "model": "arrhenius",
+          "parameters": {
+            "activation_energy_j_mol": 13099.657842778886,
+            "activation_energy_kj_mol": 13.099657842778885,
+            "intercept_log10_ms_cm": 3.235649285596205,
+            "slope_per_1000_over_k": -0.684242551469088
+          },
+          "residual_summary_log10": {
+            "max_absolute": 0.07737262819604795,
+            "mean": 4.6074255521944e-16,
+            "mean_absolute": 0.02563417903602347
+          },
+          "rmse_log10": 0.033186745796561064
+        },
+        {
+          "aicc": -59.0203649615309,
+          "loo_rmse_log10": 0.07681542473628522,
+          "model": "vtf",
+          "parameters": {
+            "b_kelvin": 334.21115508147324,
+            "intercept_log10_ms_cm": 2.51263850382781,
+            "t0_kelvin": 84.5769764719756
+          },
+          "residual_summary_log10": {
+            "max_absolute": 0.07468555364834761,
+            "mean": -1.8028687986948456e-10,
+            "mean_absolute": 0.02303110301156696
+          },
+          "rmse_log10": 0.031713327896703294
+        }
+      ]
+    },
+    {
+      "formulation_id": "Ref-2-sweep-1",
+      "n": 10,
+      "preferred_by_aicc": "vtf",
+      "models": [
+        {
+          "aicc": -62.492463332174005,
+          "loo_rmse_log10": 0.043776863575829605,
+          "model": "arrhenius",
+          "parameters": {
+            "activation_energy_j_mol": 10798.594820020859,
+            "activation_energy_kj_mol": 10.798594820020858,
+            "intercept_log10_ms_cm": 2.722413437699931,
+            "slope_per_1000_over_k": -0.5640496996648668
+          },
+          "residual_summary_log10": {
+            "max_absolute": 0.05165066594116685,
+            "mean": 1.0158540675320183e-15,
+            "mean_absolute": 0.028624026502139206
+          },
+          "rmse_log10": 0.03303005242712224
+        },
+        {
+          "aicc": -80.50588729895316,
+          "loo_rmse_log10": 0.021172642574355215,
+          "model": "vtf",
+          "parameters": {
+            "b_kelvin": 74.94988538477749,
+            "intercept_log10_ms_cm": 1.4665163925560531,
+            "t0_kelvin": 176.44673515129315
+          },
+          "residual_summary_log10": {
+            "max_absolute": 0.015879072649242376,
+            "mean": -1.0650185733318551e-10,
+            "mean_absolute": 0.010211270893294017
+          },
+          "rmse_log10": 0.010831525545660048
+        }
+      ]
+    },
+    {
+      "formulation_id": "Ref-2-sweep-2",
+      "n": 10,
+      "preferred_by_aicc": "vtf",
+      "models": [
+        {
+          "aicc": -70.96210232280457,
+          "loo_rmse_log10": 0.029713954869331205,
+          "model": "arrhenius",
+          "parameters": {
+            "activation_energy_j_mol": 11447.515825775517,
+            "activation_energy_kj_mol": 11.447515825775518,
+            "intercept_log10_ms_cm": 2.830769822970613,
+            "slope_per_1000_over_k": -0.5979451929677104
+          },
+          "residual_summary_log10": {
+            "max_absolute": 0.03635076119902353,
+            "mean": 9.381384558082572e-16,
+            "mean_absolute": 0.019215116752412248
+          },
+          "rmse_log10": 0.021626856030341948
+        },
+        {
+          "aicc": -108.15562610571327,
+          "loo_rmse_log10": 0.006464135368884741,
+          "model": "vtf",
+          "parameters": {
+            "b_kelvin": 130.3089090736354,
+            "intercept_log10_ms_cm": 1.7128602646631508,
+            "t0_kelvin": 148.80766172016277
+          },
+          "residual_summary_log10": {
+            "max_absolute": 0.006748128778228946,
+            "mean": -8.889000646661316e-14,
+            "mean_absolute": 0.0017538415819470855
+          },
+          "rmse_log10": 0.0027182110825517388
+        }
+      ]
+    },
+    {
+      "formulation_id": "Ref-2-sweep-3",
+      "n": 10,
+      "preferred_by_aicc": "vtf",
+      "models": [
+        {
+          "aicc": -71.48990871548155,
+          "loo_rmse_log10": 0.029150051500730544,
+          "model": "arrhenius",
+          "parameters": {
+            "activation_energy_j_mol": 11349.174736129662,
+            "activation_energy_kj_mol": 11.349174736129662,
+            "intercept_log10_ms_cm": 2.8020061831365446,
+            "slope_per_1000_over_k": -0.5928084818489064
+          },
+          "residual_summary_log10": {
+            "max_absolute": 0.03760880316185472,
+            "mean": 3.9412917374193055e-16,
+            "mean_absolute": 0.018072058013849663
+          },
+          "rmse_log10": 0.02106358157411024
+        },
+        {
+          "aicc": -110.14029175575067,
+          "loo_rmse_log10": 0.00400236413510433,
+          "model": "vtf",
+          "parameters": {
+            "b_kelvin": 130.44892774564147,
+            "intercept_log10_ms_cm": 1.6983688625182654,
+            "t0_kelvin": 148.18277876021097
+          },
+          "residual_summary_log10": {
+            "max_absolute": 0.0040436773883095745,
+            "mean": 1.0547118733938987e-16,
+            "mean_absolute": 0.002106484208197651
+          },
+          "rmse_log10": 0.002461425592388182
+        }
+      ]
+    }
+  ],
+  "processes_closed": true,
+  "no_remaining_leases": true,
+  "manuscripts_unchanged": true,
+  "net_speedup_tested": false,
+  "new_electrolyte_measurements": false
+}

@@ -1,0 +1,26 @@
+{"event": "on_chain_start", "name": "LangGraph", "run_id": "01a15de9-2649-7143-9371-ad8d88a0762a", "parent_ids": [], "elapsed_seconds": 1.265}
+{"event": "on_chain_start", "name": "__start__", "run_id": "01a15de9-265a-7d73-875c-fb0e188f1848", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 1.281}
+{"event": "on_chain_start", "name": "whether_compact", "run_id": "01a15de9-265b-70b3-9367-b4a54ab51e4e", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a", "01a15de9-265a-7d73-875c-fb0e188f1848"], "elapsed_seconds": 1.281}
+{"event": "on_chain_end", "name": "whether_compact", "run_id": "01a15de9-265b-70b3-9367-b4a54ab51e4e", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a", "01a15de9-265a-7d73-875c-fb0e188f1848"], "elapsed_seconds": 1.281}
+{"event": "on_chain_end", "name": "__start__", "run_id": "01a15de9-265a-7d73-875c-fb0e188f1848", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 1.281}
+{"event": "on_chain_start", "name": "context_prepare", "run_id": "01a15de9-265d-7ec3-bffd-4be3f34e32f5", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 1.281}
+{"event": "on_chain_end", "name": "context_prepare", "run_id": "01a15de9-265d-7ec3-bffd-4be3f34e32f5", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 1.281}
+{"event": "on_chain_start", "name": "llm", "run_id": "01a15de9-2660-7ea1-b123-a3890584afe0", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 1.281}
+{"event": "on_chat_model_start", "name": "ReasoningPreservingChatDeepSeek", "run_id": "01a15de9-2661-70a3-b807-45c99cf9d66a", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a", "01a15de9-2660-7ea1-b123-a3890584afe0"], "elapsed_seconds": 1.281}
+{"event": "on_chat_model_end", "name": "ReasoningPreservingChatDeepSeek", "run_id": "01a15de9-2661-70a3-b807-45c99cf9d66a", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a", "01a15de9-2660-7ea1-b123-a3890584afe0"], "elapsed_seconds": 2.218}
+{"event": "on_chain_end", "name": "llm", "run_id": "01a15de9-2660-7ea1-b123-a3890584afe0", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 2.218}
+{"event": "on_chain_start", "name": "review", "run_id": "01a15de9-2a0f-7593-b43d-3600a54273a9", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 2.218}
+{"event": "on_chain_end", "name": "review", "run_id": "01a15de9-2a0f-7593-b43d-3600a54273a9", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 2.218}
+{"event": "on_chain_start", "name": "tools", "run_id": "01a15de9-2a10-7872-b33b-cc309b634df8", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 2.218}
+{"event": "on_tool_start", "name": "load_skill", "run_id": "01a15de9-2a2b-7db0-827f-1ecdfe667e9a", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a", "01a15de9-2a10-7872-b33b-cc309b634df8"], "elapsed_seconds": 2.25}
+{"event": "on_tool_end", "name": "load_skill", "run_id": "01a15de9-2a2b-7db0-827f-1ecdfe667e9a", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a", "01a15de9-2a10-7872-b33b-cc309b634df8"], "elapsed_seconds": 2.265}
+{"event": "on_chain_end", "name": "tools", "run_id": "01a15de9-2a10-7872-b33b-cc309b634df8", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 2.297}
+{"event": "on_chain_start", "name": "llm", "run_id": "01a15de9-2a5a-79a2-a53b-1d74733a7717", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 2.297}
+{"event": "on_chat_model_start", "name": "ReasoningPreservingChatDeepSeek", "run_id": "01a15de9-2a5c-7e91-b37f-f7c7157f49e4", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a", "01a15de9-2a5a-79a2-a53b-1d74733a7717"], "elapsed_seconds": 2.297}
+{"event": "on_chat_model_end", "name": "ReasoningPreservingChatDeepSeek", "run_id": "01a15de9-2a5c-7e91-b37f-f7c7157f49e4", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a", "01a15de9-2a5a-79a2-a53b-1d74733a7717"], "elapsed_seconds": 5.453}
+{"event": "on_chain_end", "name": "llm", "run_id": "01a15de9-2a5a-79a2-a53b-1d74733a7717", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 5.453}
+{"event": "on_chain_start", "name": "review", "run_id": "01a15de9-36b4-7c23-8733-9a0cd3624032", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 5.453}
+{"event": "on_chain_end", "name": "review", "run_id": "01a15de9-36b4-7c23-8733-9a0cd3624032", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 5.468}
+{"event": "on_chain_start", "name": "tools", "run_id": "01a15de9-36b6-70a2-a2a1-deac1ffc882d", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a"], "elapsed_seconds": 5.468}
+{"event": "on_tool_start", "name": "predict_formulation_conductivity", "run_id": "01a15de9-36c5-7623-b93b-6fe413a36186", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a", "01a15de9-36b6-70a2-a2a1-deac1ffc882d"], "elapsed_seconds": 5.484}
+{"event": "on_tool_end", "name": "predict_formulation_conductivity", "run_id": "01a15de9-36c5-7623-b93b-6fe413a36186", "parent_ids": ["01a15de9-2649-7143-9371-ad8d88a0762a", "01a15de9-36b6-70a2-a2a1-deac1ffc882d"], "elapsed_seconds": 6.968}

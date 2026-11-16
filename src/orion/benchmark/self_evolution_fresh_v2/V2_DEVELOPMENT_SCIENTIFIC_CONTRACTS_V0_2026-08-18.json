@@ -1,0 +1,123 @@
+{
+  "schema_version": "orion_self_evolution_fresh_v2_development_scientific_contracts_v0",
+  "date": "2026-08-18",
+  "status": "DEVELOPMENT_ONLY_BURNED_V1_FAMILIES_NO_CONFIRMATORY_REUSE",
+  "families": {
+    "FRESH_V2_DEV_A1_NADFP": {
+      "representation": {
+        "development_source_ids": ["A1_DEV_CEJ_2024_NADFP"],
+        "required_relevant_fields": ["additive", "electrode", "temperature_c"],
+        "required_text_scope": {
+          "additive": {"any_alias": ["NaDFP", "sodium difluorophosphate"], "all_tokens": []},
+          "cell_configuration": {"any_alias": ["pouch", "full cell"], "all_tokens": []}
+        },
+        "required_salt": null,
+        "required_electrode_pair": {
+          "positive_any_alias": ["NFM", "layered oxide"],
+          "negative_any_alias": ["hard carbon"]
+        },
+        "required_numeric_scope": {
+          "temperature_c": {"kind": "interval", "value": null, "lower": -30.0, "upper": 60.0, "values": [], "lower_inclusive": true, "upper_inclusive": true, "unit": "C"}
+        },
+        "must_be_unstated_fields": []
+      },
+      "matched_boundary": null,
+      "matched_categorical_boundary": null
+    },
+    "FRESH_V2_DEV_A4_DTD": {
+      "representation": {
+        "development_source_ids": ["A4_DEV_ESM_2024_DTD"],
+        "required_relevant_fields": ["additive", "solvent"],
+        "required_text_scope": {
+          "additive": {"any_alias": ["DTD", "ethylene sulfate", "cyclic sulfate"], "all_tokens": []},
+          "solvent": {"any_alias": ["carbonate"], "all_tokens": []}
+        },
+        "required_salt": null,
+        "required_electrode_pair": null,
+        "required_numeric_scope": {},
+        "must_be_unstated_fields": []
+      },
+      "matched_boundary": null,
+      "matched_categorical_boundary": null
+    },
+    "FRESH_V2_DEV_A5_ETHER": {
+      "representation": {
+        "development_source_ids": ["A5_DEV_JPS_2025_ETHER_HC"],
+        "required_relevant_fields": ["solvent", "electrode"],
+        "required_text_scope": {
+          "solvent": {"any_alias": ["ether"], "all_tokens": []}
+        },
+        "required_salt": null,
+        "required_electrode_pair": {
+          "positive_any_alias": [],
+          "negative_any_alias": ["hard carbon"]
+        },
+        "required_numeric_scope": {},
+        "must_be_unstated_fields": ["voltage_window_v"]
+      },
+      "matched_boundary": {
+        "source_id": "A5_BOUNDARY_JACS_2026_ETHER_HV",
+        "field": "voltage_window_v",
+        "adverse_numeric_domain": {"kind": "lower_bound", "value": null, "lower": 4.0, "upper": null, "values": [], "lower_inclusive": true, "upper_inclusive": true, "unit": "V"}
+      },
+      "matched_categorical_boundary": null
+    },
+    "FRESH_V2_DEV_A6_GLYME": {
+      "representation": {
+        "development_source_ids": ["A6_DEV_ACS_SCE_2024_GLYME"],
+        "required_relevant_fields": ["salt", "solvent", "cell_configuration", "voltage_window_v"],
+        "required_text_scope": {
+          "solvent": {"any_alias": ["diglyme", "glyme", "G2"], "all_tokens": []},
+          "cell_configuration": {"any_alias": ["full cell", "full-cell"], "all_tokens": []}
+        },
+        "required_salt": {
+          "identity_aliases": ["NaPF6"],
+          "concentration_mol_l": 1.0
+        },
+        "required_electrode_pair": {
+          "positive_any_alias": ["olivine iron phosphate", "iron phosphate"],
+          "negative_any_alias": ["hard carbon"]
+        },
+        "required_numeric_scope": {
+          "voltage_window_v": {"kind": "interval", "value": null, "lower": 1.8, "upper": 3.8, "values": [], "lower_inclusive": true, "upper_inclusive": true, "unit": "V"}
+        },
+        "must_be_unstated_fields": []
+      },
+      "matched_boundary": {
+        "source_id": "A6_BOUNDARY_ANG_2021_ETHER_HV",
+        "field": "voltage_window_v",
+        "adverse_numeric_domain": {"kind": "lower_bound", "value": null, "lower": 4.0, "upper": null, "values": [], "lower_inclusive": true, "upper_inclusive": true, "unit": "V"}
+      },
+      "matched_categorical_boundary": null
+    },
+    "FRESH_V2_DEV_A8_PFPN": {
+      "representation": {
+        "development_source_ids": ["A8_DEV_ACSAMI_2025_PFPN_POUCH"],
+        "required_relevant_fields": ["additive", "electrode", "cell_configuration"],
+        "required_text_scope": {
+          "additive": {"any_alias": ["PFPN", "ethoxy(pentafluoro)cyclotriphosphazene", "ethoxy (pentafluoro) cyclotriphosphazene"], "all_tokens": []},
+          "cell_configuration": {"any_alias": ["NFM-HC pouch cell", "practical pouch cell", "hard carbon pouch cell", "hard-carbon pouch cell", "hard carbon full cell", "full cell"], "all_tokens": []}
+        },
+        "required_salt": null,
+        "required_electrode_pair": {
+          "positive_any_alias": ["NFM", "Na0.98Ni0.5Fe0.2Mn0.3O2", "layered oxide"],
+          "negative_any_alias": ["hard carbon"]
+        },
+        "required_numeric_scope": {},
+        "must_be_unstated_fields": []
+      },
+      "matched_boundary": null,
+      "matched_categorical_boundary": {
+        "source_id": "A8_BOUNDARY_ACSEL_2025_NA_METAL_LIMIT",
+        "boundary": {
+          "field": "cell_configuration",
+          "canonical_aliases": {
+            "hard_carbon_full_cell": ["hard carbon full cell", "hard-carbon full cell", "NFM-HC full cell", "NFM-HC pouch cell", "hard carbon pouch cell", "hard-carbon pouch cell", "practical pouch cell", "full cell"],
+            "na_metal_half_cell": ["Na metal half-cell", "sodium metal half-cell", "NFM-Na half-cell", "hard carbon/Na half-cell", "hard-carbon/Na half-cell", "HC/Na half-cell", "Na metal counter electrode"]
+          },
+          "adverse_values": ["na_metal_half_cell"]
+        }
+      }
+    }
+  }
+}
